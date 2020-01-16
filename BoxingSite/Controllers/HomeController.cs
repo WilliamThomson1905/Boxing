@@ -26,5 +26,19 @@ namespace BoxingSite.Controllers
 
             return View();
         }
+
+        public ActionResult Management()
+        {
+            ViewBag.Message = "Your Management description page.";
+
+            return View();
+        }
+
+        public ActionResult Promotions()
+        {
+            ViewBag.Message = "Your Promotions page.";
+
+            return View();
+        }
     }
 }

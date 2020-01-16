@@ -8,7 +8,15 @@
     @Scripts.Render("~/bundles/modernizr")
 
 
-    <link href="~/Content/css/boxingSiteCss.css" rel="stylesheet" />
+
+
+    <link href="~/assets/css/main.css" rel="stylesheet" />
+    @*<link href="~/Content/css/boxingSite.css" rel="stylesheet" />*@
+
+
+
+
+
 </head>
 <body>
     @*<div class="navbar navbar-inverse navbar-fixed-top">
@@ -33,62 +41,38 @@
         </div>*@
 
 
+    @*@Html.Partial("~/Views/Shared/_HeaderSection.cshtml")*@
 
 
-    <!-- Wrapper -->
-    <div id="navWrapper" style="position: absolute; ">
 
-        <!-- Header -->
-        <header id="header">
-            <div class="inner">
-
-                <!-- Nav -->
-                <nav>
-                    <ul>
-                        <li><a href="#menu">Menu</a></li>
-                    </ul>
-                </nav>
-
-            </div>
-        </header>
-
-        <!-- Menu -->
-        <nav id="menu">
-            <h3 class="modalboxHeading">Menu</h3>
-            <ul>
-                <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                <li>@Html.ActionLink("About", "About", "Home")</li>
-                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                @*<li><a href="generic.html">Tempus etiam</a></li>
-        <li><a href="generic.html">Consequat dolor</a></li>
-        <li><a href="elements.html">Elements</a></li>*@
-            </ul>
-
-            <br />
-          
-        </nav>
-
-    </div>
-
-
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+    <div class="is-preload">
+        <div id="page-wrapper">
+            @Html.Partial("~/Views/Shared/_HeaderSection.cshtml")
+            @RenderBody()
+            @Html.Partial("~/Views/Shared/_Footer.cshtml")
+        </div>
     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 
-    
-<script src="~/Scripts/navigation/util.js"></script>
-<script src="~/Scripts/navigation/breakpoints.min.js"></script>
-<script src="~/Scripts/navigation/browser.min.js"></script>
-<script src="~/Scripts/navigation/jquery.min.js"></script>
-<script src="~/Scripts/navigation/main.js"></script> 
+
+
+    <script src="~/assets/js/jquery.min.js"></script>
+    <script src="~/assets/js/jquery.scrolly.min.js"></script>
+    <script src="~/assets/js/jquery.scrollex.min.js"></script>
+    <script src="~/assets/js/browser.min.js"></script>
+    <script src="~/assets/js/breakpoints.min.js"></script>
+    <script src="~/assets/js/util.js"></script>
+    <script src="~/assets/js/main.js"></script>
+
+    @*<script src="~/Scripts/navigation/util.js"></script>
+            <script src="~/Scripts/navigation/breakpoints.min.js"></script>
+            <script src="~/Scripts/navigation/browser.min.js"></script>
+            <script src="~/Scripts/navigation/jquery.min.js"></script>
+        <script src="~/Scripts/navigation/main.js"></script>*@
+
 
 </body>
 </html>

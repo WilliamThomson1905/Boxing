@@ -200,6 +200,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\boxingSite.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -207,6 +208,7 @@
     <Content Include="images\banner.jpg" />
     <Content Include="images\banner.mp4" />
     <Content Include="images\banner.webm" />
+    <Content Include="images\banner_gym_floor_one.jpg" />
     <Content Include="images\pic01.svg" />
     <Content Include="images\pic02.svg" />
     <Content Include="images\pic03.svg" />
@@ -269,6 +271,11 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\navigation\breakpoints.min.js" />
+    <Content Include="Scripts\navigation\browser.min.js" />
+    <Content Include="Scripts\navigation\jquery.min.js" />
+    <Content Include="Scripts\navigation\main.js" />
+    <Content Include="Scripts\navigation\util.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -304,6 +311,9 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_HeaderSection.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Home\Management.cshtml" />
+    <Content Include="Views\Home\Promotions.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
