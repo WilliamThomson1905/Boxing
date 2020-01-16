@@ -3543,7 +3543,7 @@ input, select, textarea {
 
 			#banner {
 				padding: 6em 2em 2em 2em ;
-				min-height: 0;
+				/*min-height: 0;*/
 			}
 
 				#banner .inner {

@@ -27,18 +27,27 @@ namespace BoxingSite.Controllers
             return View();
         }
 
-        public ActionResult Management()
+        public ActionResult Trainers()
         {
-            ViewBag.Message = "Your Management description page.";
+            ViewBag.Message = "Your Management/Trainers description page.";
 
             return View();
         }
 
-        public ActionResult Promotions()
+        public ActionResult Schedule()
         {
-            ViewBag.Message = "Your Promotions page.";
+            ViewBag.Message = "Your Schedule page.";
 
             return View();
         }
+
+        public ActionResult Prices()
+        {
+            ViewBag.Message = "Your Prices page.";
+
+            return View();
+        }
+
+     
     }
 }

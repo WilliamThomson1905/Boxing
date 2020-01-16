@@ -209,6 +209,18 @@
     <Content Include="images\banner.mp4" />
     <Content Include="images\banner.webm" />
     <Content Include="images\banner_gym_floor_one.jpg" />
+    <Content Include="images\boxing\attentie-attentie-ig7vN6OkGNE-unsplash.jpg" />
+    <Content Include="images\boxing\chris-kendall-sJ6az6-T1u8-unsplash.jpg" />
+    <Content Include="images\boxing\dan-burton-ODqEpFhcfpE-unsplash.jpg" />
+    <Content Include="images\boxing\dylan-nolte-ITDjGji__6Y-unsplash.jpg" />
+    <Content Include="images\boxing\edgar-chaparro-sHfo3WOgGTU-unsplash.jpg" />
+    <Content Include="images\boxing\hermes-rivera-qbf59TU077Q-unsplash.jpg" />
+    <Content Include="images\boxing\matheus-ferrero-VWkWP3CMgm8-unsplash.jpg" />
+    <Content Include="images\boxing\metin-ozer-LXDWcn5vWKU-unsplash.jpg" />
+    <Content Include="images\boxing\patrick-kool-E1iDP5xRvHE-unsplash.jpg" />
+    <Content Include="images\boxing\quinn-buffing-2UhwQ2PnIBQ-unsplash.jpg" />
+    <Content Include="images\boxing\timothy-eberly-28S1UBUM7aQ-unsplash.jpg" />
+    <Content Include="images\boxing\wade-austin-ellis-gpOz1RcIrPE-unsplash.jpg" />
     <Content Include="images\pic01.svg" />
     <Content Include="images\pic02.svg" />
     <Content Include="images\pic03.svg" />
@@ -312,8 +324,9 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_HeaderSection.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
-    <Content Include="Views\Home\Management.cshtml" />
-    <Content Include="Views\Home\Promotions.cshtml" />
+    <Content Include="Views\Home\Trainers.cshtml" />
+    <Content Include="Views\Home\Schedule.cshtml" />
+    <Content Include="Views\Home\Prices.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
