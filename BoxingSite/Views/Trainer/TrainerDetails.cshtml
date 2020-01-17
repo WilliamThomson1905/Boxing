@@ -1,8 +1,51 @@
-﻿
+﻿@model BoxingSite.Models.SingleTrainerViewmodel
+
+
 @{
     ViewBag.Title = "TrainerDetails";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>TrainerDetails</h2>
+
+<div id="wrapper">
+
+    <!-- One -->
+    <section class="main">
+        <div class="inner spotlight style1">
+            <div class="content">
+                <header>
+                    <h2>
+                        @Html.DisplayFor(model => model.Forename)
+                        @Html.DisplayFor(model => model.Surname)
+                    </h2>
+                </header>
+                <p>
+                    @Html.DisplayFor(model => model.Description)
+
+                </p>
+            </div>
+            <!--
+                Note: You can replace the image below with a JPEG or PNG. Just make sure it's exactly
+                320x340 or at least the same aspect ratio (16:17).
+
+            <span class="image"><img src="images/pic01.svg" alt="" /></span>-->
+        </div>
+    </section>
+
+    <!-- Main -->
+    <div id="">
+
+        <div class="inner">
+
+
+            <span class="image align-center">
+                <img style="width: 60%;" src=@Html.DisplayFor(model => model.ImageSrc) alt="" />
+            </span>
+
+
+
+        </div>
+    </div>
+</div>
+
 

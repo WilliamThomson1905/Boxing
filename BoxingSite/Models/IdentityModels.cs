@@ -11,6 +11,7 @@ namespace BoxingSite.Models
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
+        public string T_Id { get; set; }
         public string Title { get; set; }
         public string Forename { get; set; }
         public string Surname { get; set; }
@@ -34,6 +35,7 @@ namespace BoxingSite.Models
     public class TrainerUser : ApplicationUser
     {
         public string Description { get; set; }
+        public string ImageSrc { get; set; }
         public string Instagarm { get; set; }
         public string Facebook { get; set; }
         public string LinkedIn { get; set; }
