@@ -170,10 +170,13 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\TrainerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\TrainerViewModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -186,6 +189,7 @@
     <Content Include="assets\css\images\menu-alt.svg" />
     <Content Include="assets\css\images\menu.svg" />
     <Content Include="assets\css\main.css" />
+    <Content Include="assets\css\mainPhantom.css" />
     <Content Include="assets\js\breakpoints.min.js" />
     <Content Include="assets\js\browser.min.js" />
     <Content Include="assets\js\jquery.min.js" />
@@ -221,6 +225,22 @@
     <Content Include="images\boxing\quinn-buffing-2UhwQ2PnIBQ-unsplash.jpg" />
     <Content Include="images\boxing\timothy-eberly-28S1UBUM7aQ-unsplash.jpg" />
     <Content Include="images\boxing\wade-austin-ellis-gpOz1RcIrPE-unsplash.jpg" />
+    <Content Include="images\imagesPhantom\logo.svg" />
+    <Content Include="images\imagesPhantom\pic01.jpg" />
+    <Content Include="images\imagesPhantom\pic02.jpg" />
+    <Content Include="images\imagesPhantom\pic03.jpg" />
+    <Content Include="images\imagesPhantom\pic04.jpg" />
+    <Content Include="images\imagesPhantom\pic05.jpg" />
+    <Content Include="images\imagesPhantom\pic06.jpg" />
+    <Content Include="images\imagesPhantom\pic07.jpg" />
+    <Content Include="images\imagesPhantom\pic08.jpg" />
+    <Content Include="images\imagesPhantom\pic09.jpg" />
+    <Content Include="images\imagesPhantom\pic10.jpg" />
+    <Content Include="images\imagesPhantom\pic11.jpg" />
+    <Content Include="images\imagesPhantom\pic12.jpg" />
+    <Content Include="images\imagesPhantom\pic13.jpg" />
+    <Content Include="images\imagesPhantom\pic14.jpg" />
+    <Content Include="images\imagesPhantom\pic15.jpg" />
     <Content Include="images\pic01.svg" />
     <Content Include="images\pic02.svg" />
     <Content Include="images\pic03.svg" />
@@ -228,6 +248,19 @@
     <Content Include="images\pic05.jpg" />
     <Content Include="images\pic06.jpg" />
     <Content Include="images\pic07.jpg" />
+    <Content Include="images\trainers\colin-cassidy-akj4oRw8E04-unsplash.jpg" />
+    <Content Include="images\trainers\emily-sea-coiWR0gT8Cw-unsplash.jpg" />
+    <Content Include="images\trainers\filipe-almeida-mnEWC72eWDM-unsplash.jpg" />
+    <Content Include="images\trainers\form-B6fw69UttOI-unsplash.jpg" />
+    <Content Include="images\trainers\form-qQGAQMbURhU-unsplash.jpg" />
+    <Content Include="images\trainers\imani-clovis-tBt9JxuQBYs-unsplash.jpg" />
+    <Content Include="images\trainers\jonathan-cosens-photography-jcp-v-YiCIbDjOQ-unsplash.jpg" />
+    <Content Include="images\trainers\joshua-medway-sd-Pq5aDoO4-unsplash.jpg" />
+    <Content Include="images\trainers\leandro-viegas-Tv4lD_smpPQ-unsplash.jpg" />
+    <Content Include="images\trainers\marius-ciocirlan-vMV6r4VRhJ8-unsplash.jpg" />
+    <Content Include="images\trainers\steven-van-vLC--gwHnbQ-unsplash.jpg" />
+    <Content Include="images\trainers\trust-tru-katsande-Pu7BOaYlYGY-unsplash.jpg" />
+    <Content Include="images\trainers\valentina-aleksandrovna-BExYKIjiPQE-unsplash.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="assets\sass\base\_page.scss" />
@@ -324,9 +357,10 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_HeaderSection.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
-    <Content Include="Views\Home\Trainers.cshtml" />
+    <Content Include="Views\Trainer\Trainers.cshtml" />
     <Content Include="Views\Home\Schedule.cshtml" />
     <Content Include="Views\Home\Prices.cshtml" />
+    <Content Include="Views\Trainer\TrainerDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

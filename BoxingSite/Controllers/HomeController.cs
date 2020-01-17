@@ -27,12 +27,6 @@ namespace BoxingSite.Controllers
             return View();
         }
 
-        public ActionResult Trainers()
-        {
-            ViewBag.Message = "Your Management/Trainers description page.";
-
-            return View();
-        }
 
         public ActionResult Schedule()
         {
