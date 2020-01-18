@@ -14,7 +14,7 @@
     <section id="one" class="main">
         <div class="inner spotlight style1">
             <div class="content">
-                <header>
+                <header class="major">
                     <h2>Trainers</h2>
                 </header>
                 <p>
@@ -39,20 +39,21 @@
             <section class="tiles">
                 @foreach (var person in Model)
                 {
-
-                <article class="style1">
-                    <span class="image">
-                        <img src=@Html.DisplayFor(modelItem => person.ImageSrc) alt="" />
-                    </span>
+                    Random rand = new Random(DateTime.Now.Millisecond);
+                    int styleNum = rand.Next(1, 7);
+                    <article class="style@(styleNum)">
+                        <span class="image">
+                            <img src=@Html.DisplayFor(modelItem => person.ImageSrc) alt="" />
+                        </span>
                  
 
-                    <a href="/Trainer/TrainerDetails/@person.T_Id">
-                        <h2>@Html.DisplayFor(modelItem => person.Forename) @Html.DisplayFor(modelItem => person.Surname)</h2>
-                        <div class="content">
-                            <p>@Html.DisplayFor(modelItem => person.Description).ToString().Substring(0, 100)</p>
-                        </div>
-                    </a>
-                </article>
+                        <a href="/Trainer/TrainerDetails/@person.T_Id">
+                            <h2 class="trainerName">@Html.DisplayFor(modelItem => person.Forename) @Html.DisplayFor(modelItem => person.Surname)</h2>
+                            <div class="content">
+                                <p>@Html.DisplayFor(modelItem => person.Description).ToString().Substring(0, 100)</p>
+                            </div>
+                        </a>
+                    </article>
 
                 }
 
