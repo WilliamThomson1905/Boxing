@@ -1,17 +1,600 @@
 ﻿@{
     ViewBag.Title = "Schedule";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<div id="wrapper">
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+    <!-- One -->
+    <section id="one" class="main">
+        <div class="inner spotlight style1">
+            <div class="content align-center">
+                <header class="major">
+                    <h2>Schedule</h2>
+                </header>
+                <p>
+                    The only boxing gym in Glasgow open 7 days.The only boxing gym in Glasgow open 7 days. <br />
+                    The only boxing gym in Glasgow open 7 days.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <style>
+        ul {
+            padding-left: 0px;
+            margin: 0px;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        .schedule {
+            width: 100%;
+        }
+
+        .schedulColumn {
+            margin: 0 2px;
+            float: left;
+            width: 13.28%;
+        }
+
+        .schedulColumnTitle {
+            margin-top: 0px;
+            text-align: center
+        }
+
+        .classBoard {
+            background-color: rgba(128, 128, 128, 0.04);
+            margin: 10px 0px;
+            height: 150px;
+        }
+
+
+
+
+        .className {
+            padding-top: 20px;
+        }
+
+        .classTime {
+            font-style: oblique;
+            font-size: small;
+        }
+
+        .classDuration {
+            font-style: oblique;
+            font-size: small;
+        }
+    </style>
+
+
+    <div class="container">
+        <div class="schedule">
+
+
+            <div class="schedulColumn">
+                <h2 class="schedulColumnTitle">Monday</h2>
+                <ul>
+                    <li class="classBoard">
+                        <div class="classStatus"></div>
+                        <div class="className">Bag Blast</div>
+                        <div class="classTime">10:00AM-11:00AM</div>
+                        <div class="classDuration">30 mins</div>
+                    </li>
+                    <li class="classBoard">
+                        <div class="classStatus"></div>
+                        <div class="className">Open Training</div>
+                        <div class="classTime">7:15pm-7:45pm</div>
+                        <div class="classDuration">30 mins</div>
+                    </li>
+                    <li class="classBoard">
+                        <div class="classStatus"></div>
+                        <div class="className">Kids' Classs (Under 8's)</div>
+                        <div class="classTime">10:00AM-11:00AM</div>
+                        <div class="classDuration">30 mins</div>
+                    </li>
+                    <li class="classBoard">
+                        <div class="classStatus"></div>
+                        <div class="className">Kids' Classs (8 and Over)</div>
+                        <div class="classTime">7:15pm-7:45pm</div>
+                        <div class="classDuration">30 mins</div>
+                    </li>
+                    <li class="classBoard">
+                        <div class="classStatus"></div>
+                        <div class="className">All Levels Boxing</div>
+                        <div class="classTime">10:00AM-11:00AM</div>
+                        <div class="classDuration">30 mins</div>
+                    </li>
+                    <li class="classBoard">
+                        <div class="classStatus"></div>
+                        <div class="className">Pad Work Class</div>
+                        <div class="classTime">7:15pm-7:45pm</div>
+                        <div class="classDuration">30 mins</div>
+                    </li>
+                    <li class="classBoard">
+                        <div class="classStatus"></div>
+                        <div class="className">Curcuits</div>
+                        <div class="classTime">10:00AM-11:00AM</div>
+                        <div class="classDuration">30 mins</div>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="schedulColumn">
+                <h2 class="schedulColumnTitle">Tuesday</h2>
+                <ul>
+                    <li class="classBoard">
+                        <div class="classStatus"></div>
+                        <div class="className">Bag Blast</div>
+                        <div class="classTime">10:00AM-11:00AM</div>
+                        <div class="classDuration">30 mins</div>
+                    </li>
+                    <li class="classBoard">
+                        <div class="classStatus"></div>
+                        <div class="className">Open Training</div>
+                        <div class="classTime">7:15pm-7:45pm</div>
+                        <div class="classDuration">30 mins</div>
+                    </li>
+                    <li class="classBoard">
+                        <div class="classStatus"></div>
+                        <div class="className">Bag Blast</div>
+                        <div class="classTime">10:00AM-11:00AM</div>
+                        <div class="classDuration">30 mins</div>
+                    </li>
+                    <li class="classBoard">
+                        <div class="classStatus"></div>
+                        <div class="className">Open Training</div>
+                        <div class="classTime">7:15pm-7:45pm</div>
+                        <div class="classDuration">30 mins</div>
+                    </li>
+                    <li class="classBoard">
+                        <div class="classStatus"></div>
+                        <div class="className">Bag Blast</div>
+                        <div class="classTime">10:00AM-11:00AM</div>
+                        <div class="classDuration">30 mins</div>
+                    </li>
+                    <li class="classBoard">
+                        <div class="classStatus"></div>
+                        <div class="className">Open Training</div>
+                        <div class="classTime">7:15pm-7:45pm</div>
+                        <div class="classDuration">30 mins</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="schedulColumn">
+                <h2 class="schedulColumnTitle">Wednesday</h2>
+                <ul>
+                    <li class="classBoard">
+                        <div class="classStatus"></div>
+                        <div class="className">Bag Blast</div>
+                        <div class="classTime">10:00AM-11:00AM</div>
+                        <div class="classDuration">30 mins</div>
+                    </li>
+                    <li class="classBoard">
+                        <div class="classStatus"></div>
+                        <div class="className">Open Training</div>
+                        <div class="classTime">7:15pm-7:45pm</div>
+                        <div class="classDuration">30 mins</div>
+                    </li>
+                    <li class="classBoard">
+                        <div class="classStatus"></div>
+                        <div class="className">Bag Blast</div>
+                        <div class="classTime">10:00AM-11:00AM</div>
+                        <div class="classDuration">30 mins</div>
+                    </li>
+                    <li class="classBoard">
+                        <div class="classStatus"></div>
+                        <div class="className">Open Training</div>
+                        <div class="classTime">7:15pm-7:45pm</div>
+                        <div class="classDuration">30 mins</div>
+                    </li>
+                    <li class="classBoard">
+                        <div class="classStatus"></div>
+                        <div class="className">Bag Blast</div>
+                        <div class="classTime">10:00AM-11:00AM</div>
+                        <div class="classDuration">30 mins</div>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="schedulColumn">
+                <h2 class="schedulColumnTitle">Thursday</h2>
+                <ul>
+                    <li class="classBoard">
+                        <div class="classStatus"></div>
+                        <div class="className">Bag Blast</div>
+                        <div class="classTime">10:00AM-11:00AM</div>
+                        <div class="classDuration">30 mins</div>
+                    </li>
+                    <li class="classBoard">
+                        <div class="classStatus"></div>
+                        <div class="className">Open Training</div>
+                        <div class="classTime">7:15pm-7:45pm</div>
+                        <div class="classDuration">30 mins</div>
+                    </li>
+                    <li class="classBoard">
+                        <div class="classStatus"></div>
+                        <div class="className">Bag Blast</div>
+                        <div class="classTime">10:00AM-11:00AM</div>
+                        <div class="classDuration">30 mins</div>
+                    </li>
+                    <li class="classBoard">
+                        <div class="classStatus"></div>
+                        <div class="className">Open Training</div>
+                        <div class="classTime">7:15pm-7:45pm</div>
+                        <div class="classDuration">30 mins</div>
+                    </li>
+                    <li class="classBoard">
+                        <div class="classStatus"></div>
+                        <div class="className">Bag Blast</div>
+                        <div class="classTime">10:00AM-11:00AM</div>
+                        <div class="classDuration">30 mins</div>
+                    </li>
+                    <li class="classBoard">
+                        <div class="classStatus"></div>
+                        <div class="className">Open Training</div>
+                        <div class="classTime">7:15pm-7:45pm</div>
+                        <div class="classDuration">30 mins</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="schedulColumn">
+                <h2 class="schedulColumnTitle">Friday</h2>
+                <ul>
+                    <li class="classBoard">
+                        <div class="classStatus"></div>
+                        <div class="className">Bag Blast</div>
+                        <div class="classTime">10:00AM-11:00AM</div>
+                        <div class="classDuration">30 mins</div>
+                    </li>
+                    <li class="classBoard">
+                        <div class="classStatus"></div>
+                        <div class="className">Open Training</div>
+                        <div class="classTime">7:15pm-7:45pm</div>
+                        <div class="classDuration">30 mins</div>
+                    </li>
+                    <li class="classBoard">
+                        <div class="classStatus"></div>
+                        <div class="className">Bag Blast</div>
+                        <div class="classTime">10:00AM-11:00AM</div>
+                        <div class="classDuration">30 mins</div>
+                    </li>
+                    <li class="classBoard">
+                        <div class="classStatus"></div>
+                        <div class="className">Open Training</div>
+                        <div class="classTime">7:15pm-7:45pm</div>
+                        <div class="classDuration">30 mins</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="schedulColumn">
+                <h2 class="schedulColumnTitle">Saturday</h2>
+                <ul>
+                    <li class="classBoard">
+                        <div class="classStatus"></div>
+                        <div class="className">Bag Blast</div>
+                        <div class="classTime">10:00AM-11:00AM</div>
+                        <div class="classDuration">30 mins</div>
+                    </li>
+                    <li class="classBoard">
+                        <div class="classStatus"></div>
+                        <div class="className">Open Training</div>
+                        <div class="classTime">7:15pm-7:45pm</div>
+                        <div class="classDuration">30 mins</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="schedulColumn">
+                <h2 class="schedulColumnTitle">Sunday</h2>
+                <ul>
+                    <li class="classBoard">
+                        <div class="classStatus"></div>
+                        <div class="className">Bag Blast</div>
+                        <div class="classTime">10:00AM-11:00AM</div>
+                        <div class="classDuration">30 mins</div>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <div class=" align-center" >
+        <a href="#payg" class="button btn-default large">Schedule</a>
+
+    </div>
+
+</div>
+    
+
+    <!-- Main -->
+    @*<div id="">
+        <div class="inner">
+            <h2>Monday</h2>
+            <table>
+                <tr>
+                    <th>TIME</th>
+                    <th>EVENT</th>
+                </tr>
+                <tr>
+                    <td>10:00AM - 11:00AM</td>
+                    <td>Bag Blast</td>
+                </tr>
+                <tr>
+                    <td>4:00PM - 5:30PM</td>
+                    <td>Open Training</td>
+                </tr>
+                <tr>
+                    <td>5:00PM - 5:45PM</td>
+                    <td>Kids' Classs (Under 8's)</td>
+                </tr>
+                <tr>
+                    <td>5:45PM - 6:30PM</td>
+                    <td>Kids' Classs (8 and Over)</td>
+                </tr>
+                <tr>
+                    <td>6:30PM - 7:30PM</td>
+                    <td>All Levels Boxing</td>
+                </tr>
+                <tr>
+                    <td>7:30PM - 8:00PM</td>
+                    <td>Pad Work Class</td>
+                </tr>
+                <tr>
+                    <td>8:00PM - 8:30PM</td>
+                    <td>Circuits</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="">
+        <div class="inner">
+            <h2>Tuesday</h2>
+            <table>
+                <tr>
+                    <th>TIME</th>
+                    <th>EVENT</th>
+                </tr>
+                <tr>
+                    <td>10:00AM - 11:00AM</td>
+                    <td>Bag Blast</td>
+                </tr>
+                <tr>
+                    <td>4:00PM - 5:30PM</td>
+                    <td>Open Training</td>
+                </tr>
+                <tr>
+                    <td>5:00PM - 5:45PM</td>
+                    <td>Kids' Classs (Under 8's)</td>
+                </tr>
+                <tr>
+                    <td>5:45PM - 6:30PM</td>
+                    <td>Kids' Classs (8 and Over)</td>
+                </tr>
+                <tr>
+                    <td>6:30PM - 7:30PM</td>
+                    <td>All Levels Boxing</td>
+                </tr>
+                <tr>
+                    <td>7:30PM - 8:00PM</td>
+                    <td>Pad Work Class</td>
+                </tr>
+                <tr>
+                    <td>8:00PM - 8:30PM</td>
+                    <td>Circuits</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="">
+        <div class="inner">
+            <h2>Wednesday</h2>
+            <table>
+                <tr>
+                    <th>TIME</th>
+                    <th>EVENT</th>
+                </tr>
+                <tr>
+                    <td>10:00AM - 11:00AM</td>
+                    <td>Bag Blast</td>
+                </tr>
+                <tr>
+                    <td>4:00PM - 5:30PM</td>
+                    <td>Open Training</td>
+                </tr>
+                <tr>
+                    <td>5:00PM - 5:45PM</td>
+                    <td>Kids' Classs (Under 8's)</td>
+                </tr>
+                <tr>
+                    <td>5:45PM - 6:30PM</td>
+                    <td>Kids' Classs (8 and Over)</td>
+                </tr>
+                <tr>
+                    <td>6:30PM - 7:30PM</td>
+                    <td>All Levels Boxing</td>
+                </tr>
+                <tr>
+                    <td>7:30PM - 8:00PM</td>
+                    <td>Pad Work Class</td>
+                </tr>
+                <tr>
+                    <td>8:00PM - 8:30PM</td>
+                    <td>Circuits</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="">
+        <div class="inner">
+            <h2>Thursday</h2>
+            <table>
+                <tr>
+                    <th>TIME</th>
+                    <th>EVENT</th>
+                </tr>
+                <tr>
+                    <td>10:00AM - 11:00AM</td>
+                    <td>Bag Blast</td>
+                </tr>
+                <tr>
+                    <td>4:00PM - 5:30PM</td>
+                    <td>Open Training</td>
+                </tr>
+                <tr>
+                    <td>5:00PM - 5:45PM</td>
+                    <td>Kids' Classs (Under 8's)</td>
+                </tr>
+                <tr>
+                    <td>5:45PM - 6:30PM</td>
+                    <td>Kids' Classs (8 and Over)</td>
+                </tr>
+                <tr>
+                    <td>6:30PM - 7:30PM</td>
+                    <td>All Levels Boxing</td>
+                </tr>
+                <tr>
+                    <td>7:30PM - 8:00PM</td>
+                    <td>Pad Work Class</td>
+                </tr>
+                <tr>
+                    <td>8:00PM - 8:30PM</td>
+                    <td>Circuits</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="">
+        <div class="inner">
+            <h2>Friday</h2>
+            <table>
+                <tr>
+                    <th>TIME</th>
+                    <th>EVENT</th>
+                </tr>
+                <tr>
+                    <td>10:00AM - 11:00AM</td>
+                    <td>Bag Blast</td>
+                </tr>
+                <tr>
+                    <td>4:00PM - 5:30PM</td>
+                    <td>Open Training</td>
+                </tr>
+                <tr>
+                    <td>5:00PM - 5:45PM</td>
+                    <td>Kids' Classs (Under 8's)</td>
+                </tr>
+                <tr>
+                    <td>5:45PM - 6:30PM</td>
+                    <td>Kids' Classs (8 and Over)</td>
+                </tr>
+                <tr>
+                    <td>6:30PM - 7:30PM</td>
+                    <td>All Levels Boxing</td>
+                </tr>
+                <tr>
+                    <td>7:30PM - 8:00PM</td>
+                    <td>Pad Work Class</td>
+                </tr>
+                <tr>
+                    <td>8:00PM - 8:30PM</td>
+                    <td>Circuits</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="">
+        <div class="inner">
+            <h2>Saturday</h2>
+            <table>
+                <tr>
+                    <th>TIME</th>
+                    <th>EVENT</th>
+                </tr>
+                <tr>
+                    <td>10:00AM - 11:00AM</td>
+                    <td>Bag Blast</td>
+                </tr>
+                <tr>
+                    <td>4:00PM - 5:30PM</td>
+                    <td>Open Training</td>
+                </tr>
+                <tr>
+                    <td>5:00PM - 5:45PM</td>
+                    <td>Kids' Classs (Under 8's)</td>
+                </tr>
+                <tr>
+                    <td>5:45PM - 6:30PM</td>
+                    <td>Kids' Classs (8 and Over)</td>
+                </tr>
+                <tr>
+                    <td>6:30PM - 7:30PM</td>
+                    <td>All Levels Boxing</td>
+                </tr>
+                <tr>
+                    <td>7:30PM - 8:00PM</td>
+                    <td>Pad Work Class</td>
+                </tr>
+                <tr>
+                    <td>8:00PM - 8:30PM</td>
+                    <td>Circuits</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="">
+        <div class="inner">
+            <h2>Sunday</h2>
+            <table>
+                <tr>
+                    <th>TIME</th>
+                    <th>EVENT</th>
+                </tr>
+                <tr>
+                    <td>10:00AM - 11:00AM</td>
+                    <td>Bag Blast</td>
+                </tr>
+                <tr>
+                    <td>4:00PM - 5:30PM</td>
+                    <td>Open Training</td>
+                </tr>
+                <tr>
+                    <td>5:00PM - 5:45PM</td>
+                    <td>Kids' Classs (Under 8's)</td>
+                </tr>
+                <tr>
+                    <td>5:45PM - 6:30PM</td>
+                    <td>Kids' Classs (8 and Over)</td>
+                </tr>
+                <tr>
+                    <td>6:30PM - 7:30PM</td>
+                    <td>All Levels Boxing</td>
+                </tr>
+                <tr>
+                    <td>7:30PM - 8:00PM</td>
+                    <td>Pad Work Class</td>
+                </tr>
+                <tr>
+                    <td>8:00PM - 8:30PM</td>
+                    <td>Circuits</td>
+                </tr>
+            </table>
+        </div>
+    </div>*@
+
+
+ 
