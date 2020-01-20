@@ -6,12 +6,12 @@ using System.Web.Mvc;
 
 namespace BoxingSite.Controllers
 {
-    public class PricesController : Controller
+    public class EquipmentController : Controller
     {
         // GET: Prices
-        public ActionResult Pricing()
+        public ActionResult Equipment()
         {
-            ViewBag.Message = "Your Prices page.";
+            ViewBag.Message = "Your Equipment page.";
             return View();
         }
         

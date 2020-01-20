@@ -23,3 +23,92 @@
         background-attachment: scroll;
     }
 }
+
+
+
+
+/* SCHEDULE */
+ul {
+    padding-left: 0px;
+    margin: 0px;
+}
+
+li {
+    list-style-type: none;
+}
+
+.schedule {
+    width: 100%;
+}
+
+.schedulColumn {
+    margin: 0 5px;
+    float: left;
+    width: 12.28%;
+}
+
+.schedulColumnTitle {
+    margin-top: 0px;
+    text-align: center
+}
+
+.classBoard {
+    background-color: rgba(128, 128, 128, 0.04);
+    margin: 10px 0px;
+    height: 150px;
+    border-radius: 5px;
+}
+
+
+
+
+.className {
+    padding-top: 20px;
+    font-weight: bold;
+}
+
+.classTime {
+    font-style: oblique;
+    font-size: small;
+}
+
+.classDuration {
+    font-style: oblique;
+    font-size: small;
+}
+
+@media only screen and (max-width: 1000px) {
+
+    .schedule {
+        text-align: center;
+    }
+
+    .schedulColumn {
+        padding: 0 5%;
+        float: left;
+        width: 100%;
+    }
+    .schedulColumnTitle {
+        margin-top: 50px;
+    }
+
+    .classBoard {
+        background-color: rgba(128, 128, 128, 0.04);
+        margin: 10px 0px;
+        padding: 10px 0px;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    .className, .classTime {
+        padding: 10px;
+        font-size: medium;
+        display: inline;
+    }
+
+    .classDuration {
+        width: 100%;
+        font-size: medium;
+        font-style: normal;
+    }
+}

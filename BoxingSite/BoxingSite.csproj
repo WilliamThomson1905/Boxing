@@ -170,6 +170,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\EquipmentController.cs" />
     <Compile Include="Controllers\PricesController.cs" />
     <Compile Include="Controllers\TrainerController.cs" />
     <Compile Include="Global.asax.cs">
@@ -361,8 +362,9 @@
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Trainer\Trainers.cshtml" />
     <Content Include="Views\Home\Schedule.cshtml" />
-    <Content Include="Views\Prices\Index.cshtml" />
+    <Content Include="Views\Prices\Pricing.cshtml" />
     <Content Include="Views\Trainer\TrainerDetails.cshtml" />
+    <Content Include="Views\Equipment\Equipment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
