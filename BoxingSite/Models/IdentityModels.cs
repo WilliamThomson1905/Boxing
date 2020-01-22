@@ -32,6 +32,12 @@ namespace BoxingSite.Models
         }
     }
 
+    public class GeneralUser : ApplicationUser
+    {
+
+    }
+
+
     public class TrainerUser : ApplicationUser
     {
         public string Description { get; set; }
@@ -42,5 +48,18 @@ namespace BoxingSite.Models
         public string Twitter { get; set; }
 
     }
+
+    public class AdminUser : ApplicationUser
+    {
+
+    }
+
+
+    public class Equipment
+    {
+
+    }
+
+    
 
 }

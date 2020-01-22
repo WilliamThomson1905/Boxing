@@ -29,7 +29,6 @@
             <div class="features">
                 <section>
                     <span class="icon major far fa-heart style1"></span>
-                    <h3>Pay as you Go</h3>
                     <div class="inner">
                         <h2>Pay As You Go Training</h2>
                         <table>
@@ -50,21 +49,20 @@
                 </section>
                 <section>
                     <span class="icon solid major fas fa-heart style2"></span>
-                    <h3>Membership</h3>
                     <div class="inner">
                         <h2>Membership</h2>
                         <table>
                             <tr>
                                 <td>Adults (17+)</td>
-                                <td>£7 per session</td>
+                                <td>£60 per month</td>
                             </tr>
                             <tr>
                                 <td>Student</td>
-                                <td>£5 per session</td>
+                                <td>£36 per month</td>
                             </tr>
                             <tr>
                                 <td>Kids (5-16)</td>
-                                <td>£5 per session</td>
+                                <td>£36 per month</td>
                             </tr>
                         </table>
 
@@ -79,7 +77,8 @@
                                     @Html.ActionLink("Log in", "Login", "Account",
                                      new { id = "loginLink" }, new { @class = "button fit" })
                                 </li>
-                            } else
+                            }
+                            else
                             {
                                 <li>
                                     @Html.ActionLink("Create Membership", "Index", "Home",
