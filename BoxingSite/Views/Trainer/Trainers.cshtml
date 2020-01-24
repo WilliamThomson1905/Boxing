@@ -1,5 +1,4 @@
-﻿
-@model IEnumerable<BoxingSite.Models.TrainerUser>
+﻿@model IEnumerable<BoxingSite.Models.TrainerUser>
 
 @{
     ViewBag.Title = "Trainers";
@@ -45,7 +44,7 @@
                     int styleNum = rand.Next(1, 7);
                     <article class="style@(styleNum)">
 
-                        <a href="/Trainer/TrainerDetails/@person.T_Id">
+                        <a href="/Trainer/TrainerDetails/@person.Id">
                             <h2 class="trainerName">@Html.DisplayFor(modelItem => person.Forename) @Html.DisplayFor(modelItem => person.Surname)</h2>
                             <div class="content">
                                 <p>@Html.DisplayFor(modelItem => person.Description).ToString().Substring(0, 100)</p>
@@ -63,9 +62,9 @@
 <script>
     function searchTrainers() {
 
-        var searchInput, filter; 
+        var searchInput, filter;
         var articles;
-        var trainerName; 
+        var trainerName;
         var trainerNameTextValue, trainerDescriptionTextValue;
         var a, i;
 
@@ -73,8 +72,7 @@
         filter = searchInput.toString().toUpperCase();
         articles = document.getElementsByTagName('article');
 
-        for (i = 0; i < articles.length; i++)
-        {
+        for (i = 0; i < articles.length; i++) {
 
             a = articles[i].getElementsByTagName('a')[0];
 
@@ -88,12 +86,10 @@
 
 
             if (trainerNameTextValue.toUpperCase().indexOf(filter.toString()) > -1 ||
-                trainerDescriptionTextValue.toUpperCase().indexOf(filter.toString()) > -1)
-            {
+                trainerDescriptionTextValue.toUpperCase().indexOf(filter.toString()) > -1) {
                 articles[i].style.display = "";
             }
-            else
-            {
+            else {
                 articles[i].style.display = "none";
             }
         }
@@ -102,168 +98,168 @@
 
 
 
-                @*<article class="style1">
-                        <span class="image">
-                            <img src="~/images/trainers/joshua-medway-sd-Pq5aDoO4-unsplash.jpg" alt="" />
-                        </span>
-                        <a href="generic.html">
-                            <h2>Robert Lilt</h2>
-                            <div class="content">
-                                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="style4">
-                        <span class="image">
-                            <img src="~/images/trainers/colin-cassidy-akj4oRw8E04-unsplash.jpg" alt="" />
-                        </span>
-                        <a href="generic.html">
-                            <h2>Violet Malcolm</h2>
-                            <div class="content">
-                                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="style3">
-                        <span class="image">
-                            <img src="~/images/trainers/steven-van-vLC--gwHnbQ-unsplash.jpg" alt="" />
-                        </span>
-                        <a href="generic.html">
-                            <h2>Robert Betfred</h2>
-                            <div class="content">
-                                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="style2">
-                        <span class="image">
-                            <img src="~/images/trainers/emily-sea-coiWR0gT8Cw-unsplash.jpg" alt="" />
-                        </span>
-                        <a href="generic.html">
-                            <h2>Helen Tacki</h2>
-                            <div class="content">
-                                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="style3">
-                        <span class="image">
-                            <img src="~/images/trainers/filipe-almeida-mnEWC72eWDM-unsplash.jpg" alt="" />
-                        </span>
-                        <a href="generic.html">
-                            <h2>John Greanleaf</h2>
-                            <div class="content">
-                                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="style4">
-                        <span class="image">
-                            <img src="~/images/trainers/form-B6fw69UttOI-unsplash.jpg" alt="" />
-                        </span>
-                        <a href="generic.html">
-                            <h2>Elizabeth Almond</h2>
-                            <div class="content">
-                                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="style5">
-                        <span class="image">
-                            <img src="~/images/trainers/form-qQGAQMbURhU-unsplash.jpg" alt="" />
-                        </span>
-                        <a href="generic.html">
-                            <h2>Garry MacDonald</h2>
-                            <div class="content">
-                                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="style6">
-                        <span class="image">
-                            <img src="~/images/trainers/imani-clovis-tBt9JxuQBYs-unsplash.jpg" alt="" />
-                        </span>
-                        <a href="generic.html">
-                            <h2>Douglas Butcher</h2>
-                            <div class="content">
-                                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="style2">
-                        <span class="image">
-                            <img src="~/images/trainers/jonathan-cosens-photography-jcp-v-YiCIbDjOQ-unsplash.jpg" alt="" />
-                        </span>
-                        <a href="generic.html">
-                            <h2>James Walker</h2>
-                            <div class="content">
-                                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="style3">
-                        <span class="image">
-                            <img src="~/images/trainers/joshua-medway-sd-Pq5aDoO4-unsplash.jpg" alt="" />
-                        </span>
-                        <a href="generic.html">
-                            <h2>William Wallace</h2>
-                            <div class="content">
-                                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="style1">
-                        <span class="image">
-                            <img src="~/images/trainers/leandro-viegas-Tv4lD_smpPQ-unsplash.jpg" alt="" />
-                        </span>
-                        <a href="generic.html">
-                            <h2>Nullam Nullam</h2>
-                            <div class="content">
-                                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="style5">
-                        <span class="image">
-                            <img src="~/images/trainers/marius-ciocirlan-vMV6r4VRhJ8-unsplash.jpg" alt="" />
-                        </span>
-                        <a href="generic.html">
-                            <h2>Ultricies Ultricies</h2>
-                            <div class="content">
-                                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="style6">
-                        <span class="image">
-                            <img src="~/images/trainers/form-B6fw69UttOI-unsplash.jpg" alt="" />
-                        </span>
-                        <a href="generic.html">
-                            <h2>Dictum Dictum</h2>
-                            <div class="content">
-                                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="style4">
-                        <span class="image">
-                            <img src="~/images/trainers/trust-tru-katsande-Pu7BOaYlYGY-unsplash.jpg" alt="" />
-                        </span>
-                        <a href="generic.html">
-                            <h2>Pretium Pretium</h2>
-                            <div class="content">
-                                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="style4">
-                        <span class="image">
-                            <img src="~/images/trainers/valentina-aleksandrovna-BExYKIjiPQE-unsplash.jpg" alt="" />
-                        </span>
-                        <a href="generic.html">
-                            <h2>Pretium Pretium</h2>
-                            <div class="content">
-                                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-                            </div>
-                        </a>
-                    </article>*@
+@*<article class="style1">
+        <span class="image">
+            <img src="~/images/trainers/joshua-medway-sd-Pq5aDoO4-unsplash.jpg" alt="" />
+        </span>
+        <a href="generic.html">
+            <h2>Robert Lilt</h2>
+            <div class="content">
+                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+            </div>
+        </a>
+    </article>
+    <article class="style4">
+        <span class="image">
+            <img src="~/images/trainers/colin-cassidy-akj4oRw8E04-unsplash.jpg" alt="" />
+        </span>
+        <a href="generic.html">
+            <h2>Violet Malcolm</h2>
+            <div class="content">
+                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+            </div>
+        </a>
+    </article>
+    <article class="style3">
+        <span class="image">
+            <img src="~/images/trainers/steven-van-vLC--gwHnbQ-unsplash.jpg" alt="" />
+        </span>
+        <a href="generic.html">
+            <h2>Robert Betfred</h2>
+            <div class="content">
+                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+            </div>
+        </a>
+    </article>
+    <article class="style2">
+        <span class="image">
+            <img src="~/images/trainers/emily-sea-coiWR0gT8Cw-unsplash.jpg" alt="" />
+        </span>
+        <a href="generic.html">
+            <h2>Helen Tacki</h2>
+            <div class="content">
+                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+            </div>
+        </a>
+    </article>
+    <article class="style3">
+        <span class="image">
+            <img src="~/images/trainers/filipe-almeida-mnEWC72eWDM-unsplash.jpg" alt="" />
+        </span>
+        <a href="generic.html">
+            <h2>John Greanleaf</h2>
+            <div class="content">
+                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+            </div>
+        </a>
+    </article>
+    <article class="style4">
+        <span class="image">
+            <img src="~/images/trainers/form-B6fw69UttOI-unsplash.jpg" alt="" />
+        </span>
+        <a href="generic.html">
+            <h2>Elizabeth Almond</h2>
+            <div class="content">
+                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+            </div>
+        </a>
+    </article>
+    <article class="style5">
+        <span class="image">
+            <img src="~/images/trainers/form-qQGAQMbURhU-unsplash.jpg" alt="" />
+        </span>
+        <a href="generic.html">
+            <h2>Garry MacDonald</h2>
+            <div class="content">
+                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+            </div>
+        </a>
+    </article>
+    <article class="style6">
+        <span class="image">
+            <img src="~/images/trainers/imani-clovis-tBt9JxuQBYs-unsplash.jpg" alt="" />
+        </span>
+        <a href="generic.html">
+            <h2>Douglas Butcher</h2>
+            <div class="content">
+                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+            </div>
+        </a>
+    </article>
+    <article class="style2">
+        <span class="image">
+            <img src="~/images/trainers/jonathan-cosens-photography-jcp-v-YiCIbDjOQ-unsplash.jpg" alt="" />
+        </span>
+        <a href="generic.html">
+            <h2>James Walker</h2>
+            <div class="content">
+                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+            </div>
+        </a>
+    </article>
+    <article class="style3">
+        <span class="image">
+            <img src="~/images/trainers/joshua-medway-sd-Pq5aDoO4-unsplash.jpg" alt="" />
+        </span>
+        <a href="generic.html">
+            <h2>William Wallace</h2>
+            <div class="content">
+                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+            </div>
+        </a>
+    </article>
+    <article class="style1">
+        <span class="image">
+            <img src="~/images/trainers/leandro-viegas-Tv4lD_smpPQ-unsplash.jpg" alt="" />
+        </span>
+        <a href="generic.html">
+            <h2>Nullam Nullam</h2>
+            <div class="content">
+                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+            </div>
+        </a>
+    </article>
+    <article class="style5">
+        <span class="image">
+            <img src="~/images/trainers/marius-ciocirlan-vMV6r4VRhJ8-unsplash.jpg" alt="" />
+        </span>
+        <a href="generic.html">
+            <h2>Ultricies Ultricies</h2>
+            <div class="content">
+                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+            </div>
+        </a>
+    </article>
+    <article class="style6">
+        <span class="image">
+            <img src="~/images/trainers/form-B6fw69UttOI-unsplash.jpg" alt="" />
+        </span>
+        <a href="generic.html">
+            <h2>Dictum Dictum</h2>
+            <div class="content">
+                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+            </div>
+        </a>
+    </article>
+    <article class="style4">
+        <span class="image">
+            <img src="~/images/trainers/trust-tru-katsande-Pu7BOaYlYGY-unsplash.jpg" alt="" />
+        </span>
+        <a href="generic.html">
+            <h2>Pretium Pretium</h2>
+            <div class="content">
+                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+            </div>
+        </a>
+    </article>
+    <article class="style4">
+        <span class="image">
+            <img src="~/images/trainers/valentina-aleksandrovna-BExYKIjiPQE-unsplash.jpg" alt="" />
+        </span>
+        <a href="generic.html">
+            <h2>Pretium Pretium</h2>
+            <div class="content">
+                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+            </div>
+        </a>
+    </article>*@
