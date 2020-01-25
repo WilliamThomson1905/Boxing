@@ -67,13 +67,13 @@ namespace BoxingSite.Controllers
 
 
 
-        // GET: Trainer/Details/5
-        public ActionResult TrainerDetails(int? id)
+        // GET: Trainer/Details/-------
+        public ActionResult TrainerDetails(string id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+            //if (id.HasValue())
+            //{
+            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            //}
             TrainerUser trainer = context.TrainerUsers.Find(id);
             if (trainer == null)
             {
@@ -86,7 +86,13 @@ namespace BoxingSite.Controllers
                 Description = trainer.Description,
                 Forename = trainer.Forename,
                 Surname = trainer.Surname,
-                ImageSrc = trainer.ImageSrc
+                ImageSrc = trainer.ImageSrc,
+                Instagarm = trainer.Instagarm,
+                LinkedIn = trainer.LinkedIn,
+                Facebook = trainer.Facebook,
+                Twitter = trainer.Twitter,
+                Email = trainer.Email,
+                Available = trainer.Available
             };
 
             return View(stvm);

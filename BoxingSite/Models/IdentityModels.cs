@@ -69,6 +69,9 @@ namespace BoxingSite.Models
         public string LinkedIn { get; set; }
         public string Twitter { get; set; }
 
+        // for PT Sessions - will bew shown on their Trainer/Details/id view
+        public bool Available { get; set; }
+
     }
 
     /// <summary>
@@ -92,7 +95,7 @@ namespace BoxingSite.Models
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? PurchaseDate { get; set; }
-        public float Price { get; set; }
+        public float ItemPrice { get; set; }
 
 
         // Foriegn key 

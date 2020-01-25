@@ -17,7 +17,7 @@
                     <h2>
                         @Html.DisplayFor(model => model.Forename)
                         @Html.DisplayFor(model => model.Surname)
-                    </h2> <span> -- Available for PT Sessions</span>
+                    </h2> @if (Model.Available) {<span> -- Available for PT Sessions</span>}
                 </header>
                 <p>
                     @Html.DisplayFor(model => model.Description)
@@ -38,9 +38,11 @@
         <div class="inner">
 
             <ul class="icons">
-                <li><a href="https://twitter.com/KynochBoxing" class="icon brands fa-twitter fa-2x"><span class="label">Twitter</span></a></li>
-                <li><a href="#" class="icon brands fa-instagram fa-2x"><span class="label">Instagram</span></a></li>
-                <li><a href="#" class="icon solid fa-envelope fa-2x"><span class="label">Email</span></a></li>
+                <li><a target="_blank" href="@Html.DisplayFor(model => model.Instagarm)" class="icon brands fa-instagram fa-2x"><span class="label">Instagram</span></a></li>
+                <li><a target="_blank" href="@Html.DisplayFor(model => model.Facebook)" class="icon brands fab fa-facebook-square fa-2x"><span class="label">Facebook</span></a></li>
+                <li><a target="_blank" href="@Html.DisplayFor(model => model.Twitter)" class="icon brands fa-twitter fa-2x"><span class="label">Twitter</span></a></li>
+                <li><a target="_blank" href="@Html.DisplayFor(model => model.LinkedIn)" class="icon brands fab fa-linkedin fa-2x"><span class="label">LinkedIn</span></a></li>
+                <li><a target="_blank" href="@Html.DisplayFor(model => model.Email)" class="icon far fa-envelope fa-2x"><span class="label">Email</span></a></li>
             </ul>
         </div>
     </section>
