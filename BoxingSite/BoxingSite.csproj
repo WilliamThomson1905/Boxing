@@ -328,7 +328,9 @@
     <Content Include="Scripts\navigation\jquery.min.js" />
     <Content Include="Scripts\navigation\main.js" />
     <Content Include="Scripts\navigation\util.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -369,6 +371,7 @@
     <Content Include="Views\Prices\Pricing.cshtml" />
     <Content Include="Views\Trainer\TrainerDetails.cshtml" />
     <Content Include="Views\Equipment\Equipment.cshtml" />
+    <Content Include="Views\Trainer\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

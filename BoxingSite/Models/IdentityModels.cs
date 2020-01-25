@@ -70,6 +70,7 @@ namespace BoxingSite.Models
         public string Twitter { get; set; }
 
         // for PT Sessions - will bew shown on their Trainer/Details/id view
+        [Display(Name = "Are you open for PT Sessions?")]
         public bool Available { get; set; }
 
     }
@@ -95,7 +96,7 @@ namespace BoxingSite.Models
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? PurchaseDate { get; set; }
-        public float ItemPrice { get; set; }
+        public float Price { get; set; }
 
 
         // Foriegn key 

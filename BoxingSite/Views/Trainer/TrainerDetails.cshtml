@@ -21,18 +21,17 @@
                 </header>
                 <p>
                     @Html.DisplayFor(model => model.Description)
+                    @Html.ActionLink("Edit", "Edit", new { id = Model.Id })
+                    
+                    @Html.ActionLink("Delete", "Delete", new { id = Model.Id },
+                                        new { onclick = "return confirm('Are you sure you wish to delete this Coach?');" })
 
+                    
                 </p>
             </div>
             <br />
 
-                        
-            
-            <!--
-            Note: You can replace the image below with a JPEG or PNG. Just make sure it's exactly
-            320x340 or at least the same aspect ratio (16:17).
-
-        <span class="image"><img src="images/pic01.svg" alt="" /></span>-->
+                      
         </div>
 
         <div class="inner">

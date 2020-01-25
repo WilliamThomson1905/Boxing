@@ -9,6 +9,7 @@ using System.Data;
 using System.Data.Entity;
 using BoxingSite.DAL;
 using System.Net;
+using System.Data.Entity.Infrastructure;
 
 namespace BoxingSite.Controllers
 {
@@ -64,10 +65,7 @@ namespace BoxingSite.Controllers
         }
 
 
-
-
-
-        // GET: Trainer/Details/-------
+        // GET: Trainer/Details/id
         public ActionResult TrainerDetails(string id)
         {
             //if (id.HasValue())
@@ -83,6 +81,7 @@ namespace BoxingSite.Controllers
 
             SingleTrainerViewmodel stvm = new SingleTrainerViewmodel()
             {
+                Id = trainer.Id,
                 Description = trainer.Description,
                 Forename = trainer.Forename,
                 Surname = trainer.Surname,
@@ -121,46 +120,85 @@ namespace BoxingSite.Controllers
         }
 
         // GET: Trainer/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(string id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            TrainerUser trainer = context.TrainerUsers.Find(id);
+            if (trainer == null)
+            {
+                return HttpNotFound();
+            }
+            return View(trainer);
         }
 
         // POST: Trainer/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "Id, Title, DOB, Description,Forename,Surname,ImageSrc,Mobile,Instagarm, " +
+            "LinkedIn, Facebook, Twitter, Email, Available")] TrainerUser trainerUser)
         {
+
             try
             {
-                // TODO: Add update logic here
+                if (ModelState.IsValid)
+                {
+                    var trainer = context.TrainerUsers.Find(trainerUser.Id);
+                    trainer.Title = trainerUser.Title;
+                    trainer.DOB = trainerUser.DOB;
+                    trainer.Description = trainerUser.Description;
+                    trainer.Forename = trainerUser.Forename;
+                    trainer.Surname = trainerUser.Surname;
+                    trainer.ImageSrc = trainerUser.ImageSrc;
+                    trainer.Mobile = trainerUser.Mobile;
+                    trainer.Instagarm = trainerUser.Instagarm;
+                    trainer.LinkedIn = trainerUser.LinkedIn;
+                    trainer.Facebook = trainerUser.Facebook;
+                    trainer.Twitter = trainerUser.Twitter;
+                    trainer.Email = trainerUser.Email;
+                    trainer.Available = trainerUser.Available;
 
-                return RedirectToAction("Index");
+
+                    context.Entry(trainer).State = EntityState.Modified;
+                    context.SaveChanges();
+                    return RedirectToAction("TrainerDetails", "Trainer", new { id = trainer.Id });
+                }
             }
-            catch
+            catch (DbUpdateException /* ex */)
             {
-                return View();
+                //Log the error (uncomment ex variable name and write a log.
+                ModelState.AddModelError("", "Unable to save changes. " +
+                    "Try again, and if the problem persists " +
+                    "see your system administrator.");
             }
+            return RedirectToAction("Trainers", "Trainer");
+
         }
 
         // GET: Trainer/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
+        //public ActionResult Delete(int id)
+        //{
+        //    return View();
+        //}
 
         // POST: Trainer/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(string id)
         {
             try
             {
-                // TODO: Add delete logic here
+                var trainerUser = context.TrainerUsers.Find(id);
+                context.TrainerUsers.Remove(trainerUser);
+                context.SaveChanges();
+                return RedirectToAction("Trainers", "Trainer");
 
-                return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                return RedirectToAction("Trainers", "Trainer");
             }
         }
     }
