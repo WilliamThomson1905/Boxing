@@ -86,7 +86,7 @@ namespace BoxingSite.Controllers
                 Forename = trainer.Forename,
                 Surname = trainer.Surname,
                 ImageSrc = trainer.ImageSrc,
-                Instagarm = trainer.Instagarm,
+                Instagram = trainer.Instagram,
                 LinkedIn = trainer.LinkedIn,
                 Facebook = trainer.Facebook,
                 Twitter = trainer.Twitter,
@@ -104,20 +104,20 @@ namespace BoxingSite.Controllers
         }
 
         // POST: Trainer/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
+        //[HttpPost]
+        //public ActionResult Create(FormCollection collection)
+        //{
+        //    try
+        //    {
+        //        // TODO: Add insert logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        //        return RedirectToAction("Index");
+        //    }
+        //    catch
+        //    {
+        //        return View();
+        //    }
+        //}
 
         // GET: Trainer/Edit/5
         public ActionResult Edit(string id)
@@ -137,7 +137,7 @@ namespace BoxingSite.Controllers
         // POST: Trainer/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id, Title, DOB, Description,Forename,Surname,ImageSrc,Mobile,Instagarm, " +
+        public ActionResult Edit([Bind(Include = "Id, Title, DOB, Description,Forename,Surname,ImageSrc,Mobile,Instagram, " +
             "LinkedIn, Facebook, Twitter, Email, Available")] TrainerUser trainerUser)
         {
 
@@ -153,7 +153,7 @@ namespace BoxingSite.Controllers
                     trainer.Surname = trainerUser.Surname;
                     trainer.ImageSrc = trainerUser.ImageSrc;
                     trainer.Mobile = trainerUser.Mobile;
-                    trainer.Instagarm = trainerUser.Instagarm;
+                    trainer.Instagram = trainerUser.Instagram;
                     trainer.LinkedIn = trainerUser.LinkedIn;
                     trainer.Facebook = trainerUser.Facebook;
                     trainer.Twitter = trainerUser.Twitter;
@@ -183,14 +183,16 @@ namespace BoxingSite.Controllers
         //    return View();
         //}
 
-        // POST: Trainer/Delete/5
+
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(string id)
+        public ActionResult Delete(int id)
         {
             try
             {
-                var trainerUser = context.TrainerUsers.Find(id);
+                TrainerUser trainerUser = context.TrainerUsers.Find(id);
                 context.TrainerUsers.Remove(trainerUser);
                 context.SaveChanges();
                 return RedirectToAction("Trainers", "Trainer");
@@ -201,5 +203,32 @@ namespace BoxingSite.Controllers
                 return RedirectToAction("Trainers", "Trainer");
             }
         }
+
+
+
+        // DELETE: /Trainer/DeleteUser/id
+        //[Authorize(Roles = "Administrator")]
+        #region public ActionResult DeleteUser(string Id)
+        public ActionResult DeleteUser(string Id)
+        {
+
+            try
+            {
+                TrainerUser trainerUser = context.TrainerUsers.Find(Id);
+                context.TrainerUsers.Remove(trainerUser);
+                context.SaveChanges();
+                return RedirectToAction("Trainers", "Trainer");
+
+            }
+            catch
+            {
+                return RedirectToAction("Trainers", "Trainer");
+            }
+
+        }
+        #endregion
+
+
+
     }
 }

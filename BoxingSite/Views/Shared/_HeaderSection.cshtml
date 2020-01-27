@@ -1,6 +1,19 @@
 ﻿    <!-- Header -->
 <header id="header">
     <a href="../../Home/Index" class="logo">Community <span>Fitness</span></a>
+    @if (User.IsInRole("Administrator"))
+    {
+        @Html.Partial("_AdminNavigation")
+        <nav>
+            <ul>
+                <li><a href="#adminMenu" onclick="openAdmin()">ADMIN</a></li>
+            </ul>
+        </nav>
+
+
+
+    }
+
     <nav>
         <ul>
             <li><a href="#menu">Menu</a></li>
@@ -22,3 +35,4 @@
     @Html.Partial("_LoginPartial")
 
 </nav>
+

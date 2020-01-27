@@ -48,7 +48,7 @@
 		if ($banner.length > 0) {
 
 			// IE: Height fix.
-				if (browser.name == 'ie') {
+				if (browser.name === 'ie') {
 
 					breakpoints.on('>small', function() {
 						$banner.css('height', '100vh');

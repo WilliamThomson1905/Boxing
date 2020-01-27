@@ -64,7 +64,7 @@ namespace BoxingSite.Models
 
         public string Description { get; set; }
         public string ImageSrc { get; set; }
-        public string Instagarm { get; set; }
+        public string Instagram { get; set; }
         public string Facebook { get; set; }
         public string LinkedIn { get; set; }
         public string Twitter { get; set; }

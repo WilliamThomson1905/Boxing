@@ -19,6 +19,26 @@
         </div>
     </div>
 
+
+
+
+
+    <script>
+        function openAdmin() {
+            document.getElementById("adminMenu").style.display = "block";
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${window.scrollY}px`;
+        }
+
+        function closeAdmin() {
+            document.getElementById("adminMenu").style.display = "none";
+            document.body.style.position = '';
+            document.body.style.top = '';
+        }
+    </script>
+
+
+
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
@@ -31,6 +51,9 @@
     <script src="~/assets/js/breakpoints.min.js"></script>
     <script src="~/assets/js/util.js"></script>
     <script src="~/assets/js/main.js"></script>
+
+
+
 
 </body>
 </html>
