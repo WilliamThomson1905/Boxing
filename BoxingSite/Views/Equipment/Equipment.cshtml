@@ -1,5 +1,8 @@
-﻿@{
-    ViewBag.Title = "Prices";
+﻿@model IEnumerable<BoxingSite.Models.Equipment>
+@using Microsoft.AspNet.Identity;
+
+@{
+    ViewBag.Title = "King Boxing Equipment";
 }
 
 <div id="wrapper">
@@ -16,76 +19,104 @@
             </div>
         </div>
     </section>
-
-
-    <!-- Main -->
     <div id="payg">
         <div class="inner">
-            <h2>Gym Equipment </h2>
+            <h2>Gym Equipment</h2>
             <table>
                 <tr>
                     <th>Item</th>
                     <th>Quantity</th>
+                    <th>Description</th>
+                    <th>Company Name</th>
                 </tr>
-                <tr>
-                    <td>Boxing Ring</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>Skipping Rope</td>
-                    <td>12</td>
-                </tr>
-                <tr>
-                    <td>Boxing Gloves</td>
-                    <td>26 Pairs</td>
-                </tr>
-                <tr>
-                    <td>Speed Bags</td>
-                    <td>4</td>
-                </tr>
-                <tr>
-                    <td>Double End Bag</td>
-                    <td>3</td>
-                </tr>
-                <tr>
-                    <td>Hanging Heavy Bag</td>
-                    <td>8</td>
-                </tr>
-                <tr>
-                    <td>Angled Heavy Bag</td>
-                    <td>6</td>
-                </tr>
-                <tr>
-                    <td>Teardrop Punching Bag</td>
-                    <td>12</td>
-                </tr>
-                <tr>
-                    <td>Mats</td>
-                    <td>Covers Floor</td>
-                </tr>
-                <tr>
-                    <td>Boxing Gloves</td>
-                    <td>26 Pairs</td>
-                </tr>
-                <tr>
-                    <td>Skipping Rope</td>
-                    <td>12</td>
-                </tr>
-                <tr>
-                    <td>Boxing Gloves</td>
-                    <td>26 Pairs</td>
-                </tr>
-                <tr>
-                    <td>Skipping Rope</td>
-                    <td>12</td>
-                </tr>
-                <tr>
-                    <td>Boxing Gloves</td>
-                    <td>26 Pairs</td>
-                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@item.Quantity</td>
+                        <td>@item.Description</td>
+                        <td>@item.Supplier.Name</td>
+                    </tr>
+                }
+
             </table>
         </div>
     </div>
+
+
+
+
+
+
+
+    <!-- Main
+        <div id="payg">
+            <div class="inner">
+                <h2>Gym Equipment </h2>
+                <table>
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                    </tr>
+                    <tr>
+                        <td>Boxing Ring</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>Skipping Rope</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>Boxing Gloves</td>
+                        <td>26 Pairs</td>
+                    </tr>
+                    <tr>
+                        <td>Speed Bags</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>Double End Bag</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>Hanging Heavy Bag</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>Angled Heavy Bag</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>Teardrop Punching Bag</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>Mats</td>
+                        <td>Covers Floor</td>
+                    </tr>
+                    <tr>
+                        <td>Boxing Gloves</td>
+                        <td>26 Pairs</td>
+                    </tr>
+                    <tr>
+                        <td>Skipping Rope</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>Boxing Gloves</td>
+                        <td>26 Pairs</td>
+                    </tr>
+                    <tr>
+                        <td>Skipping Rope</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>Boxing Gloves</td>
+                        <td>26 Pairs</td>
+                    </tr>
+                </table>
+            </div>
+    </div>-->
 
 
     <div class="sectionBgColor align-center ">
@@ -96,9 +127,9 @@
 
 
     @*<div class="parallax align-center " style="height: 220px; background-image: url('../../images/boxing/dylan-nolte-ITDjGji__6Y-unsplash.jpg')">
-        <a href="#payg" class="button btn-default large">Schedule</a>
+            <a href="#payg" class="button btn-default large">Schedule</a>
 
-    </div>*@
+        </div>*@
 
     @*<section class="sectionBgColor">
         </section>*@

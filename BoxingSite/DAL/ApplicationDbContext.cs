@@ -16,7 +16,7 @@ namespace BoxingSite.DAL
         public DbSet<Staff> Staff { get; set; } // Also Admin 
 
         // Items 
-        public DbSet<Equipment> Equipments { get; set; }
+        public DbSet<Equipment> Equipment { get; set; }
         public DbSet<Supplier> Suppliers { get; set; }
 
 

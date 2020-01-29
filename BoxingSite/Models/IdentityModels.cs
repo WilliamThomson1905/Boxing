@@ -116,7 +116,7 @@ namespace BoxingSite.Models
         public string Mobile { get; set; }
 
         // Navigation property - Suppliers can provide multiple instances of 'Equipment' 
-        public virtual ICollection<Equipment> Equipments { get; set; }
+        // public virtual ICollection<Equipment> Equipments { get; set; }
 
     }
 
