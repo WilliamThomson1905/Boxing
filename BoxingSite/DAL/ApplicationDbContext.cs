@@ -18,6 +18,8 @@ namespace BoxingSite.DAL
         // Items 
         public DbSet<Equipment> Equipment { get; set; }
         public DbSet<Supplier> Suppliers { get; set; }
+        public DbSet<BoxingClass> BoxingClasses { get; set; }
+        public DbSet<Schedule> Schedule { get; set; }
 
 
 

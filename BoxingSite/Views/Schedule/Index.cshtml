@@ -1,0 +1,268 @@
+﻿@model BoxingSite.Models.ScheduleListsViewmodel
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="wrapper">
+
+    <!-- One -->
+    <section id="one" class="main sectionBgColor">
+        <div class="inner spotlight style1">
+            <div class="content align-center">
+                <header class="major">
+                    <h2>Schedule</h2>
+                </header>
+                <p>
+                    The only boxing gym in Glasgow open 7 days.The only boxing gym in Glasgow open 7 days.
+                    The only boxing gym in Glasgow open 7 days.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <div>
+        <div class="inner">
+            <div class="schedule">
+
+
+                <div class="schedulColumn">
+                    <h2 class="schedulColumnTitle">.MON.</h2>
+                    <ul>
+                        @foreach (var item in Model.Monday.ToList())
+                        {
+                            <li class="classBoard">
+                                <article class="style3">
+                                    <a href="" target="_blank">
+                                        <div class="classStatus"></div>
+                                        <div class="className">@item.BoxingClass.Title</div>
+                                        <div class="classTime">@item.StartTime-@item.EndTime</div>
+                                        <div class="classDuration">60 mins</div>
+                                        <div class="classDuration">@item.BoxingClass.Trainer.Forename @item.BoxingClass.Trainer.Surname </div>
+
+                                    </a>
+                                </article>
+                            </li>
+                        }
+                    </ul>
+                </div>
+
+
+
+
+                <div class="schedulColumn">
+                    <h2 class="schedulColumnTitle">.TUES.</h2>
+                    <ul>
+                        @foreach (var item in Model.Tuesday.ToList())
+                        {
+                            <li class="classBoard">
+                                <article class="style3">
+                                    <a href="" target="_blank">
+                                        <div class="classStatus"></div>
+                                        <div class="className">@item.BoxingClass.Title</div>
+                                        <div class="classTime">@item.StartTime-@item.EndTime</div>
+                                        <div class="classDuration">60 mins</div>
+                                        <div class="classDuration">@item.BoxingClass.Trainer.Forename @item.BoxingClass.Trainer.Surname </div>
+
+                                    </a>
+                                </article>
+                            </li>
+                        }
+
+                    </ul>
+                </div>
+
+                <div class="schedulColumn">
+                    <h2 class="schedulColumnTitle">.WED.</h2>
+                    <ul>
+                        @foreach (var item in Model.Wednesday.ToList())
+                        {
+                            <li class="classBoard">
+                                <article class="style3">
+                                    <a href="" target="_blank">
+                                        <div class="classStatus"></div>
+                                        <div class="className">@item.BoxingClass.Title</div>
+                                        <div class="classTime">@item.StartTime-@item.EndTime</div>
+                                        <div class="classDuration">60 mins</div>
+                                        <div class="classDuration">@item.BoxingClass.Trainer.Forename @item.BoxingClass.Trainer.Surname </div>
+                                    </a>
+                                </article>
+                            </li>
+                        }
+                    </ul>
+                </div>
+
+                <div class="schedulColumn">
+                    <h2 class="schedulColumnTitle">.THURS.</h2>
+                    <ul>
+                        @foreach (var item in Model.Thursday.ToList())
+                        {
+                            <li class="classBoard">
+                                <article class="style3">
+                                    <a href="" target="_blank">
+                                        <div class="classStatus"></div>
+                                        <div class="className">@item.BoxingClass.Title</div>
+                                        <div class="classTime">@item.StartTime-@item.EndTime</div>
+                                        <div class="classDuration">60 mins</div>
+                                        <div class="classDuration">@item.BoxingClass.Trainer.Forename @item.BoxingClass.Trainer.Surname </div>
+                                    </a>
+                                </article>
+                            </li>
+                        }
+                    </ul>
+                </div>
+
+                <div class="schedulColumn">
+                    <h2 class="schedulColumnTitle">.FRI.</h2>
+                    <ul>
+                        @foreach (var item in Model.Friday.ToList())
+                        {
+                            <li class="classBoard">
+                                <article class="style3">
+                                    <a href="" target="_blank">
+                                        <div class="classStatus"></div>
+                                        <div class="className">@item.BoxingClass.Title</div>
+                                        <div class="classTime">@item.StartTime-@item.EndTime</div>
+                                        <div class="classDuration">60 mins</div>
+                                        <div class="classDuration">@item.BoxingClass.Trainer.Forename @item.BoxingClass.Trainer.Surname </div>
+                                    </a>
+                                </article>
+                            </li>
+                        }
+
+                    </ul>
+                </div>
+
+                <div class="schedulColumn">
+                    <h2 class="schedulColumnTitle">.SAT.</h2>
+                    <ul>
+                        @foreach (var item in Model.Saturday.ToList())
+                        {
+                            <li class="classBoard">
+                                <article class="style3">
+                                    <a href="" target="_blank">
+                                        <div class="classStatus"></div>
+                                        <div class="className">@item.BoxingClass.Title</div>
+                                        <div class="classTime">@item.StartTime-@item.EndTime</div>
+                                        <div class="classDuration">60 mins</div>
+                                        <div class="classDuration">@item.BoxingClass.Trainer.Forename @item.BoxingClass.Trainer.Surname </div>
+                                    </a>
+                                </article>
+                            </li>
+                        }
+                    </ul>
+                </div>
+
+                <div class="schedulColumn">
+                    <h2 class="schedulColumnTitle">.SUN.</h2>
+                    <ul>
+                        @foreach (var item in Model.Sunday.ToList())
+                        {
+                            <li class="classBoard">
+                                <article class="style3">
+                                    <a href="" target="_blank">
+                                        <div class="classStatus"></div>
+                                        <div class="className">@item.BoxingClass.Title</div>
+                                        <div class="classTime">@item.StartTime-@item.EndTime</div>
+                                        <div class="classDuration">60 mins</div>
+                                        <div class="classDuration">@item.BoxingClass.Trainer.Forename @item.BoxingClass.Trainer.Surname </div>
+                                    </a>
+                                </article>
+                            </li>
+                        }
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="parallax align-center" style="height: 220px; background-image: url('../../images/boxing/chris-kendall-sJ6az6-T1u8-unsplash.jpg')">
+        <a href="../../Price/Pricing" class="button btn-default large">King Boxing Pricing</a>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*__________________________________________*@
+
+@*<h2>Index</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Trainer.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Trainer.Forename)
+            </th>
+            <th>
+                Start Times
+            </th>
+            <th>
+                End Times
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Trainer.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Trainer.Forename)
+            </td>
+            <td>
+                @foreach (var boxingClass in item.Schedule)
+                {
+                    @Html.DisplayFor(modelItem => boxingClass.StartTime)<br />
+                }
+            </td>
+            <td>
+                @foreach (var boxingClass in item.Schedule)
+                {
+                    @Html.DisplayFor(modelItem => boxingClass.EndTime)<br/>
+                }
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.BoxingClassID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.BoxingClassID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.BoxingClassID })
+            </td>
+        </tr>
+    }
+
+    </table>*@

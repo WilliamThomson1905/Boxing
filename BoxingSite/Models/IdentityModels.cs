@@ -116,8 +116,49 @@ namespace BoxingSite.Models
         public string Mobile { get; set; }
 
         // Navigation property - Suppliers can provide multiple instances of 'Equipment' 
-        // public virtual ICollection<Equipment> Equipments { get; set; }
+        public virtual ICollection<Equipment> Equipments { get; set; }
 
+    }
+
+    // Classes  
+    [Table("BoxingClass")]
+    public class BoxingClass
+    {
+        // Primary Key
+        public int BoxingClassID { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+
+
+        // Navigation property - BoxingClass can have one or more instances of 'Schedule' 
+        public virtual ICollection<Schedule> Schedule { get; set; }
+
+        // Foriegn key - Trainer will do class
+        public string TrainerID { get; set; }
+        // Corresponding navigation property 
+        public virtual TrainerUser Trainer { get; set; }
+    }
+
+    // When an BoxingClass is created 
+    [Table("Schedule")]
+    public class Schedule
+    {
+        public int ScheduleID { get; set; }
+        public string StartTime { get; set; }
+        public string EndTime { get; set; }
+        public Day Day { get; set; }
+
+        // Foriegn key - Trainer will do class
+        public int BoxingClassID { get; set; }
+        // Corresponding navigation property 
+        public virtual BoxingClass BoxingClass { get; set; }
+
+    }
+
+    public enum Day
+    {
+        // Novice, (Advanced) Beginner, Competent, Proficient, Expert.
+        MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
     }
 
 
