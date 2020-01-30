@@ -77,104 +77,10 @@ namespace BoxingSite.Controllers
 
 
 
-        // GET: BoxingClass/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            BoxingClass boxingClass = context.BoxingClasses.Find(id);
-            if (boxingClass == null)
-            {
-                return HttpNotFound();
-            }
-            return View(boxingClass);
-        }
 
-        // GET: BoxingClass/Create
-        public ActionResult Create()
-        {
-            ViewBag.TrainerID = new SelectList(context.Users, "Id", "Title");
-            return View();
-        }
 
-        // POST: BoxingClass/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "BoxingClassID,Title,Description,TrainerID")] BoxingClass boxingClass)
-        {
-            if (ModelState.IsValid)
-            {
-                context.BoxingClasses.Add(boxingClass);
-                context.SaveChanges();
-                return RedirectToAction("Index");
-            }
 
-            ViewBag.TrainerID = new SelectList(context.Users, "Id", "Title", boxingClass.TrainerID);
-            return View(boxingClass);
-        }
-
-        // GET: BoxingClass/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            BoxingClass boxingClass = context.BoxingClasses.Find(id);
-            if (boxingClass == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.TrainerID = new SelectList(context.Users, "Id", "Title", boxingClass.TrainerID);
-            return View(boxingClass);
-        }
-
-        // POST: BoxingClass/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "BoxingClassID,Title,Description,TrainerID")] BoxingClass boxingClass)
-        {
-            if (ModelState.IsValid)
-            {
-                context.Entry(boxingClass).State = EntityState.Modified;
-                context.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.TrainerID = new SelectList(context.Users, "Id", "Title", boxingClass.TrainerID);
-            return View(boxingClass);
-        }
-
-        // GET: BoxingClass/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            BoxingClass boxingClass = context.BoxingClasses.Find(id);
-            if (boxingClass == null)
-            {
-                return HttpNotFound();
-            }
-            return View(boxingClass);
-        }
-
-        // POST: BoxingClass/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            BoxingClass boxingClass = context.BoxingClasses.Find(id);
-            context.BoxingClasses.Remove(boxingClass);
-            context.SaveChanges();
-            return RedirectToAction("Index");
-        }
+        
 
         protected override void Dispose(bool disposing)
         {

@@ -148,11 +148,22 @@ namespace BoxingSite.Models
         public string EndTime { get; set; }
         public Day Day { get; set; }
 
+        public ClassStatus ClassStatus { get; set; }
+
         // Foriegn key - Trainer will do class
         public int BoxingClassID { get; set; }
         // Corresponding navigation property 
         public virtual BoxingClass BoxingClass { get; set; }
 
+        public Schedule()
+        {
+            ClassStatus = ClassStatus.AVAILABLE;
+        }
+    }
+
+    public enum ClassStatus
+    {
+        FULLYBOOKED, CANCELLED, AVAILABLE
     }
 
     public enum Day

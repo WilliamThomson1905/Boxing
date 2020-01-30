@@ -55,9 +55,38 @@ li {
 .classBoard {
     background-color: rgba(128, 128, 128, 0.1);
     margin: 10px 0px;
-    height: 150px;
+    height: 160px;
+    border-radius: 5px;
+
+}
+
+.classBoardBooked, .classBoardCancelled {
+    background-color: rgba(128, 128, 128, 0.7);
+    margin: 10px 0px;
+    height: 160px;
     border-radius: 5px;
 }
+
+
+
+    .classBoardBooked:after {
+        position: relative;
+        content: "Fully Booked";
+        font-size: 22px;
+        color: whitesmoke;
+        font-weight: unset;
+        top: -80px;
+        left: 8px
+    }
+    .classBoardCancelled:after {
+        position: relative;
+        content: "Cancelled";
+        font-size: 22px;
+        color: whitesmoke;
+        font-weight: lighter;
+        top: -80px;
+        left: 8px
+    }
 
 
 

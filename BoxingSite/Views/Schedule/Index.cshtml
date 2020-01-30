@@ -1,9 +1,12 @@
 ﻿@model BoxingSite.Models.ScheduleListsViewmodel
-
+@using BoxingSite.Models
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+    var classBoard = "classBoard";
 }
 
 <div id="wrapper">
@@ -35,15 +38,26 @@
                     <ul>
                         @foreach (var item in Model.Monday.ToList())
                         {
-                            <li class="classBoard">
+                            switch (item.ClassStatus)
+                            {
+                                case ClassStatus.FULLYBOOKED:
+                                    classBoard = "classBoardBooked";
+                                    break;
+                                case ClassStatus.CANCELLED:
+                                    classBoard = "classBoardCancelled";
+                                    break;
+                                default:
+                                    classBoard = "classBoard";
+                                    break;
+                            }
+                            <li class="@classBoard">
                                 <article class="style3">
-                                    <a href="" target="_blank">
-                                        <div class="classStatus"></div>
-                                        <div class="className">@item.BoxingClass.Title</div>
-                                        <div class="classTime">@item.StartTime-@item.EndTime</div>
-                                        <div class="classDuration">60 mins</div>
+                                    <div class="classStatus"></div>
+                                    <div class="className">@item.BoxingClass.Title</div>
+                                    <div class="classTime">@item.StartTime-@item.EndTime</div>
+                                    <div class="classDuration">60 mins</div>
+                                    <a href="/Trainer/TrainerDetails/@item.BoxingClass.Trainer.Id" target="_blank">
                                         <div class="classDuration">@item.BoxingClass.Trainer.Forename @item.BoxingClass.Trainer.Surname </div>
-
                                     </a>
                                 </article>
                             </li>
@@ -59,15 +73,26 @@
                     <ul>
                         @foreach (var item in Model.Tuesday.ToList())
                         {
-                            <li class="classBoard">
+                            switch (item.ClassStatus)
+                            {
+                                case ClassStatus.FULLYBOOKED:
+                                    classBoard = "classBoardBooked";
+                                    break;
+                                case ClassStatus.CANCELLED:
+                                    classBoard = "classBoardCancelled";
+                                    break;
+                                default:
+                                    classBoard = "classBoard";
+                                    break;
+                            }
+                            <li class="@classBoard">
                                 <article class="style3">
-                                    <a href="" target="_blank">
-                                        <div class="classStatus"></div>
-                                        <div class="className">@item.BoxingClass.Title</div>
-                                        <div class="classTime">@item.StartTime-@item.EndTime</div>
-                                        <div class="classDuration">60 mins</div>
+                                    <div class="classStatus"></div>
+                                    <div class="className">@item.BoxingClass.Title</div>
+                                    <div class="classTime">@item.StartTime-@item.EndTime</div>
+                                    <div class="classDuration">60 mins</div>
+                                    <a href="/Trainer/TrainerDetails/@item.BoxingClass.Trainer.Id" target="_blank">
                                         <div class="classDuration">@item.BoxingClass.Trainer.Forename @item.BoxingClass.Trainer.Surname </div>
-
                                     </a>
                                 </article>
                             </li>
@@ -81,13 +106,25 @@
                     <ul>
                         @foreach (var item in Model.Wednesday.ToList())
                         {
-                            <li class="classBoard">
+                            switch (item.ClassStatus)
+                            {
+                                case ClassStatus.FULLYBOOKED:
+                                    classBoard = "classBoardBooked";
+                                    break;
+                                case ClassStatus.CANCELLED:
+                                    classBoard = "classBoardCancelled";
+                                    break;
+                                default:
+                                    classBoard = "classBoard";
+                                    break;
+                            }
+                            <li class="@classBoard">
                                 <article class="style3">
-                                    <a href="" target="_blank">
-                                        <div class="classStatus"></div>
-                                        <div class="className">@item.BoxingClass.Title</div>
-                                        <div class="classTime">@item.StartTime-@item.EndTime</div>
-                                        <div class="classDuration">60 mins</div>
+                                    <div class="classStatus"></div>
+                                    <div class="className">@item.BoxingClass.Title</div>
+                                    <div class="classTime">@item.StartTime-@item.EndTime</div>
+                                    <div class="classDuration">60 mins</div>
+                                    <a href="/Trainer/TrainerDetails/@item.BoxingClass.Trainer.Id" target="_blank">
                                         <div class="classDuration">@item.BoxingClass.Trainer.Forename @item.BoxingClass.Trainer.Surname </div>
                                     </a>
                                 </article>
@@ -101,13 +138,26 @@
                     <ul>
                         @foreach (var item in Model.Thursday.ToList())
                         {
-                            <li class="classBoard">
+                            switch(item.ClassStatus)
+                            {
+                                case ClassStatus.FULLYBOOKED:
+                                    classBoard = "classBoardBooked";
+                                    break;
+                                case ClassStatus.CANCELLED:
+                                    classBoard = "classBoardCancelled";
+                                    break;
+                                default:
+                                    classBoard = "classBoard";
+                                    break;
+                            }
+                          
+                            <li class="@classBoard">
                                 <article class="style3">
-                                    <a href="" target="_blank">
-                                        <div class="classStatus"></div>
-                                        <div class="className">@item.BoxingClass.Title</div>
-                                        <div class="classTime">@item.StartTime-@item.EndTime</div>
-                                        <div class="classDuration">60 mins</div>
+                                    <div class="classStatus"></div>
+                                    <div class="className">@item.BoxingClass.Title</div>
+                                    <div class="classTime">@item.StartTime-@item.EndTime</div>
+                                    <div class="classDuration">60 mins</div>
+                                    <a href="/Trainer/TrainerDetails/@item.BoxingClass.Trainer.Id" target="_blank">
                                         <div class="classDuration">@item.BoxingClass.Trainer.Forename @item.BoxingClass.Trainer.Surname </div>
                                     </a>
                                 </article>
@@ -121,13 +171,25 @@
                     <ul>
                         @foreach (var item in Model.Friday.ToList())
                         {
-                            <li class="classBoard">
+                            switch (item.ClassStatus)
+                            {
+                                case ClassStatus.FULLYBOOKED:
+                                    classBoard = "classBoardBooked";
+                                    break;
+                                case ClassStatus.CANCELLED:
+                                    classBoard = "classBoardCancelled";
+                                    break;
+                                default:
+                                    classBoard = "classBoard";
+                                    break;
+                            }
+                            <li class="@classBoard">
                                 <article class="style3">
-                                    <a href="" target="_blank">
-                                        <div class="classStatus"></div>
-                                        <div class="className">@item.BoxingClass.Title</div>
-                                        <div class="classTime">@item.StartTime-@item.EndTime</div>
-                                        <div class="classDuration">60 mins</div>
+                                    <div class="classStatus"></div>
+                                    <div class="className">@item.BoxingClass.Title</div>
+                                    <div class="classTime">@item.StartTime-@item.EndTime</div>
+                                    <div class="classDuration">60 mins</div>
+                                    <a href="/Trainer/TrainerDetails/@item.BoxingClass.Trainer.Id" target="_blank">
                                         <div class="classDuration">@item.BoxingClass.Trainer.Forename @item.BoxingClass.Trainer.Surname </div>
                                     </a>
                                 </article>
@@ -142,13 +204,25 @@
                     <ul>
                         @foreach (var item in Model.Saturday.ToList())
                         {
-                            <li class="classBoard">
+                            switch (item.ClassStatus)
+                            {
+                                case ClassStatus.FULLYBOOKED:
+                                    classBoard = "classBoardBooked";
+                                    break;
+                                case ClassStatus.CANCELLED:
+                                    classBoard = "classBoardCancelled";
+                                    break;
+                                default:
+                                    classBoard = "classBoard";
+                                    break;
+                            }
+                            <li class="@classBoard">
                                 <article class="style3">
-                                    <a href="" target="_blank">
-                                        <div class="classStatus"></div>
-                                        <div class="className">@item.BoxingClass.Title</div>
-                                        <div class="classTime">@item.StartTime-@item.EndTime</div>
-                                        <div class="classDuration">60 mins</div>
+                                    <div class="classStatus"></div>
+                                    <div class="className">@item.BoxingClass.Title</div>
+                                    <div class="classTime">@item.StartTime-@item.EndTime</div>
+                                    <div class="classDuration">60 mins</div>
+                                    <a href="/Trainer/TrainerDetails/@item.BoxingClass.Trainer.Id" target="_blank">
                                         <div class="classDuration">@item.BoxingClass.Trainer.Forename @item.BoxingClass.Trainer.Surname </div>
                                     </a>
                                 </article>
@@ -162,13 +236,25 @@
                     <ul>
                         @foreach (var item in Model.Sunday.ToList())
                         {
-                            <li class="classBoard">
+                            switch (item.ClassStatus)
+                            {
+                                case ClassStatus.FULLYBOOKED:
+                                    classBoard = "classBoardBooked";
+                                    break;
+                                case ClassStatus.CANCELLED:
+                                    classBoard = "classBoardCancelled";
+                                    break;
+                                default:
+                                    classBoard = "classBoard";
+                                    break;
+                            }
+                            <li class="@classBoard">
                                 <article class="style3">
-                                    <a href="" target="_blank">
-                                        <div class="classStatus"></div>
-                                        <div class="className">@item.BoxingClass.Title</div>
-                                        <div class="classTime">@item.StartTime-@item.EndTime</div>
-                                        <div class="classDuration">60 mins</div>
+                                    <div class="classStatus"></div>
+                                    <div class="className">@item.BoxingClass.Title</div>
+                                    <div class="classTime">@item.StartTime-@item.EndTime</div>
+                                    <div class="classDuration">60 mins</div>
+                                    <a href="/Trainer/TrainerDetails/@item.BoxingClass.Trainer.Id" target="_blank">
                                         <div class="classDuration">@item.BoxingClass.Trainer.Forename @item.BoxingClass.Trainer.Surname </div>
                                     </a>
                                 </article>
@@ -248,13 +334,13 @@
             <td>
                 @foreach (var boxingClass in item.Schedule)
                 {
-                    @Html.DisplayFor(modelItem => boxingClass.StartTime)<br />
+                                @Html.DisplayFor(modelItem => boxingClass.StartTime)<br />
                 }
             </td>
             <td>
                 @foreach (var boxingClass in item.Schedule)
                 {
-                    @Html.DisplayFor(modelItem => boxingClass.EndTime)<br/>
+                                @Html.DisplayFor(modelItem => boxingClass.EndTime)<br/>
                 }
             </td>
             <td>
