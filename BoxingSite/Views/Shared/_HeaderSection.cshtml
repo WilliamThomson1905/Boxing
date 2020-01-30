@@ -3,12 +3,9 @@
     <a href="../../Home/Index" class="logo">Community <span>Fitness</span></a>
     @if (User.IsInRole("Administrator"))
     {
+                <a href="#adminMenu" onclick="openAdmin()"><i class="fas fa-tools fa-lg"></i></a>
+     
         @Html.Partial("_AdminNavigation")
-        <nav>
-            <ul>
-                <li><a href="#adminMenu" onclick="openAdmin()">ADMIN</a></li>
-            </ul>
-        </nav>
 
 
 
@@ -20,7 +17,9 @@
         </ul>
     </nav>
 </header>
-
+@if (User.IsInRole("Administrator"))
+{
+}
 <!-- Menu -->
 <nav id="menu">
     <ul class="links">

@@ -1,17 +1,19 @@
 ﻿
 <!-- Menu -->
-<nav id="adminMenu" class="adminOverlay">
+<div id="backgroundOverlay">
+    <nav id="adminMenu" class="adminOverlay">
 
-    <a href="javascript:void(0)" class="closebtn" onclick="closeAdmin()">CLOSE &times;</a>
-    <div class="overlayContent">
-        <ul class="links">
-            <li><h2>Admin</h2></li>
-            <li><h3>Manage System</h3><hr /></li>
-            <li>@Html.ActionLink("General Users", "Contact", "Home")</li>
-            <li>@Html.ActionLink("Trainers", "Contact", "Home")</li>
-            <li>@Html.ActionLink("Classes", "Contact", "Home")</li>
-            <li>@Html.ActionLink("Equipment", "Contact", "Home")</li>
-        </ul>
-    </div>
-       
-</nav>
+            <a href="javascript:void(0)" class="closebtn" onclick="closeAdmin()">&times;</a>
+        <div class="overlayContent">
+            <ul class="">
+                <li><h2>Admin: Manage System</h2></li>
+                <li><br /><br /></li>
+                <li>@Html.ActionLink("General Users", "Contact", "Home")</li>
+                <li>@Html.ActionLink("Trainers", "Contact", "Home")</li>
+                <li>@Html.ActionLink("Classes", "Contact", "Home")</li>
+                <li>@Html.ActionLink("Equipment", "Contact", "Home")</li>
+            </ul>
+        </div>
+
+    </nav>
+</div>

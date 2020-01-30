@@ -25,15 +25,13 @@
 
     <script>
         function openAdmin() {
-            document.getElementById("adminMenu").style.display = "block";
-            document.body.style.position = 'fixed';
-            document.body.style.top = `-${window.scrollY}px`;
+            document.getElementById("backgroundOverlay").style.width = "100%";
+            document.getElementById("backgroundOverlay").style.backgroundColor = "rgba(255, 255, 255, 0.5)";
         }
 
         function closeAdmin() {
-            document.getElementById("adminMenu").style.display = "none";
-            document.body.style.position = '';
-            document.body.style.top = '';
+            document.getElementById("backgroundOverlay").style.width = "0";
+            document.getElementById("backgroundOverlay").style.backgroundColor = "rgba(255, 255, 255, 0.0)";
         }
     </script>
 

@@ -7,7 +7,7 @@
 
         <ul class="actions stacked">
             <li>
-                @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "button primary fit" })
+                @Html.ActionLink("My Account", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "button primary fit" })
             </li>
             <li>
                 <a href="javascript:document.getElementById('logoutForm').submit()" class="button fit">Log off</a>
@@ -21,11 +21,11 @@ else
 {
 
         <ul class="actions stacked">
-            <li>@Html.ActionLink("Register", "Register", "Account", 
-              new { id = "registerLink" }, new { @class = "button primary fit" })
-            </li>
             <li>@Html.ActionLink("Log in", "Login", "Account",
                new { id = "loginLink" }, new { @class="button fit"})
+            </li>
+            <li>@Html.ActionLink("Register", "Register", "Account", 
+              new { id = "registerLink" }, new { @class = "button primary fit" })
             </li>
              @*routeValues: null, htmlAttributes:*@ 
         </ul>
