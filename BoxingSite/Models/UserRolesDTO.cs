@@ -8,6 +8,16 @@ namespace BoxingSite.Models
 {
     public class ExpandedUserDTO
     {
+        public string Title { get; set; }
+        public string Forename { get; set; }
+        public string Surname { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        public DateTime? DOB { get; set; }
+        public string Mobile { get; set; }
+
+
         [Key]
         [Display(Name = "User Name")]
         public string UserName { get; set; }

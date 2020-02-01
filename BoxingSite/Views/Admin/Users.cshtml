@@ -1,0 +1,86 @@
+﻿@*@model IEnumerable<BoxingSite.Models.ApplicationUser>*@
+@*@using BoxingSite.Models;*@
+@using BoxingSite.Models;
+@model PagedList.IPagedList<BoxingSite.Models.ExpandedUserDTO>
+@using PagedList.Mvc;
+@using Microsoft.AspNet.Identity;
+
+@{
+    ViewBag.Title = "This is William ";
+}
+
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- One -->
+    <section id="top" class="main">
+        <div class="inner spotlight style1">
+            <div class="content">
+
+                <h2>Manage Users </h2>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Name</th>
+                        <th>Username</th>
+                        <th>Mobile</th>
+                        <th>DOB</th>
+
+                        <th>User Type</th>
+                        <th>Manage</th>
+                    </tr>
+
+                    @foreach (var person in Model)
+                    {
+                    <tr>
+                        <td></td>
+                        <td>
+                            @Html.DisplayFor(modelItem => person.Forename) @Html.DisplayFor(modelItem => person.Surname)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => person.UserName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => person.Mobile)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => person.DOB)
+                        </td>
+                        
+                        <td>
+
+                            @foreach (var role in person.Roles)
+                            {
+
+                                <span>@role.RoleName</span>
+
+                            }
+
+                        </td>
+                        <td>details/edit/delete</td>
+                    </tr>
+
+                    }
+                   
+
+                </table>
+
+                <!-- Declaration of pagination for user accounts -->
+                Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+                @Html.PagedListPager(Model, page => Url.Action("Users", new
+                {
+                    page,
+                    searchStringUserNameOrEmail = ViewBag.searchStringUserNameOrEmail,
+                    currentFilter = ViewBag.CurrentFilter
+                }))
+
+                <hr />
+
+
+            </div>
+        </div>
+    </section>
+</div>
+
