@@ -93,7 +93,7 @@ namespace BoxingSite.Models
         public string Description { get; set; }
         public int Quantity { get; set; }
 
-        [DataType(DataType.Date)]
+        [DataType(DataType.Date), Required]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? PurchaseDate { get; set; }
         public float Price { get; set; }

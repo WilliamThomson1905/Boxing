@@ -21,13 +21,25 @@
     </section>
     <div id="payg">
         <div class="inner">
+
             <h2>Gym Equipment</h2>
+
+            @if (User.IsInRole("Administrator"))
+            {
+                @Html.ActionLink("Create Equipment", "CreateEquipment", "Equipment")
+
+            }
+
             <table>
                 <tr>
                     <th>Item</th>
                     <th>Quantity</th>
                     <th>Description</th>
                     <th>Company Name</th>
+                    @if (User.IsInRole("Administrator"))
+                    {
+                        <th>Manage</th>
+                    }
                 </tr>
                 @foreach (var item in Model)
                 {
@@ -36,88 +48,22 @@
                         <td>@item.Quantity</td>
                         <td>@item.Description</td>
                         <td>@item.Supplier.Name</td>
+                        @if (User.IsInRole("Administrator"))
+                        {
+                        <td>
+                            <a href="/Equipment/EditEquipment/@item.EquipmentID">Edit</a>
+                            @Html.ActionLink("Delete", "DeleteEquipment", new { id = item.EquipmentID },
+                                           new { onclick = "return confirm('Are you sure you wish to delete this Equipment? It will no longer be displayed on site. ');" })
+
+                        </td>
+                        }
                     </tr>
+
                 }
 
             </table>
         </div>
     </div>
-
-
-
-
-
-
-
-    <!-- Main
-        <div id="payg">
-            <div class="inner">
-                <h2>Gym Equipment </h2>
-                <table>
-                    <tr>
-                        <th>Item</th>
-                        <th>Quantity</th>
-                    </tr>
-                    <tr>
-                        <td>Boxing Ring</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <td>Skipping Rope</td>
-                        <td>12</td>
-                    </tr>
-                    <tr>
-                        <td>Boxing Gloves</td>
-                        <td>26 Pairs</td>
-                    </tr>
-                    <tr>
-                        <td>Speed Bags</td>
-                        <td>4</td>
-                    </tr>
-                    <tr>
-                        <td>Double End Bag</td>
-                        <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>Hanging Heavy Bag</td>
-                        <td>8</td>
-                    </tr>
-                    <tr>
-                        <td>Angled Heavy Bag</td>
-                        <td>6</td>
-                    </tr>
-                    <tr>
-                        <td>Teardrop Punching Bag</td>
-                        <td>12</td>
-                    </tr>
-                    <tr>
-                        <td>Mats</td>
-                        <td>Covers Floor</td>
-                    </tr>
-                    <tr>
-                        <td>Boxing Gloves</td>
-                        <td>26 Pairs</td>
-                    </tr>
-                    <tr>
-                        <td>Skipping Rope</td>
-                        <td>12</td>
-                    </tr>
-                    <tr>
-                        <td>Boxing Gloves</td>
-                        <td>26 Pairs</td>
-                    </tr>
-                    <tr>
-                        <td>Skipping Rope</td>
-                        <td>12</td>
-                    </tr>
-                    <tr>
-                        <td>Boxing Gloves</td>
-                        <td>26 Pairs</td>
-                    </tr>
-                </table>
-            </div>
-    </div>-->
-
 
     <div class="sectionBgColor align-center ">
         <p>*This is an exhaustive list of all the equipment at our gym - @DateTime.Now.ToString("dd MM, yyyy")</p>
@@ -126,18 +72,10 @@
     </div>
 
 
-    @*<div class="parallax align-center " style="height: 220px; background-image: url('../../images/boxing/dylan-nolte-ITDjGji__6Y-unsplash.jpg')">
-            <a href="#payg" class="button btn-default large">Schedule</a>
-
-        </div>*@
-
-    @*<section class="sectionBgColor">
-        </section>*@
-
     <div id="membership">
         <div class="inner">
             <h2>Membership</h2>
-        <p>If you have any queries call: 07490 1231239</p>
+            <p>If you have any queries call: 07490 1231239</p>
         </div>
     </div>
 </div>
