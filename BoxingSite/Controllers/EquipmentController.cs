@@ -129,7 +129,7 @@ namespace BoxingSite.Controllers
         #region public ActionResult DeleteEquipment(int Id)
         public ActionResult DeleteEquipment(int Id)
         {
-
+             
             try
             {
                 Equipment equipment = context.Equipment.Find(Id);
