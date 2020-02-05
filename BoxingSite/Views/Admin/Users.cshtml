@@ -1,7 +1,5 @@
-﻿@*@model IEnumerable<BoxingSite.Models.ApplicationUser>*@
-@*@using BoxingSite.Models;*@
-@using BoxingSite.Models;
-@model PagedList.IPagedList<BoxingSite.Models.ExpandedUserDTO>
+﻿@using BoxingSite.Models;
+@model PagedList.IPagedList<BoxingSite.Models.ApplicationUser>
 @using PagedList.Mvc;
 @using Microsoft.AspNet.Identity;
 
@@ -19,11 +17,38 @@
             <div class="content">
 
                 <h2>Manage Users </h2>
+
+                @using (Html.BeginForm())
+                {
+                    <p>
+                        Find by name: @Html.TextBox("searchString")
+                        <input type="submit" value="Search" />
+                    </p>
+                }
                 <table>
                     <tr>
                         <th></th>
-                        <th>Name</th>
-                        <th>Username</th>
+                        <th>
+                            @Html.ActionLink("Forename", "Users", new {
+                           sortOrder = ViewBag.ForenameSortParm,
+                           searchString = ViewBag.SearchStringPlaceHolder,
+                           previousSort = ViewBag.CurrentSort
+                       })
+                        </th>
+                        <th>
+                            @Html.ActionLink("Surname", "Users", new {
+                           sortOrder = ViewBag.SurnameSortParm,
+                           searchString = ViewBag.SearchStringPlaceHolder,
+                           previousSort = ViewBag.CurrentSort
+                       })
+                        </th>
+                        <th>
+                            @Html.ActionLink("Username", "Users", new {
+                           sortOrder = ViewBag.UsernameSortParm,
+                           searchString = ViewBag.SearchStringPlaceHolder,
+                           previousSort = ViewBag.CurrentSort
+                       })
+                        </th>
                         <th>Mobile</th>
                         <th>DOB</th>
 
@@ -33,48 +58,51 @@
 
                     @foreach (var person in Model)
                     {
-                    <tr>
-                        <td></td>
-                        <td>
-                            @Html.DisplayFor(modelItem => person.Forename) @Html.DisplayFor(modelItem => person.Surname)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => person.UserName)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => person.Mobile)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => person.DOB)
-                        </td>
-                        
-                        <td>
+                        <tr>
+                            <td></td>
+                            <td>
+                                @Html.DisplayFor(modelItem => person.Forename)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => person.Surname)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => person.UserName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => person.Mobile)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => person.DOB)
+                            </td>
 
-                            @foreach (var role in person.Roles)
-                            {
+                            <td>
 
-                                <span>@role.RoleName</span>
+                                    @*@foreach (var role in person.Roles)
+                                    {
 
-                            }
+                                        <span>@role.ToString()</span>
 
-                        </td>
-                        <td>details/edit/delete</td>
-                    </tr>
+                                    }*@
+
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit ", "EditUser", new { UserName = person.UserName })
+                                /@Html.ActionLink(" Delete", "EditUser", "Admin", new { id = person.UserName })
+
+                            </td>
+                        </tr>
 
                     }
-                   
+
 
                 </table>
 
                 <!-- Declaration of pagination for user accounts -->
                 Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
 
-                @Html.PagedListPager(Model, page => Url.Action("Users", new
-                {
-                    page,
-                    searchStringUserNameOrEmail = ViewBag.searchStringUserNameOrEmail,
-                    currentFilter = ViewBag.CurrentFilter
-                }))
+                @Html.PagedListPager(Model, page => Url.Action("Users",
+                    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
 
                 <hr />
 
@@ -84,3 +112,143 @@
     </section>
 </div>
 
+
+
+
+
+@*@using BoxingSite.Models;
+@model PagedList.IPagedList<BoxingSite.Models.ApplicationUser>
+@using PagedList.Mvc;
+@using Microsoft.AspNet.Identity;
+
+@{
+    ViewBag.Title = "This is William ";
+}
+
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- One -->
+    <section id="top" class="main">
+        <div class="inner spotlight style1">
+            <div class="content">
+
+                <h2>Manage Users </h2>
+
+
+                <p>
+                    <input type="text" id="searchInput" onkeyup="searchUsers()" placeholder="Search for Trainers.." title="Type in a name">
+                </p>
+
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>
+                            @Html.ActionLink("Forename", "Users", new { sortOrder = ViewBag.ForenameSortParm })
+                        </th>
+                        <th>
+                            @Html.ActionLink("Surname", "Users", new { sortOrder = ViewBag.SurnameSortParm })
+                        </th>
+                        <th>
+                            @Html.ActionLink("Username", "Users", new { sortOrder = ViewBag.UsernameSortParm })
+                        </th>
+                        <th>Mobile</th>
+                        <th>DOB</th>
+
+                        <th>User Type</th>
+                        <th>Manage</th>
+                    </tr>
+
+                    @foreach (var person in Model)
+                    {
+                        <tr>
+                            <td></td>
+                            <td class="UsersForename">
+                                @Html.DisplayFor(modelItem => person.Forename)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => person.Surname)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => person.UserName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => person.Mobile)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => person.DOB)
+                            </td>
+
+                            <td>
+
+                                @ * @foreach (var role in person.Roles)
+                                    {
+
+                                        <span>@role.RoleName</span>
+
+                                    }* @
+
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit ", "EditUser", new { UserName = person.UserName })
+                                /@Html.ActionLink(" Delete", "EditUser", "Admin", new { id = person.UserName })
+
+                            </td>
+                        </tr>
+
+                    }
+
+
+                </table>
+
+                <!-- Declaration of pagination for user accounts -->
+                Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+                @Html.PagedListPager(Model, page => Url.Action("Index",
+                    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+
+                <hr />
+
+
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+    function searchUsers() {
+
+        var searchInput, filter;
+        var tr;
+        var usersForename;
+        var usersForenameTextValue, usersSurnameTextValue;
+        var a, i;
+
+        searchInput = document.getElementById('searchInput').value;
+        filter = searchInput.toString().toUpperCase();
+        tr = document.getElementsByTagName('tr');
+
+        for (i = 0; i < tr.length; i++) {
+
+            a = tr[i].getElementsByTagName('a')[0];
+
+            // get name of each trainer
+            usersForename = a.getElementsByClassName('UsersForename')[0];
+            usersForenameTextValue = usersForename.textContent;
+
+            // get description of each trainer
+            var p = tr[i].getElementsByTagName('td')[0];
+            usersSurnameTextValue = p.textContent;
+
+
+            if (usersForenameTextValue.toUpperCase().indexOf(filter.toString()) > -1 ||
+                usersSurnameTextValue.toUpperCase().indexOf(filter.toString()) > -1) {
+                tr[i].style.display = "";
+            }
+            else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+</script>*@

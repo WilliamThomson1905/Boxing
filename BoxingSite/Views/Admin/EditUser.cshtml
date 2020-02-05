@@ -1,0 +1,155 @@
+﻿
+@model BoxingSite.Models.ExpandedUserDTO
+
+@{
+    ViewBag.Title = "Edit User Details";
+}
+
+
+<div id="wrapper">
+
+    <!-- One -->
+    <section class="main">
+        <div class="inner spotlight style1">
+            <div class="content">
+                <header>
+                    <h2>
+                        Manage @Html.DisplayFor(model => model.Forename)
+                        @Html.DisplayFor(model => model.Surname) 
+                    </h2>
+                </header>
+                <p>
+                    @ViewBag.Title
+                </p>
+            </div>
+            <br />
+        </div>
+
+        <div class="inner">
+
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="">
+
+                    <hr />
+             
+
+                    <div class="formRow">
+                        @Html.LabelFor(model => model.Title)
+                        <div class="formInfo">
+                            @Html.EditorFor(model => model.Title)
+                            @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+                    <div class="formRow">
+                        @Html.LabelFor(model => model.Forename)
+                        <div class="formInfo">
+                            @Html.EditorFor(model => model.Forename)
+                            @Html.ValidationMessageFor(model => model.Forename, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+                    <div class="formRow">
+                        @Html.LabelFor(model => model.Surname)
+                        <div class="formInfo">
+                            @Html.EditorFor(model => model.Surname)
+                            @Html.ValidationMessageFor(model => model.Surname, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+                    @*<div class="formRow">
+                            @Html.LabelFor(model => model.Description)
+                            <div class="formInfo">
+                                @Html.EditorFor(model => model.Description)
+                                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                            </div>
+                        </div>*@
+
+                    <div class="formRow">
+                        @Html.LabelFor(model => model.DOB)
+                        <div class="formInfo">
+                            @Html.EditorFor(model => model.DOB)
+                            @Html.ValidationMessageFor(model => model.DOB, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    @*<div class="formRow">
+                            @Html.LabelFor(model => model.Twitter)
+                            <div class="formInfo">
+                                @Html.EditorFor(model => model.Twitter)
+                                @Html.ValidationMessageFor(model => model.Twitter, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="formRow">
+                            @Html.LabelFor(model => model.Facebook)
+                            <div class="formInfo">
+                                @Html.EditorFor(model => model.Facebook)
+                                @Html.ValidationMessageFor(model => model.Facebook, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="formRow">
+                            @Html.LabelFor(model => model.Instagram)
+                            <div class="formInfo">
+                                @Html.EditorFor(model => model.Instagram)
+                                @Html.ValidationMessageFor(model => model.Instagram, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="formRow">
+                            @Html.LabelFor(model => model.LinkedIn)
+                            <div class="formInfo">
+                                @Html.EditorFor(model => model.LinkedIn)
+                                @Html.ValidationMessageFor(model => model.LinkedIn, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="formRow">
+                            @Html.LabelFor(model => model.ImageSrc)
+                            <div class="formInfo">
+                                @Html.EditorFor(model => model.ImageSrc)
+                                @Html.ValidationMessageFor(model => model.ImageSrc, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="formRow">
+                            @Html.LabelFor(model => model.Available)
+                            <div class="formInfo">
+                                @Html.DropDownListFor(m => m.Available, new SelectList(
+                                    new[] {
+                                        new { Value = "true", Text = "Yes" },
+                                        new { Value = "false", Text = "No" },
+                                    },
+                                    "Value",
+                                    "Text"
+                                ))
+                                @Html.ValidationMessageFor(model => model.Available)
+                            </div>
+                        </div>*@
+
+
+
+                    <div class="formRow">
+                        <div class="formInfo">
+
+
+                            <input type="submit" value="Save" class="button primary" />
+                            @Html.ActionLink("Manage Users", "Users", "Admin", new { @class = "button" })
+
+
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+
+
+    </section>
+</div>
