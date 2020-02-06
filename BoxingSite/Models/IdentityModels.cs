@@ -169,10 +169,7 @@ namespace BoxingSite.Models
         // Navigation property - BoxingClass can have one or more instances of 'Schedule' 
         public virtual ICollection<Schedule> Schedule { get; set; }
 
-        // Foriegn key - Trainer will do class
-        public string TrainerID { get; set; }
-        // Corresponding navigation property 
-        public virtual TrainerUser Trainer { get; set; }
+ 
     }
 
     // When an BoxingClass is created 
@@ -180,7 +177,11 @@ namespace BoxingSite.Models
     public class Schedule
     {
         public int ScheduleID { get; set; }
+
+        [DataType(DataType.Time)]
         public string StartTime { get; set; }
+
+        [DataType(DataType.Time)]
         public string EndTime { get; set; }
         public Day Day { get; set; }
 
@@ -190,6 +191,11 @@ namespace BoxingSite.Models
         public int BoxingClassID { get; set; }
         // Corresponding navigation property 
         public virtual BoxingClass BoxingClass { get; set; }
+
+        // Foriegn key - Trainer will do class
+        public string TrainerID { get; set; }
+        // Corresponding navigation property 
+        public virtual TrainerUser Trainer { get; set; }
 
         public Schedule()
         {

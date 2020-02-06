@@ -38,8 +38,10 @@
                 {
                     <br />
                     @Html.ActionLink("Create Session", "CreateSession", "Schedule")
-                    @Html.ActionLink("Create Class", "CreateClass", "Schedule")
-
+                    <br />
+                    @Html.ActionLink("Manage Classes", "Classes", "Schedule")
+                    <br />
+                    <br />
                 }
 
             }
@@ -73,9 +75,14 @@
                                     <div class="className">@item.BoxingClass.Title</div>
                                     <div class="classTime">@item.StartTime-@item.EndTime</div>
                                     <div class="classDuration">60 mins</div>
-                                    <a href="/Trainer/TrainerDetails/@item.BoxingClass.Trainer.Id" target="_blank">
-                                        <div class="classDuration">@item.BoxingClass.Trainer.Forename @item.BoxingClass.Trainer.Surname </div>
+                                    <a href="/Trainer/TrainerDetails/@item.Trainer.Id" target="_blank">
+                                        <div class="classDuration">@item.Trainer.Forename @item.Trainer.Surname </div>
                                     </a>
+                                    @if (User.IsInRole("Administrator"))
+                                    {
+                                        @Html.ActionLink("Edit", "EditSession", new { Id = item.ScheduleID })
+                                 
+                                    }
                                 </article>
                             </li>
                         }
@@ -108,8 +115,8 @@
                                     <div class="className">@item.BoxingClass.Title</div>
                                     <div class="classTime">@item.StartTime-@item.EndTime</div>
                                     <div class="classDuration">60 mins</div>
-                                    <a href="/Trainer/TrainerDetails/@item.BoxingClass.Trainer.Id" target="_blank">
-                                        <div class="classDuration">@item.BoxingClass.Trainer.Forename @item.BoxingClass.Trainer.Surname </div>
+                                    <a href="/Trainer/TrainerDetails/@item.Trainer.Id" target="_blank">
+                                        <div class="classDuration">@item.Trainer.Forename @item.Trainer.Surname </div>
                                     </a>
                                 </article>
                             </li>
@@ -141,8 +148,8 @@
                                     <div class="className">@item.BoxingClass.Title</div>
                                     <div class="classTime">@item.StartTime-@item.EndTime</div>
                                     <div class="classDuration">60 mins</div>
-                                    <a href="/Trainer/TrainerDetails/@item.BoxingClass.Trainer.Id" target="_blank">
-                                        <div class="classDuration">@item.BoxingClass.Trainer.Forename @item.BoxingClass.Trainer.Surname </div>
+                                    <a href="/Trainer/TrainerDetails/@item.Trainer.Id" target="_blank">
+                                        <div class="classDuration">@item.Trainer.Forename @item.Trainer.Surname </div>
                                     </a>
                                 </article>
                             </li>
@@ -174,8 +181,8 @@
                                     <div class="className">@item.BoxingClass.Title</div>
                                     <div class="classTime">@item.StartTime-@item.EndTime</div>
                                     <div class="classDuration">60 mins</div>
-                                    <a href="/Trainer/TrainerDetails/@item.BoxingClass.Trainer.Id" target="_blank">
-                                        <div class="classDuration">@item.BoxingClass.Trainer.Forename @item.BoxingClass.Trainer.Surname </div>
+                                    <a href="/Trainer/TrainerDetails/@item.Trainer.Id" target="_blank">
+                                        <div class="classDuration">@item.Trainer.Forename @item.Trainer.Surname </div>
                                     </a>
                                 </article>
                             </li>
@@ -206,8 +213,8 @@
                                     <div class="className">@item.BoxingClass.Title</div>
                                     <div class="classTime">@item.StartTime-@item.EndTime</div>
                                     <div class="classDuration">60 mins</div>
-                                    <a href="/Trainer/TrainerDetails/@item.BoxingClass.Trainer.Id" target="_blank">
-                                        <div class="classDuration">@item.BoxingClass.Trainer.Forename @item.BoxingClass.Trainer.Surname </div>
+                                    <a href="/Trainer/TrainerDetails/@item.Trainer.Id" target="_blank">
+                                        <div class="classDuration">@item.Trainer.Forename @item.Trainer.Surname </div>
                                     </a>
                                 </article>
                             </li>
@@ -239,8 +246,8 @@
                                     <div class="className">@item.BoxingClass.Title</div>
                                     <div class="classTime">@item.StartTime-@item.EndTime</div>
                                     <div class="classDuration">60 mins</div>
-                                    <a href="/Trainer/TrainerDetails/@item.BoxingClass.Trainer.Id" target="_blank">
-                                        <div class="classDuration">@item.BoxingClass.Trainer.Forename @item.BoxingClass.Trainer.Surname </div>
+                                    <a href="/Trainer/TrainerDetails/@item.Trainer.Id" target="_blank">
+                                        <div class="classDuration">@item.Trainer.Forename @item.Trainer.Surname </div>
                                     </a>
                                 </article>
                             </li>
@@ -271,8 +278,8 @@
                                     <div class="className">@item.BoxingClass.Title</div>
                                     <div class="classTime">@item.StartTime-@item.EndTime</div>
                                     <div class="classDuration">60 mins</div>
-                                    <a href="/Trainer/TrainerDetails/@item.BoxingClass.Trainer.Id" target="_blank">
-                                        <div class="classDuration">@item.BoxingClass.Trainer.Forename @item.BoxingClass.Trainer.Surname </div>
+                                    <a href="/Trainer/TrainerDetails/@item.Trainer.Id" target="_blank">
+                                        <div class="classDuration">@item.Trainer.Forename @item.Trainer.Surname </div>
                                     </a>
                                 </article>
                             </li>
@@ -290,82 +297,3 @@
     </div>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-@*__________________________________________*@
-
-@*<h2>Index</h2>
-
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Trainer.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Trainer.Forename)
-            </th>
-            <th>
-                Start Times
-            </th>
-            <th>
-                End Times
-            </th>
-            <th></th>
-        </tr>
-
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Trainer.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-
-            <td>
-                @Html.DisplayFor(modelItem => item.Trainer.Forename)
-            </td>
-            <td>
-                @foreach (var boxingClass in item.Schedule)
-                {
-                                @Html.DisplayFor(modelItem => boxingClass.StartTime)<br />
-                }
-            </td>
-            <td>
-                @foreach (var boxingClass in item.Schedule)
-                {
-                                @Html.DisplayFor(modelItem => boxingClass.EndTime)<br/>
-                }
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.BoxingClassID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.BoxingClassID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.BoxingClassID })
-            </td>
-        </tr>
-    }
-
-    </table>*@

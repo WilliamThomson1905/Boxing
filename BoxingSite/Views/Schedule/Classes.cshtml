@@ -1,40 +1,49 @@
 ﻿@model IEnumerable<BoxingSite.Models.BoxingClass>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Trainer.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Trainer.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.BoxingClassID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.BoxingClassID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.BoxingClassID })
-        </td>
-    </tr>
-}
+<div id="wrapper">
 
-</table>
+    <!-- One -->
+    <section class="main">
+        <div class="inner">
+
+            <p>
+                @Html.ActionLink("Create New", "CreateBoxingClass")
+            </p>
+
+            <table class="table">
+                <tr>
+                   
+                    <th>
+                        @Html.DisplayNameFor(model => model.Title)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Description)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                       
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "EditBoxingClass", new { id = item.BoxingClassID }) |
+                            @Html.ActionLink("Details", "DetailsBoxingClass", new { id = item.BoxingClassID }) |
+                            @Html.ActionLink("Delete", "DeleteBoxingClass", new { id = item.BoxingClassID },
+                                                                      new { onclick = "return confirm('Are you sure you wish to delete this Class? It will no longer be displayed on system. ');" })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </section>
+</div>

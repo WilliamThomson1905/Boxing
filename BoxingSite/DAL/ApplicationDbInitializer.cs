@@ -705,53 +705,43 @@ namespace BoxingSite.DAL
                 new BoxingClass {
                     // id = 1 
                     Title ="Bag Blast",
-                    Description = "Bag Blast is a blah du blah da.",
-                    TrainerID = trainerUsers[0].Id,
-                    Trainer = trainerUsers[0],
+                    Description = "Bag Blast is a blah du blah da."
                 },
                 new BoxingClass {
                                         
                     // id = 2
                     Title ="Open Training",
                     Description = "Open Training session is a lorium sertius derlerium. ",
-                    TrainerID = trainerUsers[1].Id,
-                    Trainer = trainerUsers[1],
                 },
                 new BoxingClass {
                     Title ="Kids' Classs (8 and Over)",
                     Description = "Session is s lorium sertius derlerium. ",
-                    TrainerID = trainerUsers[7].Id,
-                    Trainer = trainerUsers[7],
+           
                 },
                 new BoxingClass {
                     Title ="All Levels Boxing",
                     Description = "Session is s lorium sertius derlerium. ",
-                    TrainerID = trainerUsers[3].Id,
-                    Trainer = trainerUsers[3],
+            
                 },
                 new BoxingClass {
                     Title ="Pad Work Class",
                     Description = "Session is s lorium sertius derlerium. ",
-                    TrainerID = trainerUsers[4].Id,
-                    Trainer = trainerUsers[4],
+                    
                 },
                 new BoxingClass {
                     Title ="Curcuits",
                     Description = "Curcuits is s lorium sertius derlerium. ",
-                    TrainerID = trainerUsers[7].Id,
-                    Trainer = trainerUsers[7],
+              
                 },
                 new BoxingClass {
                     Title ="Kids' Classs (Under 8's)",
                     Description = "Sparring Session is s lorium sertius derlerium. ",
-                    TrainerID = trainerUsers[6].Id,
-                    Trainer = trainerUsers[6],
+           
                 },
                  new BoxingClass {
                     Title ="Kids' Classs (8 and Over)",
                     Description = "Sparring Session is s lorium sertius derlerium. ",
-                    TrainerID = trainerUsers[7].Id,
-                    Trainer = trainerUsers[7],
+             
                 },
 
             };
@@ -769,7 +759,9 @@ namespace BoxingSite.DAL
                     StartTime = "10:00:00",
                     EndTime = "11:00:00",
                     BoxingClass = boxingClasses[0],
-                    BoxingClassID = boxingClasses[0].BoxingClassID
+                    BoxingClassID = boxingClasses[0].BoxingClassID,
+                    TrainerID = trainerUsers[4].Id,
+                    Trainer = trainerUsers[4]
                 },
                 new Schedule()
                 {
@@ -777,7 +769,9 @@ namespace BoxingSite.DAL
                     StartTime = "16:00:00",
                     EndTime = "17:30:00",
                     BoxingClass = boxingClasses[1],
-                    BoxingClassID = boxingClasses[1].BoxingClassID
+                    BoxingClassID = boxingClasses[1].BoxingClassID,
+                    TrainerID = trainerUsers[4].Id,
+                    Trainer = trainerUsers[4]
 
                 },
                 new Schedule()
@@ -786,7 +780,9 @@ namespace BoxingSite.DAL
                     StartTime = "17:00:00",
                     EndTime = "17:45:00",
                     BoxingClass = boxingClasses[2],
-                    BoxingClassID = boxingClasses[2].BoxingClassID
+                    BoxingClassID = boxingClasses[2].BoxingClassID,
+                    TrainerID = trainerUsers[4].Id,
+                    Trainer = trainerUsers[4]
 
                 },
                 new Schedule()
@@ -795,7 +791,9 @@ namespace BoxingSite.DAL
                     StartTime = "17:45:00",
                     EndTime = "18:30:00",
                     BoxingClass = boxingClasses[3],
-                    BoxingClassID = boxingClasses[3].BoxingClassID
+                    BoxingClassID = boxingClasses[3].BoxingClassID,
+                    TrainerID = trainerUsers[4].Id,
+                    Trainer = trainerUsers[4]
                 },
                 new Schedule()
                 {
@@ -803,7 +801,9 @@ namespace BoxingSite.DAL
                     StartTime = "18:30:00",
                     EndTime = "19:30:00",
                     BoxingClass = boxingClasses[4],
-                    BoxingClassID = boxingClasses[4].BoxingClassID
+                    BoxingClassID = boxingClasses[4].BoxingClassID,
+                    TrainerID = trainerUsers[4].Id,
+                    Trainer = trainerUsers[4]
 
                 },
                 new Schedule()
@@ -813,7 +813,9 @@ namespace BoxingSite.DAL
                     EndTime = "20:00:00",
                     BoxingClass = boxingClasses[5],
                     BoxingClassID = boxingClasses[5].BoxingClassID,
-                    ClassStatus = ClassStatus.FULLYBOOKED
+                    ClassStatus = ClassStatus.FULLYBOOKED,
+                    TrainerID = trainerUsers[4].Id,
+                    Trainer = trainerUsers[4]
 
                 },
                 new Schedule()
@@ -822,7 +824,9 @@ namespace BoxingSite.DAL
                     StartTime = "20:00:00",
                     EndTime = "20:30:00",
                     BoxingClass = boxingClasses[6],
-                    BoxingClassID = boxingClasses[6].BoxingClassID
+                    BoxingClassID = boxingClasses[6].BoxingClassID,
+                    TrainerID = trainerUsers[4].Id,
+                    Trainer = trainerUsers[4]
                 },
                
 
@@ -837,7 +841,9 @@ namespace BoxingSite.DAL
                     StartTime = "16:00:00",
                     EndTime = "17:30:00",
                     BoxingClass = boxingClasses[1],
-                    BoxingClassID = boxingClasses[1].BoxingClassID
+                    BoxingClassID = boxingClasses[1].BoxingClassID,
+                    TrainerID = trainerUsers[4].Id,
+                    Trainer = trainerUsers[4]
 
                 },
                 new Schedule()
@@ -846,7 +852,9 @@ namespace BoxingSite.DAL
                      StartTime = "17:00:00",
                     EndTime = "17:45:00",
                     BoxingClass = boxingClasses[0],
-                    BoxingClassID = boxingClasses[0].BoxingClassID
+                    BoxingClassID = boxingClasses[0].BoxingClassID,
+                    TrainerID = trainerUsers[4].Id,
+                    Trainer = trainerUsers[4]
                 },
                 new Schedule()
                 {
@@ -855,7 +863,9 @@ namespace BoxingSite.DAL
                     EndTime = "18:30:00",
                     BoxingClass = boxingClasses[4],
                     BoxingClassID = boxingClasses[4].BoxingClassID,
-                    ClassStatus = ClassStatus.FULLYBOOKED
+                    ClassStatus = ClassStatus.FULLYBOOKED,
+                    TrainerID = trainerUsers[4].Id,
+                    Trainer = trainerUsers[4]
 
                 },
                 new Schedule()
@@ -864,7 +874,9 @@ namespace BoxingSite.DAL
                     StartTime = "18:30:00",
                     EndTime = "19:30:00",
                     BoxingClass = boxingClasses[5],
-                    BoxingClassID = boxingClasses[5].BoxingClassID
+                    BoxingClassID = boxingClasses[5].BoxingClassID,
+                    TrainerID = trainerUsers[4].Id,
+                    Trainer = trainerUsers[4]
                 },
                 new Schedule()
                 {
@@ -872,7 +884,9 @@ namespace BoxingSite.DAL
                     StartTime = "19:30:00",
                     EndTime = "20:00:00",
                     BoxingClass = boxingClasses[6],
-                    BoxingClassID = boxingClasses[6].BoxingClassID
+                    BoxingClassID = boxingClasses[6].BoxingClassID,
+                    TrainerID = trainerUsers[4].Id,
+                    Trainer = trainerUsers[4]
 
                 },
                 new Schedule()
@@ -881,7 +895,9 @@ namespace BoxingSite.DAL
                     StartTime = "20:00:00",
                     EndTime = "20:30:00",
                     BoxingClass = boxingClasses[2],
-                    BoxingClassID = boxingClasses[2].BoxingClassID
+                    BoxingClassID = boxingClasses[2].BoxingClassID,
+                    TrainerID = trainerUsers[4].Id,
+                    Trainer = trainerUsers[4]
 
                 },
               
@@ -898,7 +914,9 @@ namespace BoxingSite.DAL
                     StartTime = "13:00:00",
                     EndTime = "15:00:00",
                     BoxingClass = boxingClasses[2],
-                    BoxingClassID = boxingClasses[2].BoxingClassID
+                    BoxingClassID = boxingClasses[2].BoxingClassID,
+                    TrainerID = trainerUsers[4].Id,
+                    Trainer = trainerUsers[4]
 
 
                 },
@@ -908,7 +926,9 @@ namespace BoxingSite.DAL
                     StartTime = "16:30:00",
                     EndTime = "17:30:00",
                     BoxingClass = boxingClasses[7],
-                    BoxingClassID = boxingClasses[7].BoxingClassID
+                    BoxingClassID = boxingClasses[7].BoxingClassID,
+                    TrainerID = trainerUsers[4].Id,
+                    Trainer = trainerUsers[4]
 
                 },
                 new Schedule()
@@ -917,7 +937,9 @@ namespace BoxingSite.DAL
                     StartTime = "17:30:00",
                     EndTime = "18:30:00",
                     BoxingClass = boxingClasses[0],
-                    BoxingClassID = boxingClasses[0].BoxingClassID
+                    BoxingClassID = boxingClasses[0].BoxingClassID,
+                    TrainerID = trainerUsers[4].Id,
+                    Trainer = trainerUsers[4]
 
                 },
                 new Schedule()
@@ -926,7 +948,9 @@ namespace BoxingSite.DAL
                     StartTime = "18:30:00",
                     EndTime = "19:30:00",
                     BoxingClass = boxingClasses[5],
-                    BoxingClassID = boxingClasses[5].BoxingClassID
+                    BoxingClassID = boxingClasses[5].BoxingClassID,
+                    TrainerID = trainerUsers[4].Id,
+                    Trainer = trainerUsers[4]
 
                 },
                 new Schedule()
@@ -935,7 +959,9 @@ namespace BoxingSite.DAL
                     StartTime = "19:30:00",
                     EndTime = "20:45:00",
                     BoxingClass = boxingClasses[6],
-                    BoxingClassID = boxingClasses[6].BoxingClassID
+                    BoxingClassID = boxingClasses[6].BoxingClassID,
+                    TrainerID = trainerUsers[4].Id,
+                    Trainer = trainerUsers[4]
                 },
 
 
@@ -951,7 +977,9 @@ namespace BoxingSite.DAL
                     StartTime = "16:30:00",
                     EndTime = "17:30:00",
                     BoxingClass = boxingClasses[0],
-                    BoxingClassID = boxingClasses[0].BoxingClassID
+                    BoxingClassID = boxingClasses[0].BoxingClassID,
+                    TrainerID = trainerUsers[4].Id,
+                    Trainer = trainerUsers[4]
                 },
                 new Schedule()
                 {
@@ -959,7 +987,9 @@ namespace BoxingSite.DAL
                     StartTime = "17:00:00",
                     EndTime = "19:00:00",
                     BoxingClass = boxingClasses[3],
-                    BoxingClassID = boxingClasses[3].BoxingClassID
+                    BoxingClassID = boxingClasses[3].BoxingClassID,
+                    TrainerID = trainerUsers[4].Id,
+                    Trainer = trainerUsers[4]
                 },
                 new Schedule()
                 {
@@ -967,7 +997,9 @@ namespace BoxingSite.DAL
                     StartTime = "19:00:00",
                     EndTime = "20:45:00",
                     BoxingClass = boxingClasses[4],
-                    BoxingClassID = boxingClasses[4].BoxingClassID
+                    BoxingClassID = boxingClasses[4].BoxingClassID,
+                    TrainerID = trainerUsers[4].Id,
+                    Trainer = trainerUsers[4]
                 },
                 new Schedule()
                 {
@@ -976,7 +1008,9 @@ namespace BoxingSite.DAL
                     EndTime = "21:15:00",
                     BoxingClass = boxingClasses[6],
                     BoxingClassID = boxingClasses[6].BoxingClassID,
-                    ClassStatus = ClassStatus.CANCELLED
+                    ClassStatus = ClassStatus.CANCELLED,
+                    TrainerID = trainerUsers[4].Id,
+                    Trainer = trainerUsers[4]
                 },
 
 
@@ -990,7 +1024,9 @@ namespace BoxingSite.DAL
                     StartTime = "16:30:00",
                     EndTime = "17:30:00",
                     BoxingClass = boxingClasses[1],
-                    BoxingClassID = boxingClasses[1].BoxingClassID
+                    BoxingClassID = boxingClasses[1].BoxingClassID,
+                    TrainerID = trainerUsers[4].Id,
+                    Trainer = trainerUsers[4]
                 },
                 new Schedule()
                 {
@@ -998,7 +1034,9 @@ namespace BoxingSite.DAL
                     StartTime = "17:00:00",
                     EndTime = "19:00:00",
                     BoxingClass = boxingClasses[2],
-                    BoxingClassID = boxingClasses[2].BoxingClassID
+                    BoxingClassID = boxingClasses[2].BoxingClassID,
+                    TrainerID = trainerUsers[4].Id,
+                    Trainer = trainerUsers[4]
                 },
                 new Schedule()
                 {
@@ -1006,7 +1044,9 @@ namespace BoxingSite.DAL
                     StartTime = "19:00:00",
                     EndTime = "20:45:00",
                     BoxingClass = boxingClasses[4],
-                    BoxingClassID = boxingClasses[4].BoxingClassID
+                    BoxingClassID = boxingClasses[4].BoxingClassID,
+                    TrainerID = trainerUsers[4].Id,
+                    Trainer = trainerUsers[4]
                 },
                 new Schedule()
                 {
@@ -1014,7 +1054,9 @@ namespace BoxingSite.DAL
                     StartTime = "20:45:00",
                     EndTime = "21:15:00",
                     BoxingClass = boxingClasses[7],
-                    BoxingClassID = boxingClasses[7].BoxingClassID
+                    BoxingClassID = boxingClasses[7].BoxingClassID,
+                    TrainerID = trainerUsers[4].Id,
+                    Trainer = trainerUsers[4]
                 },
 
 
@@ -1027,7 +1069,9 @@ namespace BoxingSite.DAL
                     EndTime = "08:30:00",
                     BoxingClass = boxingClasses[0],
                     BoxingClassID = boxingClasses[0].BoxingClassID,
-                    ClassStatus = ClassStatus.CANCELLED
+                    ClassStatus = ClassStatus.CANCELLED,
+                    TrainerID = trainerUsers[4].Id,
+                    Trainer = trainerUsers[4]
 
 
 
@@ -1038,7 +1082,9 @@ namespace BoxingSite.DAL
                     StartTime = "08:30:00",
                     EndTime = "09:00:00",
                     BoxingClass = boxingClasses[7],
-                    BoxingClassID = boxingClasses[7].BoxingClassID
+                    BoxingClassID = boxingClasses[7].BoxingClassID,
+                    TrainerID = trainerUsers[4].Id,
+                    Trainer = trainerUsers[4]
 
                 },
 
@@ -1052,7 +1098,9 @@ namespace BoxingSite.DAL
                     StartTime = "07:00:00",
                     EndTime = "08:00:00",
                     BoxingClass = boxingClasses[2],
-                    BoxingClassID = boxingClasses[2].BoxingClassID
+                    BoxingClassID = boxingClasses[2].BoxingClassID,
+                    TrainerID = trainerUsers[4].Id,
+                    Trainer = trainerUsers[4]
 
 
                 }

@@ -11,16 +11,16 @@
                 <li>@Html.ActionLink("Users", "Users", "Admin")</li>
                 <li>@Html.ActionLink("Equipment", "Equipment", "Equipment")</li>
                 <li>@Html.ActionLink("Suppliers", "Supplier", "Supplier")</li>
-                <li>@Html.ActionLink("Classes", "Classes", "Schedule")</li>
                 <li>@Html.ActionLink("Schedule", "Schedule", "Schedule")</li>
-            </ul>
-            <ul class="">
-                <li><br /><br /><br /></li>
-                <li><h2>Admin: Quick Create</h2></li>
+                <li>@Html.ActionLink("Classes", "Classes", "Schedule")</li>
+                <li><br /><br /></li>
+                <li><h2>Quick Create</h2></li>
                 <li>@Html.ActionLink("Equipment", "CreateEquipment", "Equipment")</li>
                 <li>@Html.ActionLink("Supplier", "CreateSupplier", "Supplier")</li>
-                <li>@Html.ActionLink("Session", "Index", "Schedule")</li>
+                <li>@Html.ActionLink("Session", "CreateSession", "Schedule")</li>
+                <li>@Html.ActionLink("Boxing Class", "CreateBoxingClass", "Schedule")</li>
             </ul>
+         
         </div>
 
     </nav>

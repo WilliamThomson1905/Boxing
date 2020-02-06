@@ -385,7 +385,7 @@
     <Content Include="Views\Trainer\Edit.cshtml" />
     <Content Include="Views\Trainer\Create.cshtml" />
     <Content Include="Views\Shared\_AdminNavigation.cshtml" />
-    <Content Include="Views\Schedule\Index.cshtml" />
+    <Content Include="Views\Schedule\Schedule.cshtml" />
     <Content Include="Views\Admin\Users.cshtml" />
     <Content Include="Views\Admin\EditUser.cshtml" />
     <Content Include="Views\Equipment\CreateEquipment.cshtml" />
@@ -394,6 +394,10 @@
     <Content Include="Views\Supplier\Supplier.cshtml" />
     <Content Include="Views\Supplier\EditSupplier.cshtml" />
     <Content Include="Views\Schedule\Classes.cshtml" />
+    <Content Include="Views\Schedule\CreateBoxingClass.cshtml" />
+    <Content Include="Views\Schedule\CreateSession.cshtml" />
+    <Content Include="Views\Schedule\EditBoxingClass.cshtml" />
+    <Content Include="Views\Schedule\EditSession.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
