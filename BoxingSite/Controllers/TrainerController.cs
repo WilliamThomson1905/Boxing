@@ -98,6 +98,7 @@ namespace BoxingSite.Controllers
         }
 
         // GET: Trainer/Create
+        [Authorize(Roles = "Administrator")]
         public ActionResult Create()
         {
             return View();
@@ -188,6 +189,7 @@ namespace BoxingSite.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
         public ActionResult Delete(int id)
         {
             try
@@ -207,7 +209,7 @@ namespace BoxingSite.Controllers
 
 
         // DELETE: /Trainer/DeleteUser/id
-        //[Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator")]
         #region public ActionResult DeleteUser(string Id)
         public ActionResult DeleteUser(string Id)
         {

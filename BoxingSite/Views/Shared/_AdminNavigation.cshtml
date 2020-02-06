@@ -3,14 +3,23 @@
 <div id="backgroundOverlay">
     <nav id="adminMenu" class="adminOverlay">
 
-            <a href="javascript:void(0)" class="closebtn" onclick="closeAdmin()">&times;</a>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeAdmin()">&times;</a>
+        
         <div class="overlayContent">
             <ul class="">
                 <li><h2>Admin: Manage System</h2></li>
-                <li><br /><br /></li>
                 <li>@Html.ActionLink("Users", "Users", "Admin")</li>
-                <li>@Html.ActionLink("Classes", "Contact", "Home")</li>
-                <li>@Html.ActionLink("Equipment", "Contact", "Home")</li>
+                <li>@Html.ActionLink("Equipment", "Equipment", "Equipment")</li>
+                <li>@Html.ActionLink("Suppliers", "Supplier", "Supplier")</li>
+                <li>@Html.ActionLink("Classes", "Classes", "Schedule")</li>
+                <li>@Html.ActionLink("Schedule", "Schedule", "Schedule")</li>
+            </ul>
+            <ul class="">
+                <li><br /><br /><br /></li>
+                <li><h2>Admin: Quick Create</h2></li>
+                <li>@Html.ActionLink("Equipment", "CreateEquipment", "Equipment")</li>
+                <li>@Html.ActionLink("Supplier", "CreateSupplier", "Supplier")</li>
+                <li>@Html.ActionLink("Session", "Index", "Schedule")</li>
             </ul>
         </div>
 

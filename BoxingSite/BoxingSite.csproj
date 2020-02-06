@@ -176,6 +176,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\SupplierController.cs" />
     <Compile Include="Controllers\ScheduleController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -389,6 +390,10 @@
     <Content Include="Views\Admin\EditUser.cshtml" />
     <Content Include="Views\Equipment\CreateEquipment.cshtml" />
     <Content Include="Views\Equipment\EditEquipment.cshtml" />
+    <Content Include="Views\Supplier\CreateSupplier.cshtml" />
+    <Content Include="Views\Supplier\Supplier.cshtml" />
+    <Content Include="Views\Supplier\EditSupplier.cshtml" />
+    <Content Include="Views\Schedule\Classes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

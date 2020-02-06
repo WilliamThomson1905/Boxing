@@ -15,12 +15,20 @@ namespace BoxingSite.Models
     {
   
         public string Title { get; set; }
+
+        [Required]
+        [StringLength(20)]
         public string Forename { get; set; }
+
+        [Required]
+        [StringLength(20)]
         public string Surname { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? DOB { get; set; }
+
+        [Phone]
         public string Mobile { get; set; }
 
 
@@ -40,8 +48,13 @@ namespace BoxingSite.Models
     [Table("GeneralUser")]
     public class GeneralUser : ApplicationUser
     {
+        [Display(Name = "Skill Level")]
         public SkillLevel SkillLevel { get; set; }
+
+        [Display(Name = "Weight-pounds")]
         public float Weight { get; set; }
+
+        [Display(Name = "Height-In feet")]
         public float Height { get; set; }
         public char Gender { get; set; }
 
@@ -62,11 +75,23 @@ namespace BoxingSite.Models
     public class TrainerUser : ApplicationUser
     {
 
+        [Required]
+        [StringLength(1500)]
         public string Description { get; set; }
+
+
         public string ImageSrc { get; set; }
+
+        [Url]
         public string Instagram { get; set; }
+
+        [Url]
         public string Facebook { get; set; }
+
+        [Url]
         public string LinkedIn { get; set; }
+
+        [Url]
         public string Twitter { get; set; }
 
         // for PT Sessions - will bew shown on their Trainer/Details/id view
@@ -89,7 +114,13 @@ namespace BoxingSite.Models
     public class Equipment
     {
         public int EquipmentID { get; set; }
+
+        [Required]
+        [StringLength(60)]
         public string Name { get; set; }
+
+        [Required]
+        [StringLength(1000)]
         public string Description { get; set; }
         public int Quantity { get; set; }
 
@@ -112,7 +143,12 @@ namespace BoxingSite.Models
     {
         // Primary Key
         public int SupplierID { get; set; }
+
+        [Required]
+        [StringLength(60)]
         public string Name { get; set; }
+
+        [Phone]
         public string Mobile { get; set; }
 
         // Navigation property - Suppliers can provide multiple instances of 'Equipment' 

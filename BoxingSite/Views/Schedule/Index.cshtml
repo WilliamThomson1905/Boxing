@@ -1,6 +1,7 @@
 ﻿@model BoxingSite.Models.ScheduleListsViewmodel
 @using BoxingSite.Models
 
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -30,6 +31,22 @@
 
     <div>
         <div class="inner">
+            @if (User.Identity.IsAuthenticated)
+            {
+
+                if (User.IsInRole("Administrator"))
+                {
+                    <br />
+                    @Html.ActionLink("Create Session", "CreateSession", "Schedule")
+                    @Html.ActionLink("Create Class", "CreateClass", "Schedule")
+
+                }
+
+            }
+
+
+
+
             <div class="schedule">
 
 
@@ -138,7 +155,7 @@
                     <ul>
                         @foreach (var item in Model.Thursday.ToList())
                         {
-                            switch(item.ClassStatus)
+                            switch (item.ClassStatus)
                             {
                                 case ClassStatus.FULLYBOOKED:
                                     classBoard = "classBoardBooked";
@@ -150,7 +167,7 @@
                                     classBoard = "classBoard";
                                     break;
                             }
-                          
+
                             <li class="@classBoard">
                                 <article class="style3">
                                     <div class="classStatus"></div>

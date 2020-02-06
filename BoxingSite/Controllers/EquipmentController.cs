@@ -26,6 +26,7 @@ namespace BoxingSite.Controllers
 
 
         // GET: Equipment/CreateCreateEquipment
+        [Authorize(Roles = "Administrator")]
         public ActionResult CreateEquipment()
         {
             ViewBag.SupplierId = new SelectList(context.Suppliers, "SupplierId", "Name");
@@ -36,6 +37,7 @@ namespace BoxingSite.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
         public ActionResult CreateEquipment([Bind(Include = "Name, Description, " +
             "Quantity, PurchaseDate, Price, SupplierId ")] Equipment equipment)
         {
@@ -54,18 +56,18 @@ namespace BoxingSite.Controllers
                     SupplierID = chosenSupplier.SupplierID
                 };
 
-                // add and save the  new insyance to the context
                 context.Equipment.Add(equip);
                 context.SaveChanges();
                 return RedirectToAction("Equipment", "Equipment");
             }
 
+            ViewBag.SupplierId = new SelectList(context.Suppliers, "SupplierId", "Name");
             return View(equipment);
         }
 
 
 
-
+        [Authorize(Roles = "Administrator")]
         public ActionResult EditEquipment(int? Id)
         {
 
@@ -74,7 +76,7 @@ namespace BoxingSite.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            // Finf Job Sector from parameter id
+
             Equipment equipment = context.Equipment.Find(Id);
 
 
@@ -91,6 +93,7 @@ namespace BoxingSite.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
         public ActionResult EditEquipment([Bind(Include = "EquipmentID,Name, Description, Quantity, PurchaseDate, Price, SupplierId")] Equipment equipment)
         {
             if (ModelState.IsValid)
@@ -116,7 +119,7 @@ namespace BoxingSite.Controllers
                 return RedirectToAction("Equipment");
             }
 
-
+            ViewBag.SupplierId = new SelectList(context.Suppliers, "SupplierId", "Name", equipment.SupplierID);
             return View(equipment);
         }
 
@@ -156,15 +159,6 @@ namespace BoxingSite.Controllers
             }
             base.Dispose(disposing);
         }
-
-
-
-
-
-
-
-
-
-
+                                    
     }
 }

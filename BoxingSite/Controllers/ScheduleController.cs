@@ -16,7 +16,7 @@ namespace BoxingSite.Controllers
         private ApplicationDbContext context = new ApplicationDbContext();
 
         // GET: BoxingClass
-        public ActionResult Index()
+        public ActionResult Schedule()
         {
 
             //monday classes
@@ -76,11 +76,16 @@ namespace BoxingSite.Controllers
         }
 
 
+        public ActionResult Classes()
+        {
+
+            return View(context.BoxingClasses.ToList());
+        }
 
 
 
 
-        
+
 
         protected override void Dispose(bool disposing)
         {

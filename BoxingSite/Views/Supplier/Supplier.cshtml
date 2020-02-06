@@ -1,0 +1,75 @@
+﻿@model IEnumerable<BoxingSite.Models.Supplier>
+@using Microsoft.AspNet.Identity;
+
+@{
+    ViewBag.Title = "King Boxing Suppliers";
+}
+
+<div id="wrapper">
+    <!-- One -->
+    <section id="one" class="main sectionBgColor">
+        <div class="inner spotlight style1">
+            <div class="content align-center">
+                <header class="major">
+                    <h2>@ViewBag.Title</h2>
+                </header>
+                <p>
+                    Below is an update representation of all the Suppliers which interact with King Boxing.
+                </p>
+            </div>
+        </div>
+    </section>
+    <div id="payg">
+        <div class="inner">
+
+            <h2>Supplier</h2>
+
+            @if (User.IsInRole("Administrator"))
+            {
+                @Html.ActionLink("Create Supplier Details", "CreateSupplier", "Supplier")
+
+            }
+
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Mobile</th>
+                    @if (User.IsInRole("Administrator"))
+                    {
+                        <th>Manage</th>
+                    }
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@item.Mobile</td>
+                        @if (User.IsInRole("Administrator"))
+                        {
+                        <td>
+                            <a href="/Supplier/EditSupplier/@item.SupplierID">Edit</a>
+                            @Html.ActionLink("Delete", "DeleteSupplier", new { id = item.SupplierID },
+                                           new { onclick = "return confirm('Are you sure you wish to delete these Supplier details? It will no longer be displayed on the system. ');" })
+
+                        </td>
+                        }
+                    </tr>
+
+                }
+
+            </table>
+        </div>
+    </div>
+
+    <div class="sectionBgColor align-center ">
+        <p>If you have any queries call: 07490 1231239</p>
+
+        <br />
+    </div>
+
+
+</div>
+
+
+
+
