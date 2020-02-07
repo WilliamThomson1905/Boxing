@@ -36,9 +36,10 @@
                         </td>
                         <td>
                             @Html.ActionLink("Edit", "EditBoxingClass", new { id = item.BoxingClassID }) |
-                            @Html.ActionLink("Details", "DetailsBoxingClass", new { id = item.BoxingClassID }) |
                             @Html.ActionLink("Delete", "DeleteBoxingClass", new { id = item.BoxingClassID },
-                                                                      new { onclick = "return confirm('Are you sure you wish to delete this Class? It will no longer be displayed on system. ');" })
+                             new { onclick = "return confirm('Are you sure you wish to delete this Class? " +
+                                          "It will DELETE ALL gym session associated with it!');"
+                             })
                         </td>
                     </tr>
                 }

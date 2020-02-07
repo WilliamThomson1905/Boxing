@@ -179,10 +179,10 @@ namespace BoxingSite.Models
         public int ScheduleID { get; set; }
 
         [DataType(DataType.Time)]
-        public string StartTime { get; set; }
+        public TimeSpan StartTime { get; set; }
 
         [DataType(DataType.Time)]
-        public string EndTime { get; set; }
+        public TimeSpan EndTime { get; set; }
         public Day Day { get; set; }
 
         public ClassStatus ClassStatus { get; set; }
@@ -196,6 +196,9 @@ namespace BoxingSite.Models
         public string TrainerID { get; set; }
         // Corresponding navigation property 
         public virtual TrainerUser Trainer { get; set; }
+        
+
+
 
         public Schedule()
         {
@@ -205,7 +208,7 @@ namespace BoxingSite.Models
 
     public enum ClassStatus
     {
-        FULLYBOOKED, CANCELLED, AVAILABLE
+        AVAILABLE, FULLYBOOKED, CANCELLED
     }
 
     public enum Day

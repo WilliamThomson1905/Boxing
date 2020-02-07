@@ -53,6 +53,24 @@ namespace BoxingSite.Controllers
             return View("CreateBoxingClass", "Schedule");
         }
 
+        
+       
+        public ActionResult ClassScheduleDetails(int? Id)
+        {
+            if (Id == null)
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            
+           Schedule boxingClassSession = context.Schedule.Find(Id);
+
+            if (boxingClassSession == null)
+                return HttpNotFound();
+            
+
+
+            // ViewBag.TrainerID = new SelectList(context.TrainerUsers, "ID", "Forename");
+            return View(boxingClassSession);
+        }
+
 
         [Authorize(Roles = "Administrator")]
         public ActionResult EditBoxingClass(int? Id)
@@ -67,7 +85,7 @@ namespace BoxingSite.Controllers
             
 
 
-            ViewBag.TrainerID = new SelectList(context.TrainerUsers, "ID", "Forename");
+            // ViewBag.TrainerID = new SelectList(context.TrainerUsers, "ID", "Forename");
             return View(boxingClass);
         }
 
@@ -90,12 +108,47 @@ namespace BoxingSite.Controllers
                 return RedirectToAction("Classes", "Schedule");
             }
 
-            ViewBag.TrainerID = new SelectList(context.TrainerUsers, "ID", "Forename");
+            // ViewBag.TrainerID = new SelectList(context.TrainerUsers, "ID", "Forename");
             return View(pBoxingClass);
         }
 
 
 
+        // DELETE: /Schedule/DeleteBoxingClass/id
+        [Authorize(Roles = "Administrator")]
+        #region public ActionResult DeleteBoxingClass(int Id)
+        public ActionResult DeleteBoxingClass(int Id)
+        {
+
+            try
+            {
+                // find specified class
+                BoxingClass boxingClass = context.BoxingClasses.Find(Id);
+
+                // find all gym sessions associated with Boxing Class AND remove/delete
+                var boxingClassSessions = context.Schedule.Where(c => c.BoxingClassID == boxingClass.BoxingClassID);
+                if (boxingClassSessions.Any())
+                {
+                    foreach (var session in boxingClassSessions)
+                    {
+                        context.Schedule.Remove(session);
+                    }
+                }
+
+
+
+                context.BoxingClasses.Remove(boxingClass);
+                context.SaveChanges();
+                return RedirectToAction("Classes", "Schedule");
+
+            }
+            catch
+            {
+                return RedirectToAction("Classes", "Schedule");
+            }
+
+        }
+        #endregion
 
 
 
@@ -174,7 +227,8 @@ namespace BoxingSite.Controllers
 
         public ActionResult CreateSession()
         {
-            ViewBag.TrainerID = new SelectList(context.TrainerUsers, "ID", "Forename");
+            //ViewBag.TrainerID = new SelectList(context.TrainerUsers, "ID", "Forename");
+            ViewBag.TrainerID = GetTrainersSelectListItem(-1);
             ViewBag.BoxingClassID = new SelectList(context.BoxingClasses, "BoxingClassID", "Title");
             return View();
         }
@@ -211,10 +265,15 @@ namespace BoxingSite.Controllers
                 return RedirectToAction("Schedule", "Schedule");
             }
 
-            ViewBag.TrainerID = new SelectList(context.TrainerUsers, "ID", "Forename");
+            ViewBag.TrainerID = GetTrainersSelectListItem(pSchedule.ScheduleID);
+            // ViewBag.TrainerID = new SelectList(context.TrainerUsers, "ID", "Forename");
             ViewBag.BoxingClassID = new SelectList(context.BoxingClasses, "BoxingClassID", "Title");
             return View("CreateBoxingClass", "Schedule");
         }
+
+
+
+
 
 
         [Authorize(Roles = "Administrator")]
@@ -229,12 +288,83 @@ namespace BoxingSite.Controllers
                 return HttpNotFound();
 
 
-
-            ViewBag.TrainerID = new SelectList(context.TrainerUsers, "ID", "forename");
+            // pass schedule Id 
+            ViewBag.TrainerID = GetTrainersSelectListItem(Id);
+            //ViewBag.TrainerID = new SelectList(context.TrainerUsers, "ID", "forename+surname", gymSession.TrainerID);
+            ViewBag.BoxingClassID = new SelectList(context.BoxingClasses, "BoxingClassID", "title", gymSession.BoxingClassID);
             return View(gymSession);
         }
 
 
+        public List<SelectListItem> GetTrainersSelectListItem(int? Id)
+        {
+            Schedule gymSession;
+
+            if (Id == -1) {
+                gymSession = context.Schedule.First();
+            } else {
+                gymSession = context.Schedule.Find(Id);
+            }
+
+
+            var allTrainers = context.TrainerUsers;
+            List<SelectListItem> trainers = new List<SelectListItem>();
+
+            foreach (var trainer in allTrainers)
+            {
+                trainers.Add(new SelectListItem()
+                {
+                    Text = trainer.Forename + " " + trainer.Surname,
+                    Value = trainer.Id,
+                    Selected = trainer.Id == gymSession.TrainerID ? true : false
+                });
+            } 
+            return trainers; 
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
+        public ActionResult EditSession([Bind(Include = "ScheduleID, StartTime, EndTime, Day," +
+            "ClassStatus, BoxingClassID, TrainerID")] Schedule pSchedule)
+        {
+            if (ModelState.IsValid)
+            {
+
+                context.Entry(pSchedule).State = EntityState.Modified;
+                context.SaveChanges();
+                return RedirectToAction("Schedule", "Schedule");
+            }
+
+            ViewBag.TrainerID = GetTrainersSelectListItem(pSchedule.ScheduleID);
+            // ViewBag.TrainerID = new SelectList(context.TrainerUsers, "ID", "forename", pSchedule.TrainerID);
+            ViewBag.BoxingClassID = new SelectList(context.BoxingClasses, "BoxingClassID", "title", pSchedule.BoxingClassID);
+            return View(pSchedule);
+        }
+
+
+
+        // DELETE: /Schedule/DeleteSession/id
+        [Authorize(Roles = "Administrator")]
+        #region public ActionResult DeleteSession(int Id)
+        public ActionResult DeleteSession(int Id)
+        {
+
+            try
+            {
+                Schedule schedule = context.Schedule.Find(Id);
+                context.Schedule.Remove(schedule);
+                context.SaveChanges();
+                return RedirectToAction("Session", "Schedule");
+
+            }
+            catch
+            {
+                return RedirectToAction("Session", "Schedule");
+            }
+
+        }
+        #endregion
 
 
 

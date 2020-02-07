@@ -1,0 +1,60 @@
+﻿@model BoxingSite.Models.Schedule
+
+
+<div id="wrapper">
+
+    <!-- One -->
+    <section class="main">
+        <div class="inner">
+            <h2>
+                @Html.DisplayFor(model => model.BoxingClass.Title)
+            </h2>
+            <p class="classTime">
+                with
+                @Html.DisplayFor(model => model.Trainer.Forename)
+                @Html.DisplayFor(model => model.Trainer.Surname)
+            </p>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.BoxingClass.Description)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.BoxingClass.Description)
+                </dd>
+
+                <dt>
+                    Duration
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.StartTime) - @Html.DisplayFor(model => model.EndTime)
+                </dd>
+
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Day)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Day)
+                </dd>
+
+                <dt>
+                    Availability
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ClassStatus)
+                </dd>
+
+            </dl>
+            <p>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.ScheduleID , @class="btn btn-default"}) |
+                @Html.ActionLink("Back to Schedule", "Schedule")
+            </p>
+        </div>
+       
+    </section>
+</div>

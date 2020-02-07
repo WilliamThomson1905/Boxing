@@ -31,20 +31,24 @@
 
     <div>
         <div class="inner">
-            @if (User.Identity.IsAuthenticated)
-            {
+            <div class="text-center stack">
 
-                if (User.IsInRole("Administrator"))
+                @if (User.Identity.IsAuthenticated)
                 {
-                    <br />
-                    @Html.ActionLink("Create Session", "CreateSession", "Schedule")
-                    <br />
-                    @Html.ActionLink("Manage Classes", "Classes", "Schedule")
-                    <br />
-                    <br />
+
+                    if (User.IsInRole("Administrator"))
+                    {
+
+                        @Html.ActionLink("Create Session", "CreateSession", "Schedule") 
+                        <span>&nbsp &nbsp</span>
+                        @Html.ActionLink("Manage Classes", "Classes", "Schedule")
+                        <hr />
+
+                    }
+
                 }
 
-            }
+            </div>
 
 
 
@@ -74,14 +78,16 @@
                                     <div class="classStatus"></div>
                                     <div class="className">@item.BoxingClass.Title</div>
                                     <div class="classTime">@item.StartTime-@item.EndTime</div>
-                                    <div class="classDuration">60 mins</div>
                                     <a href="/Trainer/TrainerDetails/@item.Trainer.Id" target="_blank">
                                         <div class="classDuration">@item.Trainer.Forename @item.Trainer.Surname </div>
                                     </a>
                                     @if (User.IsInRole("Administrator"))
                                     {
                                         @Html.ActionLink("Edit", "EditSession", new { Id = item.ScheduleID })
-                                 
+                                        <span>&nbsp &nbsp</span>
+                                        @Html.ActionLink("Delete", "DeleteSession", new { id = item.ScheduleID },
+                                          new { onclick = "return confirm('Are you sure you wish to delete this Gym Session? It will no longer be displayed on site. ');" })
+
                                     }
                                 </article>
                             </li>
@@ -114,10 +120,17 @@
                                     <div class="classStatus"></div>
                                     <div class="className">@item.BoxingClass.Title</div>
                                     <div class="classTime">@item.StartTime-@item.EndTime</div>
-                                    <div class="classDuration">60 mins</div>
                                     <a href="/Trainer/TrainerDetails/@item.Trainer.Id" target="_blank">
                                         <div class="classDuration">@item.Trainer.Forename @item.Trainer.Surname </div>
                                     </a>
+                                    @if (User.IsInRole("Administrator"))
+                                    {
+                                        @Html.ActionLink("Edit", "EditSession", new { Id = item.ScheduleID })
+                                        <span>&nbsp &nbsp</span>
+                                        @Html.ActionLink("Delete", "DeleteSession", new { id = item.ScheduleID },
+                                                                                  new { onclick = "return confirm('Are you sure you wish to delete this Gym Session? It will no longer be displayed on site. ');" })
+
+                                    }
                                 </article>
                             </li>
                         }
@@ -147,10 +160,17 @@
                                     <div class="classStatus"></div>
                                     <div class="className">@item.BoxingClass.Title</div>
                                     <div class="classTime">@item.StartTime-@item.EndTime</div>
-                                    <div class="classDuration">60 mins</div>
                                     <a href="/Trainer/TrainerDetails/@item.Trainer.Id" target="_blank">
                                         <div class="classDuration">@item.Trainer.Forename @item.Trainer.Surname </div>
                                     </a>
+                                    @if (User.IsInRole("Administrator"))
+                                    {
+                                        @Html.ActionLink("Edit", "EditSession", new { Id = item.ScheduleID })
+                                        <span>&nbsp &nbsp</span>
+                                        @Html.ActionLink("Delete", "DeleteSession", new { id = item.ScheduleID },
+                                                                                  new { onclick = "return confirm('Are you sure you wish to delete this Gym Session? It will no longer be displayed on site. ');" })
+
+                                    }
                                 </article>
                             </li>
                         }
@@ -180,10 +200,17 @@
                                     <div class="classStatus"></div>
                                     <div class="className">@item.BoxingClass.Title</div>
                                     <div class="classTime">@item.StartTime-@item.EndTime</div>
-                                    <div class="classDuration">60 mins</div>
                                     <a href="/Trainer/TrainerDetails/@item.Trainer.Id" target="_blank">
                                         <div class="classDuration">@item.Trainer.Forename @item.Trainer.Surname </div>
                                     </a>
+                                    @if (User.IsInRole("Administrator"))
+                                    {
+                                        @Html.ActionLink("Edit", "EditSession", new { Id = item.ScheduleID })
+                                        <span>&nbsp &nbsp</span>
+                                        @Html.ActionLink("Delete", "DeleteSession", new { id = item.ScheduleID },
+                                                                                  new { onclick = "return confirm('Are you sure you wish to delete this Gym Session? It will no longer be displayed on site. ');" })
+
+                                    }
                                 </article>
                             </li>
                         }
@@ -212,10 +239,17 @@
                                     <div class="classStatus"></div>
                                     <div class="className">@item.BoxingClass.Title</div>
                                     <div class="classTime">@item.StartTime-@item.EndTime</div>
-                                    <div class="classDuration">60 mins</div>
                                     <a href="/Trainer/TrainerDetails/@item.Trainer.Id" target="_blank">
                                         <div class="classDuration">@item.Trainer.Forename @item.Trainer.Surname </div>
                                     </a>
+                                    @if (User.IsInRole("Administrator"))
+                                    {
+                                        @Html.ActionLink("Edit", "EditSession", new { Id = item.ScheduleID })
+                                        <span>&nbsp &nbsp</span>
+                                        @Html.ActionLink("Delete", "DeleteSession", new { id = item.ScheduleID },
+                                                                                  new { onclick = "return confirm('Are you sure you wish to delete this Gym Session? It will no longer be displayed on site. ');" })
+
+                                    }
                                 </article>
                             </li>
                         }
@@ -243,12 +277,21 @@
                             <li class="@classBoard">
                                 <article class="style3">
                                     <div class="classStatus"></div>
-                                    <div class="className">@item.BoxingClass.Title</div>
+                                    <a href="/Schedule/ClassScheduleDetails/@item.ScheduleID" target="_blank">
+                                        <div class="className">@item.BoxingClass.Title</div>
+                                    </a>
                                     <div class="classTime">@item.StartTime-@item.EndTime</div>
-                                    <div class="classDuration">60 mins</div>
                                     <a href="/Trainer/TrainerDetails/@item.Trainer.Id" target="_blank">
                                         <div class="classDuration">@item.Trainer.Forename @item.Trainer.Surname </div>
                                     </a>
+                                    @if (User.IsInRole("Administrator"))
+                                    {
+                                        @Html.ActionLink("Edit", "EditSession", new { Id = item.ScheduleID })
+                                        <span>&nbsp</span>
+                                        @Html.ActionLink("Delete", "DeleteSession", new { id = item.ScheduleID },
+                                                                                  new { onclick = "return confirm('Are you sure you wish to delete this Gym Session? It will no longer be displayed on site. ');" })
+
+                                    }
                                 </article>
                             </li>
                         }
@@ -277,10 +320,17 @@
                                     <div class="classStatus"></div>
                                     <div class="className">@item.BoxingClass.Title</div>
                                     <div class="classTime">@item.StartTime-@item.EndTime</div>
-                                    <div class="classDuration">60 mins</div>
+                                    @*<div class="classDuration">60 mins</div>*@
                                     <a href="/Trainer/TrainerDetails/@item.Trainer.Id" target="_blank">
                                         <div class="classDuration">@item.Trainer.Forename @item.Trainer.Surname </div>
                                     </a>
+                                    @if (User.IsInRole("Administrator"))
+                                    {
+                                        @Html.ActionLink("Edit", "EditSession", new { Id = item.ScheduleID })
+                                        @Html.ActionLink("Delete", "DeleteSession", new { id = item.ScheduleID },
+                                          new { onclick = "return confirm('Are you sure you wish to delete this Gym Session? It will no longer be displayed on site. ');" })
+
+                                    }
                                 </article>
                             </li>
                         }

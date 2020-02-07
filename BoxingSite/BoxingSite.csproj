@@ -398,9 +398,12 @@
     <Content Include="Views\Schedule\CreateSession.cshtml" />
     <Content Include="Views\Schedule\EditBoxingClass.cshtml" />
     <Content Include="Views\Schedule\EditSession.cshtml" />
+    <Content Include="Views\Schedule\ClassDetails.cshtml" />
+    <Content Include="Views\Schedule\ClassScheduleDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ModelValidation\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>

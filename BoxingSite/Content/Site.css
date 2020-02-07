@@ -95,6 +95,7 @@ li {
     padding-top: 20px;
     font-weight: bold;
     font-size: 0.9em;
+    display: block;
 }
 
 .classTime {
@@ -132,9 +133,9 @@ li {
     }
 
     .className, .classTime {
-        padding: 10px;
+        padding: 0px;
         font-size: medium;
-        display: inline;
+        display: block;
     }
 
     .classDuration {

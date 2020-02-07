@@ -756,8 +756,8 @@ namespace BoxingSite.DAL
                 new Schedule()
                 {
                     Day = Day.MONDAY,
-                    StartTime = "10:00:00",
-                    EndTime = "11:00:00",
+                    StartTime = new TimeSpan(10, 0, 0),
+                    EndTime = new TimeSpan(11, 0, 0),
                     BoxingClass = boxingClasses[0],
                     BoxingClassID = boxingClasses[0].BoxingClassID,
                     TrainerID = trainerUsers[4].Id,
@@ -766,8 +766,8 @@ namespace BoxingSite.DAL
                 new Schedule()
                 {
                     Day = Day.MONDAY,
-                    StartTime = "16:00:00",
-                    EndTime = "17:30:00",
+                    StartTime = new TimeSpan(16, 0, 0),
+                    EndTime = new TimeSpan(17, 30, 0),
                     BoxingClass = boxingClasses[1],
                     BoxingClassID = boxingClasses[1].BoxingClassID,
                     TrainerID = trainerUsers[4].Id,
@@ -777,8 +777,8 @@ namespace BoxingSite.DAL
                 new Schedule()
                 {
                     Day = Day.MONDAY,
-                    StartTime = "17:00:00",
-                    EndTime = "17:45:00",
+                    StartTime = new TimeSpan(17, 0, 0),
+                    EndTime = new TimeSpan(17, 45, 0),
                     BoxingClass = boxingClasses[2],
                     BoxingClassID = boxingClasses[2].BoxingClassID,
                     TrainerID = trainerUsers[4].Id,
@@ -788,8 +788,8 @@ namespace BoxingSite.DAL
                 new Schedule()
                 {
                     Day = Day.MONDAY,
-                    StartTime = "17:45:00",
-                    EndTime = "18:30:00",
+                    StartTime = new TimeSpan(17, 45, 0),
+                    EndTime = new TimeSpan(18, 30, 0),
                     BoxingClass = boxingClasses[3],
                     BoxingClassID = boxingClasses[3].BoxingClassID,
                     TrainerID = trainerUsers[4].Id,
@@ -798,8 +798,8 @@ namespace BoxingSite.DAL
                 new Schedule()
                 {
                     Day = Day.MONDAY,
-                    StartTime = "18:30:00",
-                    EndTime = "19:30:00",
+                    StartTime = new TimeSpan(18, 30, 0),
+                    EndTime = new TimeSpan(19, 30, 0),
                     BoxingClass = boxingClasses[4],
                     BoxingClassID = boxingClasses[4].BoxingClassID,
                     TrainerID = trainerUsers[4].Id,
@@ -809,8 +809,8 @@ namespace BoxingSite.DAL
                 new Schedule()
                 {
                     Day = Day.MONDAY,
-                    StartTime = "19:30:00",
-                    EndTime = "20:00:00",
+                    StartTime = new TimeSpan(19, 30, 0),
+                    EndTime = new TimeSpan(20, 00, 0),
                     BoxingClass = boxingClasses[5],
                     BoxingClassID = boxingClasses[5].BoxingClassID,
                     ClassStatus = ClassStatus.FULLYBOOKED,
@@ -821,8 +821,8 @@ namespace BoxingSite.DAL
                 new Schedule()
                 {
                     Day = Day.MONDAY,
-                    StartTime = "20:00:00",
-                    EndTime = "20:30:00",
+                    StartTime = new TimeSpan(20, 0, 0),
+                    EndTime = new TimeSpan(20, 30, 0),
                     BoxingClass = boxingClasses[6],
                     BoxingClassID = boxingClasses[6].BoxingClassID,
                     TrainerID = trainerUsers[4].Id,
@@ -838,8 +838,8 @@ namespace BoxingSite.DAL
                 new Schedule()
                 {
                     Day = Day.TUESDAY,
-                    StartTime = "16:00:00",
-                    EndTime = "17:30:00",
+                    StartTime = new TimeSpan(16, 0, 0),
+                    EndTime = new TimeSpan(17, 30, 0),
                     BoxingClass = boxingClasses[1],
                     BoxingClassID = boxingClasses[1].BoxingClassID,
                     TrainerID = trainerUsers[4].Id,
@@ -849,8 +849,8 @@ namespace BoxingSite.DAL
                 new Schedule()
                 {
                     Day = Day.TUESDAY,
-                     StartTime = "17:00:00",
-                    EndTime = "17:45:00",
+                     StartTime = new TimeSpan(17, 30, 0),
+                    EndTime = new TimeSpan(17, 45, 0),
                     BoxingClass = boxingClasses[0],
                     BoxingClassID = boxingClasses[0].BoxingClassID,
                     TrainerID = trainerUsers[4].Id,
@@ -859,8 +859,8 @@ namespace BoxingSite.DAL
                 new Schedule()
                 {
                     Day = Day.TUESDAY,
-                    StartTime = "17:45:00",
-                    EndTime = "18:30:00",
+                    StartTime = new TimeSpan(17, 45, 0),
+                    EndTime = new TimeSpan(18, 30, 0),
                     BoxingClass = boxingClasses[4],
                     BoxingClassID = boxingClasses[4].BoxingClassID,
                     ClassStatus = ClassStatus.FULLYBOOKED,
@@ -871,8 +871,8 @@ namespace BoxingSite.DAL
                 new Schedule()
                 {
                     Day = Day.TUESDAY,
-                    StartTime = "18:30:00",
-                    EndTime = "19:30:00",
+                    StartTime = new TimeSpan(18, 30, 0),
+                    EndTime = new TimeSpan(19, 30, 0),
                     BoxingClass = boxingClasses[5],
                     BoxingClassID = boxingClasses[5].BoxingClassID,
                     TrainerID = trainerUsers[4].Id,
@@ -881,8 +881,8 @@ namespace BoxingSite.DAL
                 new Schedule()
                 {
                     Day = Day.TUESDAY,
-                    StartTime = "19:30:00",
-                    EndTime = "20:00:00",
+                    StartTime = new TimeSpan(19, 30, 0),
+                    EndTime = new TimeSpan(20, 0, 0),
                     BoxingClass = boxingClasses[6],
                     BoxingClassID = boxingClasses[6].BoxingClassID,
                     TrainerID = trainerUsers[4].Id,
@@ -892,8 +892,8 @@ namespace BoxingSite.DAL
                 new Schedule()
                 {
                     Day = Day.TUESDAY,
-                    StartTime = "20:00:00",
-                    EndTime = "20:30:00",
+                    StartTime = new TimeSpan(20, 0, 0),
+                    EndTime = new TimeSpan(20, 30, 0),
                     BoxingClass = boxingClasses[2],
                     BoxingClassID = boxingClasses[2].BoxingClassID,
                     TrainerID = trainerUsers[4].Id,
@@ -911,8 +911,8 @@ namespace BoxingSite.DAL
                 new Schedule()
                 {
                     Day = Day.WEDNESDAY,
-                    StartTime = "13:00:00",
-                    EndTime = "15:00:00",
+                    StartTime = new TimeSpan(13, 0, 0),
+                    EndTime = new TimeSpan(14, 30, 0),
                     BoxingClass = boxingClasses[2],
                     BoxingClassID = boxingClasses[2].BoxingClassID,
                     TrainerID = trainerUsers[4].Id,
@@ -923,8 +923,8 @@ namespace BoxingSite.DAL
                 new Schedule()
                 {
                     Day = Day.WEDNESDAY,
-                    StartTime = "16:30:00",
-                    EndTime = "17:30:00",
+                    StartTime = new TimeSpan(16, 30, 0),
+                    EndTime = new TimeSpan(17, 30, 0),
                     BoxingClass = boxingClasses[7],
                     BoxingClassID = boxingClasses[7].BoxingClassID,
                     TrainerID = trainerUsers[4].Id,
@@ -934,8 +934,8 @@ namespace BoxingSite.DAL
                 new Schedule()
                 {
                     Day = Day.WEDNESDAY,
-                    StartTime = "17:30:00",
-                    EndTime = "18:30:00",
+                    StartTime = new TimeSpan(17, 30, 0),
+                    EndTime = new TimeSpan(18, 30, 0),
                     BoxingClass = boxingClasses[0],
                     BoxingClassID = boxingClasses[0].BoxingClassID,
                     TrainerID = trainerUsers[4].Id,
@@ -945,8 +945,8 @@ namespace BoxingSite.DAL
                 new Schedule()
                 {
                     Day = Day.WEDNESDAY,
-                    StartTime = "18:30:00",
-                    EndTime = "19:30:00",
+                    StartTime = new TimeSpan(18, 30, 0),
+                    EndTime = new TimeSpan(19, 30, 0),
                     BoxingClass = boxingClasses[5],
                     BoxingClassID = boxingClasses[5].BoxingClassID,
                     TrainerID = trainerUsers[4].Id,
@@ -956,8 +956,8 @@ namespace BoxingSite.DAL
                 new Schedule()
                 {
                     Day = Day.WEDNESDAY,
-                    StartTime = "19:30:00",
-                    EndTime = "20:45:00",
+                    StartTime = new TimeSpan(19, 30, 0),
+                    EndTime = new TimeSpan(20, 45, 0),
                     BoxingClass = boxingClasses[6],
                     BoxingClassID = boxingClasses[6].BoxingClassID,
                     TrainerID = trainerUsers[4].Id,
@@ -974,8 +974,8 @@ namespace BoxingSite.DAL
                 new Schedule()
                 {
                     Day = Day.THURSDAY,
-                    StartTime = "16:30:00",
-                    EndTime = "17:30:00",
+                    StartTime = new TimeSpan(16, 30, 0),
+                    EndTime = new TimeSpan(17, 30, 0),
                     BoxingClass = boxingClasses[0],
                     BoxingClassID = boxingClasses[0].BoxingClassID,
                     TrainerID = trainerUsers[4].Id,
@@ -984,8 +984,8 @@ namespace BoxingSite.DAL
                 new Schedule()
                 {
                     Day = Day.THURSDAY,
-                    StartTime = "17:00:00",
-                    EndTime = "19:00:00",
+                    StartTime = new TimeSpan(17, 0, 0),
+                    EndTime = new TimeSpan(18, 30, 0),
                     BoxingClass = boxingClasses[3],
                     BoxingClassID = boxingClasses[3].BoxingClassID,
                     TrainerID = trainerUsers[4].Id,
@@ -994,8 +994,8 @@ namespace BoxingSite.DAL
                 new Schedule()
                 {
                     Day = Day.THURSDAY,
-                    StartTime = "19:00:00",
-                    EndTime = "20:45:00",
+                    StartTime = new TimeSpan(19, 30, 0),
+                    EndTime = new TimeSpan(20, 45, 0),
                     BoxingClass = boxingClasses[4],
                     BoxingClassID = boxingClasses[4].BoxingClassID,
                     TrainerID = trainerUsers[4].Id,
@@ -1004,8 +1004,8 @@ namespace BoxingSite.DAL
                 new Schedule()
                 {
                     Day = Day.THURSDAY,
-                    StartTime = "20:45:00",
-                    EndTime = "21:15:00",
+                    StartTime = new TimeSpan(20, 45, 0),
+                    EndTime = new TimeSpan(21, 15, 0),
                     BoxingClass = boxingClasses[6],
                     BoxingClassID = boxingClasses[6].BoxingClassID,
                     ClassStatus = ClassStatus.CANCELLED,
@@ -1021,8 +1021,8 @@ namespace BoxingSite.DAL
                 new Schedule()
                 {
                     Day = Day.FRIDAY,
-                    StartTime = "16:30:00",
-                    EndTime = "17:30:00",
+                    StartTime = new TimeSpan(16, 30, 0),
+                    EndTime= new TimeSpan(17, 30, 0),
                     BoxingClass = boxingClasses[1],
                     BoxingClassID = boxingClasses[1].BoxingClassID,
                     TrainerID = trainerUsers[4].Id,
@@ -1031,8 +1031,8 @@ namespace BoxingSite.DAL
                 new Schedule()
                 {
                     Day = Day.FRIDAY,
-                    StartTime = "17:00:00",
-                    EndTime = "19:00:00",
+                    StartTime = new TimeSpan(17, 30, 0),
+                    EndTime = new TimeSpan(19, 0, 0),
                     BoxingClass = boxingClasses[2],
                     BoxingClassID = boxingClasses[2].BoxingClassID,
                     TrainerID = trainerUsers[4].Id,
@@ -1041,8 +1041,8 @@ namespace BoxingSite.DAL
                 new Schedule()
                 {
                     Day = Day.FRIDAY,
-                    StartTime = "19:00:00",
-                    EndTime = "20:45:00",
+                    StartTime = new TimeSpan(19, 0, 0),
+                    EndTime = new TimeSpan(20, 45, 0),
                     BoxingClass = boxingClasses[4],
                     BoxingClassID = boxingClasses[4].BoxingClassID,
                     TrainerID = trainerUsers[4].Id,
@@ -1051,8 +1051,8 @@ namespace BoxingSite.DAL
                 new Schedule()
                 {
                     Day = Day.FRIDAY,
-                    StartTime = "20:45:00",
-                    EndTime = "21:15:00",
+                    StartTime = new TimeSpan(20, 45, 0),
+                    EndTime = new TimeSpan(21, 0, 0),
                     BoxingClass = boxingClasses[7],
                     BoxingClassID = boxingClasses[7].BoxingClassID,
                     TrainerID = trainerUsers[4].Id,
@@ -1065,8 +1065,8 @@ namespace BoxingSite.DAL
                 new Schedule()
                 {
                     Day = Day.SATURDAY,
-                    StartTime = "07:30:00",
-                    EndTime = "08:30:00",
+                    StartTime = new TimeSpan(07, 30, 0),
+                    EndTime = new TimeSpan(08, 30, 0),
                     BoxingClass = boxingClasses[0],
                     BoxingClassID = boxingClasses[0].BoxingClassID,
                     ClassStatus = ClassStatus.CANCELLED,
@@ -1079,8 +1079,8 @@ namespace BoxingSite.DAL
                 new Schedule()
                 {
                     Day = Day.SATURDAY,
-                    StartTime = "08:30:00",
-                    EndTime = "09:00:00",
+                    StartTime = new TimeSpan(08, 30, 0),
+                    EndTime = new TimeSpan(09, 30, 0),
                     BoxingClass = boxingClasses[7],
                     BoxingClassID = boxingClasses[7].BoxingClassID,
                     TrainerID = trainerUsers[4].Id,
@@ -1095,8 +1095,8 @@ namespace BoxingSite.DAL
                 new Schedule()
                 {
                     Day = Day.SUNDAY,
-                    StartTime = "07:00:00",
-                    EndTime = "08:00:00",
+                    StartTime = new TimeSpan(07, 0, 0),
+                    EndTime = new TimeSpan(08, 30, 0),
                     BoxingClass = boxingClasses[2],
                     BoxingClassID = boxingClasses[2].BoxingClassID,
                     TrainerID = trainerUsers[4].Id,
