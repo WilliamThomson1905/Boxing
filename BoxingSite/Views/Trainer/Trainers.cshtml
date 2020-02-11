@@ -37,8 +37,10 @@
     <!-- Main -->
     <div id="">
         <div class="inner">
-            @Html.ActionLink("Create Trainer", "Create", "Trainer", new { @class = "button primary" })
-            <br />
+            @if (User.IsInRole("Administrator")) {
+                @Html.ActionLink("Create Trainer", "Create", "Trainer")
+                <br /><br />
+            }
             <section class="tiles">
                 @foreach (var person in Model)
                 {

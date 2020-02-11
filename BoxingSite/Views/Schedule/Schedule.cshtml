@@ -6,7 +6,6 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
-
     var classBoard = "classBoard";
 }
 
@@ -40,7 +39,7 @@
                     {
 
                         @Html.ActionLink("Create Session", "CreateSession", "Schedule") 
-                        <span>&nbsp &nbsp</span>
+                        <span>&nbsp; &nbsp;</span>
                         @Html.ActionLink("Manage Classes", "Classes", "Schedule")
                         <hr />
 
@@ -51,15 +50,54 @@
             </div>
 
 
-
+            <div class="scheduleKey">
+                <div class="statusKey classBoardAvailable">Available</div>
+                <div class="statusKey statusKeyFullyBooked">
+                    Fully Booked
+                </div>
+                <div class="statusKey statusKeyCancelled">
+                    Cancelled
+                </div>
+            </div>
+                
 
             <div class="schedule">
 
 
+                @for (int i = 0; i <= 6; i++)
+                {
+                    string[] days = { "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY" };
+                    var day = days[i];
+                    var listOfClasses = Model.Monday;
+
+                    switch (day)
+                    {
+                        case "MONDAY":
+                            listOfClasses = Model.Monday;
+                            break;
+                        case "TUESDAY":
+                            listOfClasses = Model.Tuesday;
+                            break;
+                        case "WEDNESDAY":
+                            listOfClasses = Model.Wednesday;
+                            break;
+                        case "THURSDAY":
+                            listOfClasses = Model.Thursday;
+                            break;
+                        case "FRIDAY":
+                            listOfClasses = Model.Friday;
+                            break;
+                        case "SATURDAY":
+                            listOfClasses = Model.Saturday;
+                            break;
+                        default:
+                            listOfClasses = Model.Sunday;
+                            break;
+                    }
                 <div class="schedulColumn">
-                    <h2 class="schedulColumnTitle">.MON.</h2>
+                    <h2 class="schedulColumnTitle">@days[i]</h2>
                     <ul>
-                        @foreach (var item in Model.Monday.ToList())
+                        @foreach (var item in listOfClasses)
                         {
                             switch (item.ClassStatus)
                             {
@@ -70,272 +108,40 @@
                                     classBoard = "classBoardCancelled";
                                     break;
                                 default:
-                                    classBoard = "classBoard";
-                                    break;
-                            }
-                            <li class="@classBoard">
-                                <article class="style3">
-                                    <div class="classStatus"></div>
-                                    <div class="className">@item.BoxingClass.Title</div>
-                                    <div class="classTime">@item.StartTime-@item.EndTime</div>
-                                    <a href="/Trainer/TrainerDetails/@item.Trainer.Id" target="_blank">
-                                        <div class="classDuration">@item.Trainer.Forename @item.Trainer.Surname </div>
-                                    </a>
-                                    @if (User.IsInRole("Administrator"))
-                                    {
-                                        @Html.ActionLink("Edit", "EditSession", new { Id = item.ScheduleID })
-                                        <span>&nbsp &nbsp</span>
-                                        @Html.ActionLink("Delete", "DeleteSession", new { id = item.ScheduleID },
-                                          new { onclick = "return confirm('Are you sure you wish to delete this Gym Session? It will no longer be displayed on site. ');" })
-
-                                    }
-                                </article>
-                            </li>
-                        }
-                    </ul>
-                </div>
-
-
-
-
-                <div class="schedulColumn">
-                    <h2 class="schedulColumnTitle">.TUES.</h2>
-                    <ul>
-                        @foreach (var item in Model.Tuesday.ToList())
-                        {
-                            switch (item.ClassStatus)
-                            {
-                                case ClassStatus.FULLYBOOKED:
-                                    classBoard = "classBoardBooked";
-                                    break;
-                                case ClassStatus.CANCELLED:
-                                    classBoard = "classBoardCancelled";
-                                    break;
-                                default:
-                                    classBoard = "classBoard";
-                                    break;
-                            }
-                            <li class="@classBoard">
-                                <article class="style3">
-                                    <div class="classStatus"></div>
-                                    <div class="className">@item.BoxingClass.Title</div>
-                                    <div class="classTime">@item.StartTime-@item.EndTime</div>
-                                    <a href="/Trainer/TrainerDetails/@item.Trainer.Id" target="_blank">
-                                        <div class="classDuration">@item.Trainer.Forename @item.Trainer.Surname </div>
-                                    </a>
-                                    @if (User.IsInRole("Administrator"))
-                                    {
-                                        @Html.ActionLink("Edit", "EditSession", new { Id = item.ScheduleID })
-                                        <span>&nbsp &nbsp</span>
-                                        @Html.ActionLink("Delete", "DeleteSession", new { id = item.ScheduleID },
-                                                                                  new { onclick = "return confirm('Are you sure you wish to delete this Gym Session? It will no longer be displayed on site. ');" })
-
-                                    }
-                                </article>
-                            </li>
-                        }
-
-                    </ul>
-                </div>
-
-                <div class="schedulColumn">
-                    <h2 class="schedulColumnTitle">.WED.</h2>
-                    <ul>
-                        @foreach (var item in Model.Wednesday.ToList())
-                        {
-                            switch (item.ClassStatus)
-                            {
-                                case ClassStatus.FULLYBOOKED:
-                                    classBoard = "classBoardBooked";
-                                    break;
-                                case ClassStatus.CANCELLED:
-                                    classBoard = "classBoardCancelled";
-                                    break;
-                                default:
-                                    classBoard = "classBoard";
-                                    break;
-                            }
-                            <li class="@classBoard">
-                                <article class="style3">
-                                    <div class="classStatus"></div>
-                                    <div class="className">@item.BoxingClass.Title</div>
-                                    <div class="classTime">@item.StartTime-@item.EndTime</div>
-                                    <a href="/Trainer/TrainerDetails/@item.Trainer.Id" target="_blank">
-                                        <div class="classDuration">@item.Trainer.Forename @item.Trainer.Surname </div>
-                                    </a>
-                                    @if (User.IsInRole("Administrator"))
-                                    {
-                                        @Html.ActionLink("Edit", "EditSession", new { Id = item.ScheduleID })
-                                        <span>&nbsp &nbsp</span>
-                                        @Html.ActionLink("Delete", "DeleteSession", new { id = item.ScheduleID },
-                                                                                  new { onclick = "return confirm('Are you sure you wish to delete this Gym Session? It will no longer be displayed on site. ');" })
-
-                                    }
-                                </article>
-                            </li>
-                        }
-                    </ul>
-                </div>
-
-                <div class="schedulColumn">
-                    <h2 class="schedulColumnTitle">.THURS.</h2>
-                    <ul>
-                        @foreach (var item in Model.Thursday.ToList())
-                        {
-                            switch (item.ClassStatus)
-                            {
-                                case ClassStatus.FULLYBOOKED:
-                                    classBoard = "classBoardBooked";
-                                    break;
-                                case ClassStatus.CANCELLED:
-                                    classBoard = "classBoardCancelled";
-                                    break;
-                                default:
-                                    classBoard = "classBoard";
+                                    classBoard = "classBoardAvailable";
                                     break;
                             }
 
-                            <li class="@classBoard">
-                                <article class="style3">
-                                    <div class="classStatus"></div>
-                                    <div class="className">@item.BoxingClass.Title</div>
-                                    <div class="classTime">@item.StartTime-@item.EndTime</div>
-                                    <a href="/Trainer/TrainerDetails/@item.Trainer.Id" target="_blank">
-                                        <div class="classDuration">@item.Trainer.Forename @item.Trainer.Surname </div>
-                                    </a>
-                                    @if (User.IsInRole("Administrator"))
-                                    {
-                                        @Html.ActionLink("Edit", "EditSession", new { Id = item.ScheduleID })
-                                        <span>&nbsp &nbsp</span>
-                                        @Html.ActionLink("Delete", "DeleteSession", new { id = item.ScheduleID },
-                                                                                  new { onclick = "return confirm('Are you sure you wish to delete this Gym Session? It will no longer be displayed on site. ');" })
 
-                                    }
-                                </article>
-                            </li>
-                        }
-                    </ul>
-                </div>
-
-                <div class="schedulColumn">
-                    <h2 class="schedulColumnTitle">.FRI.</h2>
-                    <ul>
-                        @foreach (var item in Model.Friday.ToList())
-                        {
-                            switch (item.ClassStatus)
-                            {
-                                case ClassStatus.FULLYBOOKED:
-                                    classBoard = "classBoardBooked";
-                                    break;
-                                case ClassStatus.CANCELLED:
-                                    classBoard = "classBoardCancelled";
-                                    break;
-                                default:
-                                    classBoard = "classBoard";
-                                    break;
-                            }
-                            <li class="@classBoard">
-                                <article class="style3">
-                                    <div class="classStatus"></div>
-                                    <div class="className">@item.BoxingClass.Title</div>
-                                    <div class="classTime">@item.StartTime-@item.EndTime</div>
-                                    <a href="/Trainer/TrainerDetails/@item.Trainer.Id" target="_blank">
-                                        <div class="classDuration">@item.Trainer.Forename @item.Trainer.Surname </div>
-                                    </a>
-                                    @if (User.IsInRole("Administrator"))
-                                    {
-                                        @Html.ActionLink("Edit", "EditSession", new { Id = item.ScheduleID })
-                                        <span>&nbsp &nbsp</span>
-                                        @Html.ActionLink("Delete", "DeleteSession", new { id = item.ScheduleID },
-                                                                                  new { onclick = "return confirm('Are you sure you wish to delete this Gym Session? It will no longer be displayed on site. ');" })
-
-                                    }
-                                </article>
-                            </li>
-                        }
-
-                    </ul>
-                </div>
-
-                <div class="schedulColumn">
-                    <h2 class="schedulColumnTitle">.SAT.</h2>
-                    <ul>
-                        @foreach (var item in Model.Saturday.ToList())
-                        {
-                            switch (item.ClassStatus)
-                            {
-                                case ClassStatus.FULLYBOOKED:
-                                    classBoard = "classBoardBooked";
-                                    break;
-                                case ClassStatus.CANCELLED:
-                                    classBoard = "classBoardCancelled";
-                                    break;
-                                default:
-                                    classBoard = "classBoard";
-                                    break;
-                            }
-                            <li class="@classBoard">
-                                <article class="style3">
+                            <li class="classBoard @classBoard">
+                                <article class="">
                                     <div class="classStatus"></div>
                                     <a href="/Schedule/ClassScheduleDetails/@item.ScheduleID" target="_blank">
                                         <div class="className">@item.BoxingClass.Title</div>
-                                    </a>
-                                    <div class="classTime">@item.StartTime-@item.EndTime</div>
-                                    <a href="/Trainer/TrainerDetails/@item.Trainer.Id" target="_blank">
-                                        <div class="classDuration">@item.Trainer.Forename @item.Trainer.Surname </div>
+                                        <div class="classTime">
+                                            @string.Format("{0:00}:{1:00}", item.StartTime.Hours, item.StartTime.Minutes)
+                                            &nbsp;-&nbsp;
+                                            @string.Format("{0:00}:{1:00}", item.EndTime.Hours, item.EndTime.Minutes)
+
+                                        </div>
+                                        <div class="classInstructor">@item.Trainer.Forename @item.Trainer.Surname </div>
                                     </a>
                                     @if (User.IsInRole("Administrator"))
                                     {
                                         @Html.ActionLink("Edit", "EditSession", new { Id = item.ScheduleID })
-                                        <span>&nbsp</span>
+                                        <span>&nbsp &nbsp</span>
                                         @Html.ActionLink("Delete", "DeleteSession", new { id = item.ScheduleID },
-                                                                                  new { onclick = "return confirm('Are you sure you wish to delete this Gym Session? It will no longer be displayed on site. ');" })
+                                            new { onclick = "return confirm('Are you sure you wish to delete this Gym Session? It will no longer be displayed on site. ');" })
 
                                     }
                                 </article>
                             </li>
                         }
                     </ul>
+                    
                 </div>
+                }
 
-                <div class="schedulColumn">
-                    <h2 class="schedulColumnTitle">.SUN.</h2>
-                    <ul>
-                        @foreach (var item in Model.Sunday.ToList())
-                        {
-                            switch (item.ClassStatus)
-                            {
-                                case ClassStatus.FULLYBOOKED:
-                                    classBoard = "classBoardBooked";
-                                    break;
-                                case ClassStatus.CANCELLED:
-                                    classBoard = "classBoardCancelled";
-                                    break;
-                                default:
-                                    classBoard = "classBoard";
-                                    break;
-                            }
-                            <li class="@classBoard">
-                                <article class="style3">
-                                    <div class="classStatus"></div>
-                                    <div class="className">@item.BoxingClass.Title</div>
-                                    <div class="classTime">@item.StartTime-@item.EndTime</div>
-                                    @*<div class="classDuration">60 mins</div>*@
-                                    <a href="/Trainer/TrainerDetails/@item.Trainer.Id" target="_blank">
-                                        <div class="classDuration">@item.Trainer.Forename @item.Trainer.Surname </div>
-                                    </a>
-                                    @if (User.IsInRole("Administrator"))
-                                    {
-                                        @Html.ActionLink("Edit", "EditSession", new { Id = item.ScheduleID })
-                                        @Html.ActionLink("Delete", "DeleteSession", new { id = item.ScheduleID },
-                                          new { onclick = "return confirm('Are you sure you wish to delete this Gym Session? It will no longer be displayed on site. ');" })
-
-                                    }
-                                </article>
-                            </li>
-                        }
-                    </ul>
-                </div>
 
             </div>
         </div>

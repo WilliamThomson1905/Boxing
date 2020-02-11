@@ -1,60 +1,142 @@
 ﻿@model BoxingSite.Models.Schedule
 
+<style>
 
+    /* Style the tab */
+    .tab {
+        overflow: hidden;
+        border: 0px;
+        background-color: #f1f1f1;
+    }
+
+    .detailsTab{
+        margin-bottom: 60px;
+    }
+
+
+
+    /* Style the buttons inside the tab */
+    .tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        font-size: 17px;
+        align-content: center;
+    }
+
+            /* Change background color of buttons on hover */
+            .tab button:hover, .tab button:active {
+                background-color: #ddd;
+            }
+
+            /* Create an active/current tablink class */
+            .tab button.active {
+                background-color: #ccc;
+            }
+
+    /* Style the tab content */
+    .tabcontent {
+        display: none;
+        border: 0px;
+        border-top: none;
+    }
+</style>
 <div id="wrapper">
 
     <!-- One -->
     <section class="main">
+
+
+
+
         <div class="inner">
-            <h2>
-                @Html.DisplayFor(model => model.BoxingClass.Title)
-            </h2>
-            <p class="classTime">
-                with
-                @Html.DisplayFor(model => model.Trainer.Forename)
-                @Html.DisplayFor(model => model.Trainer.Surname)
-            </p>
-            <hr />
-            <dl class="dl-horizontal">
-                <dt>
-                    @Html.DisplayNameFor(model => model.BoxingClass.Description)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.BoxingClass.Description)
-                </dd>
-
-                <dt>
-                    Duration
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.StartTime) - @Html.DisplayFor(model => model.EndTime)
-                </dd>
 
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.Day)
-                </dt>
+            <div class="detailsTab align-center" >
+                <button class="tablinks button primary" onclick="openTab(event, 'BoxingClass')">
+                    Session Details
+                </button>
 
-                <dd>
-                    @Html.DisplayFor(model => model.Day)
-                </dd>
-
-                <dt>
-                    Availability
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.ClassStatus)
-                </dd>
-
-            </dl>
-            <p>
-                @Html.ActionLink("Edit", "Edit", new { id = Model.ScheduleID , @class="btn btn-default"}) |
-                @Html.ActionLink("Back to Schedule", "Schedule")
-            </p>
+                <button class="tablinks button" onclick="openTab(event, 'Trainer')">
+                    Trainer Details
+                </button>
+            </div>
         </div>
-       
+        <div class="inner">
+
+            <div id="Trainer" class="tabcontent">
+                <h2>
+                    @Html.DisplayFor(model => model.Trainer.Forename)
+                    @Html.DisplayFor(model => model.Trainer.Surname)
+                </h2>
+                <p class="">
+                    @Html.DisplayFor(model => model.Trainer.Description)
+                </p>
+
+
+
+
+                @Html.ActionLink("View Trainer", "TrainerDetails", "Trainer", new { id = Model.Trainer.Id }, null)
+                &nbsp;&nbsp;
+                @Html.ActionLink("Back to Schedule", "Schedule", "Schedule")
+
+            </div>
+
+
+
+            <div id="BoxingClass" class="tabcontent" style="display: block">
+                <h2>@Html.DisplayFor(model => model.BoxingClass.Title)</h2>
+                <p class="italic">
+                    @Html.DisplayFor(model => model.Day):
+                    @Html.DisplayFor(model => model.StartTime) - @Html.DisplayFor(model => model.EndTime)
+                    <br />
+                    Class Status: @Html.DisplayFor(model => model.ClassStatus)
+                </p>
+                <p>
+                    @Html.DisplayFor(model => model.BoxingClass.Description)
+                </p>
+
+
+                <p>
+                    @if (User.IsInRole("Administrator")) {
+                        @Html.ActionLink("Edit", "EditSession", new { Id = Model.ScheduleID })
+                        @Html.Raw("&nbsp; &nbsp;")
+                    }
+                    @Html.ActionLink("Back to Schedule", "Schedule")
+                </p>
+            </div>
+        </div>
+
     </section>
 </div>
+
+
+
+
+
+<script>
+    function openTab(evt, infoName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+
+        }
+
+        tablinks = document.getElementsByClassName("tablinks");
+
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+            tablinks[i].className = tablinks[i].className.replace(" primary", "");
+        }
+
+        document.getElementById(infoName).style.display = "block";
+        evt.currentTarget.className += " active";
+        evt.currentTarget.className += " primary";
+
+    }
+</script>

@@ -44,7 +44,7 @@ li {
 .schedulColumn {
     margin: 0 5px;
     float: left;
-    width: 12.28%;
+    width: 13.1%;
 }
 
 .schedulColumnTitle {
@@ -57,45 +57,69 @@ li {
     margin: 10px 0px;
     height: 160px;
     border-radius: 5px;
+    font-family: "Oswald", sans-serif;
+    font-weight: 200;
+}
+
+.classBoardAvailable {
+    background-color: rgba(128, 128, 128, 0.1);
 
 }
 
-.classBoardBooked, .classBoardCancelled {
-    background-color: rgba(128, 128, 128, 0.7);
-    margin: 10px 0px;
-    height: 160px;
-    border-radius: 5px;
+.classBoardBooked {
+    background-color: rgba(199, 91, 155, 0.45);
+    color: white;
+}
+
+.classBoardCancelled {
+    background-color: rgba(174, 133, 202, 0.35);
+    color: white;
 }
 
 
+    .classBoardBooked:hover, .classBoardCancelled:hover {
+        color: rgba(132, 153, 231, 0);
+    }
+    .classBoardBooked a:hover, .classBoardCancelled a:hover {
+        color: rgba(132, 153, 231, 0) !important;
+        pointer-events: none !important;
+        cursor: default;
+    }
 
-    .classBoardBooked:after {
-        position: relative;
-        content: "Fully Booked";
-        font-size: 22px;
-        color: whitesmoke;
-        font-weight: unset;
-        top: -80px;
-        left: 8px
-    }
-    .classBoardCancelled:after {
-        position: relative;
-        content: "Cancelled";
-        font-size: 22px;
-        color: whitesmoke;
-        font-weight: lighter;
-        top: -80px;
-        left: 8px
-    }
+        .classBoardBooked:hover:after {
+            position: relative;
+            content: "Fully Booked";
+            color: white;
+            text-transform: uppercase;
+            top: -50px;
+        }
+        .classBoardCancelled:hover:after {
+            position: relative;
+            content: "Cancelled";
+            color: white;
+            text-transform: uppercase;
+            top: -50px;
+        }
+
+
+
+
+
+
+
 
 
 
 
 .className {
+    font-family: "Oswald", sans-serif;
+    font-weight: 400;
+
     padding-top: 20px;
     font-weight: bold;
-    font-size: 0.9em;
+    font-size: 1.0em;
     display: block;
+    text-transform: uppercase;
 }
 
 .classTime {
@@ -103,7 +127,7 @@ li {
     font-size: small;
 }
 
-.classDuration {
+.classInstructor {
     font-style: oblique;
     font-size: small;
 }
@@ -125,10 +149,9 @@ li {
     }
 
     .classBoard {
-        background-color: rgba(128, 128, 128, 0.1);
         margin: 10px 0px;
         padding: 10px 0px;
-        height: auto;
+        height: 140px;
         border-radius: 5px;
     }
 
@@ -138,12 +161,58 @@ li {
         display: block;
     }
 
-    .classDuration {
+    .classInstructor {
         width: 100%;
         font-size: medium;
         font-style: normal;
     }
+
+
+    .statusKey {
+        padding: 8px 5px;
+        margin: 0px 2px;
+       
+    }
+
 }
+
+
+
+.scheduleKey {
+    width: 100%;
+    padding: 20px 0px 40px 0px;
+    text-align: center;
+}
+
+.statusKey {
+    width: 33%;
+    padding: 10px 15px;
+    margin: 0px 5px;
+    display: inline;
+    font-family: "Oswald", sans-serif;
+    font-weight: 200;
+    text-transform: uppercase;
+}
+
+.statusKeyFullyBooked {
+    background-color: rgba(199, 91, 155, 0.45);
+    color: white;
+}
+
+
+.statusKeyCancelled {
+    background-color: rgba(174, 133, 202, 0.35);
+    color: white;
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -267,4 +336,10 @@ label {
 }
 .opacityFull {
     opacity: 1;
+}
+
+
+
+.italic {
+    font-style: italic;
 }
