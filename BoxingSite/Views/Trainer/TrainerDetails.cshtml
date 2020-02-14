@@ -48,11 +48,30 @@
         <div class="inner">
 
             <ul class="icons">
-                <li><a target="_blank" href="@Html.DisplayFor(model => model.Instagram)" class="icon brands fa-instagram fa-2x"><span class="label">Instagram</span></a></li>
-                <li><a target="_blank" href="@Html.DisplayFor(model => model.Facebook)" class="icon brands fab fa-facebook-square fa-2x"><span class="label">Facebook</span></a></li>
-                <li><a target="_blank" href="@Html.DisplayFor(model => model.Twitter)" class="icon brands fa-twitter fa-2x"><span class="label">Twitter</span></a></li>
-                <li><a target="_blank" href="@Html.DisplayFor(model => model.LinkedIn)" class="icon brands fab fa-linkedin fa-2x"><span class="label">LinkedIn</span></a></li>
-                <li><a target="_blank" href="@Html.DisplayFor(model => model.Email)" class="icon far fa-envelope fa-2x"><span class="label">Email</span></a></li>
+                @if (Model.Instagram != null)
+                {
+                    <li><a target="_blank" href="@Html.DisplayFor(model => model.Instagram)" class="icon brands fa-instagram fa-2x"><span class="label">Instagram</span></a></li>
+                }
+                @if (Model.Facebook != null)
+                {
+                    <li><a target="_blank" href="@Html.DisplayFor(model => model.Facebook)" class="icon brands fab fa-facebook-square fa-2x"><span class="label">Facebook</span></a></li>
+                }
+                @if (Model.Twitter != null)
+                {
+                    <li><a target="_blank" href="@Html.DisplayFor(model => model.Twitter)" class="icon brands fa-twitter fa-2x"><span class="label">Twitter</span></a></li>
+                }
+                @if (Model.LinkedIn != null)
+                {
+                    <li><a target="_blank" href="@Html.DisplayFor(model => model.LinkedIn)" class="icon brands fab fa-linkedin fa-2x"><span class="label">LinkedIn</span></a></li>
+                }
+                @if (Model.Email != null)
+                {
+                    <li class="tooltip">
+                        <i class="far fa-envelope fa-2x"></i>
+                        <span class="tooltiptext">@Html.DisplayFor(model => model.Email)</span>
+                    </li>
+                 
+                }
             </ul>
         </div>
     </section>

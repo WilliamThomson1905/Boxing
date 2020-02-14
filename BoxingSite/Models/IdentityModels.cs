@@ -25,11 +25,15 @@ namespace BoxingSite.Models
         public string Surname { get; set; }
 
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:dd MMM yyyy}")]
+        //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? DOB { get; set; }
 
         [Phone]
         public string Mobile { get; set; }
+
+        [Compare(nameof(Mobile), ErrorMessage = "Mobile number doesn't match.")]
+        public string RepeatMobile { get; set; }
 
 
         // Has their account be hidden from other users/not admin? T: Yes -- F: No
@@ -56,7 +60,7 @@ namespace BoxingSite.Models
 
         [Display(Name = "Height-In feet")]
         public float Height { get; set; }
-        public char Gender { get; set; }
+        public bool Gender { get; set; }
 
     }
 

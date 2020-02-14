@@ -190,6 +190,7 @@ namespace BoxingSite.DAL
                     Title = "Mr",
                     PhoneNumber = "01418920828",
                     Mobile = "07418920828",
+                    RepeatMobile = "07418920828",
                     UserName = userName,
                     Email = userName,
                     EmailConfirmed = true
@@ -211,7 +212,7 @@ namespace BoxingSite.DAL
                     DOB = new DateTime(1964, 7, 9),
                     Weight =14.4F,
                     Height =201,
-                    Gender ='M',
+                    Gender =true,
                     SkillLevel = SkillLevel.BEGINNER
                 },
                 new GeneralUser {
@@ -222,7 +223,7 @@ namespace BoxingSite.DAL
                     DOB = new DateTime(1964, 7, 9),
                     Weight =10.4F,
                     Height =181,
-                    Gender ='F',
+                    Gender =false,
                     SkillLevel =SkillLevel.NOVICE
                 },
                 new GeneralUser {
@@ -233,7 +234,7 @@ namespace BoxingSite.DAL
                     DOB = new DateTime(1964, 7, 9),
                     Weight =8.2F,
                     Height =125,
-                    Gender ='F',
+                    Gender =false,
                     SkillLevel =SkillLevel.BEGINNER
                 },
                 new GeneralUser {
@@ -244,7 +245,7 @@ namespace BoxingSite.DAL
                     DOB = new DateTime(1964, 7, 9),
                     Weight =14.4F,
                     Height =201,
-                    Gender ='M',
+                    Gender =true,
                     SkillLevel =SkillLevel.COMPETENT
                 },
                 new GeneralUser {
@@ -255,7 +256,7 @@ namespace BoxingSite.DAL
                     DOB = new DateTime(1964, 7, 9),
                     Weight =14.4F,
                     Height =201,
-                    Gender ='M',
+                    Gender =true,
                     SkillLevel =SkillLevel.PROFICIENT}
             };
 

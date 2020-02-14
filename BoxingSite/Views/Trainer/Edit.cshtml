@@ -78,7 +78,7 @@
                 <div class="formRow">
                     @Html.LabelFor(model => model.DOB)
                     <div class="formInfo">
-                        @Html.EditorFor(model => model.DOB)
+                        @Html.TextBoxFor(model => model.DOB, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date" })
                         @Html.ValidationMessageFor(model => model.DOB, "", new { @class = "text-danger" })
                     </div>
                 </div>

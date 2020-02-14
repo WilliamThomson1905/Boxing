@@ -343,3 +343,54 @@ label {
 .italic {
     font-style: italic;
 }
+
+.form-group {
+    display: block;
+    width: 100%;
+}
+
+
+
+
+
+
+.tooltip {
+    display: -webkit-box;
+    display: flex;
+}
+
+.tooltip {
+    
+    align-items: center;
+
+    position: relative;
+   
+
+    font-size: 1em;
+    -webkit-transition: all 0.15s ease;
+    transition: all 0.15s ease;
+    background: #fff;
+    opacity: 1;
+
+}
+
+.tooltip:hover .tooltiptext {
+    opacity: 0.9;
+}
+
+/* Tooltips */
+.tooltiptext {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    padding: 0.8rem 1rem;
+
+   
+    font-size: 0.8rem;
+    font-weight: bold;
+    opacity: 0;
+    text-transform: uppercase;
+    transform: translate(-50%, -100%);
+    transition: all 0.3s ease;
+}

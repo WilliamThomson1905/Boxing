@@ -61,7 +61,7 @@ namespace BoxingSite.Controllers
             ViewBag.Title = "Trainers";
             ViewBag.Message = "Your Management/Trainers description page.";
 
-            return View(context.TrainerUsers.ToList());
+            return View(context.TrainerUsers.ToList().Where(m => m.AccountHidden == false));
         }
 
 
