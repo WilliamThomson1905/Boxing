@@ -223,4 +223,77 @@ namespace BoxingSite.Models
 
 
 
+
+
+
+    // When an BoxingClass is created 
+    [Table("Promotion")]
+    public class Promotion
+    {
+        public int PromotionID { get; set; }
+        public string Name { get; set; }
+        public string PromotedBy { get; set; }
+        public string AboutEvent { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd MMM yyyy}")]
+        public DateTime? PromotionDate { get; set; }
+        public TimeSpan PromotionStartTime { get; set; }
+        public TimeSpan PromotionEndTime { get; set; }
+        public string Photo { get; set; }
+        public int AmountGoing { get; set; }
+        public int RemainingSeats { get; set; }
+
+        // total seats/tickets available for purchase
+        public int TotalSeats { get; set; }
+
+
+        // Location Values of Promotion 
+        public string LocationBuiding { get; set; }
+        public string LocationStreetAddress { get; set; }
+        public string LocationPostCode { get; set; }
+        public string LocationCity { get; set; }
+
+
+        // Navigation property - BoxingClass can have one or more instances of 'Schedule' 
+        public virtual ICollection<Ticket> Tickets { get; set; }
+
+
+        public Promotion()
+        {
+            PromotedBy = "King Boxing";
+            AmountGoing = 0;
+            RemainingSeats = 0;
+        }
+    }
+
+    
+    public class Ticket
+    {
+        public int TicketID { get; set; }
+        public string Name { get; set; }
+        public double Cost { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd MMM yyyy}")]
+        public DateTime? TicketSalesEndDate { get; set; }
+        public string Description { get; set; }
+        public int Quantity { get; set; }
+
+
+        // Foriegn key - Ticket will have a single PromotinoPromotion will 
+        public int PromotionID { get; set; }
+        // Corresponding navigation property 
+        public virtual Promotion Promotion { get; set; }
+
+
+        public Ticket()
+        {
+            Quantity = 0; 
+        }
+    }
+
+
+
+
 }

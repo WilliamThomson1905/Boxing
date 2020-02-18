@@ -22,6 +22,9 @@ namespace BoxingSite.DAL
         public DbSet<Schedule> Schedule { get; set; }
 
 
+        public DbSet<Promotion> Promotions { get; set; }
+        public DbSet<Ticket> Tickets { get; set; }
+
 
 
         public ApplicationDbContext() : base("ApplicationDbContext", throwIfV1Schema: false)

@@ -176,6 +176,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\PromotionController.cs" />
     <Compile Include="Controllers\SupplierController.cs" />
     <Compile Include="Controllers\ScheduleController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -400,6 +401,11 @@
     <Content Include="Views\Schedule\EditSession.cshtml" />
     <Content Include="Views\Schedule\ClassDetails.cshtml" />
     <Content Include="Views\Schedule\ClassScheduleDetails.cshtml" />
+    <Content Include="Views\Promotion\CreatePromotion.cshtml" />
+    <Content Include="Views\Promotion\DeletePromotion.cshtml" />
+    <Content Include="Views\Promotion\Details.cshtml" />
+    <Content Include="Views\Promotion\EditPromotion.cshtml" />
+    <Content Include="Views\Promotion\Promotions.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
