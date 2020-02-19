@@ -7,7 +7,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <link href="~/assets/css/mainPhantom.css" rel="stylesheet" />
-
+<link href="~/Content/Site.css" rel="stylesheet" />
 
 <div id="wrapper">
     @*<section id="one" class="main sectionBgColor">
@@ -25,21 +25,23 @@
     
     <!-- Main -->
     <div id="">
+   
+
         <div class="inner">
-            @if (User.Identity.IsAuthenticated)
+            @if (!User.Identity.IsAuthenticated)
             {
-                if (User.IsInRole("Administrator"))
+                if (!User.IsInRole("Administrator"))
                 {
                     @Html.ActionLink("Create Promotion", "CreatePromotion", "Promotion")
                     <br /><br />
                 }
             }
             @*<div class="scheduleKey">
-            <div class="statusKey classBoardAvailable">@DateTime.Now.ToString("dddd dd MMMM, yyyy")</div>
-        </div>*@
+                <div class="statusKey classBoardAvailable">@DateTime.Now.ToString("dddd dd MMMM, yyyy")</div>
+            </div>*@
 
             <div>
-                <h1>Future Events</h1>
+                <h1>Upcoming Events</h1>
 
                 @*<i class="fas fa-sliders-h fa-3x"></i>*@
 
@@ -49,65 +51,13 @@
                 {
                     Random rand = new Random(DateTime.Now.Millisecond);
                     int styleNum = rand.Next(1, 7);
-                    <article class="style4">
-
-                        <a  href="../../Promotion/Details/@promotion.PromotionID">
-
-                            <h2 class="trainerName">
-                                @Html.DisplayFor(modelItem => promotion.Name)
-                                @*An Evening With Andre Ward*@
-
-                            </h2>
-                            <div class="italic">
-                                @String.Format("{0:dddd, dd MMMM yyyy}", promotion.PromotionDate)
-                                <br />
-                                @string.Format("{0:00}:{1:00}", promotion.PromotionStartTime.Hours, promotion.PromotionStartTime.Minutes)
-                                @Html.Raw("-")
-                                @string.Format("{0:00}:{1:00}", promotion.PromotionEndTime.Hours, promotion.PromotionEndTime.Minutes)
-                            </div>
-                            <span class="">
-                                @*content*@
-                                <b style="color: white !important;">
-                                    @Html.DisplayFor(modelItem => promotion.LocationBuiding)
-                                    @Html.Raw(", ")
-                                    @Html.DisplayFor(modelItem => promotion.LocationCity)
-                                </b>
-                            </span>
-
-                        </a>
-                        <span class="image">
-                            <img src="~/images/boxing/wade-austin-ellis-gpOz1RcIrPE-unsplash.jpg" />
-                            <span class="content">
-                                Banana King Charley 
-
-                            </span>
-                            @*<img src="~/images/boxing/hermes-rivera-qbf59TU077Q-unsplash.jpg" />*@
-                            @*<img style="max-height: 360px;" src="~/images/boxing/patrick-kool-E1iDP5xRvHE-unsplash.jpg" />*@
-                            @*<img style="max-height: 360px;" src="~/images/boxing/edgar-chaparro-sHfo3WOgGTU-unsplash.jpg" />*@
-                            @*<img src="~/images/boxing/attentie-attentie-ig7vN6OkGNE-unsplash.jpg" />*@
-                        </span>
-                    </article>
-                }
-
-            </section>
-
-
-
-
-            <br /><br /><br /><br /><br /><br />
-            <h1>Past Events</h1>
-            <section class="tiles">
-                @foreach (Promotion promotion in ViewBag.OldPromotions)
-                {
-                    Random rand = new Random(DateTime.Now.Millisecond);
-                    int styleNum = rand.Next(1, 7);
-                    <article class="style@(styleNum)">
+                    <article class="style3">
 
                         <a href="../../Promotion/Details/@promotion.PromotionID">
 
                             <h2 class="trainerName">
                                 @Html.DisplayFor(modelItem => promotion.Name)
-                                @*An Evening With Andre Ward*@
+                                @*An Evening With Andrew Ard*@
 
                             </h2>
                             <div class="italic">
@@ -127,8 +77,13 @@
                             </span>
 
                         </a>
-                        <span class="image">
+                        <span class="image" style="background-color: black;">
                             <img src="~/images/boxing/wade-austin-ellis-gpOz1RcIrPE-unsplash.jpg" />
+                            @*<span class="content" >
+                                Banana King <br/>Charley
+
+
+                            </span>*@
                             @*<img src="~/images/boxing/hermes-rivera-qbf59TU077Q-unsplash.jpg" />*@
                             @*<img style="max-height: 360px;" src="~/images/boxing/patrick-kool-E1iDP5xRvHE-unsplash.jpg" />*@
                             @*<img style="max-height: 360px;" src="~/images/boxing/edgar-chaparro-sHfo3WOgGTU-unsplash.jpg" />*@
@@ -138,13 +93,15 @@
                 }
 
             </section>
+
+
+
+
         </div>
     </div>
 
 
 </div>
-
-
 
 
 

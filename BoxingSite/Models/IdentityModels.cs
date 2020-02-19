@@ -231,27 +231,55 @@ namespace BoxingSite.Models
     public class Promotion
     {
         public int PromotionID { get; set; }
+
+        [Display(Name = "Promotion Name")]
         public string Name { get; set; }
+
+        [Display(Name = "Promoted By")]
         public string PromotedBy { get; set; }
+
+        [Display(Name = "Promotion Details")]
         public string AboutEvent { get; set; }
 
+        [Required]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd MMM yyyy}")]
         public DateTime? PromotionDate { get; set; }
+
+        [DataType(DataType.Time)]
+        [Display(Name = "Start Time")]
         public TimeSpan PromotionStartTime { get; set; }
+
+        [DataType(DataType.Time)]
+        [Display(Name = "End Time")]
         public TimeSpan PromotionEndTime { get; set; }
         public string Photo { get; set; }
         public int AmountGoing { get; set; }
+
+
+        [Display(Name = "Remaining Seats")]
         public int RemainingSeats { get; set; }
 
         // total seats/tickets available for purchase
         public int TotalSeats { get; set; }
 
+        [Display(Name = "Show Map")]
+        public bool ShowMap { get; set; }
+
+        [Display(Name = "Longitude")]
+        public double MapLong { get; set; }
+        [Display(Name = "Latitude")]
+        public double MapLat { get; set; }
+
 
         // Location Values of Promotion 
+        [Display(Name = "Building Location")]
         public string LocationBuiding { get; set; }
+        [Display(Name = "Street Address")]
         public string LocationStreetAddress { get; set; }
+        [Display(Name = "Postcode")]
         public string LocationPostCode { get; set; }
+        [Display(Name = "City")]
         public string LocationCity { get; set; }
 
 
@@ -264,6 +292,7 @@ namespace BoxingSite.Models
             PromotedBy = "King Boxing";
             AmountGoing = 0;
             RemainingSeats = 0;
+            ShowMap = false;
         }
     }
 

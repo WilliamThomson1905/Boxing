@@ -19,9 +19,8 @@ namespace BoxingSite.Controllers
         public ActionResult Promotions()
         {
             var listOfPromotions = context.Promotions.ToList().OrderBy(x => x.PromotionDate).Where(x => x.PromotionDate <= DateTime.Now);
-            
-
             ViewBag.OldPromotions = listOfPromotions;
+
             return View(context.Promotions.ToList().OrderBy(x => x.PromotionDate).Where(y => y.PromotionDate >= DateTime.Now));
         }
 
@@ -51,13 +50,16 @@ namespace BoxingSite.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreatePromotion([Bind(Include = "PromotionID,Name,PromotedBy,AboutEvent,EventDateTime, PromotionStartTime, PromotionEndTime,Photo,AmountGoing,RemainingSeats,TotalSeats,LocationBuiding,LocationStreetAddress,LocationPostCode,LocationCity")] Promotion promotion)
+        public ActionResult CreatePromotion([Bind(Include = "PromotionID,Name,PromotedBy,AboutEvent,PromotionDate, PromotionStartTime, PromotionEndTime," +
+            "Photo, AmountGoing, RemainingSeats, TotalSeats," +
+            "ShowMap, MapLong, MapLat," +
+            "LocationBuiding, LocationStreetAddress, LocationPostCode, LocationCity")] Promotion promotion)
         {
             if (ModelState.IsValid)
             {
                 context.Promotions.Add(promotion);
                 context.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Promotions");
             }
 
             return View(promotion);
@@ -83,31 +85,44 @@ namespace BoxingSite.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditPromotion([Bind(Include = "PromotionID,Name,PromotedBy,AboutEvent,EventDateTime,PromotionStartTime, PromotionEndTime,Photo,AmountGoing,RemainingSeats,TotalSeats,LocationBuiding,LocationStreetAddress,LocationPostCode,LocationCity")] Promotion promotion)
+        public ActionResult EditPromotion([Bind(Include = "PromotionID,Name,PromotedBy,AboutEvent,PromotionDate, PromotionStartTime, PromotionEndTime," +
+            "Photo, AmountGoing, RemainingSeats, TotalSeats," +
+            "ShowMap, MapLong, MapLat," +
+            "LocationBuiding, LocationStreetAddress, LocationPostCode, LocationCity")] Promotion promotion)
         {
             if (ModelState.IsValid)
             {
                 context.Entry(promotion).State = EntityState.Modified;
                 context.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Promotions");
             }
             return View(promotion);
         }
 
+
         // GET: Promotion/Delete/5
-        public ActionResult DeletePromotion(int? id)
+        #region public ActionResult DeletePromotion(int? Id)
+        public ActionResult DeletePromotion(int? Id)
         {
-            if (id == null)
+
+            try
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                Promotion promotion = context.Promotions.Find(Id);
+                context.Promotions.Remove(promotion);
+                context.SaveChanges();
+                return RedirectToAction("Promotions", "Promotion");
+
             }
-            Promotion promotion = context.Promotions.Find(id);
-            if (promotion == null)
+            catch
             {
-                return HttpNotFound();
+                return RedirectToAction("Promotions", "Promotion");
             }
-            return View(promotion);
+
         }
+        #endregion
+
+
+
 
         // POST: Promotion/Delete/5
         [HttpPost, ActionName("Delete")]
@@ -117,7 +132,7 @@ namespace BoxingSite.Controllers
             Promotion promotion = context.Promotions.Find(id);
             context.Promotions.Remove(promotion);
             context.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Promotions");
         }
 
         protected override void Dispose(bool disposing)
