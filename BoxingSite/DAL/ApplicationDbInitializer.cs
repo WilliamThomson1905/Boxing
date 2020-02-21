@@ -630,12 +630,10 @@ namespace BoxingSite.DAL
                     UserName ="7@test.com",
                     Email = "7@test.com",
                     ImageSrc ="../../images/trainers/colin-cassidy-akj4oRw8E04-unsplash.jpg",
-                    Forename = "John",
+                    Forename = "Johnny",
                     Surname = "Greenleaf",
                     DOB = new DateTime(1964, 7, 9),
                     Instagram = "https://www.youtube.com/watch?v=OJxCcCEobNs",
-                    LinkedIn = "https://www.youtube.com/watch?v=OJxCcCEobNs",
-                    Facebook = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Twitter = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Available = true,
                     Description = "Dog‘The Baby Faced Assassin’ Shelly Sweeney fought her way to national champion and represented her country proving she has those winning qualities needed to be a champion. Though boxing has been her passion, she is turning her hand to the coaching side of the sport, to help people grow in confidence and get the best out of themselves as she personally took up the sport for those reasons and knows the benefits first hand. Never judge a book by its cover, this angelic face will push you to your limits."

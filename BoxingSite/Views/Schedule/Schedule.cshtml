@@ -38,7 +38,7 @@
                     if (User.IsInRole("Administrator"))
                     {
 
-                        @Html.ActionLink("Create Session", "CreateSession", "Schedule") 
+                        @Html.ActionLink("Create Session", "CreateSession", "Schedule")
                         <span>&nbsp; &nbsp;</span>
                         @Html.ActionLink("Manage Classes", "Classes", "Schedule")
                         <hr />
@@ -59,7 +59,7 @@
                     Cancelled
                 </div>
             </div>
-                
+            <hr />
 
             <div class="schedule">
 
@@ -94,62 +94,66 @@
                             listOfClasses = Model.Sunday;
                             break;
                     }
-                <div class="schedulColumn">
-                    <h2 class="schedulColumnTitle">@days[i]</h2>
-                    <ul>
-                        @foreach (var item in listOfClasses)
-                        {
-                            switch (item.ClassStatus)
+                    <div class="schedulColumn">
+                        <h2 class="schedulColumnTitle">@days[i]</h2>
+                        <ul>
+                            @foreach (var item in listOfClasses)
                             {
-                                case ClassStatus.FULLYBOOKED:
-                                    classBoard = "classBoardBooked";
-                                    break;
-                                case ClassStatus.CANCELLED:
-                                    classBoard = "classBoardCancelled";
-                                    break;
-                                default:
-                                    classBoard = "classBoardAvailable";
-                                    break;
+                                switch (item.ClassStatus)
+                                {
+                                    case ClassStatus.FULLYBOOKED:
+                                        classBoard = "classBoardBooked";
+                                        break;
+                                    case ClassStatus.CANCELLED:
+                                        classBoard = "classBoardCancelled";
+                                        break;
+                                    default:
+                                        classBoard = "classBoardAvailable";
+                                        break;
+                                }
+
+
+                                <li class="classBoard @classBoard">
+                                    <article class="">
+                                        <div class="classStatus"></div>
+                                        <a href="/Schedule/ClassScheduleDetails/@item.ScheduleID">
+                                            <div class="className">@item.BoxingClass.Title</div>
+                                            <div class="classTime">
+                                                @string.Format("{0:00}:{1:00}", item.StartTime.Hours, item.StartTime.Minutes)
+                                                &nbsp;-&nbsp;
+                                                @string.Format("{0:00}:{1:00}", item.EndTime.Hours, item.EndTime.Minutes)
+
+                                            </div>
+                                            <div class="classInstructor">@item.Trainer.Forename @item.Trainer.Surname </div>
+                                        </a>
+                                        @if (User.IsInRole("Administrator"))
+                                        {
+                                            @Html.ActionLink("Edit", "EditSession", new { Id = item.ScheduleID })
+                                            <span>&nbsp &nbsp</span>
+                                            @Html.ActionLink("Delete", "DeleteSession", new { id = item.ScheduleID },
+                                                new { onclick = "return confirm('Are you sure you wish to delete this Gym Session? It will no longer be displayed on site. ');" })
+
+                                        }
+                                    </article>
+                                </li>
                             }
+                        </ul>
 
-
-                            <li class="classBoard @classBoard">
-                                <article class="">
-                                    <div class="classStatus"></div>
-                                    <a href="/Schedule/ClassScheduleDetails/@item.ScheduleID">
-                                        <div class="className">@item.BoxingClass.Title</div>
-                                        <div class="classTime">
-                                            @string.Format("{0:00}:{1:00}", item.StartTime.Hours, item.StartTime.Minutes)
-                                            &nbsp;-&nbsp;
-                                            @string.Format("{0:00}:{1:00}", item.EndTime.Hours, item.EndTime.Minutes)
-
-                                        </div>
-                                        <div class="classInstructor">@item.Trainer.Forename @item.Trainer.Surname </div>
-                                    </a>
-                                    @if (User.IsInRole("Administrator"))
-                                    {
-                                        @Html.ActionLink("Edit", "EditSession", new { Id = item.ScheduleID })
-                                        <span>&nbsp &nbsp</span>
-                                        @Html.ActionLink("Delete", "DeleteSession", new { id = item.ScheduleID },
-                                            new { onclick = "return confirm('Are you sure you wish to delete this Gym Session? It will no longer be displayed on site. ');" })
-
-                                    }
-                                </article>
-                            </li>
-                        }
-                    </ul>
-                    
-                </div>
+                    </div>
                 }
 
 
             </div>
+                <h3 class="align-center">
+                    <a href="../../Prices/Pricing">View Pricing Overview</a>
+                </h3>
+
         </div>
 
     </div>
-
-    <div class="parallax align-center" style="height: 220px; background-image: url('../../images/boxing/chris-kendall-sJ6az6-T1u8-unsplash.jpg')">
-        <a href="../../Price/Pricing" class="button btn-default large">King Boxing Pricing</a>
-    </div>
+   
+    @*<div class="parallax align-center" style="height: 220px; background-image: url('../../images/boxing/chris-kendall-sJ6az6-T1u8-unsplash.jpg')">
+            <a href="../../Price/Pricing" class="button btn-default large">King Boxing Pricing</a>
+        </div>*@
 
 </div>

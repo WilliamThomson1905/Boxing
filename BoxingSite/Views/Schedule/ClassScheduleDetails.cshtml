@@ -102,12 +102,18 @@
 
 
                 <p>
-                    @if (User.IsInRole("Administrator")) {
+                    @if (User.IsInRole("Administrator"))
+                    {
                         @Html.ActionLink("Edit", "EditSession", new { Id = Model.ScheduleID })
                         @Html.Raw("&nbsp; &nbsp;")
                     }
-                    @Html.ActionLink("Back to Schedule", "Schedule")
                 </p>
+
+
+
+                <h3 class="align-center">
+                    @Html.ActionLink("Back to Schedule", "Schedule")
+                </h3>
             </div>
         </div>
 

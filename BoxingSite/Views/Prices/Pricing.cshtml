@@ -13,7 +13,8 @@
                     <h2>King Boxing Pricing</h2>
                 </header>
                 <p>
-                    Membership and Pay As You Go Training Costs. Call 07023 123456 for more information.
+                    Membership and Pay As You Go Training Costs.
+                    <br />Call <b><i>07023 123456</i></b> for more information.
                 </p>
             </div>
         </div>
@@ -66,39 +67,42 @@
                             </tr>
                         </table>
 
-                        <ul class="actions stacked">
-                            @if (!Request.IsAuthenticated)
-                            {
-                                <li>
-                                    @Html.ActionLink("Register", "Register", "Account",
-                                     new { id = "registerLink" }, new { @class = "button primary fit" })
-                                </li>
-                                <li>
-                                    @Html.ActionLink("Log in", "Login", "Account",
-                                     new { id = "loginLink" }, new { @class = "button fit" })
-                                </li>
-                            }
-                            else
-                            {
-                                <li>
-                                    @Html.ActionLink("Create Membership", "Index", "Home",
-                                        new { @class = "button primary fit" })
-                                </li>
-                            }
-                        </ul>
+                        @*<ul class="actions stacked">
+                        @if (!Request.IsAuthenticated)
+                        {
+                            <li>
+                                @Html.ActionLink("Register", "Register", "Account",
+                                 new { id = "registerLink" }, new { @class = "button primary fit" })
+                            </li>
+                            <li>
+                                @Html.ActionLink("Log in", "Login", "Account",
+                                 new { id = "loginLink" }, new { @class = "button fit" })
+                            </li>
+                        }
+                        else
+                        {
+                            <li>
+                                @Html.ActionLink("Create Membership", "Index", "Home",
+                                    new { @class = "button primary fit" })
+                            </li>
+                        }
+                    </ul>*@
                     </div>
                 </section>
 
             </div>
-            <p>
+
+
+            <h3>
+                <a href="../../Schedule/Schedule">View Timetable</a>
+            </h3>
+            @*<p>
                 Call 07023 123456 for more information.
-            </p>
+            </p>*@
         </div>
     </section>
 
-    <div class="parallax align-center" style="height: 220px; background-image: url('../../images/boxing/chris-kendall-sJ6az6-T1u8-unsplash.jpg')">
-        <a href="../../Home/Schedule" class="button btn-default large">King Boxing Schedule</a>
-    </div>
+   
 
 
 </div>

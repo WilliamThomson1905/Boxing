@@ -1,6 +1,14 @@
 ﻿    <!-- Header -->
 <header id="header">
-    <a href="../../Home/Index" class="logo">King Boxing <span>Promotions</span></a>
+    <a href="../../Home/Index" class="logo">
+        <span id="logoNavigation">
+            King Boxing <span>Promotions</span>
+        </span>
+        <div id="textNavigation">
+            King Boxing <span>Promotions</span>
+        </div>
+
+    </a>
     @if (User.IsInRole("Administrator"))
     {
                 <a href="#adminMenu" onclick="openAdmin()"><i class="fas fa-tools fa-lg"></i></a>
@@ -25,14 +33,14 @@
     <ul class="links">
         <li>@Html.ActionLink("Home", "Index", "Home")</li>
         <li>@Html.ActionLink("Promotions", "Promotions", "Promotion")</li>
-        <li>@Html.ActionLink("Schedule", "Schedule", "Schedule")</li>
-        <li>@Html.ActionLink("Trainers", "Trainers", "Trainer")</li>
+        <li>@Html.ActionLink("Timetable", "Schedule", "Schedule")</li>
+        <li>@Html.ActionLink("Professional Boxers", "Trainers", "Trainer")</li>
         <li>@Html.ActionLink("Prices", "Pricing", "Prices")</li>
         <li>@Html.ActionLink("Gym Equipment", "Equipment", "Equipment")</li>
         <li>@Html.ActionLink("About", "About", "Home")</li>
         <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
     </ul>
-    @Html.Partial("_LoginPartial")
+    @*@Html.Partial("_LoginPartial")*@
 
 </nav>
 

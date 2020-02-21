@@ -34,8 +34,6 @@
                 <tr>
                     <th>Item</th>
                     <th>Quantity</th>
-                    <th>Description</th>
-                    <th>Company Name</th>
                     @if (User.IsInRole("Administrator"))
                     {
                         <th>Manage</th>
@@ -46,8 +44,6 @@
                     <tr>
                         <td>@item.Name</td>
                         <td>@item.Quantity</td>
-                        <td>@item.Description</td>
-                        <td>@item.Supplier.Name</td>
                         @if (User.IsInRole("Administrator"))
                         {
                             <td>
@@ -62,14 +58,18 @@
                 }
 
             </table>
+
+            <h3 class="align-center">
+                <a href="../../Schedule/Schedule">View Timetable</a>
+            </h3>
         </div>
     </div>
 
 
-    <div class="parallax align-center" style="height: 220px; background-image: url('../../images/boxing/chris-kendall-sJ6az6-T1u8-unsplash.jpg')">
+    @*<div class="parallax align-center" style="height: 220px; background-image: url('../../images/boxing/chris-kendall-sJ6az6-T1u8-unsplash.jpg')">
         <p>*This is an exhaustive list of all the equipment at our gym - @DateTime.Now.ToString("dd MM, yyyy")
         <br/>Availability of Equiptment may be restricted if a class is on - for more inforation contact: 07490 123456</p>
-    </div>
+    </div>*@
 
 
 

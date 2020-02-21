@@ -7,7 +7,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <link href="~/assets/css/mainPhantom.css" rel="stylesheet" />
-<link href="~/Content/Site.css" rel="stylesheet" />
 
 <div id="wrapper">
     @*<section id="one" class="main sectionBgColor">
@@ -37,71 +36,107 @@
                 }
             }
             @*<div class="scheduleKey">
-                <div class="statusKey classBoardAvailable">@DateTime.Now.ToString("dddd dd MMMM, yyyy")</div>
-            </div>*@
+            <div class="statusKey classBoardAvailable">@DateTime.Now.ToString("dddd dd MMMM, yyyy")</div>
+        </div>*@
 
-            <div>
-                <h1>Upcoming Events</h1>
+            <div id="">
+                <div class="inner">
+                    <h1>Upcoming Events</h1>
 
-                @*<i class="fas fa-sliders-h fa-3x"></i>*@
+                    @*<i class="fas fa-sliders-h fa-3x"></i>*@
 
+                </div>
             </div>
-            <section class="tiles">
-                @foreach (var promotion in Model)
-                {
-                    Random rand = new Random(DateTime.Now.Millisecond);
-                    int styleNum = rand.Next(1, 7);
-                    <article class="style3">
+            <div id="">
+                <div class="inner">
+                    <section class="tiles">
+                        @foreach (var promotion in Model)
+                        {
+                            Random rand = new Random(DateTime.Now.Millisecond);
+                            int styleNum = rand.Next(1, 7);
+                            <article class="style3">
 
-                        <a href="../../Promotion/Details/@promotion.PromotionID">
+                                <a href="../../Promotion/Details/@promotion.PromotionID">
 
-                            <h2 class="trainerName">
-                                @Html.DisplayFor(modelItem => promotion.Name)
-                                @*An Evening With Andrew Ard*@
+                                    <h2 class="trainerName">
+                                        @Html.DisplayFor(modelItem => promotion.Name)
+                                        @*An Evening With Andrew Ard*@
 
-                            </h2>
-                            <div class="italic">
-                                @String.Format("{0:dddd, dd MMMM yyyy}", promotion.PromotionDate)
-                                <br />
-                                @string.Format("{0:00}:{1:00}", promotion.PromotionStartTime.Hours, promotion.PromotionStartTime.Minutes)
-                                @Html.Raw("-")
-                                @string.Format("{0:00}:{1:00}", promotion.PromotionEndTime.Hours, promotion.PromotionEndTime.Minutes)
-                            </div>
-                            <span class="">
-                                @*content*@
-                                <b style="color: white !important;">
-                                    @Html.DisplayFor(modelItem => promotion.LocationBuiding)
-                                    @Html.Raw(", ")
-                                    @Html.DisplayFor(modelItem => promotion.LocationCity)
-                                </b>
-                            </span>
+                                    </h2>
+                                    <div class="italic">
+                                        @String.Format("{0:dddd, dd MMMM yyyy}", promotion.PromotionDate)
+                                        <br />
+                                        @string.Format("{0:00}:{1:00}", promotion.PromotionStartTime.Hours, promotion.PromotionStartTime.Minutes)
+                                        @Html.Raw("-")
+                                        @string.Format("{0:00}:{1:00}", promotion.PromotionEndTime.Hours, promotion.PromotionEndTime.Minutes)
+                                    </div>
+                                    <span class="">
+                                        @*content*@
+                                        <b style="color: white !important;">
+                                            @Html.DisplayFor(modelItem => promotion.LocationBuiding)
+                                            @Html.Raw(", ")
+                                            @Html.DisplayFor(modelItem => promotion.LocationCity)
+                                        </b>
+                                    </span>
 
-                        </a>
-                        <span class="image" style="background-color: black;">
-                            <img src="~/images/boxing/wade-austin-ellis-gpOz1RcIrPE-unsplash.jpg" />
-                            @*<span class="content" >
-                                Banana King <br/>Charley
-
-
-                            </span>*@
-                            @*<img src="~/images/boxing/hermes-rivera-qbf59TU077Q-unsplash.jpg" />*@
-                            @*<img style="max-height: 360px;" src="~/images/boxing/patrick-kool-E1iDP5xRvHE-unsplash.jpg" />*@
-                            @*<img style="max-height: 360px;" src="~/images/boxing/edgar-chaparro-sHfo3WOgGTU-unsplash.jpg" />*@
-                            @*<img src="~/images/boxing/attentie-attentie-ig7vN6OkGNE-unsplash.jpg" />*@
-                        </span>
-                    </article>
-                }
-
-            </section>
+                                </a>
+                                <span class="image" style="background-color: black;">
+                                    <img src="~/images/boxing/wade-austin-ellis-gpOz1RcIrPE-unsplash.jpg" />
+                                    @*<span class="content" >
+                                    Banana King <br/>Charley
 
 
+                                </span>*@
+                                    @*<img src="~/images/boxing/hermes-rivera-qbf59TU077Q-unsplash.jpg" />*@
+                                    @*<img style="max-height: 360px;" src="~/images/boxing/patrick-kool-E1iDP5xRvHE-unsplash.jpg" />*@
+                                    @*<img style="max-height: 360px;" src="~/images/boxing/edgar-chaparro-sHfo3WOgGTU-unsplash.jpg" />*@
+                                    @*<img src="~/images/boxing/attentie-attentie-ig7vN6OkGNE-unsplash.jpg" />*@
+                                </span>
+                            </article>
+                        }
+
+                    </section>
+
+                </div>
+            </div>
+
+
+            @*<br /><br /><br /><br /><br /><br />
+        <h1>Past Events</h1>
+        <div>
+            @foreach (Promotion promotion in ViewBag.OldPromotions)
+            {
+
+                <a class="promotionRelative" href="../../Promotion/Details/@promotion.PromotionID">
+                    <img class="promotionImage" src="~/images/boxing/wade-austin-ellis-gpOz1RcIrPE-unsplash.jpg" alt="Dude">
+                    <div class="promotionAbsolute">
+                        <h3 class="promotionData">
+                            @Html.DisplayFor(modelItem => promotion.Name)
+                        </h3>
+                        <p class="promotionContent">
+                            @String.Format("{0:dddd, dd MMMM yyyy}", promotion.PromotionDate)
+                            @Html.Raw( " * ")
+
+                            @string.Format("{0:00}:{1:00}", promotion.PromotionStartTime.Hours, promotion.PromotionStartTime.Minutes)
+                            @Html.Raw("-")
+                            @string.Format("{0:00}:{1:00}", promotion.PromotionEndTime.Hours, promotion.PromotionEndTime.Minutes)
+                            <br />
+                            @Html.DisplayFor(modelItem => promotion.LocationBuiding)
+                            @Html.Raw(", ")
+                            @Html.DisplayFor(modelItem => promotion.LocationCity)
+                        </p>
+                    </div>
+                </a>
+
+
+            }
+
+        </div>*@
+        </div>
+            </div>
 
 
         </div>
-    </div>
-
-
-</div>
 
 
 

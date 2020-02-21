@@ -39,6 +39,7 @@ li {
 
 .schedule {
     width: 100%;
+    display: inline-block;
 }
 
 .schedulColumn {
@@ -442,3 +443,49 @@ h3.promotionData {
     overflow-x: hidden;
     border-radius: 5px;
 }
+
+
+
+
+#logoNavigation > img {
+    margin-left: 40px;
+    max-height: 140px;
+}
+#textNavigation {
+    display: none;
+}
+
+@media only screen and (max-width: 700px) {
+    #logoNavigation {
+        display: none;
+    }
+    #textNavigation {
+        display: block;
+    }
+}
+
+
+
+
+
+
+/*.tiles article.style2 > .image:before {
+    background-color: #7ecaf6;
+}
+
+.tiles article.style3 > .image:before {
+    background-color: #7bd0c1;
+}
+
+.tiles article.style4 > .image:before {
+    background-color: #c75b9b;
+}
+
+.tiles article.style5 > .image:before {
+    background-color: #ae85ca;
+}
+
+.tiles article.style6 > .image:before {
+    background-color: #8499e7;
+}*/
+

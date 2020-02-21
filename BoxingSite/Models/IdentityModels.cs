@@ -17,7 +17,7 @@ namespace BoxingSite.Models
         public string Title { get; set; }
 
         [Required]
-        [StringLength(20)]
+        [StringLength(25)]
         public string Forename { get; set; }
 
         [Required]
