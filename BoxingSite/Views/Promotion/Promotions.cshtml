@@ -8,23 +8,48 @@
 }
 <link href="~/assets/css/mainPhantom.css" rel="stylesheet" />
 
+
+<a class="icon fixedButton" onclick="subMenuDisplay()"><i class="far fa-list-alt fa-2x"></i></a>
+<script>
+    function subMenuDisplay() {
+        var i, filterContent;
+        filterContent = document.getElementsByClassName("fixedFilterMenu");
+
+
+        for (i = 0; i < filterContent.length; i++) {
+         
+            if (filterContent[i].style.display == 'block') {
+                filterContent[i].style.display = 'none';
+            } else if (filterContent[i].style.display == 'none') {
+                filterContent[i].style.display = 'block';
+            }
+
+        }
+  
+}
+
+</script>
+<div class="fixedFilterMenu" style="display: none;">
+    <ul class="icons">
+        <li><h2>Filter</h2></li>
+        <li><a class="fixedFilterMenuItem">All</a></li>
+        <li><a class="fixedFilterMenuItem">Fights</a></li>
+        <li><a class="fixedFilterMenuItem">Promoter</a></li>
+        <li><a class="fixedFilterMenuItem">Banana</a></li>
+        <li><a class="fixedFilterMenuItem">This Month</a></li>
+        <li><a class="fixedFilterMenuItem">This Year</a></li>
+        <li><a class="fixedFilterMenuItem">Grape</a></li>
+        <li><a class="fixedFilterMenuItem">Light-Weight</a></li>
+        <li><a class="fixedFilterMenuItem">Heavy-Weight</a></li>
+    </ul>
+</div>
+
+
+
+
 <div id="wrapper">
-    @*<section id="one" class="main sectionBgColor">
-        <div class="inner spotlight style1">
-            <div class="content align-center">
-                <header class="major">
-                    <h2>Promotion</h2>
-                </header>
-                <p>
-                    King Boxing promote events throughout Scotland, showcasing the country’s best boxing talent.
-                </p>
-            </div>
-        </div>
-    </section>*@
-    
-    <!-- Main -->
+
     <div id="">
-   
 
         <div class="inner">
             @if (!User.Identity.IsAuthenticated)
@@ -35,22 +60,89 @@
                     <br /><br />
                 }
             }
-            @*<div class="scheduleKey">
-            <div class="statusKey classBoardAvailable">@DateTime.Now.ToString("dddd dd MMMM, yyyy")</div>
-        </div>*@
 
             <div id="">
                 <div class="inner">
-                    <h1>Upcoming Events</h1>
+                    <div class="page-header">
+                        <h1>Upcoming Events</h1>
+                    </div>
+                    <div>
+                        @foreach (Promotion promotion in Model)
+                        {
+                            <div class="promotion">
+                                <a class="promotionLink" href="../../Promotion/Details/@promotion.PromotionID">
+                                    <div class="promotionData">
 
-                    @*<i class="fas fa-sliders-h fa-3x"></i>*@
+                                        <div class="promotionDate align-center">
+                                            <div class="promoDateDay">
+                                                <h3>
+                                                    @String.Format("{0:dd}", promotion.PromotionDate)
+                                                </h3>
+                                            </div>
+                                            @*<hr />*@
+                                            <div class="promoDateMonth">
+                                                <h3>
+                                                    @String.Format("{0:MMM}", promotion.PromotionDate)
+                                                    <br />
+                                                    @String.Format("{0:yyyy}", promotion.PromotionDate)
+                                                </h3>
+                                            </div>
+                                        </div>
+                                        
 
+                                        <div class="promotionInfo">
+                                            <h2 class="promoInfoHeader">
+                                                @Html.DisplayFor(modelItem => promotion.Name)
+                                            </h2>
+                                            <p class="promoInfoBody">
+                                                <span class="promotionDateV2">
+                                                    <b>@String.Format("{0:dddd, dd, MMM yyyy}", promotion.PromotionDate)</b>
+                                                </span>
+                                                <i>
+                                                    @string.Format("{0:00}:{1:00}", promotion.PromotionStartTime.Hours, promotion.PromotionStartTime.Minutes)
+                                                    @Html.Raw("-")
+                                                    @string.Format("{0:00}:{1:00}", promotion.PromotionEndTime.Hours, promotion.PromotionEndTime.Minutes)
+                                                </i>
+                                                <br />
+                                                @Html.DisplayFor(modelItem => promotion.LocationBuiding)@Html.Raw(", ")
+                                                @Html.DisplayFor(modelItem => promotion.LocationStreetAddress)@Html.Raw(", ")
+                                                @Html.DisplayFor(modelItem => promotion.LocationPostCode)
+                                                <br />
+                                                @Html.DisplayFor(modelItem => promotion.LocationCity)
+                                            </p>
+                                        </div>
+
+
+                                    </div>
+                                </a>
+                                <div class="promotionTickets align-center">
+                                    <h3>
+                                        Tickets @Html.Raw("@")
+                                    </h3>
+                                    <a href="https://www.youtube.com">
+                                        EventBrite
+                                    </a>
+                                </div>
+                            </div>
+                        }
+
+                    </div>
                 </div>
             </div>
+
+
+
+            <br />
+            <br />
+            <br />
             <div id="">
-                <div class="inner">
+                <div class="page-header">
+                    <h1>Past Events</h1>
+                </div>
+                <div>
+
                     <section class="tiles">
-                        @foreach (var promotion in Model)
+                        @foreach (Promotion promotion in ViewBag.OldPromotions)
                         {
                             Random rand = new Random(DateTime.Now.Millisecond);
                             int styleNum = rand.Next(1, 7);
@@ -82,15 +174,6 @@
                                 </a>
                                 <span class="image" style="background-color: black;">
                                     <img src="~/images/boxing/wade-austin-ellis-gpOz1RcIrPE-unsplash.jpg" />
-                                    @*<span class="content" >
-                                    Banana King <br/>Charley
-
-
-                                </span>*@
-                                    @*<img src="~/images/boxing/hermes-rivera-qbf59TU077Q-unsplash.jpg" />*@
-                                    @*<img style="max-height: 360px;" src="~/images/boxing/patrick-kool-E1iDP5xRvHE-unsplash.jpg" />*@
-                                    @*<img style="max-height: 360px;" src="~/images/boxing/edgar-chaparro-sHfo3WOgGTU-unsplash.jpg" />*@
-                                    @*<img src="~/images/boxing/attentie-attentie-ig7vN6OkGNE-unsplash.jpg" />*@
                                 </span>
                             </article>
                         }
@@ -99,179 +182,40 @@
 
                 </div>
             </div>
-
-
-            @*<br /><br /><br /><br /><br /><br />
-        <h1>Past Events</h1>
-        <div>
-            @foreach (Promotion promotion in ViewBag.OldPromotions)
-            {
-
-                <a class="promotionRelative" href="../../Promotion/Details/@promotion.PromotionID">
-                    <img class="promotionImage" src="~/images/boxing/wade-austin-ellis-gpOz1RcIrPE-unsplash.jpg" alt="Dude">
-                    <div class="promotionAbsolute">
-                        <h3 class="promotionData">
-                            @Html.DisplayFor(modelItem => promotion.Name)
-                        </h3>
-                        <p class="promotionContent">
-                            @String.Format("{0:dddd, dd MMMM yyyy}", promotion.PromotionDate)
-                            @Html.Raw( " * ")
-
-                            @string.Format("{0:00}:{1:00}", promotion.PromotionStartTime.Hours, promotion.PromotionStartTime.Minutes)
-                            @Html.Raw("-")
-                            @string.Format("{0:00}:{1:00}", promotion.PromotionEndTime.Hours, promotion.PromotionEndTime.Minutes)
-                            <br />
-                            @Html.DisplayFor(modelItem => promotion.LocationBuiding)
-                            @Html.Raw(", ")
-                            @Html.DisplayFor(modelItem => promotion.LocationCity)
-                        </p>
-                    </div>
-                </a>
-
-
-            }
-
-        </div>*@
         </div>
-            </div>
-
-
-        </div>
-
+    </div>
+</div>
 
 
 
 
 
-
-@*<script>
-        function openTab(evt, infoName) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-
-            }
-
-            tablinks = document.getElementsByClassName("tablinks");
-
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-                tablinks[i].className = tablinks[i].className.replace(" primary", "");
-            }
-
-            document.getElementById(infoName).style.display = "block";
-            evt.currentTarget.className += " active";
-            evt.currentTarget.className += " primary";
-
-        }
-    </script>*@
-
-
-@*<div class="inner">
-        <h1>Past Events</h1>
-
-
-        @foreach (var item in Model)
+@*<div>
+        @foreach (Promotion promotion in ViewBag.OldPromotions)
         {
-            <h2>
-                <a href="../../Promotions/Details/@item.PromotionID">
-                    @Html.DisplayFor(modelItem => item.Name)
-                </a>
-            </h2>
-            <div class="italic">
-                Promoted By:
-                @Html.DisplayFor(modelItem => item.PromotedBy)
-            </div>
-            <div class="italic">
-                @Html.DisplayFor(modelItem => item.PromotionDate) &nbsp;
-                @string.Format("{0:00}:{1:00}", item.PromotionStartTime.Hours, item.PromotionStartTime.Minutes)
-                @string.Format("{0:00}:{1:00}", item.PromotionEndTime.Hours, item.PromotionEndTime.Minutes)
-            </div>
 
-            @Html.DisplayFor(modelItem => item.AboutEvent)
-            <br />
+            <a class="promotionRelative" href="../../Promotion/Details/@promotion.PromotionID">
+                <img class="promotionImage" src="~/images/boxing/wade-austin-ellis-gpOz1RcIrPE-unsplash.jpg" alt="Dude">
+                <div class="promotionAbsolute">
+                    <h3 class="promotionData">
+                        @Html.DisplayFor(modelItem => promotion.Name)
+                    </h3>
+                    <p class="promotionContent">
+                        @String.Format("{0:dddd, dd MMMM yyyy}", promotion.PromotionDate)
+                        @Html.Raw(" * ")
 
-
-
-            <div>
-                Going:
-                @Html.DisplayFor(modelItem => item.AmountGoing)
-                &nbsp;&nbsp;&nbsp;
-                Remaining:
-                @Html.DisplayFor(modelItem => item.RemainingSeats)
-            </div>
+                        @string.Format("{0:00}:{1:00}", promotion.PromotionStartTime.Hours, promotion.PromotionStartTime.Minutes)
+                        @Html.Raw("-")
+                        @string.Format("{0:00}:{1:00}", promotion.PromotionEndTime.Hours, promotion.PromotionEndTime.Minutes)
+                        <br />
+                        @Html.DisplayFor(modelItem => promotion.LocationBuiding)
+                        @Html.Raw(", ")
+                        @Html.DisplayFor(modelItem => promotion.LocationCity)
+                    </p>
+                </div>
+            </a>
 
 
-            <br />
-
-
-
-            <div class="italic">
-                <b>
-                    @Html.DisplayFor(modelItem => item.LocationBuiding)
-                </b>
-                <br />
-                @Html.DisplayFor(modelItem => item.LocationStreetAddress)
-                @Html.Raw(", ")
-                @Html.DisplayFor(modelItem => item.LocationPostCode)
-                @Html.Raw(", ")
-                @Html.DisplayFor(modelItem => item.LocationCity)
-            </div>
-            <br />
-            @Html.ActionLink("Edit", "EditPromotion", new { id = item.PromotionID })
-            @Html.ActionLink("Delete", "DeletePromotion", new { id = item.PromotionID })
-
-
-
-            <br /> <br /> <br /> <br /> <br />
         }
 
     </div>*@
-
-
-
-
-
-
-
-
-
-@*<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script async type="text/javascript">
-        google.charts.load("current", { packages: ["calendar"] });
-        google.charts.setOnLoadCallback(drawChart);
-
-        function drawChart() {
-            var dataTable = new google.visualization.DataTable();
-            dataTable.addColumn({ type: 'date', id: 'Date' });
-            dataTable.addColumn({ type: 'number', id: 'Won/Loss' });
-            dataTable.addRows([
-                [new Date(2020, 3, 13), 37032],
-                [new Date(2020, 3, 14), 38024],
-                [new Date(2020, 3, 15), 38024],
-                [new Date(2020, 3, 16), 38108],
-                [new Date(2020, 3, 17), 38229],
-                // Many rows omitted for brevity.
-                [new Date(2022, 3, 8), 38177],
-                // Many rows omitted for brevity.
-                [new Date(2021, 9, 4), 38177],
-                [new Date(2021, 9, 5), 38705],
-                [new Date(2021, 9, 12), 38210],
-                [new Date(2021, 9, 13), 38029],
-                [new Date(2021, 9, 19), 38823],
-                [new Date(2021, 9, 23), 38345],
-                [new Date(2021, 9, 24), 38436],
-                [new Date(2021, 9, 30), 38447]
-            ]);
-
-            var chart = new google.visualization.Calendar(document.getElementById('calendar_basic'));
-
-            var options = {
-                title: "King Boxing Promotions",
-                height: 500,
-            };
-
-            chart.draw(dataTable, options);
-        }
-    </script>*@
