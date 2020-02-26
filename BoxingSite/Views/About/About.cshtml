@@ -10,7 +10,7 @@
         <div class="inner spotlight style1">
             <div class="content align-center">
                 <header class="major">
-                    <h2>King Boxing</h2>
+                    <h2>About King Boxing</h2>
                 </header>
                 <p>
                     All information regarding King Boxing and any equiptment availble for use in main gym area. 
@@ -23,14 +23,12 @@
     <section id="main" class="main">
         <div class="inner">
 
-                
-            <h2>About Kynoch Boxing</h2>
-            @*<span class="image main"><img src="~/images/banner_gym_floor_one.jpg" alt="" /></span>*@
-
+            <h2>About King Boxing</h2>
 
             <p>King Boxing was founded in 2018 by Sam King. Sam traded in a career as a Corporate Lawyer with Scotland’s largest Commercial Law firm in 2013 to work full-time in the boxing industry. Sam has been involved in boxing management and promotion since 2008. Sam’s first boxing venture was SK Boxing Promotions – under which banner he promoted in excess of 150 events throughout Scotland.</p>
             <p>In 2015 Sam moved into the professional boxing arena – establishing MGM Scotland in partnership with MGM Marbella. When MGM re-branded as MTK Global in 2017 Sam was appointed as Group Managing Director. With in excess of 40 professional promotions under his belt Sam decided in 2018 to form King Boxing – with the intention of becoming Scotland’s leading boxing business.</p>
             <p>King Boxing is comprised of three divisions:</p>
+
             <p><strong>King Boxing</strong> &nbsp;– Scotland’s biggest boxing gym which is located in Glasgow. The gym is kitted out with two boxing rings and more than 50 punchbags;</p>
             <p><strong>King Boxing Management</strong> &nbsp;– King Boxing manage the largest stable of boxers in Scotland;</p>
             <p><strong>King Boxing Promotions</strong> – King Boxing promote more events in Scotland than any other promoter. We promote regular public shows in addition to operating a Boxing Dinner Club which is based in Glasgow’s Crowne Plaza.</p>
@@ -52,20 +50,21 @@
                     <tr>
                         <th>Item</th>
                         <th>Quantity</th>
-                        @if (User.IsInRole("Administrator"))
+                        @if (!User.IsInRole("Administrator"))
                         {
                             <th>Manage</th>
                         }
                     </tr>
+
                     @foreach (var item in Model)
                     {
                         <tr>
                             <td>@item.Name</td>
                             <td>@item.Quantity</td>
-                            @if (User.IsInRole("Administrator"))
+                            @if (!User.IsInRole("Administrator"))
                             {
                                 <td>
-                                    <a href="/Equipment/EditEquipment/@item.EquipmentID">Edit</a>
+                                    <a href="/About/EditEquipment/@item.EquipmentID">Edit</a>
                                     @Html.ActionLink("Delete", "DeleteEquipment", new { id = item.EquipmentID },
                                                    new { onclick = "return confirm('Are you sure you wish to delete this Equipment? It will no longer be displayed on site. ');" })
 

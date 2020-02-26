@@ -10,15 +10,15 @@ using System.Net;
 
 namespace BoxingSite.Controllers
 {
-    public class EquipmentController : Controller
+    public class AboutController : Controller
     {
         private ApplicationDbContext context = new ApplicationDbContext();
 
 
         // GET: Prices
-        public ActionResult Equipment()
+        public ActionResult About()
         {
-            ViewBag.Message = "Your Equipment page.";
+            ViewBag.Message = "Your About/Equiptment page.";
             return View(context.Equipment.ToList());
         }
 
@@ -116,7 +116,7 @@ namespace BoxingSite.Controllers
 
                 context.Entry(equip).State = EntityState.Modified;
                 context.SaveChanges();
-                return RedirectToAction("Equipment");
+                return RedirectToAction("About");
             }
 
             ViewBag.SupplierId = new SelectList(context.Suppliers, "SupplierId", "Name", equipment.SupplierID);
@@ -138,12 +138,12 @@ namespace BoxingSite.Controllers
                 Equipment equipment = context.Equipment.Find(Id);
                 context.Equipment.Remove(equipment);
                 context.SaveChanges();
-                return RedirectToAction("Equipment", "Equipment");
+                return RedirectToAction("About", "About");
 
             }
             catch
             {
-                return RedirectToAction("Equipment", "Equipment");
+                return RedirectToAction("About", "About");
             }
 
         }

@@ -181,7 +181,7 @@
     <Compile Include="Controllers\ScheduleController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\EquipmentController.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\PricesController.cs" />
     <Compile Include="Controllers\TrainerController.cs" />
     <Compile Include="DAL\ApplicationDbInitializer.cs" />
@@ -382,15 +382,15 @@
     <Content Include="Views\Trainer\Trainers.cshtml" />
     <Content Include="Views\Prices\Pricing.cshtml" />
     <Content Include="Views\Trainer\TrainerDetails.cshtml" />
-    <Content Include="Views\Equipment\Equipment.cshtml" />
+    <Content Include="Views\About\About.cshtml" />
     <Content Include="Views\Trainer\Edit.cshtml" />
     <Content Include="Views\Trainer\Create.cshtml" />
     <Content Include="Views\Shared\_AdminNavigation.cshtml" />
     <Content Include="Views\Schedule\Schedule.cshtml" />
     <Content Include="Views\Admin\Users.cshtml" />
     <Content Include="Views\Admin\EditUser.cshtml" />
-    <Content Include="Views\Equipment\CreateEquipment.cshtml" />
-    <Content Include="Views\Equipment\EditEquipment.cshtml" />
+    <Content Include="Views\About\CreateEquipment.cshtml" />
+    <Content Include="Views\About\EditEquipment.cshtml" />
     <Content Include="Views\Supplier\CreateSupplier.cshtml" />
     <Content Include="Views\Supplier\Supplier.cshtml" />
     <Content Include="Views\Supplier\EditSupplier.cshtml" />
