@@ -630,6 +630,14 @@ label {
 
 
 
+
+.eventEnded {
+    font-weight: bold;
+    color: white;
+    padding: 10px 20px;
+    background-color: gray;
+    margin-bottom: 80px;
+}
 /*.tiles article.style2 > .image:before {
     background-color: #7ecaf6;
 }
@@ -650,3 +658,8 @@ label {
     background-color: #8499e7;
 }*/
 
+.subheading {
+    font-family: "Oswald", sans-serif;
+    font-weight: 200;
+    padding: 0px;
+}

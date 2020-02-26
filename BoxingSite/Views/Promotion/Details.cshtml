@@ -13,18 +13,29 @@
          style="background-image: url('../../images/boxing/attentie-attentie-ig7vN6OkGNE-unsplash.jpg'); min-height: 200px;">
     <div class="inner">
         <header>
-            <h1>
+            <h1 style="font-size: 1.8em;">
                 @Html.DisplayFor(model => model.Name)
             </h1>
-            <p class="italic">
+            <p class="italic" style="color: white;">
                 @String.Format("{0:dddd, dd MMMM yyyy}", Model.PromotionDate)
             </p>
-            
+
+                @if (!User.Identity.IsAuthenticated)
+                {
+                    if (!User.IsInRole("Administrator"))
+                    {
+                        <p>
+                            @Html.ActionLink("Edit", "EditPromotion", new { id = Model.PromotionID })
+                            @Html.Raw("&nbsp;&nbsp;")
+                            @Html.ActionLink("Delete", "DeletePromotion", new { id = Model.PromotionID },
+    new { onclick = "return confirm('Are you sure you wish to delete: " + Model.Name + "? It will no longer be displayed on site. ');" })
+                        </p>
+                    }
+                }
+
+
         </header>
-
     </div>
-
-
 </section>
 
 
@@ -32,11 +43,37 @@
 
 <div id="wrapper">
 
-    <section class="main">
+    <div class="">
+        @if (Model.RemainingSeats > 0 && Model.PromotionDate > DateTime.Now)
+        {
+            <h3 class="align-center">
+                <a title="EventBrite Link" href="https://www.youtube.com">Purchase Tickets</a>
+            </h3>
+        } else
+        {
+            <h3 class="align-center">
+                Tickets Unavailable
+            </h3>
+        }
+        <br />
+
+
+
+
         <div class="inner">
+            @if (Model.PromotionDate < DateTime.Now)
+            {
+                <h2 class="eventEnded">Event Ended! </h2>
+            }
             <h2>
                 @Html.DisplayFor(model => model.Name)
             </h2>
+
+            <h3 class="subheading">
+                <i class="far fa-clock"></i>
+                @String.Format("{0:dddd, dd MMMM yyyy}", Model.PromotionDate)
+
+            </h3>
             <p>
                 @Html.DisplayFor(model => model.AboutEvent)
             </p>
@@ -45,7 +82,7 @@
 
 
             <div class="inner row">
-                
+
                 <div class="col-6-xlarge">
                     <b><i class="fas fa-map-marker-alt"></i> @Html.DisplayFor(model => model.LocationBuiding)</b>
                     <br />
@@ -92,26 +129,15 @@
                 </script>
             }
 
-            <p>
-                @if (!User.Identity.IsAuthenticated)
-                {
-                    if (!User.IsInRole("Administrator"))
-                    {
-                        @Html.ActionLink("Edit", "EditPromotion", new { id = Model.PromotionID })
-                        @Html.Raw("&nbsp;&nbsp;")
-                        @Html.ActionLink("Delete", "DeletePromotion", new { id = Model.PromotionID },
-new { onclick = "return confirm('Are you sure you wish to delete: " + Model.Name + "? It will no longer be displayed on site. ');" })
-                    }
-                }
-
-            </p>
 
 
-            <p class="align-center">
-                <a href="../../Promotion/Promotions"><i class="fas fa-list fa-lg"></i></a>
-            </p>
+            <br />
+            <br />
+            <h3 class="align-center">
+                <a href="../../Promotion/Promotions">Back to Promotions</a>
+            </h3>
 
         </div>
-      
-    </section>
+
+    </div>
 </div>

@@ -51,7 +51,8 @@
                         <a href="/Trainer/TrainerDetails/@person.Id">
                             <h2 class="trainerName">@Html.DisplayFor(modelItem => person.Forename) @Html.DisplayFor(modelItem => person.Surname)</h2>
                             <div class="content">
-                                <p>@Html.DisplayFor(modelItem => person.Description).ToString().Substring(0, 100)</p>
+                                <p>@Html.DisplayFor(modelItem => person.Description).ToString().Substring(0, 100)...</p>
+                                <span>Learn More?</span>
                             </div>
                         </a>
                         <span class="image">

@@ -625,7 +625,14 @@ namespace BoxingSite.DAL
                     Facebook = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Twitter = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Available = false,
-                    Description = "Cat‘The Baby Faced Assassin’ Shelly Sweeney fought her way to national champion and represented her country proving she has those winning qualities needed to be a champion. Though boxing has been her passion, she is turning her hand to the coaching side of the sport, to help people grow in confidence and get the best out of themselves as she personally took up the sport for those reasons and knows the benefits first hand. Never judge a book by its cover, this angelic face will push you to your limits."},
+                    Description = "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. "
+                },
                 new TrainerUser {
                     UserName ="7@test.com",
                     Email = "7@test.com",
@@ -636,7 +643,13 @@ namespace BoxingSite.DAL
                     Instagram = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Twitter = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Available = true,
-                    Description = "Dog‘The Baby Faced Assassin’ Shelly Sweeney fought her way to national champion and represented her country proving she has those winning qualities needed to be a champion. Though boxing has been her passion, she is turning her hand to the coaching side of the sport, to help people grow in confidence and get the best out of themselves as she personally took up the sport for those reasons and knows the benefits first hand. Never judge a book by its cover, this angelic face will push you to your limits."
+                    Description = "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. "
                 },
                 new TrainerUser {
                     UserName ="8@test.com",
@@ -650,7 +663,15 @@ namespace BoxingSite.DAL
                     Facebook = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Twitter = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Available = true,
-                    Description = "Elephant‘The Baby Faced Assassin’ Shelly Sweeney fought her way to national champion and represented her country proving she has those winning qualities needed to be a champion. Though boxing has been her passion, she is turning her hand to the coaching side of the sport, to help people grow in confidence and get the best out of themselves as she personally took up the sport for those reasons and knows the benefits first hand. Never judge a book by its cover, this angelic face will push you to your limits."
+
+                    Description = "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. "
+
                 },
                 new TrainerUser {
                     UserName ="9@test.com",
@@ -664,7 +685,15 @@ namespace BoxingSite.DAL
                     Facebook = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Twitter = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Available = true,
-                    Description = "Banana‘The Baby Faced Assassin’ Shelly Sweeney fought her way to national champion and represented her country proving she has those winning qualities needed to be a champion. Though boxing has been her passion, she is turning her hand to the coaching side of the sport, to help people grow in confidence and get the best out of themselves as she personally took up the sport for those reasons and knows the benefits first hand. Never judge a book by its cover, this angelic face will push you to your limits."
+
+                    Description = "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. "
+
                 },
                 new TrainerUser {
                     UserName ="10@test.com",
@@ -678,7 +707,15 @@ namespace BoxingSite.DAL
                     Facebook = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Twitter = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Available = true,
-                    Description = "Tree‘The Baby Faced Assassin’ Shelly Sweeney fought her way to national champion and represented her country proving she has those winning qualities needed to be a champion. Though boxing has been her passion, she is turning her hand to the coaching side of the sport, to help people grow in confidence and get the best out of themselves as she personally took up the sport for those reasons and knows the benefits first hand. Never judge a book by its cover, this angelic face will push you to your limits."
+
+                    Description = "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. "
+
                 },
                 new TrainerUser {
                     UserName ="11@test.com",
@@ -692,7 +729,15 @@ namespace BoxingSite.DAL
                     Facebook = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Twitter = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Available = true,
-                    Description = "Usurp‘The Baby Faced Assassin’ Shelly Sweeney fought her way to national champion and represented her country proving she has those winning qualities needed to be a champion. Though boxing has been her passion, she is turning her hand to the coaching side of the sport, to help people grow in confidence and get the best out of themselves as she personally took up the sport for those reasons and knows the benefits first hand. Never judge a book by its cover, this angelic face will push you to your limits."
+
+                    Description = "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. "
+
                 },
                 new TrainerUser {
                     UserName ="12@test.com",
@@ -706,7 +751,15 @@ namespace BoxingSite.DAL
                     Facebook = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Twitter = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Available = true,
-                    Description = "G‘The Baby Faced Assassin’ Shelly Sweeney fought her way to national champion and represented her country proving she has those winning qualities needed to be a champion. Though boxing has been her passion, she is turning her hand to the coaching side of the sport, to help people grow in confidence and get the best out of themselves as she personally took up the sport for those reasons and knows the benefits first hand. Never judge a book by its cover, this angelic face will push you to your limits."
+
+                    Description = "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. "
+
                 },
                 new TrainerUser {
                     UserName ="13@test.com",
@@ -719,7 +772,14 @@ namespace BoxingSite.DAL
                     Facebook = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Twitter = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Available = true,
-                    Description = "H‘The Baby Faced Assassin’ Shelly Sweeney fought her way to national champion and represented her country proving she has those winning qualities needed to be a champion. Though boxing has been her passion, she is turning her hand to the coaching side of the sport, to help people grow in confidence and get the best out of themselves as she personally took up the sport for those reasons and knows the benefits first hand. Never judge a book by its cover, this angelic face will push you to your limits."
+
+                    Description = "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. "
                 },
                 new TrainerUser {
                     UserName ="14@test.com",
@@ -733,7 +793,15 @@ namespace BoxingSite.DAL
                     Facebook = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Twitter = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Available = true,
-                    Description = "I‘The Baby Faced Assassin’ Shelly Sweeney fought her way to national champion and represented her country proving she has those winning qualities needed to be a champion. Though boxing has been her passion, she is turning her hand to the coaching side of the sport, to help people grow in confidence and get the best out of themselves as she personally took up the sport for those reasons and knows the benefits first hand. Never judge a book by its cover, this angelic face will push you to your limits."
+
+                    Description = "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. "
+
                 },
                 new TrainerUser {
                     UserName ="15@test.com",
@@ -747,7 +815,15 @@ namespace BoxingSite.DAL
                     Facebook = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Twitter = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Available = true,
-                    Description = "J‘The Baby Faced Assassin’ Shelly Sweeney fought her way to national champion and represented her country proving she has those winning qualities needed to be a champion. Though boxing has been her passion, she is turning her hand to the coaching side of the sport, to help people grow in confidence and get the best out of themselves as she personally took up the sport for those reasons and knows the benefits first hand. Never judge a book by its cover, this angelic face will push you to your limits."
+
+                    Description = "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. "
+
                 },
 
 
@@ -763,7 +839,15 @@ namespace BoxingSite.DAL
                     Facebook = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Twitter = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Available = false,
-                    Description = "Cat‘The Baby Faced Assassin’ Shelly Sweeney fought her way to national champion and represented her country proving she has those winning qualities needed to be a champion. Though boxing has been her passion, she is turning her hand to the coaching side of the sport, to help people grow in confidence and get the best out of themselves as she personally took up the sport for those reasons and knows the benefits first hand. Never judge a book by its cover, this angelic face will push you to your limits."
+
+                    Description = "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. "
+
                 },
                 new TrainerUser {
                     UserName ="17@test.com",
@@ -777,7 +861,15 @@ namespace BoxingSite.DAL
                     Facebook = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Twitter = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Available = true,
-                    Description = "Dog‘The Baby Faced Assassin’ Shelly Sweeney fought her way to national champion and represented her country proving she has those winning qualities needed to be a champion. Though boxing has been her passion, she is turning her hand to the coaching side of the sport, to help people grow in confidence and get the best out of themselves as she personally took up the sport for those reasons and knows the benefits first hand. Never judge a book by its cover, this angelic face will push you to your limits."
+
+                    Description = "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. "
+
                 },
                 new TrainerUser {
                     UserName ="18@test.com",
@@ -791,7 +883,16 @@ namespace BoxingSite.DAL
                     Facebook = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Twitter = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Available = true,
-                    Description = "Elephant‘The Baby Faced Assassin’ Shelly Sweeney fought her way to national champion and represented her country proving she has those winning qualities needed to be a champion. Though boxing has been her passion, she is turning her hand to the coaching side of the sport, to help people grow in confidence and get the best out of themselves as she personally took up the sport for those reasons and knows the benefits first hand. Never judge a book by its cover, this angelic face will push you to your limits."
+
+
+                    Description = "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. "
+
                 },
                 new TrainerUser {
                     UserName ="19@test.com",
@@ -805,7 +906,15 @@ namespace BoxingSite.DAL
                     Facebook = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Twitter = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Available = true,
-                    Description = "Banana‘The Baby Faced Assassin’ Shelly Sweeney fought her way to national champion and represented her country proving she has those winning qualities needed to be a champion. Though boxing has been her passion, she is turning her hand to the coaching side of the sport, to help people grow in confidence and get the best out of themselves as she personally took up the sport for those reasons and knows the benefits first hand. Never judge a book by its cover, this angelic face will push you to your limits."
+
+                    Description = "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. "
+
                 },
                 new TrainerUser {
                     UserName ="20@test.com",
@@ -819,7 +928,15 @@ namespace BoxingSite.DAL
                     Facebook = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Twitter = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Available = true,
-                    Description = "Tree‘The Baby Faced Assassin’ Shelly Sweeney fought her way to national champion and represented her country proving she has those winning qualities needed to be a champion. Though boxing has been her passion, she is turning her hand to the coaching side of the sport, to help people grow in confidence and get the best out of themselves as she personally took up the sport for those reasons and knows the benefits first hand. Never judge a book by its cover, this angelic face will push you to your limits."
+
+                    Description = "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. "
+
                 },
                 new TrainerUser {
                     UserName ="21@test.com",
@@ -833,7 +950,15 @@ namespace BoxingSite.DAL
                     Facebook = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Twitter = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Available = true,
-                    Description = "Usurp‘The Baby Faced Assassin’ Shelly Sweeney fought her way to national champion and represented her country proving she has those winning qualities needed to be a champion. Though boxing has been her passion, she is turning her hand to the coaching side of the sport, to help people grow in confidence and get the best out of themselves as she personally took up the sport for those reasons and knows the benefits first hand. Never judge a book by its cover, this angelic face will push you to your limits."
+
+                    Description = "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. "
+
                 },
                 new TrainerUser {
                     UserName ="22@test.com",
@@ -847,7 +972,16 @@ namespace BoxingSite.DAL
                     Facebook = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Twitter = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Available = true,
-                    Description = "G‘The Baby Faced Assassin’ Shelly Sweeney fought her way to national champion and represented her country proving she has those winning qualities needed to be a champion. Though boxing has been her passion, she is turning her hand to the coaching side of the sport, to help people grow in confidence and get the best out of themselves as she personally took up the sport for those reasons and knows the benefits first hand. Never judge a book by its cover, this angelic face will push you to your limits."
+
+
+                    Description = "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. "
+
                 },
                 new TrainerUser {
                     UserName ="23@test.com",
@@ -861,7 +995,15 @@ namespace BoxingSite.DAL
                     Facebook = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Twitter = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Available = true,
-                    Description = "H‘The Baby Faced Assassin’ Shelly Sweeney fought her way to national champion and represented her country proving she has those winning qualities needed to be a champion. Though boxing has been her passion, she is turning her hand to the coaching side of the sport, to help people grow in confidence and get the best out of themselves as she personally took up the sport for those reasons and knows the benefits first hand. Never judge a book by its cover, this angelic face will push you to your limits."
+
+                    Description = "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. "
+
                 },
                 new TrainerUser {
                     UserName ="24@test.com",
@@ -875,7 +1017,15 @@ namespace BoxingSite.DAL
                     Facebook = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Twitter = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Available = true,
-                    Description = "I‘The Baby Faced Assassin’ Shelly Sweeney fought her way to national champion and represented her country proving she has those winning qualities needed to be a champion. Though boxing has been her passion, she is turning her hand to the coaching side of the sport, to help people grow in confidence and get the best out of themselves as she personally took up the sport for those reasons and knows the benefits first hand. Never judge a book by its cover, this angelic face will push you to your limits."
+
+                    Description = "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. "
+
                 },
                 new TrainerUser {
                     UserName ="25@test.com",
@@ -889,7 +1039,15 @@ namespace BoxingSite.DAL
                     Facebook = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Twitter = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Available = true,
-                    Description = "J‘The Baby Faced Assassin’ Shelly Sweeney fought her way to national champion and represented her country proving she has those winning qualities needed to be a champion. Though boxing has been her passion, she is turning her hand to the coaching side of the sport, to help people grow in confidence and get the best out of themselves as she personally took up the sport for those reasons and knows the benefits first hand. Never judge a book by its cover, this angelic face will push you to your limits."
+
+                    Description = "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. "
+
                 },
 
 
@@ -906,7 +1064,15 @@ namespace BoxingSite.DAL
                     Facebook = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Twitter = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Available = false,
-                    Description = "Cat‘The Baby Faced Assassin’ Shelly Sweeney fought her way to national champion and represented her country proving she has those winning qualities needed to be a champion. Though boxing has been her passion, she is turning her hand to the coaching side of the sport, to help people grow in confidence and get the best out of themselves as she personally took up the sport for those reasons and knows the benefits first hand. Never judge a book by its cover, this angelic face will push you to your limits."
+
+                    Description = "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. "
+
                 },
                 new TrainerUser {
                     UserName ="27@test.com",
@@ -920,7 +1086,15 @@ namespace BoxingSite.DAL
                     Facebook = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Twitter = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Available = true,
-                    Description = "Dog‘The Baby Faced Assassin’ Shelly Sweeney fought her way to national champion and represented her country proving she has those winning qualities needed to be a champion. Though boxing has been her passion, she is turning her hand to the coaching side of the sport, to help people grow in confidence and get the best out of themselves as she personally took up the sport for those reasons and knows the benefits first hand. Never judge a book by its cover, this angelic face will push you to your limits."
+
+                    Description = "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. "
+
                 },
                 new TrainerUser {
                     UserName ="28@test.com",
@@ -934,7 +1108,15 @@ namespace BoxingSite.DAL
                     Facebook = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Twitter = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Available = true,
-                    Description = "Elephant‘The Baby Faced Assassin’ Shelly Sweeney fought her way to national champion and represented her country proving she has those winning qualities needed to be a champion. Though boxing has been her passion, she is turning her hand to the coaching side of the sport, to help people grow in confidence and get the best out of themselves as she personally took up the sport for those reasons and knows the benefits first hand. Never judge a book by its cover, this angelic face will push you to your limits."
+
+                    Description = "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. "
+
                 },
                 new TrainerUser {
                     UserName ="29@test.com",
@@ -948,7 +1130,15 @@ namespace BoxingSite.DAL
                     Facebook = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Twitter = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Available = true,
-                    Description = "Banana‘The Baby Faced Assassin’ Shelly Sweeney fought her way to national champion and represented her country proving she has those winning qualities needed to be a champion. Though boxing has been her passion, she is turning her hand to the coaching side of the sport, to help people grow in confidence and get the best out of themselves as she personally took up the sport for those reasons and knows the benefits first hand. Never judge a book by its cover, this angelic face will push you to your limits."
+
+                    Description = "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. "
+
                 },
                 new TrainerUser {
                     UserName ="30@test.com",
@@ -962,7 +1152,15 @@ namespace BoxingSite.DAL
                     Facebook = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Twitter = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Available = true,
-                    Description = "Tree‘The Baby Faced Assassin’ Shelly Sweeney fought her way to national champion and represented her country proving she has those winning qualities needed to be a champion. Though boxing has been her passion, she is turning her hand to the coaching side of the sport, to help people grow in confidence and get the best out of themselves as she personally took up the sport for those reasons and knows the benefits first hand. Never judge a book by its cover, this angelic face will push you to your limits."
+
+                    Description = "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. "
+
                 },
                 new TrainerUser {
                     UserName ="31@test.com",
@@ -976,7 +1174,15 @@ namespace BoxingSite.DAL
                     Facebook = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Twitter = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Available = true,
-                    Description = "Usurp‘The Baby Faced Assassin’ Shelly Sweeney fought her way to national champion and represented her country proving she has those winning qualities needed to be a champion. Though boxing has been her passion, she is turning her hand to the coaching side of the sport, to help people grow in confidence and get the best out of themselves as she personally took up the sport for those reasons and knows the benefits first hand. Never judge a book by its cover, this angelic face will push you to your limits."
+
+                    Description = "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. "
+
                 },
                 new TrainerUser {
                     UserName ="32@test.com",
@@ -990,7 +1196,15 @@ namespace BoxingSite.DAL
                     Facebook = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Twitter = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Available = true,
-                    Description = "G‘The Baby Faced Assassin’ Shelly Sweeney fought her way to national champion and represented her country proving she has those winning qualities needed to be a champion. Though boxing has been her passion, she is turning her hand to the coaching side of the sport, to help people grow in confidence and get the best out of themselves as she personally took up the sport for those reasons and knows the benefits first hand. Never judge a book by its cover, this angelic face will push you to your limits."
+
+                    Description = "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. "
+
                 },
                 new TrainerUser {
                     UserName ="33@test.com",
@@ -1004,7 +1218,15 @@ namespace BoxingSite.DAL
                     Facebook = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Twitter = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Available = false,
-                    Description = "H‘The Baby Faced Assassin’ Shelly Sweeney fought her way to national champion and represented her country proving she has those winning qualities needed to be a champion. Though boxing has been her passion, she is turning her hand to the coaching side of the sport, to help people grow in confidence and get the best out of themselves as she personally took up the sport for those reasons and knows the benefits first hand. Never judge a book by its cover, this angelic face will push you to your limits."
+
+                    Description = "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. "
+
                 },
                 new TrainerUser {
                     UserName ="34@test.com",
@@ -1017,7 +1239,15 @@ namespace BoxingSite.DAL
                     Facebook = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Twitter = "https://www.youtube.com/watch?v=OJxCcCEobNs",
                     Available = true,
-                    Description = "I‘The Baby Faced Assassin’ Shelly Sweeney fought her way to national champion and represented her country proving she has those winning qualities needed to be a champion. Though boxing has been her passion, she is turning her hand to the coaching side of the sport, to help people grow in confidence and get the best out of themselves as she personally took up the sport for those reasons and knows the benefits first hand. Never judge a book by its cover, this angelic face will push you to your limits."
+
+                    Description = "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. " +
+                    "A lllong description of this boxer and any information that you deem relevant. "
+
                 }
 
             };
