@@ -61,28 +61,30 @@
                     Session Details
                 </button>
 
-                <button class="tablinks button" onclick="openTab(event, 'Trainer')">
-                    Trainer Details
+                <button class="tablinks button" onclick="openTab(event, 'Boxer')">
+                    Boxer Details
                 </button>
             </div>
         </div>
         <div class="inner">
 
-            <div id="Trainer" class="tabcontent">
+            <div id="Boxer" class="tabcontent">
                 <h2>
-                    @Html.DisplayFor(model => model.Trainer.Forename)
-                    @Html.DisplayFor(model => model.Trainer.Surname)
+                    @Html.DisplayFor(model => model.Boxer.Forename)
+                    @Html.DisplayFor(model => model.Boxer.Surname)
                 </h2>
                 <p class="">
-                    @Html.DisplayFor(model => model.Trainer.Description)
+                    @Html.DisplayFor(model => model.Boxer.Description)
                 </p>
 
 
 
-
-                @Html.ActionLink("View Trainer", "TrainerDetails", "Trainer", new { id = Model.Trainer.Id }, null)
-                &nbsp;&nbsp;
-                @Html.ActionLink("Back to Schedule", "Schedule", "Schedule")
+                <h3 class="align-center">
+                    @Html.ActionLink("View Boxer", "BoxerDetails", "Boxer", new { id = Model.Boxer.Id }, null)
+                    &nbsp;&nbsp;
+                    @Html.ActionLink("Back to Schedule", "Schedule", "Schedule")
+                </h3>
+            
 
             </div>
 
@@ -101,17 +103,15 @@
                 </p>
 
 
-                <p>
-                    @if (User.IsInRole("Administrator"))
-                    {
-                        @Html.ActionLink("Edit", "EditSession", new { Id = Model.ScheduleID })
-                        @Html.Raw("&nbsp; &nbsp;")
-                    }
-                </p>
 
 
 
                 <h3 class="align-center">
+                    @if (User.IsInRole("Administrator"))
+                    {
+                        @Html.ActionLink("Edit Session", "EditSession", new { Id = Model.ScheduleID })
+                        @Html.Raw("&nbsp; &nbsp;")
+                    }
                     @Html.ActionLink("Back to Schedule", "Schedule")
                 </h3>
             </div>

@@ -58,7 +58,7 @@ namespace BoxingSite.Controllers
 
                 context.Equipment.Add(equip);
                 context.SaveChanges();
-                return RedirectToAction("Equipment", "Equipment");
+                return RedirectToAction("About", "About");
             }
 
             ViewBag.SupplierId = new SelectList(context.Suppliers, "SupplierId", "Name");

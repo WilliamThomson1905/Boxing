@@ -76,7 +76,7 @@ namespace BoxingSite.Models
     /// The Trainers in the gym - each will instanciate this class 
     /// </summary> 
     [Table("TrainerUser")]
-    public class TrainerUser : ApplicationUser
+    public class BoxerUser : ApplicationUser
     {
 
         [Required]
@@ -197,9 +197,9 @@ namespace BoxingSite.Models
         public virtual BoxingClass BoxingClass { get; set; }
 
         // Foriegn key - Trainer will do class
-        public string TrainerID { get; set; }
+        public string BoxerID { get; set; }
         // Corresponding navigation property 
-        public virtual TrainerUser Trainer { get; set; }
+        public virtual BoxerUser Boxer { get; set; }
         
 
 

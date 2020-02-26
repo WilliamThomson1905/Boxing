@@ -16,7 +16,7 @@
         <div class="inner spotlight style1">
             <div class="content align-center">
                 <header class="major">
-                    <h2>Schedule</h2>
+                    <h2>Timetable</h2>
                 </header>
                 <p>
                     The only boxing gym in Glasgow open 7 days.The only boxing gym in Glasgow open 7 days.
@@ -124,7 +124,7 @@
                                                 @string.Format("{0:00}:{1:00}", item.EndTime.Hours, item.EndTime.Minutes)
 
                                             </div>
-                                            <div class="classInstructor">@item.Trainer.Forename @item.Trainer.Surname </div>
+                                            <div class="classInstructor">@item.Boxer.Forename @item.Boxer.Surname </div>
                                         </a>
                                         @if (User.IsInRole("Administrator"))
                                         {

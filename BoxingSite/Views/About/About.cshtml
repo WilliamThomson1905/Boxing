@@ -34,56 +34,58 @@
             <p><strong>King Boxing Promotions</strong> – King Boxing promote more events in Scotland than any other promoter. We promote regular public shows in addition to operating a Boxing Dinner Club which is based in Glasgow’s Crowne Plaza.</p>
 
 
-
-
+            
             <br /><br /><br />
-            <div class="inner">
-                <h2>Gym Equipment</h2>
 
-                @if (User.IsInRole("Administrator"))
-                {
-                    @Html.ActionLink("Create Equipment", "CreateEquipment", "Equipment")
-
-                }
-
-                <table>
-                    <tr>
-                        <th>Item</th>
-                        <th>Quantity</th>
-                        @if (!User.IsInRole("Administrator"))
-                        {
-                            <th>Manage</th>
-                        }
-                    </tr>
-
-                    @foreach (var item in Model)
-                    {
-                        <tr>
-                            <td>@item.Name</td>
-                            <td>@item.Quantity</td>
-                            @if (!User.IsInRole("Administrator"))
-                            {
-                                <td>
-                                    <a href="/About/EditEquipment/@item.EquipmentID">Edit</a>
-                                    @Html.ActionLink("Delete", "DeleteEquipment", new { id = item.EquipmentID },
-                                                   new { onclick = "return confirm('Are you sure you wish to delete this Equipment? It will no longer be displayed on site. ');" })
-
-                                </td>
-                            }
-                        </tr>
-
-                    }
-
-                </table>
-
-                <h3 class="align-center">
-                    <a href="../../Schedule/Schedule">View Timetable</a>
-                </h3>
-            </div>
         </div>
     </section>
 
+    <section class="main">
 
+        <div class="inner">
+            <h2>Gym Equipment</h2>
+
+            @if (User.IsInRole("Administrator"))
+            {
+                @Html.ActionLink("Create Equipment", "CreateEquipment", "Equipment")
+
+            }
+
+            <table>
+                <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    @if (User.IsInRole("Administrator"))
+                    {
+                        <th>Manage</th>
+                    }
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@item.Quantity</td>
+                        @if (User.IsInRole("Administrator"))
+                        {
+                            <td>
+                                <a href="/About/EditEquipment/@item.EquipmentID">Edit</a>
+                                @Html.ActionLink("Delete", "DeleteEquipment", new { id = item.EquipmentID },
+                                               new { onclick = "return confirm('Are you sure you wish to delete this Equipment? It will no longer be displayed on site. ');" })
+
+                            </td>
+                        }
+                    </tr>
+
+                }
+
+            </table>
+
+            <h3 class="align-center">
+                <a href="../../Schedule/Schedule">View Timetable</a>
+            </h3>
+        </div>
+    </section>
     @*<div class="parallax align-center" style="height: 220px; background-image: url('../../images/boxing/chris-kendall-sJ6az6-T1u8-unsplash.jpg')">
             <p>*This is an exhaustive list of all the equipment at our gym - @DateTime.Now.ToString("dd MM, yyyy")
             <br/>Availability of Equiptment may be restricted if a class is on - for more inforation contact: 07490 123456</p>

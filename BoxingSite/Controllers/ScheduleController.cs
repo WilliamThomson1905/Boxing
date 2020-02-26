@@ -24,7 +24,7 @@ namespace BoxingSite.Controllers
 
         public ActionResult CreateBoxingClass()
         {
-            // ViewBag.TrainerID = new SelectList(context.TrainerUsers, "ID", "Forename");
+            // ViewBag.BoxerID = new SelectList(context.BoxerUsers, "ID", "Forename");
             return View();
         }
 
@@ -36,7 +36,7 @@ namespace BoxingSite.Controllers
         {
             if (ModelState.IsValid)
             {
-                // TrainerUser trainerDetails = context.TrainerUsers.Find(pBoxingClass.TrainerID);
+                // BoxerUser boxerDetails = context.BoxerUsers.Find(pBoxingClass.BoxerID);
 
                 BoxingClass boxingClass = new BoxingClass
                 {
@@ -49,7 +49,7 @@ namespace BoxingSite.Controllers
                 return RedirectToAction("Classes", "Schedule");
             }
 
-            // ViewBag.ID = new SelectList(context.TrainerUsers, "ID", "Forename");
+            // ViewBag.ID = new SelectList(context.BoxerUsers, "ID", "Forename");
             return View("CreateBoxingClass", "Schedule");
         }
 
@@ -67,7 +67,7 @@ namespace BoxingSite.Controllers
             
 
 
-            // ViewBag.TrainerID = new SelectList(context.TrainerUsers, "ID", "Forename");
+            // ViewBag.BoxerID = new SelectList(context.BoxerUsers, "ID", "Forename");
             return View(boxingClassSession);
         }
 
@@ -85,7 +85,7 @@ namespace BoxingSite.Controllers
             
 
 
-            // ViewBag.TrainerID = new SelectList(context.TrainerUsers, "ID", "Forename");
+            // ViewBag.BoxerID = new SelectList(context.BoxerUsers, "ID", "Forename");
             return View(boxingClass);
         }
 
@@ -108,7 +108,7 @@ namespace BoxingSite.Controllers
                 return RedirectToAction("Classes", "Schedule");
             }
 
-            // ViewBag.TrainerID = new SelectList(context.TrainerUsers, "ID", "Forename");
+            // ViewBag.BoxerID = new SelectList(context.BoxerUsers, "ID", "Forename");
             return View(pBoxingClass);
         }
 
@@ -216,7 +216,7 @@ namespace BoxingSite.Controllers
 
 
 
-            // var boxingClasses = context.BoxingClasses.Include(b => b.Trainer, c => c.Schedule);
+            // var boxingClasses = context.BoxingClasses.Include(b => b.Boxer, c => c.Schedule);
             //return View(context.BoxingClasses.ToList());
             return View(slvm);
         }
@@ -227,8 +227,8 @@ namespace BoxingSite.Controllers
 
         public ActionResult CreateSession()
         {
-            //ViewBag.TrainerID = new SelectList(context.TrainerUsers, "ID", "Forename");
-            ViewBag.TrainerID = GetTrainersSelectListItem(-1);
+            //ViewBag.BoxerID = new SelectList(context.BoxerUsers, "ID", "Forename");
+            ViewBag.BoxerID = GetBoxersSelectListItem(-1);
             ViewBag.BoxingClassID = new SelectList(context.BoxingClasses, "BoxingClassID", "Title");
             return View();
         }
@@ -239,11 +239,11 @@ namespace BoxingSite.Controllers
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Administrator")]
         public ActionResult CreateSession([Bind(Include = "StartTime, EndTime, Day, ClassStatus, " +
-            "BoxingClassID, TrainerID")] Schedule pSchedule)
+            "BoxingClassID, BoxerID")] Schedule pSchedule)
         {
             if (ModelState.IsValid)
             {
-                TrainerUser trainerDetails = context.TrainerUsers.Find(pSchedule.TrainerID);
+                BoxerUser boxerDetails = context.BoxerUsers.Find(pSchedule.BoxerID);
                 BoxingClass boxingClassDetails = context.BoxingClasses.Find(pSchedule.BoxingClassID);
 
 
@@ -254,8 +254,8 @@ namespace BoxingSite.Controllers
                     EndTime = pSchedule.EndTime,
                     Day = pSchedule.Day,
                     ClassStatus = pSchedule.ClassStatus,
-                    TrainerID = pSchedule.TrainerID,
-                    Trainer = trainerDetails,
+                    BoxerID = pSchedule.BoxerID,
+                    Boxer = boxerDetails,
                     BoxingClassID = pSchedule.BoxingClassID,
                     BoxingClass = boxingClassDetails
                 };
@@ -265,8 +265,8 @@ namespace BoxingSite.Controllers
                 return RedirectToAction("Schedule", "Schedule");
             }
 
-            ViewBag.TrainerID = GetTrainersSelectListItem(pSchedule.ScheduleID);
-            // ViewBag.TrainerID = new SelectList(context.TrainerUsers, "ID", "Forename");
+            ViewBag.BoxerID = GetBoxersSelectListItem(pSchedule.ScheduleID);
+            // ViewBag.BoxerID = new SelectList(context.BoxerUsers, "ID", "Forename");
             ViewBag.BoxingClassID = new SelectList(context.BoxingClasses, "BoxingClassID", "Title");
             return View("CreateBoxingClass", "Schedule");
         }
@@ -289,14 +289,14 @@ namespace BoxingSite.Controllers
 
 
             // pass schedule Id 
-            ViewBag.TrainerID = GetTrainersSelectListItem(Id);
-            //ViewBag.TrainerID = new SelectList(context.TrainerUsers, "ID", "forename+surname", gymSession.TrainerID);
+            ViewBag.BoxerID = GetBoxersSelectListItem(Id);
+            //ViewBag.BoxerID = new SelectList(context.BoxerUsers, "ID", "forename+surname", gymSession.BoxerID);
             ViewBag.BoxingClassID = new SelectList(context.BoxingClasses, "BoxingClassID", "title", gymSession.BoxingClassID);
             return View(gymSession);
         }
 
 
-        public List<SelectListItem> GetTrainersSelectListItem(int? Id)
+        public List<SelectListItem> GetBoxersSelectListItem(int? Id)
         {
             Schedule gymSession;
 
@@ -307,26 +307,26 @@ namespace BoxingSite.Controllers
             }
 
 
-            var allTrainers = context.TrainerUsers;
-            List<SelectListItem> trainers = new List<SelectListItem>();
+            var allBoxers = context.BoxerUsers;
+            List<SelectListItem> boxers = new List<SelectListItem>();
 
-            foreach (var trainer in allTrainers)
+            foreach (var boxer in allBoxers)
             {
-                trainers.Add(new SelectListItem()
+                boxers.Add(new SelectListItem()
                 {
-                    Text = trainer.Forename + " " + trainer.Surname,
-                    Value = trainer.Id,
-                    Selected = trainer.Id == gymSession.TrainerID ? true : false
+                    Text = boxer.Forename + " " + boxer.Surname,
+                    Value = boxer.Id,
+                    Selected = boxer.Id == gymSession.BoxerID ? true : false
                 });
             } 
-            return trainers; 
+            return boxers; 
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Administrator")]
         public ActionResult EditSession([Bind(Include = "ScheduleID, StartTime, EndTime, Day," +
-            "ClassStatus, BoxingClassID, TrainerID")] Schedule pSchedule)
+            "ClassStatus, BoxingClassID, BoxerID")] Schedule pSchedule)
         {
             if (ModelState.IsValid)
             {
@@ -336,8 +336,8 @@ namespace BoxingSite.Controllers
                 return RedirectToAction("Schedule", "Schedule");
             }
 
-            ViewBag.TrainerID = GetTrainersSelectListItem(pSchedule.ScheduleID);
-            // ViewBag.TrainerID = new SelectList(context.TrainerUsers, "ID", "forename", pSchedule.TrainerID);
+            ViewBag.BoxerID = GetBoxersSelectListItem(pSchedule.ScheduleID);
+            // ViewBag.BoxerID = new SelectList(context.BoxerUsers, "ID", "forename", pSchedule.BoxerID);
             ViewBag.BoxingClassID = new SelectList(context.BoxingClasses, "BoxingClassID", "title", pSchedule.BoxingClassID);
             return View(pSchedule);
         }

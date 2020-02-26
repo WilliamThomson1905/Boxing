@@ -10,10 +10,10 @@ namespace BoxingSite.Models
         public string Title { get; set; }
         public string Description { get; set; }
 
-        // Foriegn key - Trainer will do class
-        public string TrainerID { get; set; }
+        // Foriegn key - Boxer will do class
+        public string BoxerID { get; set; }
         // Corresponding navigation property 
-        public virtual TrainerUser Trainer { get; set; }
+        public virtual BoxerUser Boxer { get; set; }
 
 
         // Navigation property - BoxingClass can have one or more instances of 'Schedule' 

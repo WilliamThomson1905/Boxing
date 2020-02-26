@@ -46,7 +46,7 @@ namespace BoxingSite.Models
         public float Height { get; set; }
         public bool Gender { get; set; }
 
-        // trainer 
+        // boxer 
         [StringLength(1500)]
         public string Description { get; set; }
 
@@ -64,7 +64,7 @@ namespace BoxingSite.Models
         [Url]
         public string Twitter { get; set; }
 
-        // for PT Sessions - will bew shown on their Trainer/Details/id view
+        // for PT Sessions - will bew shown on their Boxer/Details/id view
         [Display(Name = "Are you open for PT Sessions?")]
         public bool Available { get; set; }
 

@@ -1,7 +1,7 @@
-﻿@model IEnumerable<BoxingSite.Models.TrainerUser>
+﻿@model IEnumerable<BoxingSite.Models.BoxerUser>
 
 @{
-    ViewBag.Title = "Trainers";
+    ViewBag.Title = "Boxers";
 }
 <link href="~/assets/css/mainPhantom.css" rel="stylesheet" />
 
@@ -13,7 +13,7 @@
         <div class="inner spotlight style1">
             <div class="content  align-center">
                 <header class="major">
-                    <h2>Trainers - Professional Boxers</h2>
+                    <h2>Professional Boxers</h2>
                 </header>
                 <p>
                     King Boxing currently manage <strong><i>29 professional boxers</i></strong>.
@@ -31,14 +31,14 @@
             <p>
                 You can search through our 29 professional boxers.
             </p>
-            <input type="text" id="searchInput" onkeyup="searchTrainers()" placeholder="Search for Trainers.." title="Type in a name">
+            <input type="text" id="searchInput" onkeyup="searchBoxers()" placeholder="Search for Boxers.." title="Type in a name">
         </div>
     </div>
     <!-- Main -->
     <div id="">
         <div class="inner">
             @if (User.IsInRole("Administrator")) {
-                @Html.ActionLink("Create Trainer", "Create", "Trainer")
+                @Html.ActionLink("Create Boxer", "Create", "Boxer")
                 <br /><br />
             }
             <section class="tiles">
@@ -48,8 +48,8 @@
                     int styleNum = rand.Next(1, 7);
                     <article class="style@(styleNum)">
 
-                        <a href="/Trainer/TrainerDetails/@person.Id">
-                            <h2 class="trainerName">@Html.DisplayFor(modelItem => person.Forename) @Html.DisplayFor(modelItem => person.Surname)</h2>
+                        <a href="/Boxer/BoxerDetails/@person.Id">
+                            <h2 class="boxerName">@Html.DisplayFor(modelItem => person.Forename) @Html.DisplayFor(modelItem => person.Surname)</h2>
                             <div class="content">
                                 <p>@Html.DisplayFor(modelItem => person.Description).ToString().Substring(0, 100)...</p>
                                 <span>Learn More?</span>
@@ -65,12 +65,12 @@
     </div>
 </div>
 <script>
-    function searchTrainers() {
+    function searchBoxers() {
 
         var searchInput, filter;
         var articles;
-        var trainerName;
-        var trainerNameTextValue, trainerDescriptionTextValue;
+        var boxerName;
+        var boxerNameTextValue, boxerDescriptionTextValue;
         var a, i;
 
         searchInput = document.getElementById('searchInput').value;
@@ -81,17 +81,17 @@
 
             a = articles[i].getElementsByTagName('a')[0];
 
-            // get name of each trainer
-            trainerName = a.getElementsByClassName('trainerName')[0];
-            trainerNameTextValue = trainerName.textContent;
+            // get name of each boxer
+            boxerName = a.getElementsByClassName('boxerName')[0];
+            boxerNameTextValue = boxerName.textContent;
 
-            // get description of each trainer
+            // get description of each boxer
             var p = articles[i].getElementsByTagName('p')[0];
-            trainerDescriptionTextValue = p.textContent;
+            boxerDescriptionTextValue = p.textContent;
 
 
-            if (trainerNameTextValue.toUpperCase().indexOf(filter.toString()) > -1 ||
-                trainerDescriptionTextValue.toUpperCase().indexOf(filter.toString()) > -1) {
+            if (boxerNameTextValue.toUpperCase().indexOf(filter.toString()) > -1 ||
+                boxerDescriptionTextValue.toUpperCase().indexOf(filter.toString()) > -1) {
                 articles[i].style.display = "";
             }
             else {

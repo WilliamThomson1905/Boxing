@@ -1,10 +1,10 @@
 ﻿
 
 
-@model BoxingSite.Models.TrainerUser
+@model BoxingSite.Models.BoxerUser
 
 @{
-    ViewBag.Title = "Edit Trainer Details";
+    ViewBag.Title = "Edit Boxer Details";
 }
 
 
@@ -143,7 +143,7 @@
 
 
                         <input type="submit" value="Save" class="button primary" />
-                        @Html.ActionLink("Back to Details", "TrainerDetails", "Trainer", new { id = Model.Id }, new { @class = "button" })
+                        @Html.ActionLink("Back to Details", "BoxerDetails", "Boxer", new { id = Model.Id }, new { @class = "button" })
 
 
                     </div>

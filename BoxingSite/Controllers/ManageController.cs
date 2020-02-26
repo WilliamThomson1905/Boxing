@@ -107,7 +107,7 @@ namespace BoxingSite.Controllers
 
             else if(User.IsInRole("Trainer"))
             {
-                var result = (TrainerUser)UserManager.FindByName(paramUserName);
+                var result = (BoxerUser)UserManager.FindByName(paramUserName);
 
                 // If we could not find the user, throw an exception
                 if (result == null)
@@ -221,11 +221,11 @@ namespace BoxingSite.Controllers
                     context.Entry(model).State = EntityState.Modified;
                     context.SaveChanges();
                 }
-                else if (User.IsInRole("Trainer"))
+                else if (User.IsInRole("Boxer"))
                 {
 
                     // If user is an applicant
-                    var model = new TrainerUser()
+                    var model = new BoxerUser()
                     {
                         Id = applicationUser.Id,
                         UserName = applicationUser.UserName,

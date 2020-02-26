@@ -28,9 +28,9 @@ namespace BoxingSite.DAL
             {
                 var roleresult = roleManager.Create(new IdentityRole(RoleNames.ROLE_STAFF));
             }
-            if (!roleManager.RoleExists(RoleNames.ROLE_TRAINER))
+            if (!roleManager.RoleExists(RoleNames.ROLE_BOXER))
             {
-                var roleresult = roleManager.Create(new IdentityRole(RoleNames.ROLE_TRAINER));
+                var roleresult = roleManager.Create(new IdentityRole(RoleNames.ROLE_BOXER));
             }
             if (!roleManager.RoleExists(RoleNames.ROLE_GENERAL))
             {
@@ -610,13 +610,13 @@ namespace BoxingSite.DAL
             context.SaveChanges();
 
 
-            // Seed trainers/coaches
-            var trainerUsers = new List<TrainerUser>
+            // Seed boxers/coaches
+            var boxerUsers = new List<BoxerUser>
             {
-                new TrainerUser {
+                new BoxerUser {
                     UserName ="6@test.com",
                     Email = "6@test.com",
-                    ImageSrc ="../../images/trainers/joshua-medway-sd-Pq5aDoO4-unsplash.jpg",
+                    ImageSrc ="../../images/boxers/joshua-medway-sd-Pq5aDoO4-unsplash.jpg",
                     Forename = "Robert",
                     Surname = "Pitch",
                     DOB = new DateTime(1964, 7, 9),
@@ -633,10 +633,10 @@ namespace BoxingSite.DAL
                     "A lllong description of this boxer and any information that you deem relevant. " +
                     "A lllong description of this boxer and any information that you deem relevant. "
                 },
-                new TrainerUser {
+                new BoxerUser {
                     UserName ="7@test.com",
                     Email = "7@test.com",
-                    ImageSrc ="../../images/trainers/colin-cassidy-akj4oRw8E04-unsplash.jpg",
+                    ImageSrc ="../../images/boxers/colin-cassidy-akj4oRw8E04-unsplash.jpg",
                     Forename = "Johnny",
                     Surname = "Greenleaf",
                     DOB = new DateTime(1964, 7, 9),
@@ -651,10 +651,10 @@ namespace BoxingSite.DAL
                     "A lllong description of this boxer and any information that you deem relevant. " +
                     "A lllong description of this boxer and any information that you deem relevant. "
                 },
-                new TrainerUser {
+                new BoxerUser {
                     UserName ="8@test.com",
                     Email = "8@test.com",
-                    ImageSrc ="../../images/trainers/steven-van-vLC--gwHnbQ-unsplash.jpg",
+                    ImageSrc ="../../images/boxers/steven-van-vLC--gwHnbQ-unsplash.jpg",
                     Forename = "Helen",
                     Surname = "Tacki",
                     DOB = new DateTime(1964, 7, 9),
@@ -673,10 +673,10 @@ namespace BoxingSite.DAL
                     "A lllong description of this boxer and any information that you deem relevant. "
 
                 },
-                new TrainerUser {
+                new BoxerUser {
                     UserName ="9@test.com",
                     Email = "9@test.com",
-                    ImageSrc ="../../images/trainers/emily-sea-coiWR0gT8Cw-unsplash.jpg",
+                    ImageSrc ="../../images/boxers/emily-sea-coiWR0gT8Cw-unsplash.jpg",
                     Forename = "Garry",
                     Surname = "Gates",
                     DOB = new DateTime(1964, 7, 9),
@@ -695,10 +695,10 @@ namespace BoxingSite.DAL
                     "A lllong description of this boxer and any information that you deem relevant. "
 
                 },
-                new TrainerUser {
+                new BoxerUser {
                     UserName ="10@test.com",
                     Email = "10@test.com",
-                    ImageSrc ="../../images/trainers/filipe-almeida-mnEWC72eWDM-unsplash.jpg",
+                    ImageSrc ="../../images/boxers/filipe-almeida-mnEWC72eWDM-unsplash.jpg",
                     Forename = "Douglas",
                     Surname = "Butcher",
                     DOB = new DateTime(1964, 7, 9),
@@ -717,10 +717,10 @@ namespace BoxingSite.DAL
                     "A lllong description of this boxer and any information that you deem relevant. "
 
                 },
-                new TrainerUser {
+                new BoxerUser {
                     UserName ="11@test.com",
                     Email = "11@test.com",
-                    ImageSrc ="../../images/trainers/form-B6fw69UttOI-unsplash.jpg",
+                    ImageSrc ="../../images/boxers/form-B6fw69UttOI-unsplash.jpg",
                     Forename = "James",
                     Surname = "Walker",
                     DOB = new DateTime(1964, 7, 9),
@@ -739,10 +739,10 @@ namespace BoxingSite.DAL
                     "A lllong description of this boxer and any information that you deem relevant. "
 
                 },
-                new TrainerUser {
+                new BoxerUser {
                     UserName ="12@test.com",
                     Email = "12@test.com",
-                    ImageSrc ="../../images/trainers/form-qQGAQMbURhU-unsplash.jpg",
+                    ImageSrc ="../../images/boxers/form-qQGAQMbURhU-unsplash.jpg",
                     Forename = "William",
                     Surname = "Wallace",
                     DOB = new DateTime(1964, 7, 9),
@@ -761,10 +761,10 @@ namespace BoxingSite.DAL
                     "A lllong description of this boxer and any information that you deem relevant. "
 
                 },
-                new TrainerUser {
+                new BoxerUser {
                     UserName ="13@test.com",
                     Email = "13@test.com",
-                    ImageSrc ="../../images/trainers/imani-clovis-tBt9JxuQBYs-unsplash.jpg",
+                    ImageSrc ="../../images/boxers/imani-clovis-tBt9JxuQBYs-unsplash.jpg",
                     Forename = "Elizabeth",
                     Surname = "Almond",
                     Instagram = "https://www.youtube.com/watch?v=OJxCcCEobNs",
@@ -781,10 +781,10 @@ namespace BoxingSite.DAL
                     "A lllong description of this boxer and any information that you deem relevant. " +
                     "A lllong description of this boxer and any information that you deem relevant. "
                 },
-                new TrainerUser {
+                new BoxerUser {
                     UserName ="14@test.com",
                     Email = "14@test.com",
-                    ImageSrc ="../../images/trainers/jonathan-cosens-photography-jcp-v-YiCIbDjOQ-unsplash.jpg",
+                    ImageSrc ="../../images/boxers/jonathan-cosens-photography-jcp-v-YiCIbDjOQ-unsplash.jpg",
                     Forename = "Robert",
                     Surname = "Lilt",
                     DOB = new DateTime(1964, 7, 9),
@@ -803,10 +803,10 @@ namespace BoxingSite.DAL
                     "A lllong description of this boxer and any information that you deem relevant. "
 
                 },
-                new TrainerUser {
+                new BoxerUser {
                     UserName ="15@test.com",
                     Email = "15@test.com",
-                    ImageSrc ="../../images/trainers/form-B6fw69UttOI-unsplash.jpg",
+                    ImageSrc ="../../images/boxers/form-B6fw69UttOI-unsplash.jpg",
                     Forename = "Violet",
                     Surname = "Malcolm",
                     DOB = new DateTime(1964, 7, 9),
@@ -827,10 +827,10 @@ namespace BoxingSite.DAL
                 },
 
 
-                new TrainerUser {
+                new BoxerUser {
                     UserName ="16@test.com",
                     Email = "16@test.com",
-                    ImageSrc ="../../images/trainers/joshua-medway-sd-Pq5aDoO4-unsplash.jpg",
+                    ImageSrc ="../../images/boxers/joshua-medway-sd-Pq5aDoO4-unsplash.jpg",
                     Forename = "Robert",
                     Surname = "Pitch",
                     DOB = new DateTime(1964, 7, 9),
@@ -849,10 +849,10 @@ namespace BoxingSite.DAL
                     "A lllong description of this boxer and any information that you deem relevant. "
 
                 },
-                new TrainerUser {
+                new BoxerUser {
                     UserName ="17@test.com",
                     Email = "17@test.com",
-                    ImageSrc ="../../images/trainers/colin-cassidy-akj4oRw8E04-unsplash.jpg",
+                    ImageSrc ="../../images/boxers/colin-cassidy-akj4oRw8E04-unsplash.jpg",
                     Forename = "John",
                     Surname = "Greenleaf",
                     DOB = new DateTime(1964, 7, 9),
@@ -871,10 +871,10 @@ namespace BoxingSite.DAL
                     "A lllong description of this boxer and any information that you deem relevant. "
 
                 },
-                new TrainerUser {
+                new BoxerUser {
                     UserName ="18@test.com",
                     Email = "18@test.com",
-                    ImageSrc ="../../images/trainers/steven-van-vLC--gwHnbQ-unsplash.jpg",
+                    ImageSrc ="../../images/boxers/steven-van-vLC--gwHnbQ-unsplash.jpg",
                     Forename = "Helen",
                     Surname = "Tacki",
                     DOB = new DateTime(1964, 7, 9),
@@ -894,10 +894,10 @@ namespace BoxingSite.DAL
                     "A lllong description of this boxer and any information that you deem relevant. "
 
                 },
-                new TrainerUser {
+                new BoxerUser {
                     UserName ="19@test.com",
                     Email = "19@test.com",
-                    ImageSrc ="../../images/trainers/emily-sea-coiWR0gT8Cw-unsplash.jpg",
+                    ImageSrc ="../../images/boxers/emily-sea-coiWR0gT8Cw-unsplash.jpg",
                     Forename = "Garry",
                     Surname = "Gates",
                     DOB = new DateTime(1964, 7, 9),
@@ -916,10 +916,10 @@ namespace BoxingSite.DAL
                     "A lllong description of this boxer and any information that you deem relevant. "
 
                 },
-                new TrainerUser {
+                new BoxerUser {
                     UserName ="20@test.com",
                     Email = "20@test.com",
-                    ImageSrc ="../../images/trainers/filipe-almeida-mnEWC72eWDM-unsplash.jpg",
+                    ImageSrc ="../../images/boxers/filipe-almeida-mnEWC72eWDM-unsplash.jpg",
                     Forename = "Douglas",
                     Surname = "Butcher",
                     DOB = new DateTime(1964, 7, 9),
@@ -938,10 +938,10 @@ namespace BoxingSite.DAL
                     "A lllong description of this boxer and any information that you deem relevant. "
 
                 },
-                new TrainerUser {
+                new BoxerUser {
                     UserName ="21@test.com",
                     Email = "21@test.com",
-                    ImageSrc ="../../images/trainers/form-B6fw69UttOI-unsplash.jpg",
+                    ImageSrc ="../../images/boxers/form-B6fw69UttOI-unsplash.jpg",
                     Forename = "James",
                     Surname = "Walker",
                     DOB = new DateTime(1964, 7, 9),
@@ -960,10 +960,10 @@ namespace BoxingSite.DAL
                     "A lllong description of this boxer and any information that you deem relevant. "
 
                 },
-                new TrainerUser {
+                new BoxerUser {
                     UserName ="22@test.com",
                     Email = "22@test.com",
-                    ImageSrc ="../../images/trainers/form-qQGAQMbURhU-unsplash.jpg",
+                    ImageSrc ="../../images/boxers/form-qQGAQMbURhU-unsplash.jpg",
                     Forename = "William",
                     Surname = "Wallace",
                     DOB = new DateTime(1964, 7, 9),
@@ -983,10 +983,10 @@ namespace BoxingSite.DAL
                     "A lllong description of this boxer and any information that you deem relevant. "
 
                 },
-                new TrainerUser {
+                new BoxerUser {
                     UserName ="23@test.com",
                     Email = "23@test.com",
-                    ImageSrc ="../../images/trainers/imani-clovis-tBt9JxuQBYs-unsplash.jpg",
+                    ImageSrc ="../../images/boxers/imani-clovis-tBt9JxuQBYs-unsplash.jpg",
                     Forename = "Elizabeth",
                     Surname = "Almond",
                     DOB = new DateTime(1964, 7, 9),
@@ -1005,10 +1005,10 @@ namespace BoxingSite.DAL
                     "A lllong description of this boxer and any information that you deem relevant. "
 
                 },
-                new TrainerUser {
+                new BoxerUser {
                     UserName ="24@test.com",
                     Email = "24@test.com",
-                    ImageSrc ="../../images/trainers/jonathan-cosens-photography-jcp-v-YiCIbDjOQ-unsplash.jpg",
+                    ImageSrc ="../../images/boxers/jonathan-cosens-photography-jcp-v-YiCIbDjOQ-unsplash.jpg",
                     Forename = "Robert",
                     Surname = "Lilt",
                     DOB = new DateTime(1964, 7, 9),
@@ -1027,10 +1027,10 @@ namespace BoxingSite.DAL
                     "A lllong description of this boxer and any information that you deem relevant. "
 
                 },
-                new TrainerUser {
+                new BoxerUser {
                     UserName ="25@test.com",
                     Email = "25@test.com",
-                    ImageSrc ="../../images/trainers/form-B6fw69UttOI-unsplash.jpg",
+                    ImageSrc ="../../images/boxers/form-B6fw69UttOI-unsplash.jpg",
                     Forename = "Violet",
                     Surname = "Malcolm",
                     DOB = new DateTime(1964, 7, 9),
@@ -1052,10 +1052,10 @@ namespace BoxingSite.DAL
 
 
 
-                new TrainerUser {
+                new BoxerUser {
                     UserName ="26@test.com",
                     Email = "26@test.com",
-                    ImageSrc ="../../images/trainers/joshua-medway-sd-Pq5aDoO4-unsplash.jpg",
+                    ImageSrc ="../../images/boxers/joshua-medway-sd-Pq5aDoO4-unsplash.jpg",
                     Forename = "Robert",
                     Surname = "Pitch",
                     DOB = new DateTime(1964, 7, 9),
@@ -1074,10 +1074,10 @@ namespace BoxingSite.DAL
                     "A lllong description of this boxer and any information that you deem relevant. "
 
                 },
-                new TrainerUser {
+                new BoxerUser {
                     UserName ="27@test.com",
                     Email = "27@test.com",
-                    ImageSrc ="../../images/trainers/colin-cassidy-akj4oRw8E04-unsplash.jpg",
+                    ImageSrc ="../../images/boxers/colin-cassidy-akj4oRw8E04-unsplash.jpg",
                     Forename = "John",
                     Surname = "Greenleaf",
                     DOB = new DateTime(1964, 7, 9),
@@ -1096,10 +1096,10 @@ namespace BoxingSite.DAL
                     "A lllong description of this boxer and any information that you deem relevant. "
 
                 },
-                new TrainerUser {
+                new BoxerUser {
                     UserName ="28@test.com",
                     Email = "28@test.com",
-                    ImageSrc ="../../images/trainers/steven-van-vLC--gwHnbQ-unsplash.jpg",
+                    ImageSrc ="../../images/boxers/steven-van-vLC--gwHnbQ-unsplash.jpg",
                     Forename = "Helen",
                     Surname = "Tacki",
                     DOB = new DateTime(1964, 7, 9),
@@ -1118,10 +1118,10 @@ namespace BoxingSite.DAL
                     "A lllong description of this boxer and any information that you deem relevant. "
 
                 },
-                new TrainerUser {
+                new BoxerUser {
                     UserName ="29@test.com",
                     Email = "29@test.com",
-                    ImageSrc ="../../images/trainers/emily-sea-coiWR0gT8Cw-unsplash.jpg",
+                    ImageSrc ="../../images/boxers/emily-sea-coiWR0gT8Cw-unsplash.jpg",
                     Forename = "Garry",
                     Surname = "Gates",
                     DOB = new DateTime(1964, 7, 9),
@@ -1140,10 +1140,10 @@ namespace BoxingSite.DAL
                     "A lllong description of this boxer and any information that you deem relevant. "
 
                 },
-                new TrainerUser {
+                new BoxerUser {
                     UserName ="30@test.com",
                     Email = "30@test.com",
-                    ImageSrc ="../../images/trainers/filipe-almeida-mnEWC72eWDM-unsplash.jpg",
+                    ImageSrc ="../../images/boxers/filipe-almeida-mnEWC72eWDM-unsplash.jpg",
                     Forename = "Douglas",
                     Surname = "Butcher",
                     DOB = new DateTime(1964, 7, 9),
@@ -1162,10 +1162,10 @@ namespace BoxingSite.DAL
                     "A lllong description of this boxer and any information that you deem relevant. "
 
                 },
-                new TrainerUser {
+                new BoxerUser {
                     UserName ="31@test.com",
                     Email = "31@test.com",
-                    ImageSrc ="../../images/trainers/form-B6fw69UttOI-unsplash.jpg",
+                    ImageSrc ="../../images/boxers/form-B6fw69UttOI-unsplash.jpg",
                     Forename = "James",
                     Surname = "Walker",
                     DOB = new DateTime(1964, 7, 9),
@@ -1184,10 +1184,10 @@ namespace BoxingSite.DAL
                     "A lllong description of this boxer and any information that you deem relevant. "
 
                 },
-                new TrainerUser {
+                new BoxerUser {
                     UserName ="32@test.com",
                     Email = "32@test.com",
-                    ImageSrc ="../../images/trainers/form-qQGAQMbURhU-unsplash.jpg",
+                    ImageSrc ="../../images/boxers/form-qQGAQMbURhU-unsplash.jpg",
                     Forename = "William",
                     Surname = "Wallace",
                     DOB = new DateTime(1964, 7, 9),
@@ -1206,10 +1206,10 @@ namespace BoxingSite.DAL
                     "A lllong description of this boxer and any information that you deem relevant. "
 
                 },
-                new TrainerUser {
+                new BoxerUser {
                     UserName ="33@test.com",
                     Email = "33@test.com",
-                    ImageSrc ="../../images/trainers/imani-clovis-tBt9JxuQBYs-unsplash.jpg",
+                    ImageSrc ="../../images/boxers/imani-clovis-tBt9JxuQBYs-unsplash.jpg",
                     Forename = "Elizabeth",
                     Surname = "Almond",
                     DOB = new DateTime(1964, 7, 9),
@@ -1228,10 +1228,10 @@ namespace BoxingSite.DAL
                     "A lllong description of this boxer and any information that you deem relevant. "
 
                 },
-                new TrainerUser {
+                new BoxerUser {
                     UserName ="34@test.com",
                     Email = "34@test.com",
-                    ImageSrc ="../../images/trainers/jonathan-cosens-photography-jcp-v-YiCIbDjOQ-unsplash.jpg",
+                    ImageSrc ="../../images/boxers/jonathan-cosens-photography-jcp-v-YiCIbDjOQ-unsplash.jpg",
                     Forename = "Robert",
                     Surname = "Lilt",
                     Instagram = "https://www.youtube.com/watch?v=OJxCcCEobNs",
@@ -1252,15 +1252,15 @@ namespace BoxingSite.DAL
 
             };
 
-            foreach (var person in trainerUsers)
+            foreach (var person in boxerUsers)
             {
                 string generalPassword = "Password_1";
                 userManager.Create(person, generalPassword);
-                userManager.AddToRole(person.Id, RoleNames.ROLE_TRAINER);
+                userManager.AddToRole(person.Id, RoleNames.ROLE_BOXER);
             }
 
 
-            // trainerUsers.ForEach(s => context.TrainerUsers.Add(s));
+            // boxerUsers.ForEach(s => context.BoxerUsers.Add(s));
             context.SaveChanges();
 
 
@@ -1327,8 +1327,8 @@ namespace BoxingSite.DAL
                     EndTime = new TimeSpan(11, 0, 0),
                     BoxingClass = boxingClasses[0],
                     BoxingClassID = boxingClasses[0].BoxingClassID,
-                    TrainerID = trainerUsers[4].Id,
-                    Trainer = trainerUsers[4]
+                    BoxerID = boxerUsers[4].Id,
+                    Boxer = boxerUsers[4]
                 },
                 new Schedule()
                 {
@@ -1337,8 +1337,8 @@ namespace BoxingSite.DAL
                     EndTime = new TimeSpan(17, 30, 0),
                     BoxingClass = boxingClasses[1],
                     BoxingClassID = boxingClasses[1].BoxingClassID,
-                    TrainerID = trainerUsers[4].Id,
-                    Trainer = trainerUsers[4]
+                    BoxerID = boxerUsers[4].Id,
+                    Boxer = boxerUsers[4]
 
                 },
                 new Schedule()
@@ -1348,8 +1348,8 @@ namespace BoxingSite.DAL
                     EndTime = new TimeSpan(17, 45, 0),
                     BoxingClass = boxingClasses[2],
                     BoxingClassID = boxingClasses[2].BoxingClassID,
-                    TrainerID = trainerUsers[4].Id,
-                    Trainer = trainerUsers[4]
+                    BoxerID = boxerUsers[4].Id,
+                    Boxer = boxerUsers[4]
 
                 },
                 new Schedule()
@@ -1359,8 +1359,8 @@ namespace BoxingSite.DAL
                     EndTime = new TimeSpan(18, 30, 0),
                     BoxingClass = boxingClasses[3],
                     BoxingClassID = boxingClasses[3].BoxingClassID,
-                    TrainerID = trainerUsers[4].Id,
-                    Trainer = trainerUsers[4]
+                    BoxerID = boxerUsers[4].Id,
+                    Boxer = boxerUsers[4]
                 },
                 new Schedule()
                 {
@@ -1369,8 +1369,8 @@ namespace BoxingSite.DAL
                     EndTime = new TimeSpan(19, 30, 0),
                     BoxingClass = boxingClasses[4],
                     BoxingClassID = boxingClasses[4].BoxingClassID,
-                    TrainerID = trainerUsers[4].Id,
-                    Trainer = trainerUsers[4]
+                    BoxerID = boxerUsers[4].Id,
+                    Boxer = boxerUsers[4]
 
                 },
                 new Schedule()
@@ -1381,8 +1381,8 @@ namespace BoxingSite.DAL
                     BoxingClass = boxingClasses[5],
                     BoxingClassID = boxingClasses[5].BoxingClassID,
                     ClassStatus = ClassStatus.FULLYBOOKED,
-                    TrainerID = trainerUsers[4].Id,
-                    Trainer = trainerUsers[4]
+                    BoxerID = boxerUsers[4].Id,
+                    Boxer = boxerUsers[4]
 
                 },
                 new Schedule()
@@ -1392,8 +1392,8 @@ namespace BoxingSite.DAL
                     EndTime = new TimeSpan(20, 30, 0),
                     BoxingClass = boxingClasses[6],
                     BoxingClassID = boxingClasses[6].BoxingClassID,
-                    TrainerID = trainerUsers[4].Id,
-                    Trainer = trainerUsers[4]
+                    BoxerID = boxerUsers[4].Id,
+                    Boxer = boxerUsers[4]
                 },
                
 
@@ -1409,8 +1409,8 @@ namespace BoxingSite.DAL
                     EndTime = new TimeSpan(17, 30, 0),
                     BoxingClass = boxingClasses[1],
                     BoxingClassID = boxingClasses[1].BoxingClassID,
-                    TrainerID = trainerUsers[4].Id,
-                    Trainer = trainerUsers[4]
+                    BoxerID = boxerUsers[4].Id,
+                    Boxer = boxerUsers[4]
 
                 },
                 new Schedule()
@@ -1420,8 +1420,8 @@ namespace BoxingSite.DAL
                     EndTime = new TimeSpan(17, 45, 0),
                     BoxingClass = boxingClasses[0],
                     BoxingClassID = boxingClasses[0].BoxingClassID,
-                    TrainerID = trainerUsers[4].Id,
-                    Trainer = trainerUsers[4]
+                    BoxerID = boxerUsers[4].Id,
+                    Boxer = boxerUsers[4]
                 },
                 new Schedule()
                 {
@@ -1431,8 +1431,8 @@ namespace BoxingSite.DAL
                     BoxingClass = boxingClasses[4],
                     BoxingClassID = boxingClasses[4].BoxingClassID,
                     ClassStatus = ClassStatus.FULLYBOOKED,
-                    TrainerID = trainerUsers[4].Id,
-                    Trainer = trainerUsers[4]
+                    BoxerID = boxerUsers[4].Id,
+                    Boxer = boxerUsers[4]
 
                 },
                 new Schedule()
@@ -1442,8 +1442,8 @@ namespace BoxingSite.DAL
                     EndTime = new TimeSpan(19, 30, 0),
                     BoxingClass = boxingClasses[5],
                     BoxingClassID = boxingClasses[5].BoxingClassID,
-                    TrainerID = trainerUsers[4].Id,
-                    Trainer = trainerUsers[4]
+                    BoxerID = boxerUsers[4].Id,
+                    Boxer = boxerUsers[4]
                 },
                 new Schedule()
                 {
@@ -1452,8 +1452,8 @@ namespace BoxingSite.DAL
                     EndTime = new TimeSpan(20, 0, 0),
                     BoxingClass = boxingClasses[6],
                     BoxingClassID = boxingClasses[6].BoxingClassID,
-                    TrainerID = trainerUsers[4].Id,
-                    Trainer = trainerUsers[4]
+                    BoxerID = boxerUsers[4].Id,
+                    Boxer = boxerUsers[4]
 
                 },
                 new Schedule()
@@ -1463,8 +1463,8 @@ namespace BoxingSite.DAL
                     EndTime = new TimeSpan(20, 30, 0),
                     BoxingClass = boxingClasses[2],
                     BoxingClassID = boxingClasses[2].BoxingClassID,
-                    TrainerID = trainerUsers[4].Id,
-                    Trainer = trainerUsers[4]
+                    BoxerID = boxerUsers[4].Id,
+                    Boxer = boxerUsers[4]
 
                 },
               
@@ -1482,8 +1482,8 @@ namespace BoxingSite.DAL
                     EndTime = new TimeSpan(14, 30, 0),
                     BoxingClass = boxingClasses[2],
                     BoxingClassID = boxingClasses[2].BoxingClassID,
-                    TrainerID = trainerUsers[4].Id,
-                    Trainer = trainerUsers[4]
+                    BoxerID = boxerUsers[4].Id,
+                    Boxer = boxerUsers[4]
 
 
                 },
@@ -1494,8 +1494,8 @@ namespace BoxingSite.DAL
                     EndTime = new TimeSpan(17, 30, 0),
                     BoxingClass = boxingClasses[7],
                     BoxingClassID = boxingClasses[7].BoxingClassID,
-                    TrainerID = trainerUsers[4].Id,
-                    Trainer = trainerUsers[4]
+                    BoxerID = boxerUsers[4].Id,
+                    Boxer = boxerUsers[4]
 
                 },
                 new Schedule()
@@ -1505,8 +1505,8 @@ namespace BoxingSite.DAL
                     EndTime = new TimeSpan(18, 30, 0),
                     BoxingClass = boxingClasses[0],
                     BoxingClassID = boxingClasses[0].BoxingClassID,
-                    TrainerID = trainerUsers[4].Id,
-                    Trainer = trainerUsers[4]
+                    BoxerID = boxerUsers[4].Id,
+                    Boxer = boxerUsers[4]
 
                 },
                 new Schedule()
@@ -1516,8 +1516,8 @@ namespace BoxingSite.DAL
                     EndTime = new TimeSpan(19, 30, 0),
                     BoxingClass = boxingClasses[5],
                     BoxingClassID = boxingClasses[5].BoxingClassID,
-                    TrainerID = trainerUsers[4].Id,
-                    Trainer = trainerUsers[4]
+                    BoxerID = boxerUsers[4].Id,
+                    Boxer = boxerUsers[4]
 
                 },
                 new Schedule()
@@ -1527,8 +1527,8 @@ namespace BoxingSite.DAL
                     EndTime = new TimeSpan(20, 45, 0),
                     BoxingClass = boxingClasses[6],
                     BoxingClassID = boxingClasses[6].BoxingClassID,
-                    TrainerID = trainerUsers[4].Id,
-                    Trainer = trainerUsers[4]
+                    BoxerID = boxerUsers[4].Id,
+                    Boxer = boxerUsers[4]
                 },
 
 
@@ -1545,8 +1545,8 @@ namespace BoxingSite.DAL
                     EndTime = new TimeSpan(17, 30, 0),
                     BoxingClass = boxingClasses[0],
                     BoxingClassID = boxingClasses[0].BoxingClassID,
-                    TrainerID = trainerUsers[4].Id,
-                    Trainer = trainerUsers[4]
+                    BoxerID = boxerUsers[4].Id,
+                    Boxer = boxerUsers[4]
                 },
                 new Schedule()
                 {
@@ -1555,8 +1555,8 @@ namespace BoxingSite.DAL
                     EndTime = new TimeSpan(18, 30, 0),
                     BoxingClass = boxingClasses[3],
                     BoxingClassID = boxingClasses[3].BoxingClassID,
-                    TrainerID = trainerUsers[4].Id,
-                    Trainer = trainerUsers[4]
+                    BoxerID = boxerUsers[4].Id,
+                    Boxer = boxerUsers[4]
                 },
                 new Schedule()
                 {
@@ -1565,8 +1565,8 @@ namespace BoxingSite.DAL
                     EndTime = new TimeSpan(20, 45, 0),
                     BoxingClass = boxingClasses[4],
                     BoxingClassID = boxingClasses[4].BoxingClassID,
-                    TrainerID = trainerUsers[4].Id,
-                    Trainer = trainerUsers[4]
+                    BoxerID = boxerUsers[4].Id,
+                    Boxer = boxerUsers[4]
                 },
                 new Schedule()
                 {
@@ -1576,8 +1576,8 @@ namespace BoxingSite.DAL
                     BoxingClass = boxingClasses[6],
                     BoxingClassID = boxingClasses[6].BoxingClassID,
                     ClassStatus = ClassStatus.CANCELLED,
-                    TrainerID = trainerUsers[4].Id,
-                    Trainer = trainerUsers[4]
+                    BoxerID = boxerUsers[4].Id,
+                    Boxer = boxerUsers[4]
                 },
 
 
@@ -1592,8 +1592,8 @@ namespace BoxingSite.DAL
                     EndTime= new TimeSpan(17, 30, 0),
                     BoxingClass = boxingClasses[1],
                     BoxingClassID = boxingClasses[1].BoxingClassID,
-                    TrainerID = trainerUsers[4].Id,
-                    Trainer = trainerUsers[4]
+                    BoxerID = boxerUsers[4].Id,
+                    Boxer = boxerUsers[4]
                 },
                 new Schedule()
                 {
@@ -1602,8 +1602,8 @@ namespace BoxingSite.DAL
                     EndTime = new TimeSpan(19, 0, 0),
                     BoxingClass = boxingClasses[2],
                     BoxingClassID = boxingClasses[2].BoxingClassID,
-                    TrainerID = trainerUsers[4].Id,
-                    Trainer = trainerUsers[4]
+                    BoxerID = boxerUsers[4].Id,
+                    Boxer = boxerUsers[4]
                 },
                 new Schedule()
                 {
@@ -1612,8 +1612,8 @@ namespace BoxingSite.DAL
                     EndTime = new TimeSpan(20, 45, 0),
                     BoxingClass = boxingClasses[4],
                     BoxingClassID = boxingClasses[4].BoxingClassID,
-                    TrainerID = trainerUsers[4].Id,
-                    Trainer = trainerUsers[4]
+                    BoxerID = boxerUsers[4].Id,
+                    Boxer = boxerUsers[4]
                 },
                 new Schedule()
                 {
@@ -1622,8 +1622,8 @@ namespace BoxingSite.DAL
                     EndTime = new TimeSpan(21, 0, 0),
                     BoxingClass = boxingClasses[7],
                     BoxingClassID = boxingClasses[7].BoxingClassID,
-                    TrainerID = trainerUsers[4].Id,
-                    Trainer = trainerUsers[4]
+                    BoxerID = boxerUsers[4].Id,
+                    Boxer = boxerUsers[4]
                 },
 
 
@@ -1637,8 +1637,8 @@ namespace BoxingSite.DAL
                     BoxingClass = boxingClasses[0],
                     BoxingClassID = boxingClasses[0].BoxingClassID,
                     ClassStatus = ClassStatus.CANCELLED,
-                    TrainerID = trainerUsers[4].Id,
-                    Trainer = trainerUsers[4]
+                    BoxerID = boxerUsers[4].Id,
+                    Boxer = boxerUsers[4]
 
 
 
@@ -1650,8 +1650,8 @@ namespace BoxingSite.DAL
                     EndTime = new TimeSpan(09, 30, 0),
                     BoxingClass = boxingClasses[7],
                     BoxingClassID = boxingClasses[7].BoxingClassID,
-                    TrainerID = trainerUsers[4].Id,
-                    Trainer = trainerUsers[4]
+                    BoxerID = boxerUsers[4].Id,
+                    Boxer = boxerUsers[4]
 
                 },
 
@@ -1666,8 +1666,8 @@ namespace BoxingSite.DAL
                     EndTime = new TimeSpan(08, 30, 0),
                     BoxingClass = boxingClasses[2],
                     BoxingClassID = boxingClasses[2].BoxingClassID,
-                    TrainerID = trainerUsers[4].Id,
-                    Trainer = trainerUsers[4]
+                    BoxerID = boxerUsers[4].Id,
+                    Boxer = boxerUsers[4]
 
 
                 }

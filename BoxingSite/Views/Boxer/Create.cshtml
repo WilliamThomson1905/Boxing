@@ -1,4 +1,4 @@
-﻿@model BoxingSite.Models.CreateTrainerViewmodel
+﻿@model BoxingSite.Models.CreateBoxerViewmodel
 
 
 
@@ -10,7 +10,7 @@
             <div class="content">
                 <header>
                     <h2>
-                        Create a New Trainer:  Will be displayed on trainer page 
+                        Create a New Boxer:  Will be displayed on boxer page 
                     </h2>
                 </header>
                 <p>
@@ -23,12 +23,12 @@
         <div class="inner">
 
 
-            @using (Html.BeginForm("CreateTrainer", "Account", FormMethod.Post, new { role = "form" }))
+            @using (Html.BeginForm("CreateBoxer", "Account", FormMethod.Post, new { role = "form" }))
             {
                 @Html.AntiForgeryToken()
 
             <div class="form-horizontal">
-                <h4>Create: TrainerUser</h4>
+                <h4>Create: BoxerUser</h4>
                 <hr />
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 @*<div class="">
@@ -150,7 +150,7 @@
                     </div>
                 </div>
 
-                @*Set in Controller based of email: Trainer/Create/TrainerInstance*@
+                @*Set in Controller based of email: Boxer/Create/BoxerInstance*@
                 @*<div class="formRow">
                     @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "" })
                     <div class="formInfo">
@@ -183,7 +183,7 @@
             }
 
             <div>
-                @Html.ActionLink("Back to List", "TrainerDetails", "Trainer")
+                @Html.ActionLink("Back to List", "BoxerDetails", "Boxer")
             </div>
         </div>
     </section>

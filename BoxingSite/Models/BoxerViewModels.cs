@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace BoxingSite.Models
 {
-    public class SingleTrainerViewmodel
+    public class SingleBoxerViewmodel
     {
         public string Id { get; set; }
         public string Forename { get; set; }
@@ -21,7 +21,7 @@ namespace BoxingSite.Models
         public string Email { get; set; }
     }
 
-    public class CreateTrainerViewmodel
+    public class CreateBoxerViewmodel
     {
         public string Title { get; set; }
         public string Forename { get; set; }

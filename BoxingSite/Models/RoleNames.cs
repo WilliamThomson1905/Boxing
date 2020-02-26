@@ -6,9 +6,9 @@ namespace BoxingSite.Models
     {
 
         // There will be three types of accounts (excluding locked/suspended): 
-        //      Administrator - Creating Trainer Accounts and managing all the information throughout the system (equipment/schedule details/pricing/trainers details). 
+        //      Administrator - Creating Trainer Accounts and managing all the information throughout the system (equipment/schedule details/pricing/boxers details). 
         //      Staff         - General staff members. 
-        //      Trainer/Coach - Managing there own details which will be displayed on Trainer.cshtml and their own details view (trainer/trainerDetails/id).
+        //      Trainer/Coach - Managing there own details which will be displayed on Trainer.cshtml and their own details view (boxer/boxerDetails/id).
         //      General User  - Undecided at the moment - if I implement booking functionality, then they'll be able to do that. 
 
         // Admin Accounts
@@ -18,7 +18,7 @@ namespace BoxingSite.Models
         public const string ROLE_STAFF = "Staff";
 
         // Trainer/Coach Accounts
-        public const string ROLE_TRAINER = "Trainer";
+        public const string ROLE_BOXER = "Boxer";
 
         // General User Accounts 
         public const string ROLE_GENERAL = "General";

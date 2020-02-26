@@ -493,7 +493,7 @@ namespace BoxingSite.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> CreateTrainer(CreateTrainerViewmodel trainerUser)
+        public async Task<ActionResult> CreateTrainer(CreateBoxerViewmodel boxerUser)
         {
             // pass in user details -- CreateTrainerViewModel
             // valid details
@@ -501,26 +501,26 @@ namespace BoxingSite.Controllers
 
             if (ModelState.IsValid)
             {
-                var user = new TrainerUser {
-                    Title = trainerUser.Title,
-                    Forename = trainerUser.Forename,
-                    Surname = trainerUser.Surname,
-                    DOB = trainerUser.DOB,
-                    Mobile = trainerUser.Mobile,
-                    AccountHidden = trainerUser.AccountHidden,
-                    Description = trainerUser.Description,
-                    ImageSrc = trainerUser.ImageSrc,
-                    Available = trainerUser.Available,
+                var user = new BoxerUser {
+                    Title = boxerUser.Title,
+                    Forename = boxerUser.Forename,
+                    Surname = boxerUser.Surname,
+                    DOB = boxerUser.DOB,
+                    Mobile = boxerUser.Mobile,
+                    AccountHidden = boxerUser.AccountHidden,
+                    Description = boxerUser.Description,
+                    ImageSrc = boxerUser.ImageSrc,
+                    Available = boxerUser.Available,
 
-                    Instagram = trainerUser.Instagram,
-                    Facebook = trainerUser.Facebook,
-                    LinkedIn = trainerUser.LinkedIn,
-                    Twitter = trainerUser.Twitter,
-                    Email = trainerUser.Email,
-                    UserName = trainerUser.Email 
+                    Instagram = boxerUser.Instagram,
+                    Facebook = boxerUser.Facebook,
+                    LinkedIn = boxerUser.LinkedIn,
+                    Twitter = boxerUser.Twitter,
+                    Email = boxerUser.Email,
+                    UserName = boxerUser.Email 
 
                 };
-                var result = await UserManager.CreateAsync(user, trainerUser.Password);
+                var result = await UserManager.CreateAsync(user, boxerUser.Password);
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
@@ -531,13 +531,13 @@ namespace BoxingSite.Controllers
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-                    return RedirectToAction("Trainers", "Trainer");
+                    return RedirectToAction("Boxers", "Boxer");
                 }
                 AddErrors(result);
             }
 
             // If we got this far, something failed, redisplay form
-            return View("Trainers", "Trainer");
+            return View("Boxers", "Boxer");
         }
 
 
