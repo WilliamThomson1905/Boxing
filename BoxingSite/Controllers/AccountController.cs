@@ -490,55 +490,46 @@ namespace BoxingSite.Controllers
 
 
 
-        [HttpPost]
-        [AllowAnonymous]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> CreateTrainer(CreateBoxerViewmodel boxerUser)
-        {
-            // pass in user details -- CreateTrainerViewModel
-            // valid details
-            // ensure user does already exist 
+        //[HttpPost]
+        //[AllowAnonymous]
+        //[ValidateAntiForgeryToken]
+        //public async Task<ActionResult> CreateTrainer(CreateBoxerViewmodel boxerUser)
+        //{
+        //    // pass in user details -- CreateTrainerViewModel
+        //    // valid details
+        //    // ensure user does already exist 
 
-            if (ModelState.IsValid)
-            {
-                var user = new BoxerUser {
-                    Title = boxerUser.Title,
-                    Forename = boxerUser.Forename,
-                    Surname = boxerUser.Surname,
-                    DOB = boxerUser.DOB,
-                    Mobile = boxerUser.Mobile,
-                    AccountHidden = boxerUser.AccountHidden,
-                    Description = boxerUser.Description,
-                    ImageSrc = boxerUser.ImageSrc,
-                    Available = boxerUser.Available,
+        //    if (ModelState.IsValid)
+        //    {
+        //        var user = new BoxerUser {
+        //            Title = boxerUser.Title,
+        //            Forename = boxerUser.Forename,
+        //            Surname = boxerUser.Surname,
+        //            DOB = boxerUser.DOB,
+        //            Mobile = boxerUser.Mobile,
 
-                    Instagram = boxerUser.Instagram,
-                    Facebook = boxerUser.Facebook,
-                    LinkedIn = boxerUser.LinkedIn,
-                    Twitter = boxerUser.Twitter,
-                    Email = boxerUser.Email,
-                    UserName = boxerUser.Email 
+        //            Description = boxerUser.Description,
+        //            ImageSrc = boxerUser.ImageSrc,
+        //            Available = boxerUser.Available,
 
-                };
-                var result = await UserManager.CreateAsync(user, boxerUser.Password);
-                if (result.Succeeded)
-                {
-                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+        //            Instagram = boxerUser.Instagram,
+        //            Facebook = boxerUser.Facebook,
+        //            LinkedIn = boxerUser.LinkedIn,
+        //            Twitter = boxerUser.Twitter,
+        //            Email = boxerUser.Email,
 
-                    // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
-                    // Send an email with this link
-                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-                    return RedirectToAction("Boxers", "Boxer");
-                }
-                AddErrors(result);
-            }
+        //        };
+              
 
-            // If we got this far, something failed, redisplay form
-            return View("Boxers", "Boxer");
-        }
+
+
+        //        AddErrors(result);
+        //    }
+
+        //    // If we got this far, something failed, redisplay form
+        //    return View("Boxers", "Boxer");
+        //}
 
 
     }

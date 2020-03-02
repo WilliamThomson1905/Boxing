@@ -10,8 +10,7 @@ namespace BoxingSite.DAL
        
 
         // Users 
-        //public DbSet<ApplicationUser> ApplicationUsers { get; set; }
-        public DbSet<GeneralUser> GeneralUsers { get; set; }
+        // public DbSet<ApplicationUser> ApplicationUsers { get; set; }
         public DbSet<BoxerUser> BoxerUsers { get; set; }
         public DbSet<Staff> Staff { get; set; } // Also Admin 
 
@@ -23,7 +22,6 @@ namespace BoxingSite.DAL
 
 
         public DbSet<Promotion> Promotions { get; set; }
-        public DbSet<Ticket> Tickets { get; set; }
 
 
 

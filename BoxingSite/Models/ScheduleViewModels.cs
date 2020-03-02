@@ -11,7 +11,7 @@ namespace BoxingSite.Models
         public string Description { get; set; }
 
         // Foriegn key - Boxer will do class
-        public string BoxerID { get; set; }
+        public int BoxerID { get; set; }
         // Corresponding navigation property 
         public virtual BoxerUser Boxer { get; set; }
 

@@ -1,5 +1,5 @@
 ﻿@using BoxingSite.Models;
-@model PagedList.IPagedList<BoxingSite.Models.ApplicationUser>
+@model PagedList.IPagedList<BoxingSite.Models.BoxerUser>
 @using PagedList.Mvc;
 @using Microsoft.AspNet.Identity;
 
@@ -16,7 +16,7 @@
         <div class="inner spotlight style1">
             <div class="content">
 
-                <h2>Manage Users </h2>
+                <h2>Manage Professional Boxers </h2>
 
                 @using (Html.BeginForm())
                 {
@@ -29,36 +29,30 @@
                     <tr>
                         <th></th>
                         <th>
-                            @Html.ActionLink("Forename", "Users", new {
-                           sortOrder = ViewBag.ForenameSortParm,
-                           searchString = ViewBag.SearchStringPlaceHolder,
-                           previousSort = ViewBag.CurrentSort
+                            @Html.ActionLink("Forename", "Boxers", new {
+                               sortOrder = ViewBag.ForenameSortParm,
+                               searchString = ViewBag.SearchStringPlaceHolder,
+                               previousSort = ViewBag.CurrentSort
                        })
                         </th>
                         <th>
-                            @Html.ActionLink("Surname", "Users", new {
+                            @Html.ActionLink("Surname", "Boxers", new {
                            sortOrder = ViewBag.SurnameSortParm,
                            searchString = ViewBag.SearchStringPlaceHolder,
                            previousSort = ViewBag.CurrentSort
                        })
                         </th>
                         <th>
-                            @Html.ActionLink("Username", "Users", new {
-                           sortOrder = ViewBag.UsernameSortParm,
-                           searchString = ViewBag.SearchStringPlaceHolder,
-                           previousSort = ViewBag.CurrentSort
-                       })
+                            Details Hidden?
                         </th>
                         <th>Mobile</th>
                         <th>DOB</th>
 
-                        <th>User Type</th>
                         <th>Manage</th>
                     </tr>
 
                     @foreach (var person in Model)
                     {
-
                         <tr>
                             <td></td>
                             <td>
@@ -68,7 +62,15 @@
                                 @Html.DisplayFor(modelItem => person.Surname)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => person.UserName)
+                                @if (person.DetailsHidden == true)
+                                {
+                                    <span><b>Hidden Details</b></span>
+                                }
+                                else
+                                {
+                                    <span>Visible Details</span>
+
+                                }
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => person.Mobile)
@@ -78,20 +80,9 @@
                             </td>
 
                             <td>
-
-                                @if (User.Identity.GetUserId().Equals(person.Id))
-                                {
-                                    <span><b>Admin</b></span>
-                                }
-                                else
-                                {
-                                    <span>Staff</span>
-                                }
-
-                            </td>
-                            <td>
-                                @Html.ActionLink("Edit ", "EditUser", new { UserName = person.UserName })
-                                /@Html.ActionLink(" Delete", "EditUser", "Admin", new { id = person.UserName })
+                                @Html.ActionLink("Details ", "BoxerDetails", new { Controller = "Boxer", action = "BoxerDetails", id = person.ID })
+                                /@Html.ActionLink("Edit ", "Edit", new { Controller = "Boxer", action = "Edit", id = person.ID })
+                                /@Html.ActionLink(" Delete", "DeleteBoxer", new { Controller = "Boxer", action = "DeleteUser", id = person.ID })
 
                             </td>
                         </tr>
@@ -104,11 +95,14 @@
                 <!-- Declaration of pagination for user accounts -->
                 Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
 
-                @Html.PagedListPager(Model, page => Url.Action("Users",
+                @Html.PagedListPager(Model, page => Url.Action("Boxers",
                     new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
 
                 <hr />
 
+                <h3 class="align-center">
+                    @Html.ActionLink("Public View of Professional Boxers", "Boxers", "Boxer")
+                </h3>
 
             </div>
         </div>

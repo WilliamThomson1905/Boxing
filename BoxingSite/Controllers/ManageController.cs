@@ -76,92 +76,30 @@ namespace BoxingSite.Controllers
         {
             ProfileViewModel currentProfileViewModel = new ProfileViewModel();
 
-            if (User.IsInRole("General"))
-            {
-                var result = (GeneralUser)UserManager.FindByName(paramUserName);
+            
+           
+            var result = UserManager.FindByName(paramUserName);
+
+            // If we could not find the user, throw an exception
+            if (result == null)
+                throw new Exception("Could not find the User");
 
 
 
-                // If we could not find the user, throw an exception
-                if (result == null)
-                    throw new Exception("Could not find the User");
+            currentProfileViewModel.Id = result.Id;
+            currentProfileViewModel.UserName = result.UserName;
+            currentProfileViewModel.Email = result.Email;
 
-                currentProfileViewModel.Id = result.Id;
-                currentProfileViewModel.UserName = result.UserName;
-                currentProfileViewModel.Email = result.Email;
-                currentProfileViewModel.Title = result.Title;
-                currentProfileViewModel.Forename = result.Forename;
-                currentProfileViewModel.Surname = result.Surname;
-                currentProfileViewModel.DOB = result.DOB;
-                currentProfileViewModel.Mobile = result.Mobile;
-                currentProfileViewModel.RepeatMobile = result.RepeatMobile;
-                currentProfileViewModel.PhoneNumber = result.PhoneNumber;
-                currentProfileViewModel.AccountHidden = result.AccountHidden;
-                
-                currentProfileViewModel.SkillLevel = result.SkillLevel;
-                currentProfileViewModel.Weight = result.Weight;
-                currentProfileViewModel.Height = result.Height;
-                currentProfileViewModel.Gender = result.Gender;
-                currentProfileViewModel.HasPassword = HasPassword();
-            }
+            currentProfileViewModel.Title = result.Title;
+            currentProfileViewModel.Forename = result.Forename;
+            currentProfileViewModel.Surname = result.Surname;
+            currentProfileViewModel.DOB = result.DOB;
+            currentProfileViewModel.Mobile = result.Mobile;
+            currentProfileViewModel.RepeatMobile = result.RepeatMobile;
 
-            else if(User.IsInRole("Trainer"))
-            {
-                var result = (BoxerUser)UserManager.FindByName(paramUserName);
-
-                // If we could not find the user, throw an exception
-                if (result == null)
-                    throw new Exception("Could not find the User");
-
-                currentProfileViewModel.Id = result.Id;
-                currentProfileViewModel.UserName = result.UserName;
-                currentProfileViewModel.Email = result.Email;
-
-                currentProfileViewModel.Title = result.Title;
-                currentProfileViewModel.Forename = result.Forename;
-                currentProfileViewModel.Surname = result.Surname;
-                currentProfileViewModel.DOB = result.DOB;
-                currentProfileViewModel.Mobile = result.Mobile;
-                currentProfileViewModel.RepeatMobile = result.RepeatMobile;
-
-                currentProfileViewModel.PhoneNumber = result.PhoneNumber;
-                currentProfileViewModel.AccountHidden = result.AccountHidden;
-
-                currentProfileViewModel.Description = result.Description;
-                currentProfileViewModel.ImageSrc = result.ImageSrc;
-                currentProfileViewModel.Instagram = result.Instagram;
-                currentProfileViewModel.Facebook = result.Facebook;
-                currentProfileViewModel.LinkedIn = result.LinkedIn;
-                currentProfileViewModel.Twitter = result.Twitter;
-                currentProfileViewModel.Available = result.Available;
-
-
-                currentProfileViewModel.PhoneNumber = result.PhoneNumber;
-                currentProfileViewModel.HasPassword = HasPassword();
-            }
-            else
-            {
-                var result = UserManager.FindByName(paramUserName);
-
-                // If we could not find the user, throw an exception
-                if (result == null)
-                    throw new Exception("Could not find the User");
-
-                currentProfileViewModel.Id = result.Id;
-                currentProfileViewModel.UserName = result.UserName;
-                currentProfileViewModel.Email = result.Email;
-
-                currentProfileViewModel.Title = result.Title;
-                currentProfileViewModel.Forename = result.Forename;
-                currentProfileViewModel.Surname = result.Surname;
-                currentProfileViewModel.DOB = result.DOB;
-                currentProfileViewModel.Mobile = result.Mobile;
-                currentProfileViewModel.RepeatMobile = result.RepeatMobile;
-
-                currentProfileViewModel.PhoneNumber = result.PhoneNumber;
-                currentProfileViewModel.HasPassword = HasPassword();
-            }
-
+            currentProfileViewModel.PhoneNumber = result.PhoneNumber;
+            currentProfileViewModel.HasPassword = HasPassword();
+            
 
             return currentProfileViewModel;
         }
@@ -170,9 +108,7 @@ namespace BoxingSite.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Index([Bind(Include = "Id, UserName, Email,Title, Forename, Surname, DOB, Mobile, RepeatMobile, AccountHidden," +
-            " SkillLevel, Weight, Height, Gender," +
-            " Description, ImageSrc, Instagram, Facebook, LinkedIn, Twitter, Available")] ProfileViewModel applicationUser, ManageMessageId? message)
+        public ActionResult Index([Bind(Include = "Id, UserName, Email,Title, Forename, Surname, DOB, Mobile, RepeatMobile, AccountHidden")] ProfileViewModel applicationUser, ManageMessageId? message)
         {
             ViewBag.StatusMessage =
                 message == ManageMessageId.ChangePasswordSuccess ? "Your password has been changed."
@@ -191,112 +127,41 @@ namespace BoxingSite.Controllers
 
             if (ModelState.IsValid)
             {
-                // User is any other role that isn't Applicant
-                if (User.IsInRole("General"))
+                // only user types are staff or admin - both use the staff identity modal.
+                // ADMIN or STAFF - who both have the same attributes. 
+
+                // If user is a 'Staff'
+                var model = new Staff()
                 {
-                    var model = new GeneralUser()
-                    {
-                        Id = applicationUser.Id,
-                        UserName = applicationUser.UserName,
-                        Email = applicationUser.Email,
-                        Title = applicationUser.Title,
-                        Forename = applicationUser.Forename,
-                        Surname = applicationUser.Surname,
-                        DOB = applicationUser.DOB,
-                        PhoneNumber = applicationUser.PhoneNumber,
-                        Mobile = applicationUser.Mobile,
-                        RepeatMobile = applicationUser.RepeatMobile,
-                        AccountHidden = applicationUser.AccountHidden,
-                        SkillLevel = applicationUser.SkillLevel,
-                        Weight = applicationUser.Weight,
-                        Height = applicationUser.Height,
-                        Gender = applicationUser.Gender
-                    };
-
-                    // Result used to update the three values below
-                    model.PasswordHash = result.PasswordHash;
-                    model.SecurityStamp = result.SecurityStamp;
-                    model.EmailConfirmed = true;
-
-                    context.Entry(model).State = EntityState.Modified;
-                    context.SaveChanges();
-                }
-                else if (User.IsInRole("Boxer"))
-                {
-
-                    // If user is an applicant
-                    var model = new BoxerUser()
-                    {
-                        Id = applicationUser.Id,
-                        UserName = applicationUser.UserName,
-                        Email = applicationUser.Email,
-                        Title = applicationUser.Title,
-                        Forename = applicationUser.Forename,
-                        Surname = applicationUser.Surname,
-                        DOB = applicationUser.DOB,
-                        PhoneNumber = applicationUser.PhoneNumber,
-                        Mobile = applicationUser.Mobile,
-                        RepeatMobile = applicationUser.RepeatMobile,
-                        AccountHidden = applicationUser.AccountHidden,
-
-                        Description = applicationUser.Description,
-                        ImageSrc = applicationUser.ImageSrc,
-                        Instagram = applicationUser.Instagram,
-                        Facebook = applicationUser.Facebook,
-                        LinkedIn = applicationUser.LinkedIn,
-                        Twitter = applicationUser.Twitter,
-                        Available = applicationUser.Available
-
-                    };
-
-                    // Result used to the three values below
-                    model.PasswordHash = result.PasswordHash;
-                    model.SecurityStamp = result.SecurityStamp;
-                    model.EmailConfirmed = true;
-
-                    context.Entry(model).State = EntityState.Modified;
-                    context.SaveChanges();
-                }
-                else 
-                {
-                    // Only leaves ADMIN or STAFF - who both have the same attributes. 
-
-                    // If user is a 'Staff'
-                    var model = new Staff()
-                    {
-                        Id = applicationUser.Id,
-                        UserName = applicationUser.Email,
-                        Email = applicationUser.Email,
-                        Title = applicationUser.Title,
-                        Forename = applicationUser.Forename,
-                        Surname = applicationUser.Surname,
-                        DOB = applicationUser.DOB,
-                        PhoneNumber = applicationUser.PhoneNumber,
-                        Mobile = applicationUser.Mobile,
-                        RepeatMobile = applicationUser.RepeatMobile,
-
-                        AccountHidden = applicationUser.AccountHidden,
-
-                    };
-
-                    // Result used to the three values below
-                    model.PasswordHash = result.PasswordHash;
-                    model.SecurityStamp = result.SecurityStamp;
-                    model.EmailConfirmed = true;
-
-                    context.Entry(model).State = EntityState.Modified;
-                    context.SaveChanges();
-                }
+                    Id = applicationUser.Id,
+                    UserName = applicationUser.Email,
+                    Email = applicationUser.Email,
+                    Title = applicationUser.Title,
+                    Forename = applicationUser.Forename,
+                    Surname = applicationUser.Surname,
+                    DOB = applicationUser.DOB,
+                    PhoneNumber = applicationUser.PhoneNumber,
+                    Mobile = applicationUser.Mobile,
+                    RepeatMobile = applicationUser.RepeatMobile,
 
 
+                    AccountHidden = applicationUser.AccountHidden,
 
+                };
 
+                // Result used to the three values below
+                model.PasswordHash = result.PasswordHash;
+                model.SecurityStamp = result.SecurityStamp;
+                model.EmailConfirmed = true;
 
+                context.Entry(model).State = EntityState.Modified;
+                context.SaveChanges();
 
 
                 return RedirectToAction("Index");
-            }
 
+            }
+            
             return View(applicationUser);
         }
 

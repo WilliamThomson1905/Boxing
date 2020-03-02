@@ -52,9 +52,9 @@
     <div id="">
 
         <div class="inner">
-            @if (!User.Identity.IsAuthenticated)
+            @if (User.Identity.IsAuthenticated)
             {
-                if (!User.IsInRole("Administrator"))
+                if (User.IsInRole("Administrator"))
                 {
                     @Html.ActionLink("Create Promotion", "CreatePromotion", "Promotion")
                     <br /><br />

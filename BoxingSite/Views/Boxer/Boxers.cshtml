@@ -48,7 +48,7 @@
                     int styleNum = rand.Next(1, 7);
                     <article class="style@(styleNum)">
 
-                        <a href="/Boxer/BoxerDetails/@person.Id">
+                        <a href="/Boxer/BoxerDetails/@person.ID">
                             <h2 class="boxerName">@Html.DisplayFor(modelItem => person.Forename) @Html.DisplayFor(modelItem => person.Surname)</h2>
                             <div class="content">
                                 <p>@Html.DisplayFor(modelItem => person.Description).ToString().Substring(0, 100)...</p>

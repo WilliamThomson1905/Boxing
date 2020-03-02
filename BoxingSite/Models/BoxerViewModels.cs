@@ -6,9 +6,11 @@ namespace BoxingSite.Models
 {
     public class SingleBoxerViewmodel
     {
-        public string Id { get; set; }
+        public int ID { get; set; }
+        public string Title { get; set; }
         public string Forename { get; set; }
         public string Surname { get; set; }
+
         public string Description { get; set; }
         public string ImageSrc { get; set; }
 
@@ -33,11 +35,11 @@ namespace BoxingSite.Models
         public string Mobile { get; set; }
 
 
-        // Has their account be hidden from other users/not admin? T: Yes -- F: No
-        public bool AccountHidden { get; set; }
         public string Description { get; set; }
         public string ImageSrc { get; set; }
 
+        // Has their account be hidden from other users/not admin? T: Yes -- F: No
+        public bool DetailsHidden { get; set; }
         public bool Available { get; set; }
 
         public string Instagram { get; set; }
@@ -50,15 +52,15 @@ namespace BoxingSite.Models
         [Display(Name = "Email")]
         public string Email { get; set; }
 
-        [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
-        [DataType(DataType.Password)]
-        [Display(Name = "Password")]
-        public string Password { get; set; }
+        //[Required]
+        //[StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        //[DataType(DataType.Password)]
+        //[Display(Name = "Password")]
+        //public string Password { get; set; }
 
-        [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
-        public string ConfirmPassword { get; set; }
+        //[DataType(DataType.Password)]
+        //[Display(Name = "Confirm password")]
+        //[Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        //public string ConfirmPassword { get; set; }
     }
 }

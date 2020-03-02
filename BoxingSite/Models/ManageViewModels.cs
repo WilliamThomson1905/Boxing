@@ -35,34 +35,7 @@ namespace BoxingSite.Models
         public string Email { get; set; }
 
 
-        // general user
-        [Display(Name = "Skill Level")]
-        public SkillLevel SkillLevel { get; set; }
 
-        [Display(Name = "Weight-pounds")]
-        public float Weight { get; set; }
-
-        [Display(Name = "Height-In feet")]
-        public float Height { get; set; }
-        public bool Gender { get; set; }
-
-        // boxer 
-        [StringLength(1500)]
-        public string Description { get; set; }
-
-        public string ImageSrc { get; set; }
-
-        [Url]
-        public string Instagram { get; set; }
-
-        [Url]
-        public string Facebook { get; set; }
-
-        [Url]
-        public string LinkedIn { get; set; }
-
-        [Url]
-        public string Twitter { get; set; }
 
         // for PT Sessions - will bew shown on their Boxer/Details/id view
         [Display(Name = "Are you open for PT Sessions?")]

@@ -315,8 +315,8 @@ namespace BoxingSite.Controllers
                 boxers.Add(new SelectListItem()
                 {
                     Text = boxer.Forename + " " + boxer.Surname,
-                    Value = boxer.Id,
-                    Selected = boxer.Id == gymSession.BoxerID ? true : false
+                    Value = boxer.ID.ToString(),
+                    Selected = boxer.ID.ToString() == gymSession.BoxerID.ToString() ? true : false
                 });
             } 
             return boxers; 

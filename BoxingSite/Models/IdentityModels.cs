@@ -35,7 +35,6 @@ namespace BoxingSite.Models
         [Compare(nameof(Mobile), ErrorMessage = "Mobile number doesn't match.")]
         public string RepeatMobile { get; set; }
 
-
         // Has their account be hidden from other users/not admin? T: Yes -- F: No
         public bool AccountHidden { get; set; }
 
@@ -49,35 +48,30 @@ namespace BoxingSite.Models
         }
 
     }
-    [Table("GeneralUser")]
-    public class GeneralUser : ApplicationUser
-    {
-        [Display(Name = "Skill Level")]
-        public SkillLevel SkillLevel { get; set; }
-
-        [Display(Name = "Weight-pounds")]
-        public float Weight { get; set; }
-
-        [Display(Name = "Height-In feet")]
-        public float Height { get; set; }
-        public bool Gender { get; set; }
-
-    }
-
-    public enum SkillLevel
-    {
-        // Novice, (Advanced) Beginner, Competent, Proficient, Expert.
-        NOVICE, BEGINNER, COMPETENT, PROFICIENT, EXPERT
-    }
-
+ 
 
 
     /// <summary>
     /// The Trainers in the gym - each will instanciate this class 
     /// </summary> 
-    [Table("TrainerUser")]
-    public class BoxerUser : ApplicationUser
+    [Table("BoxerUser")]
+    public class BoxerUser 
     {
+        public int ID { get; set; }
+
+        public string Title { get; set; }
+        public string Email { get; set; }
+        public string Forename { get; set; }
+        public string Surname { get; set; }
+        public DateTime? DOB { get; set; }
+
+        [Phone]
+        public string Mobile { get; set; }
+
+
+        public bool DetailsHidden { get; set; }
+
+
 
         [Required]
         [StringLength(1500)]
@@ -197,7 +191,7 @@ namespace BoxingSite.Models
         public virtual BoxingClass BoxingClass { get; set; }
 
         // Foriegn key - Trainer will do class
-        public string BoxerID { get; set; }
+        public int BoxerID { get; set; }
         // Corresponding navigation property 
         public virtual BoxerUser Boxer { get; set; }
         
@@ -282,11 +276,7 @@ namespace BoxingSite.Models
         [Display(Name = "City")]
         public string LocationCity { get; set; }
 
-
-        // Navigation property - BoxingClass can have one or more instances of 'Schedule' 
-        public virtual ICollection<Ticket> Tickets { get; set; }
-
-
+        
         public Promotion()
         {
             PromotedBy = "King Boxing";
@@ -296,33 +286,7 @@ namespace BoxingSite.Models
         }
     }
 
-    
-    public class Ticket
-    {
-        public int TicketID { get; set; }
-        public string Name { get; set; }
-        public double Cost { get; set; }
-
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd MMM yyyy}")]
-        public DateTime? TicketSalesEndDate { get; set; }
-        public string Description { get; set; }
-        public int Quantity { get; set; }
-
-
-        // Foriegn key - Ticket will have a single PromotinoPromotion will 
-        public int PromotionID { get; set; }
-        // Corresponding navigation property 
-        public virtual Promotion Promotion { get; set; }
-
-
-        public Ticket()
-        {
-            Quantity = 0; 
-        }
-    }
-
-
+   
 
 
 }

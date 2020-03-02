@@ -21,15 +21,16 @@ namespace BoxingSite.Controllers
 
         public ActionResult Boxers()
         {
-            ViewBag.Title = "Trainers";
-            ViewBag.Message = "Your Management/Trainers description page.";
+            ViewBag.Title = "Boxers";
+            ViewBag.Message = "Your Management/Boxers description page.";
 
-            return View(context.BoxerUsers.ToList().Where(m => m.AccountHidden == false));
+            return View(context.BoxerUsers.ToList());
+            //return View(context.BoxerUsers.ToList().Where(m => m.DetailsHidden == false));
         }
 
 
-        // GET: Trainer/Details/id
-        public ActionResult BoxerDetails(string id)
+        // GET: Boxer/Details/id
+        public ActionResult BoxerDetails(int id)
         {
             //if (id.HasValue())
             //{
@@ -44,7 +45,7 @@ namespace BoxingSite.Controllers
 
             SingleBoxerViewmodel sbvm = new SingleBoxerViewmodel()
             {
-                Id = boxer.Id,
+                ID = boxer.ID,
                 Description = boxer.Description,
                 Forename = boxer.Forename,
                 Surname = boxer.Surname,
@@ -60,7 +61,7 @@ namespace BoxingSite.Controllers
             return View(sbvm);
         }
 
-        // GET: Trainer/Create
+        // GET: Boxer/Create
         [Authorize(Roles = "Administrator")]
         public ActionResult Create()
         {
@@ -69,13 +70,9 @@ namespace BoxingSite.Controllers
         
 
 
-        // GET: Trainer/Edit/5
-        public ActionResult Edit(string id)
+        // GET: Boxer/Edit/5
+        public ActionResult Edit(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
             BoxerUser boxer = context.BoxerUsers.Find(id);
             if (boxer == null)
             {
@@ -84,10 +81,10 @@ namespace BoxingSite.Controllers
             return View(boxer);
         }
 
-        // POST: Trainer/Edit/5
+        // POST: Boxer/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id, Title, DOB, Description,Forename,Surname,ImageSrc,Mobile,Instagram, " +
+        public ActionResult Edit([Bind(Include = "ID, Title, DetailsHidden, DOB, Description,Forename,Surname,ImageSrc,Mobile,Instagram, " +
             "LinkedIn, Facebook, Twitter, Email, Available")] BoxerUser boxerUser)
         {
             
@@ -95,7 +92,7 @@ namespace BoxingSite.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var boxer = context.BoxerUsers.Find(boxerUser.Id);
+                    var boxer = context.BoxerUsers.Find(boxerUser.ID);
 
                     boxer.Title = boxerUser.Title;
                     boxer.DOB = boxerUser.DOB;
@@ -110,11 +107,12 @@ namespace BoxingSite.Controllers
                     boxer.Twitter = boxerUser.Twitter;
                     boxer.Email = boxerUser.Email;
                     boxer.Available = boxerUser.Available;
+                    boxer.DetailsHidden = boxerUser.DetailsHidden;
 
 
                     context.Entry(boxer).State = EntityState.Modified;
                     context.SaveChanges();
-                    return RedirectToAction("BoxerDetails", "Boxer", new { id = boxer.Id });
+                    return RedirectToAction("Boxers", "Admin");
                 }
             }
             catch (DbUpdateException /* ex */)
@@ -124,7 +122,7 @@ namespace BoxingSite.Controllers
                     "Try again, and if the problem persists " +
                     "see your system administrator.");
             }
-            return RedirectToAction("Boxers", "Boxer");
+            return RedirectToAction("Boxers", "Admin");
 
         }
 
@@ -142,12 +140,12 @@ namespace BoxingSite.Controllers
                 BoxerUser boxerUser = context.BoxerUsers.Find(id);
                 context.BoxerUsers.Remove(boxerUser);
                 context.SaveChanges();
-                return RedirectToAction("Boxers", "Boxer");
+                return RedirectToAction("Boxers", "Admin");
 
             }
             catch
             {
-                return RedirectToAction("Boxers", "Boxer");
+                return RedirectToAction("Boxers", "Admin");
             }
         }
 
@@ -155,21 +153,21 @@ namespace BoxingSite.Controllers
 
         // DELETE: /Trainer/DeleteUser/id
         [Authorize(Roles = "Administrator")]
-        #region public ActionResult DeleteUser(string Id)
-        public ActionResult DeleteUser(string Id)
+        #region public ActionResult DeleteBoxer(int id)
+        public ActionResult DeleteBoxer(int id)
         {
 
             try
             {
-                BoxerUser boxerUser = context.BoxerUsers.Find(Id);
+                BoxerUser boxerUser = context.BoxerUsers.Find(id);
                 context.BoxerUsers.Remove(boxerUser);
                 context.SaveChanges();
-                return RedirectToAction("Boxers", "Boxer");
+                return RedirectToAction("Boxers", "Admin");
 
             }
             catch
             {
-                return RedirectToAction("Boxers", "Boxer");
+                return RedirectToAction("Boxers", "Admin");
             }
 
         }

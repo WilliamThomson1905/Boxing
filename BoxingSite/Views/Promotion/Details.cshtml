@@ -20,9 +20,9 @@
                 @String.Format("{0:dddd, dd MMMM yyyy}", Model.PromotionDate)
             </p>
 
-                @if (!User.Identity.IsAuthenticated)
+                @if (User.Identity.IsAuthenticated)
                 {
-                    if (!User.IsInRole("Administrator"))
+                    if (User.IsInRole("Administrator"))
                     {
                         <p>
                             @Html.ActionLink("Edit", "EditPromotion", new { id = Model.PromotionID })

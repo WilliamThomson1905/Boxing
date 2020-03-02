@@ -22,7 +22,8 @@ namespace BoxingSite.Controllers
 
 
 
-        // GET: Prices
+        // GET: Get all Uesr: Staff and Admin
+        [Authorize(Roles = "Administrator")]
         #region public ActionResult Users(string searchString)
         public ActionResult Users(string sortOrder, string currentFilter, string searchString, int? page, string previousSort)
 
@@ -51,8 +52,6 @@ namespace BoxingSite.Controllers
                 }
 
                 ViewBag.CurrentFilter = searchString;
-                
-
 
 
                 var users = from s in context.Users
@@ -126,7 +125,103 @@ namespace BoxingSite.Controllers
         #endregion
 
 
+
+
+        // GET: Get all Uesr: Staff and Admin
+        [Authorize(Roles = "Administrator")]
+        #region public ActionResult Boxers(string searchString)
+        public ActionResult Boxers(string sortOrder, string currentFilter, string searchString, int? page, string previousSort)
+
+        {
+            try
+            {
+                if (sortOrder == null)
+                    sortOrder = "forename";
+
+                ViewBag.CurrentSort = sortOrder;
+
+                ViewBag.ForenameSortParm = "forename";
+                ViewBag.SurnameSortParm = "surname";
+                ViewBag.UsernameSortParm = "username";
+                ViewBag.SearchStringPlaceHolder = searchString;
+
+
+
+                if (searchString != null)
+                {
+                    page = 1;
+                }
+                else
+                {
+                    searchString = currentFilter;
+                }
+
+                ViewBag.CurrentFilter = searchString;
+
+
+                var boxers = from s in context.BoxerUsers
+                            select s;
+
+
+
+                if (!String.IsNullOrEmpty(searchString))
+                {
+                    boxers = boxers.Where(s => s.Surname.Contains(searchString)
+                                           || s.Forename.Contains(searchString));
+                }
+
+                switch (sortOrder)
+                {
+                    case "forename":
+                        if (previousSort != null)
+                        {
+                            boxers = boxers.OrderByDescending(s => s.Forename);
+                            ViewBag.CurrentSort = null;
+                        }
+                        else
+                        {
+                            boxers = boxers.OrderBy(s => s.Forename);
+                            ViewBag.CurrentSort = "Forename";
+                        }
+
+                        break;
+                    case "surname":
+                        if (previousSort != null)
+                        {
+                            boxers = boxers.OrderByDescending(s => s.Surname);
+                            ViewBag.CurrentSort = null;
+                        }
+                        else
+                        {
+                            boxers = boxers.OrderBy(s => s.Surname);
+                            ViewBag.CurrentSort = "Surname";
+                        }
+                        break;
+                 
+                    default:
+                        boxers = boxers.OrderBy(s => s.Forename);
+                        break;
+                }
+
+                int pageSize = 12;
+                int pageNumber = (page ?? 1);
+                return View(boxers.ToPagedList(pageNumber, pageSize));
+
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError(string.Empty, "Error: " + ex);
+                List<ExpandedUserDTO> col_UserDTO = new List<ExpandedUserDTO>();
+
+                return View(col_UserDTO.ToPagedList(1, 25));
+            }
+        }
+        #endregion
+
+
+
         // GET: Admin/Edit/id
+        [Authorize(Roles = "Administrator")]
         #region public ActionResult EditUser(string UserName)
         public ActionResult EditUser(string UserName)
         {
@@ -146,9 +241,10 @@ namespace BoxingSite.Controllers
 
 
         // PUT: /Admin/EditUser
-        // POST: Trainer/Edit/5
+        // POST: Boxer/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
         public ActionResult EditUser(ExpandedUserDTO expandedUserDTO)
         {
 
@@ -180,9 +276,10 @@ namespace BoxingSite.Controllers
                     "Try again, and if the problem persists " +
                     "see your system administrator.");
             }
-            return RedirectToAction("Trainers", "Trainer");
+            return RedirectToAction("Boxers", "Boxer");
 
         }
+
 
 
 
@@ -220,11 +317,11 @@ namespace BoxingSite.Controllers
 
             // Getting all the roles the searched for user has
             ICollection<UserRolesDTO> colUserRoleDTO = (from objRole in UserManager.GetRoles(result.Id)
-                                                        select new UserRolesDTO
-                                                        {
-                                                            RoleName = objRole
+                select new UserRolesDTO
+                {
+                    RoleName = objRole
 
-                                                        }).ToList();
+                }).ToList();
 
 
             objExpandedUserDTO.Forename = result.Forename;
