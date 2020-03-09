@@ -18,6 +18,11 @@ namespace BoxingSite.Models
         public string Mobile { get; set; }
 
 
+        [Compare(nameof(Mobile), ErrorMessage = "Mobile number doesn't match.")]
+        public string RepeatMobile { get; set; }
+        public bool Suspended { get; set; }
+
+
         [Key]
         [Display(Name = "User Name")]
         public string UserName { get; set; }
@@ -27,6 +32,7 @@ namespace BoxingSite.Models
         public DateTime? LockoutEndDateUtc { get; set; }
         public int AccessFailedCount { get; set; }
         public string PhoneNumber { get; set; }
+
 
         public ICollection<UserRolesDTO> Roles { get; set; }
 

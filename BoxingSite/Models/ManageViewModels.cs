@@ -29,17 +29,11 @@ namespace BoxingSite.Models
         [Display(Name = "Repeat Mobile")]
         public string RepeatMobile { get; set; }
 
-
-        public bool AccountHidden { get; set; }
         public string UserName { get; set; }
         public string Email { get; set; }
 
 
-
-
-        // for PT Sessions - will bew shown on their Boxer/Details/id view
-        [Display(Name = "Are you open for PT Sessions?")]
-        public bool Available { get; set; }
+        
 
 
   

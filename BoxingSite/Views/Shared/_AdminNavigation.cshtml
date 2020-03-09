@@ -4,16 +4,33 @@
     <nav id="adminMenu" class="adminOverlay">
 
         <a href="javascript:void(0)" class="closebtn" onclick="closeAdmin()">&times;</a>
-        
+
+
+
+        @if (Request.IsAuthenticated)
+        {
+            using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <ul class="actions stacked">
+                    <li>
+                        @Html.ActionLink("Manage Account", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "button primary fit" })
+                    </li>
+                    <li>
+                        <a href="javascript:document.getElementById('logoutForm').submit()" class="button primary fit">Log off</a>
+                    </li>
+                </ul>
+            }
+        }
         <div class="overlayContent">
+            <h2>Admin: Manage System</h2>
             <ul class="">
-                <li><h2>Admin: Manage System</h2></li>
-                <li>@Html.ActionLink("Users", "Users", "Admin")</li>
+                @*<li>@Html.ActionLink("Users", "Users", "Admin")</li>*@
                 <li>@Html.ActionLink("Boxers", "Boxers", "Admin")</li>
                 <li>@Html.ActionLink("Promotions", "Promotions", "Promotion")</li>
                 <li>@Html.ActionLink("Schedule", "Schedule", "Schedule")</li>
                 <li>@Html.ActionLink("Classes", "Classes", "Schedule")</li>
-
                 <li>@Html.ActionLink("Suppliers", "Supplier", "Supplier")</li>
                 <li>@Html.ActionLink("About", "About", "About")</li>
                 <li><br /></li>
@@ -25,22 +42,7 @@
                 <li>@Html.ActionLink("Supplier", "CreateSupplier", "Supplier")</li>
             </ul>
 
-            @if (Request.IsAuthenticated)
-            {
-                using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
-                {
-                    @Html.AntiForgeryToken()
 
-                    <ul class="actions stacked">
-                       
-                        <li>
-                            <a href="javascript:document.getElementById('logoutForm').submit()" class="button primary fit">Log off</a>
-                        </li>
-
-
-                    </ul>
-                }
-            }
         </div>
 
 

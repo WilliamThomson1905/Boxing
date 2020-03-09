@@ -21,7 +21,7 @@ namespace BoxingSite.Controllers
             return View(context.BoxingClasses.ToList());
         }
 
-
+        [Authorize(Roles = "Administrator")]
         public ActionResult CreateBoxingClass()
         {
             // ViewBag.BoxerID = new SelectList(context.BoxerUsers, "ID", "Forename");
@@ -53,8 +53,6 @@ namespace BoxingSite.Controllers
             return View("CreateBoxingClass", "Schedule");
         }
 
-        
-       
         public ActionResult ClassScheduleDetails(int? Id)
         {
             if (Id == null)
@@ -224,7 +222,7 @@ namespace BoxingSite.Controllers
 
 
 
-
+        [Authorize(Roles = "Administrator")]
         public ActionResult CreateSession()
         {
             //ViewBag.BoxerID = new SelectList(context.BoxerUsers, "ID", "Forename");

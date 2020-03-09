@@ -13,13 +13,6 @@ namespace BoxingSite.Controllers
             return View();
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
@@ -28,19 +21,6 @@ namespace BoxingSite.Controllers
         }
 
 
-        public ActionResult Schedule()
-        {
-            ViewBag.Message = "Your Schedule page.";
-
-            return View();
-        }
-
-        public ActionResult Prices()
-        {
-            ViewBag.Message = "Your Prices page.";
-
-            return View();
-        }
 
      
     }

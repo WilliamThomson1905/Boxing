@@ -12,8 +12,6 @@
             <li>
                 <a href="javascript:document.getElementById('logoutForm').submit()" class="button fit">Log off</a>
             </li>
-
-        
         </ul>
     }
 }
@@ -24,10 +22,7 @@ else
             <li>@Html.ActionLink("Log in", "Login", "Account",
                new { id = "loginLink" }, new { @class= "button primary fit" })
             </li>
-            <li>@Html.ActionLink("Register", "Register", "Account", 
-              new { id = "registerLink" }, new { @class = "button fit" })
-            </li>
-             @*routeValues: null, htmlAttributes:*@ 
+         
         </ul>
 
 

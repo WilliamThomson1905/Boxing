@@ -3,7 +3,7 @@
 
 @using BoxingSite.Models;
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Promotions";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <link href="~/assets/css/mainPhantom.css" rel="stylesheet" />
@@ -96,7 +96,7 @@
                                             </h2>
                                             <p class="promoInfoBody">
                                                 <span class="promotionDateV2">
-                                                    <b>@String.Format("{0:dddd, dd, MMM yyyy}", promotion.PromotionDate)</b>
+                                                    <b>@String.Format("{0:dddd, dd, MMMMM yyyy}", promotion.PromotionDate)</b>
                                                 </span>
                                                 <i>
                                                     @string.Format("{0:00}:{1:00}", promotion.PromotionStartTime.Hours, promotion.PromotionStartTime.Minutes)

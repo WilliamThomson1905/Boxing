@@ -259,7 +259,9 @@
     <Content Include="images\imagesPhantom\pic13.jpg" />
     <Content Include="images\imagesPhantom\pic14.jpg" />
     <Content Include="images\imagesPhantom\pic15.jpg" />
-    <Content Include="images\logo\cropped-King_Boxing.jpg" />
+    <Content Include="images\logo\KB_Management_Logo.jpg" />
+    <Content Include="images\logo\KB_Promotions_Logo.jpg" />
+    <Content Include="images\logo\KB_Gym_Logo.jpg" />
     <Content Include="images\pic01.svg" />
     <Content Include="images\pic02.svg" />
     <Content Include="images\pic03.svg" />
@@ -354,7 +356,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
@@ -364,7 +365,6 @@
     <Content Include="Views\Account\ForgotPassword.cshtml" />
     <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\ResetPassword.cshtml" />
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
     <Content Include="Views\Account\SendCode.cshtml" />
@@ -387,8 +387,6 @@
     <Content Include="Views\Boxer\Create.cshtml" />
     <Content Include="Views\Shared\_AdminNavigation.cshtml" />
     <Content Include="Views\Schedule\Schedule.cshtml" />
-    <Content Include="Views\Admin\Users.cshtml" />
-    <Content Include="Views\Admin\EditUser.cshtml" />
     <Content Include="Views\About\CreateEquipment.cshtml" />
     <Content Include="Views\About\EditEquipment.cshtml" />
     <Content Include="Views\Supplier\CreateSupplier.cshtml" />

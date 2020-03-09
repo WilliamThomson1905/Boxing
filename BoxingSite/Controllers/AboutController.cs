@@ -25,7 +25,7 @@ namespace BoxingSite.Controllers
 
 
 
-        // GET: Equipment/CreateCreateEquipment
+        // GET: Equipment/CreateEquipment
         [Authorize(Roles = "Administrator")]
         public ActionResult CreateEquipment()
         {

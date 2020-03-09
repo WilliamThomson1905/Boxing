@@ -23,6 +23,8 @@ namespace BoxingSite.Controllers
         {
             ViewBag.Title = "Boxers";
             ViewBag.Message = "Your Management/Boxers description page.";
+            ViewBag.BoxersCount = context.BoxerUsers.Count();
+
 
             return View(context.BoxerUsers.ToList());
             //return View(context.BoxerUsers.ToList().Where(m => m.DetailsHidden == false));
@@ -67,10 +69,51 @@ namespace BoxingSite.Controllers
         {
             return View();
         }
-        
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
+        public ActionResult Create(CreateBoxerViewmodel boxer)
+        {
+            if (ModelState.IsValid)
+            {
+                BoxerUser professionalBoxer = new BoxerUser
+                {
+                    Title = boxer.Title,
+                    Forename = boxer.Forename,
+                    Surname = boxer.Surname,
+                    DOB = boxer.DOB,
+                    Mobile = boxer.Mobile,
+
+                    Description = boxer.Description,
+                    ImageSrc = boxer.ImageSrc,
+                    DetailsHidden = boxer.DetailsHidden,
+                    Available = boxer.Available,
+                    Instagram = boxer.Instagram,
+
+                    Facebook = boxer.Facebook,
+                    LinkedIn = boxer.LinkedIn,
+                    Twitter = boxer.Twitter,
+                    Email = boxer.Email
+
+
+                };
+
+
+                context.BoxerUsers.Add(professionalBoxer);
+                context.SaveChanges();
+                return RedirectToAction("Boxers", "Boxer");
+            }
+
+            return View(boxer);
+        }
+
+
 
 
         // GET: Boxer/Edit/5
+        [Authorize(Roles = "Administrator")]
         public ActionResult Edit(int id)
         {
             BoxerUser boxer = context.BoxerUsers.Find(id);
@@ -84,6 +127,7 @@ namespace BoxingSite.Controllers
         // POST: Boxer/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
         public ActionResult Edit([Bind(Include = "ID, Title, DetailsHidden, DOB, Description,Forename,Surname,ImageSrc,Mobile,Instagram, " +
             "LinkedIn, Facebook, Twitter, Email, Available")] BoxerUser boxerUser)
         {

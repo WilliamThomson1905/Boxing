@@ -40,6 +40,7 @@ namespace BoxingSite.Controllers
         }
 
         // GET: Promotion/Create
+        [Authorize(Roles = "Administrator")]
         public ActionResult CreatePromotion()
         {
             return View();
@@ -50,6 +51,7 @@ namespace BoxingSite.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
         public ActionResult CreatePromotion([Bind(Include = "PromotionID,Name,PromotedBy,AboutEvent,PromotionDate, PromotionStartTime, PromotionEndTime," +
             "Photo, AmountGoing, RemainingSeats, TotalSeats," +
             "ShowMap, MapLong, MapLat," +
@@ -66,6 +68,7 @@ namespace BoxingSite.Controllers
         }
 
         // GET: Promotion/Edit/5
+        [Authorize(Roles = "Administrator")]
         public ActionResult EditPromotion(int? id)
         {
             if (id == null)
@@ -85,6 +88,7 @@ namespace BoxingSite.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
         public ActionResult EditPromotion([Bind(Include = "PromotionID,Name,PromotedBy,AboutEvent,PromotionDate, PromotionStartTime, PromotionEndTime," +
             "Photo, AmountGoing, RemainingSeats, TotalSeats," +
             "ShowMap, MapLong, MapLat," +
@@ -101,6 +105,7 @@ namespace BoxingSite.Controllers
 
 
         // GET: Promotion/Delete/5
+        [Authorize(Roles = "Administrator")]
         #region public ActionResult DeletePromotion(int? Id)
         public ActionResult DeletePromotion(int? Id)
         {

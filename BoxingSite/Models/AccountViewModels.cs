@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace BoxingSite.Models
@@ -64,6 +65,27 @@ namespace BoxingSite.Models
 
     public class RegisterViewModel
     {
+        public string Title { get; set; }
+        public string Forename { get; set; }
+        public string Surname { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        public DateTime? DOB { get; set; }
+        public string Mobile { get; set; }
+
+
+        [Compare(nameof(Mobile), ErrorMessage = "Mobile number doesn't match.")]
+        public string RepeatMobile { get; set; }
+        public bool Suspended { get; set; }
+
+
+
+
+        public ICollection<UserRolesDTO> Roles { get; set; }
+
+
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

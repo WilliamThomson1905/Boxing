@@ -108,7 +108,7 @@ namespace BoxingSite.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Index([Bind(Include = "Id, UserName, Email,Title, Forename, Surname, DOB, Mobile, RepeatMobile, AccountHidden")] ProfileViewModel applicationUser, ManageMessageId? message)
+        public ActionResult Index([Bind(Include = "Id, UserName, Email,Title, Forename, Surname, DOB, Mobile, RepeatMobile, Suspended")] ProfileViewModel applicationUser, ManageMessageId? message)
         {
             ViewBag.StatusMessage =
                 message == ManageMessageId.ChangePasswordSuccess ? "Your password has been changed."
@@ -142,10 +142,7 @@ namespace BoxingSite.Controllers
                     DOB = applicationUser.DOB,
                     PhoneNumber = applicationUser.PhoneNumber,
                     Mobile = applicationUser.Mobile,
-                    RepeatMobile = applicationUser.RepeatMobile,
-
-
-                    AccountHidden = applicationUser.AccountHidden,
+                    RepeatMobile = applicationUser.RepeatMobile
 
                 };
 

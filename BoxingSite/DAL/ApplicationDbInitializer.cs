@@ -24,11 +24,7 @@ namespace BoxingSite.DAL
             {
                 var roleresult = roleManager.Create(new IdentityRole(RoleNames.ROLE_ADMINISTRATOR));
             }
-            if (!roleManager.RoleExists(RoleNames.ROLE_STAFF))
-            {
-                var roleresult = roleManager.Create(new IdentityRole(RoleNames.ROLE_STAFF));
-            }
-          
+           
             if (!roleManager.RoleExists(RoleNames.ROLE_SUSPENDED))
             {
                 var roleresult = roleManager.Create(new IdentityRole(RoleNames.ROLE_SUSPENDED));
@@ -492,64 +488,64 @@ namespace BoxingSite.DAL
 
 
 
-            // Seeding a staff user 
-            string userName1 = "staff@test.com";
-            string password1 = "Password_1";
-            //  var passwordHash = new PasswordHasher();
-            //  password = passwordHash.HashPassword(password);
+            //// Seeding a staff user 
+            //string userName1 = "staff@test.com";
+            //string password1 = "Password_1";
+            ////  var passwordHash = new PasswordHasher();
+            ////  password = passwordHash.HashPassword(password);
 
-            var staff = userManager.FindByName(userName1);
+            //var staff = userManager.FindByName(userName1);
 
-            if (staff == null)
-            {
-                var newStaffUser = new Staff()
-                {
-                    Forename = "Billy",
-                    Surname = "Murray",
-                    DOB = new DateTime(1999, 2, 9),
-                    Title = "Mrs",
-                    PhoneNumber = "01418920829",
-                    Mobile = "07418920829",
-                    RepeatMobile = "07418920829",
-                    UserName = userName1,
-                    Email = userName1,
-                    EmailConfirmed = true
+            //if (staff == null)
+            //{
+            //    var newStaffUser = new Staff()
+            //    {
+            //        Forename = "Billy",
+            //        Surname = "Murray",
+            //        DOB = new DateTime(1999, 2, 9),
+            //        Title = "Mrs",
+            //        PhoneNumber = "01418920829",
+            //        Mobile = "07418920829",
+            //        RepeatMobile = "07418920829",
+            //        UserName = userName1,
+            //        Email = userName1,
+            //        EmailConfirmed = true
 
-                };
+            //    };
 
-                userManager.Create(newStaffUser, password1);
-                userManager.AddToRole(newStaffUser.Id, RoleNames.ROLE_STAFF);
-            }
+            //    userManager.Create(newStaffUser, password1);
+            //    userManager.AddToRole(newStaffUser.Id, RoleNames.ROLE_STAFF);
+            //}
 
 
-            // Seeding a staff user 2
-            string userName2 = "staffWilliam@test.com";
-            string password2 = "Password_1";
-            //  var passwordHash = new PasswordHasher();
-            //  password = passwordHash.HashPassword(password);
+            //// Seeding a staff user 2
+            //string userName2 = "staffWilliam@test.com";
+            //string password2 = "Password_1";
+            ////  var passwordHash = new PasswordHasher();
+            ////  password = passwordHash.HashPassword(password);
 
-            var staff2 = userManager.FindByName(userName2);
+            //var staff2 = userManager.FindByName(userName2);
 
-            if (staff2 == null)
-            {
-                var newStaffUser2 = new Staff()
-                {
-                    Forename = "Sarah",
-                    Surname = "Blob",
-                    DOB = new DateTime(2002, 11, 10),
-                    Title = "Mrs",
-                    PhoneNumber = "01418920830",
-                    Mobile = "074189208230",
-                    RepeatMobile = "074189208230",
-                    UserName = userName2,
-                    Email = userName2,
-                    EmailConfirmed = true
+            //if (staff2 == null)
+            //{
+            //    var newStaffUser2 = new Staff()
+            //    {
+            //        Forename = "Sarah",
+            //        Surname = "Blob",
+            //        DOB = new DateTime(2002, 11, 10),
+            //        Title = "Mrs",
+            //        PhoneNumber = "01418920830",
+            //        Mobile = "074189208230",
+            //        RepeatMobile = "074189208230",
+            //        UserName = userName2,
+            //        Email = userName2,
+            //        EmailConfirmed = true
 
-                };
+            //    };
 
-                userManager.Create(newStaffUser2, password2);
-                userManager.AddToRole(newStaffUser2.Id, RoleNames.ROLE_STAFF);
-            }
+            //    userManager.Create(newStaffUser2, password2);
+            //    userManager.AddToRole(newStaffUser2.Id, RoleNames.ROLE_STAFF);
+            //}
 
 
 

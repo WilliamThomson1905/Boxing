@@ -78,20 +78,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        @Html.LabelFor(m => m.AccountHidden, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.DropDownListFor(m => m.AccountHidden, new SelectList(
-                                new[] {
-                                    new { Value = "true", Text = "Yes" },
-                                    new { Value = "false", Text = "No" },
-                                },
-                                "Value",
-                                "Text"
-                            ),  new { @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.AccountHidden)
-                        </div>
-                    </div>
+                 
 
 
 

@@ -1,9 +1,26 @@
-﻿    <!-- Header -->
+﻿@{
+    var logoString = "";
+
+    if (ViewBag.Title == "Promotions" || ViewBag.Title == "Gym" || ViewBag.Title == "Management")
+    {
+        logoString = "../../images/logo/KB_" + @ViewBag.Title + "_Logo.jpg";
+
+    } else
+    {
+        logoString = "../../images/logo/KB_Gym_Logo.jpg";
+
+    }
+
+
+ }
+
+
+<!-- Header -->
 <header id="header">
     <a href="../../Home/Index" class="logo">
         <span id="logoNavigation">
-            King Boxing <span>Promotions</span>
-
+            @*King Boxing <span>Promotions</span>*@
+            <img src=@logoString />
         </span>
         <div id="textNavigation">
             King Boxing <span>Promotions</span>

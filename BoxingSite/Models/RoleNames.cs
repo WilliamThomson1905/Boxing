@@ -12,7 +12,7 @@ namespace BoxingSite.Models
         public const string ROLE_ADMINISTRATOR = "Administrator";
 
         // Staff 
-        public const string ROLE_STAFF = "Staff";
+        //public const string ROLE_STAFF = "Staff";
 
         // REMOVED role names  
         // public const string ROLE_BOXER = "Boxer";

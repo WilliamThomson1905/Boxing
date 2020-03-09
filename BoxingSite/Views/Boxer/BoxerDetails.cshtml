@@ -3,7 +3,7 @@
 
 
 @{
-    ViewBag.Title = "BoxerDetails";
+    ViewBag.Title = "Management";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -26,10 +26,10 @@
                 <p>
                     @Html.DisplayFor(model => model.Description)
 
-                    @if (!User.Identity.IsAuthenticated)
+                    @if (User.Identity.IsAuthenticated)
                     {
 
-                        if (!User.IsInRole("Administrator"))
+                        if (User.IsInRole("Administrator"))
                         {
                             <br />
                             @Html.ActionLink("Edit", "Edit", new { id = Model.ID })

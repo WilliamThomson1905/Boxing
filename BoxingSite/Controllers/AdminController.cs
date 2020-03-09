@@ -12,6 +12,7 @@ using PagedList;
 using System.Net;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using System.Threading.Tasks;
 
 namespace BoxingSite.Controllers
 {
@@ -22,107 +23,107 @@ namespace BoxingSite.Controllers
 
 
 
-        // GET: Get all Uesr: Staff and Admin
-        [Authorize(Roles = "Administrator")]
-        #region public ActionResult Users(string searchString)
-        public ActionResult Users(string sortOrder, string currentFilter, string searchString, int? page, string previousSort)
+        //// GET: Get all Uesr: Staff and Admin
+        //[Authorize(Roles = "Administrator")]
+        //#region public ActionResult Users(string searchString)
+        //public ActionResult Users(string sortOrder, string currentFilter, string searchString, int? page, string previousSort)
 
-        {
-            try
-            {
-                if (sortOrder == null)
-                    sortOrder = "forename";
+        //{
+        //    try
+        //    {
+        //        if (sortOrder == null)
+        //            sortOrder = "forename";
 
-                ViewBag.CurrentSort = sortOrder;
+        //        ViewBag.CurrentSort = sortOrder;
 
-                ViewBag.ForenameSortParm = "forename";
-                ViewBag.SurnameSortParm = "surname";
-                ViewBag.UsernameSortParm = "username";
-                ViewBag.SearchStringPlaceHolder = searchString;
-
-
-
-                if (searchString != null)
-                {
-                    page = 1;
-                }
-                else
-                {
-                    searchString = currentFilter;
-                }
-
-                ViewBag.CurrentFilter = searchString;
-
-
-                var users = from s in context.Users
-                            select s;
+        //        ViewBag.ForenameSortParm = "forename";
+        //        ViewBag.SurnameSortParm = "surname";
+        //        ViewBag.UsernameSortParm = "username";
+        //        ViewBag.SearchStringPlaceHolder = searchString;
 
 
 
-                if (!String.IsNullOrEmpty(searchString))
-                {
-                    users = users.Where(s => s.Surname.Contains(searchString)
-                                           || s.Forename.Contains(searchString));
-                }
+        //        if (searchString != null)
+        //        {
+        //            page = 1;
+        //        }
+        //        else
+        //        {
+        //            searchString = currentFilter;
+        //        }
 
-                switch (sortOrder)
-                {
-                    case "forename":
-                        if (previousSort != null)
-                        {
-                            users = users.OrderByDescending(s => s.Forename);
-                            ViewBag.CurrentSort = null;
-                        }
-                        else
-                        {
-                            users = users.OrderBy(s => s.Forename);
-                            ViewBag.CurrentSort = "Forename";
-                        }
+        //        ViewBag.CurrentFilter = searchString;
 
-                        break;
-                    case "surname":
-                        if (previousSort != null)
-                        {
-                            users = users.OrderByDescending(s => s.Surname);
-                            ViewBag.CurrentSort = null;
-                        }
-                        else
-                        {
-                            users = users.OrderBy(s => s.Surname);
-                            ViewBag.CurrentSort = "Surname";
-                        }
-                        break;
-                    case "username":
-                        if (previousSort != null)
-                        {
-                            users = users.OrderByDescending(s => s.UserName);
-                            ViewBag.CurrentSort = null;
-                        }
-                        else
-                        {
-                            users = users.OrderBy(s => s.UserName);
-                            ViewBag.CurrentSort = "UserName";
-                        }
-                        break;
-                    default:
-                        users = users.OrderBy(s => s.Forename);
-                        break;
-                }
 
-                int pageSize = 12;
-                int pageNumber = (page ?? 1);
-                return View(users.ToPagedList(pageNumber, pageSize));
+        //        var users = from s in context.Users
+        //                    select s;
 
-            }
-            catch (Exception ex)
-            {
-                ModelState.AddModelError(string.Empty, "Error: " + ex);
-                List<ExpandedUserDTO> col_UserDTO = new List<ExpandedUserDTO>();
 
-                return View(col_UserDTO.ToPagedList(1, 25));
-            }
-        }
-        #endregion
+
+        //        if (!String.IsNullOrEmpty(searchString))
+        //        {
+        //            users = users.Where(s => s.Surname.Contains(searchString)
+        //                                   || s.Forename.Contains(searchString));
+        //        }
+
+        //        switch (sortOrder)
+        //        {
+        //            case "forename":
+        //                if (previousSort != null)
+        //                {
+        //                    users = users.OrderByDescending(s => s.Forename);
+        //                    ViewBag.CurrentSort = null;
+        //                }
+        //                else
+        //                {
+        //                    users = users.OrderBy(s => s.Forename);
+        //                    ViewBag.CurrentSort = "Forename";
+        //                }
+
+        //                break;
+        //            case "surname":
+        //                if (previousSort != null)
+        //                {
+        //                    users = users.OrderByDescending(s => s.Surname);
+        //                    ViewBag.CurrentSort = null;
+        //                }
+        //                else
+        //                {
+        //                    users = users.OrderBy(s => s.Surname);
+        //                    ViewBag.CurrentSort = "Surname";
+        //                }
+        //                break;
+        //            case "username":
+        //                if (previousSort != null)
+        //                {
+        //                    users = users.OrderByDescending(s => s.UserName);
+        //                    ViewBag.CurrentSort = null;
+        //                }
+        //                else
+        //                {
+        //                    users = users.OrderBy(s => s.UserName);
+        //                    ViewBag.CurrentSort = "UserName";
+        //                }
+        //                break;
+        //            default:
+        //                users = users.OrderBy(s => s.Forename);
+        //                break;
+        //        }
+
+        //        int pageSize = 12;
+        //        int pageNumber = (page ?? 1);
+        //        return View(users.ToPagedList(pageNumber, pageSize));
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        ModelState.AddModelError(string.Empty, "Error: " + ex);
+        //        List<ExpandedUserDTO> col_UserDTO = new List<ExpandedUserDTO>();
+
+        //        return View(col_UserDTO.ToPagedList(1, 25));
+        //    }
+        //}
+        //#endregion
 
 
 
@@ -220,177 +221,185 @@ namespace BoxingSite.Controllers
 
 
 
-        // GET: Admin/Edit/id
-        [Authorize(Roles = "Administrator")]
-        #region public ActionResult EditUser(string UserName)
-        public ActionResult EditUser(string UserName)
-        {
-            if (UserName == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            ExpandedUserDTO objExpandedUserDTO = GetUser(UserName);
 
-            if (objExpandedUserDTO == null)
-            {
-                return HttpNotFound();
-            }
-            return View(objExpandedUserDTO);
-        }
-        #endregion
+      
 
+        //// GET: Admin/Edit/id
+        //[Authorize(Roles = "Administrator")]
+        //#region public ActionResult EditUser(string UserName)
+        //public ActionResult EditUser(string UserName)
+        //{
+        //    if (UserName == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    ExpandedUserDTO objExpandedUserDTO = GetUser(UserName);
 
-        // PUT: /Admin/EditUser
-        // POST: Boxer/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Administrator")]
-        public ActionResult EditUser(ExpandedUserDTO expandedUserDTO)
-        {
-
-            try
-            {
-                if (ModelState.IsValid)
-                {
-                    var currentEditedUser = UserManager.FindByName(expandedUserDTO.UserName);
-                    var user = context.Users.Find(currentEditedUser.Id);
+        //    if (objExpandedUserDTO == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(objExpandedUserDTO);
+        //}
+        //#endregion
 
 
-                    user.Title = expandedUserDTO.Title;
-                    user.DOB = expandedUserDTO.DOB;
-                    user.Forename = expandedUserDTO.Forename;
-                    user.Surname = expandedUserDTO.Surname;
-                    user.Mobile = expandedUserDTO.Mobile;
-                    user.Email = expandedUserDTO.Email;
+        //// PUT: /Admin/EditUser
+        //// POST: Boxer/Edit/5
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //[Authorize(Roles = "Administrator")]
+        //public ActionResult EditUser(ExpandedUserDTO expandedUserDTO)
+        //{
+
+        //    try
+        //    {
+        //        if (ModelState.IsValid)
+        //        {
+        //            var currentEditedUser = UserManager.FindByName(expandedUserDTO.UserName);
+        //            var user = context.Users.Find(currentEditedUser.Id);
 
 
-                    context.Entry(user).State = EntityState.Modified;
-                    context.SaveChanges();
-                    return RedirectToAction("Admin", "Users");
-                }
-            }
-            catch (DbUpdateException /* ex */)
-            {
-                //Log the error (uncomment ex variable name and write a log.
-                ModelState.AddModelError("", "Unable to save changes. " +
-                    "Try again, and if the problem persists " +
-                    "see your system administrator.");
-            }
-            return RedirectToAction("Boxers", "Boxer");
-
-        }
+        //            user.Title = expandedUserDTO.Title;
+        //            user.DOB = expandedUserDTO.DOB;
+        //            user.Forename = expandedUserDTO.Forename;
+        //            user.Surname = expandedUserDTO.Surname;
+        //            user.Mobile = expandedUserDTO.Mobile;
+        //            user.RepeatMobile = user.RepeatMobile;
+        //            user.Email = expandedUserDTO.Email;
+        //            user.Suspended = expandedUserDTO.Suspended;
 
 
+        //            context.Entry(user).State = EntityState.Modified;
+        //            context.SaveChanges();
+        //            return RedirectToAction("Users", "Admin");
+        //        }
+        //    }
+        //    catch (DbUpdateException /* ex */)
+        //    {
+        //        //Log the error (uncomment ex variable name and write a log.
+        //        ModelState.AddModelError("", "Unable to save changes. " +
+        //            "Try again, and if the problem persists " +
+        //            "see your system administrator.");
+        //    }
+        //    return RedirectToAction("Users", "Admin");
 
-
-        #region public ApplicationUserManager UserManager
-        public ApplicationUserManager UserManager
-        {
-            get
-            {
-                return _userManager ??
-                    HttpContext.GetOwinContext()
-                    .GetUserManager<ApplicationUserManager>();  // if _userManager desn't have a value then call getUserManager
-            }
-            private set
-            {
-                _userManager = value;
-            }
-        }
-        #endregion
-
-        // 
-        #region private ExpandedUserDTO GetUser(string paramUserName)
-        private ExpandedUserDTO GetUser(string paramUserName)
-        {
-            // Instanciate a new objExpandedUserDTO
-            ExpandedUserDTO objExpandedUserDTO = new ExpandedUserDTO();
-
-            // Defined as var since there are many user types.
-            var result = UserManager.FindByName(paramUserName);
-
-            // If we could not find the user, throw an exception
-            if (result == null) throw new Exception("Could not find the User");
-
-            objExpandedUserDTO.UserName = result.UserName;
-
-
-            // Getting all the roles the searched for user has
-            ICollection<UserRolesDTO> colUserRoleDTO = (from objRole in UserManager.GetRoles(result.Id)
-                select new UserRolesDTO
-                {
-                    RoleName = objRole
-
-                }).ToList();
-
-
-            objExpandedUserDTO.Forename = result.Forename;
-            objExpandedUserDTO.Surname = result.Surname;
-            objExpandedUserDTO.Title = result.Title;
-            objExpandedUserDTO.DOB = result.DOB;
-
-
-            objExpandedUserDTO.Roles = colUserRoleDTO;
-            objExpandedUserDTO.Email = result.Email;
-            objExpandedUserDTO.LockoutEndDateUtc = result.LockoutEndDateUtc;
-            objExpandedUserDTO.AccessFailedCount = result.AccessFailedCount;
-            objExpandedUserDTO.PhoneNumber = result.PhoneNumber;
-
-            return objExpandedUserDTO;
-        }
-        #endregion
+        //}
 
 
 
 
-        #region private ExpandedUserDTO UpdateDTOUser(ExpandedUserDTO objExpandedUserDTO)
-        private ExpandedUserDTO UpdateDTOUser(ExpandedUserDTO paramExpandedUserDTO)
-        {
+        //#region public ApplicationUserManager UserManager
+        //public ApplicationUserManager UserManager
+        //{
+        //    get
+        //    {
+        //        return _userManager ??
+        //            HttpContext.GetOwinContext()
+        //            .GetUserManager<ApplicationUserManager>();  // if _userManager desn't have a value then call getUserManager
+        //    }
+        //    private set
+        //    {
+        //        _userManager = value;
+        //    }
+        //}
+        //#endregion
 
-            ApplicationUser result = UserManager.FindByName(paramExpandedUserDTO.UserName);
+        //// 
+        //#region private ExpandedUserDTO GetUser(string paramUserName)
+        //private ExpandedUserDTO GetUser(string paramUserName)
+        //{
+        //    // Instanciate a new objExpandedUserDTO
+        //    ExpandedUserDTO objExpandedUserDTO = new ExpandedUserDTO();
+
+        //    // Defined as var since there are many user types.
+        //    var result = UserManager.FindByName(paramUserName);
+
+        //    // If we could not find the user, throw an exception
+        //    if (result == null) throw new Exception("Could not find the User");
+
+        //    objExpandedUserDTO.UserName = result.UserName;
 
 
-            // If we could not find the user, throw an exception
-            if (result == null)
-            {
-                throw new Exception("Could not find the User");
-            }
+        //    // Getting all the roles the searched for user has
+        //    ICollection<UserRolesDTO> colUserRoleDTO = (from objRole in UserManager.GetRoles(result.Id)
+        //        select new UserRolesDTO
+        //        {
+        //            RoleName = objRole
 
-            result.Email = paramExpandedUserDTO.Email;
-            result.Forename = paramExpandedUserDTO.Forename;
-            result.Surname = paramExpandedUserDTO.Surname;
-            result.Title = paramExpandedUserDTO.Title;
-            result.DOB = paramExpandedUserDTO.DOB;
+        //        }).ToList();
 
-            // Lets check if the account needs to be unlocked
-            if (UserManager.IsLockedOut(result.Id))
-            {
-                // Unlock user
-                UserManager.ResetAccessFailedCountAsync(result.Id);
-            }
 
-            UserManager.Update(result);
+        //    objExpandedUserDTO.Forename = result.Forename;
+        //    objExpandedUserDTO.Surname = result.Surname;
+        //    objExpandedUserDTO.Title = result.Title;
+        //    objExpandedUserDTO.DOB = result.DOB;
+        //    objExpandedUserDTO.Mobile = result.Mobile;
+        //    objExpandedUserDTO.RepeatMobile = result.RepeatMobile;
+        //    objExpandedUserDTO.Suspended = result.Suspended;
 
-            // Was a password sent across?
-            if (!string.IsNullOrEmpty(paramExpandedUserDTO.Password))
-            {
-                // Remove current password
-                var removePassword = UserManager.RemovePassword(result.Id);
-                if (removePassword.Succeeded)
-                {
-                    // Add new password
-                    var AddPassword = UserManager.AddPassword(result.Id, paramExpandedUserDTO.Password);
 
-                    if (AddPassword.Errors.Count() > 0)
-                    {
-                        throw new Exception(AddPassword.Errors.FirstOrDefault());
-                    }
-                }
-            }
+        //    objExpandedUserDTO.Roles = colUserRoleDTO;
+        //    objExpandedUserDTO.Email = result.Email;
+        //    objExpandedUserDTO.LockoutEndDateUtc = result.LockoutEndDateUtc;
+        //    objExpandedUserDTO.AccessFailedCount = result.AccessFailedCount;
+        //    objExpandedUserDTO.PhoneNumber = result.PhoneNumber;
 
-            return paramExpandedUserDTO;
-        }
-        #endregion
+        //    return objExpandedUserDTO;
+        //}
+        //#endregion
+
+
+
+
+        //#region private ExpandedUserDTO UpdateDTOUser(ExpandedUserDTO objExpandedUserDTO)
+        //private ExpandedUserDTO UpdateDTOUser(ExpandedUserDTO paramExpandedUserDTO)
+        //{
+
+        //    ApplicationUser result = UserManager.FindByName(paramExpandedUserDTO.UserName);
+
+
+        //    // If we could not find the user, throw an exception
+        //    if (result == null)
+        //    {
+        //        throw new Exception("Could not find the User");
+        //    }
+
+        //    result.Email = paramExpandedUserDTO.Email;
+        //    result.Forename = paramExpandedUserDTO.Forename;
+        //    result.Surname = paramExpandedUserDTO.Surname;
+        //    result.Title = paramExpandedUserDTO.Title;
+        //    result.DOB = paramExpandedUserDTO.DOB;
+
+        //    // Lets check if the account needs to be unlocked
+        //    if (UserManager.IsLockedOut(result.Id))
+        //    {
+        //        // Unlock user
+        //        UserManager.ResetAccessFailedCountAsync(result.Id);
+        //    }
+
+        //    UserManager.Update(result);
+
+        //    // Was a password sent across?
+        //    if (!string.IsNullOrEmpty(paramExpandedUserDTO.Password))
+        //    {
+        //        // Remove current password
+        //        var removePassword = UserManager.RemovePassword(result.Id);
+        //        if (removePassword.Succeeded)
+        //        {
+        //            // Add new password
+        //            var AddPassword = UserManager.AddPassword(result.Id, paramExpandedUserDTO.Password);
+
+        //            if (AddPassword.Errors.Count() > 0)
+        //            {
+        //                throw new Exception(AddPassword.Errors.FirstOrDefault());
+        //            }
+        //        }
+        //    }
+
+        //    return paramExpandedUserDTO;
+        //}
+        //#endregion
 
 
     }

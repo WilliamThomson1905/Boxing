@@ -62,7 +62,7 @@
                                 @Html.DisplayFor(modelItem => person.Surname)
                             </td>
                             <td>
-                                @if (person.DetailsHidden == true)
+                                @if (person.DetailsHidden)
                                 {
                                     <span><b>Hidden Details</b></span>
                                 }
